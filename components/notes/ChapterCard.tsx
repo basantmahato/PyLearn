@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import { Chapter } from "@/constants/chapters";
 
 interface ChapterCardProps {
@@ -20,25 +21,27 @@ export function ChapterCard({ chapter, unitColumns }: ChapterCardProps) {
     : "w-full md:w-[48%]";
 
   return (
-    <Pressable
-      className={`${widthClasses} ${
-        useSolidButton ? "bg-primary" : "bg-surface-container-lowest"
-      } rounded-3xl p-5 md:p-6 shadow-sm active:scale-[0.98] transition-all`}
-    >
-      <View className="flex-row items-center justify-between">
-        <Text
-          className={`text-lg md:text-xl font-bold leading-tight flex-1 ${
-            useSolidButton ? "text-white" : "text-on-surface"
-          }`}
-        >
-          {chapter.title}
-        </Text>
-        <MaterialCommunityIcons
-          name={isWide ? ("star" as any) : ("chevron-right" as any)}
-          size={24}
-          color={isAccent || isWide ? "#ffffff" : "#717785"}
-        />
-      </View>
-    </Pressable>
+    <Link href={`/chapter/${chapter.id}` as any} asChild>
+      <Pressable
+        className={`${widthClasses} ${
+          useSolidButton ? "bg-primary" : "bg-surface-container-lowest"
+        } rounded-[32px] p-6 md:p-8 shadow-sm active:scale-[0.97] transition-all border border-outline-variant/10`}
+      >
+        <View className="flex-row items-center justify-between">
+          <Text
+            className={`text-lg md:text-xl font-bold leading-tight flex-1 ${
+              useSolidButton ? "text-white" : "text-on-surface"
+            }`}
+          >
+            {chapter.title}
+          </Text>
+          <MaterialCommunityIcons
+            name={isWide ? ("star" as any) : ("chevron-right" as any)}
+            size={24}
+            color={isAccent || isWide ? "#ffffff" : "#717785"}
+          />
+        </View>
+      </Pressable>
+    </Link>
   );
 }

@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch9",
+  "title": "SQL Mastery: The Data Language",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Basic Commands & DDL",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What does SQL stand for?", "options": ["System Query Language", "Structured Query Language", "Simple Query List", "None"], "answer": 1, "explanation": "The standard language for relational database interaction." },
+        { "id": "q2", "question": "Which command creates a table?", "options": ["NEW TABLE", "CREATE TABLE", "INIT TABLE", "MAKE TABLE"], "answer": 1, "explanation": "DDL command used to define names and types." },
+        { "id": "q3", "question": "Which command adds a column?", "options": ["ADD", "UPDATE", "ALTER TABLE", "NEW"], "answer": 2, "explanation": "ALTER is used to change the metadata/schema." },
+        { "id": "q4", "question": "Which command removes a table AND all its data?", "options": ["DELETE", "REMOVE", "DROP TABLE", "CLEAR"], "answer": 2, "explanation": "DROP is a DDL command that destroys the object." },
+        { "id": "q5", "question": "What is the result of 'DESC Student'?", "options": ["Description of data", "Schema/Column details", "Sort student data", "None"], "answer": 1, "explanation": "DESC shows attribute names, types, and primary key status." },
+        { "id": "q6", "question": "Which type is for variable length strings?", "options": ["CHAR", "VARCHAR", "STRING", "TEXT"], "answer": 1, "explanation": "VARCHAR saves space by only using what is needed." },
+        { "id": "q7", "question": "Which type is for exact fixed length strings?", "options": ["CHAR", "VARCHAR", "STRING", "None"], "answer": 0, "explanation": "CHAR(10) always uses 10 bytes (e.g. for US state codes)." },
+        { "id": "q8", "question": "What is 'DATE' format in SQL?", "options": ["DD-MM-YYYY", "YYYY-MM-DD", "MM-DD-YYYY", "None"], "answer": 1, "explanation": "Standard ISO format: Year-Month-Day." },
+        { "id": "q9", "question": "Which constraint ensures 'No duplicate IDs'?", "options": ["PRIMARY KEY", "NOT NULL", "CHECK", "INDEX"], "answer": 0, "explanation": "Primary Key enforces both Uniqueness and Not-Null constraints." },
+        { "id": "q10", "question": "What command lists all existing tables?", "options": ["SHOW TABLES", "LIST TABLES", "GET TABLES", "None"], "answer": 0, "explanation": "Used in MySQL to see the database contents." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "DML & Filtering",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "Which command adds new records?", "options": ["ADD", "INSERT INTO", "CREATE", "NEW"], "answer": 1, "explanation": "DML command used to add tuples." },
+        { "id": "q2", "question": "How do you change existing records?", "options": ["CHANGE", "UPDATE", "MODIFY", "SAVE"], "answer": 1, "explanation": "UPDATE is used to edit values based on a WHERE condition." },
+        { "id": "q3", "question": "How do you delete specific rows?", "options": ["DROP", "DELETE FROM", "REMOVE", "CLEAR"], "answer": 1, "explanation": "DELETE FROM targets records using a WHERE filter." },
+        { "id": "q4", "question": "What is the wild card for 'Any string'?", "options": ["*", "!", "%", "_"], "answer": 2, "explanation": "'%' matches zero or more characters in a LIKE clause." },
+        { "id": "q5", "question": "What is the wild card for 'Any single character'?", "options": ["*", "!", "%", "_"], "answer": 3, "explanation": "'_' matches exactly one character." },
+        { "id": "q6", "question": "How do you sort results?", "options": ["ORDER BY", "GROUP BY", "SORT", "ALIGN"], "answer": 0, "explanation": "ORDER BY defaults to ASC (Ascending)." },
+        { "id": "q7", "question": "How do you get unique values only?", "options": ["UNIQUE", "DISTINCT", "SINGLE", "None"], "answer": 1, "explanation": "SELECT DISTINCT removes duplicate rows from the output." },
+        { "id": "q8", "question": "Which clause is used for value ranges?", "options": ["BETWEEN", "RANGE", "IN", "FROM"], "answer": 0, "explanation": "BETWEEN 50 AND 100 includes both boundary values." },
+        { "id": "q9", "question": "Which clause checks for membership in a list?", "options": ["IN", "FROM", "BETWEEN", "EQUALS"], "answer": 0, "explanation": "IN ('CS', 'IP') checks if subject is either CS or IP." },
+        { "id": "q10", "question": "How do you filter for 'NULL' values?", "options": ["== NULL", "IS NULL", "EMPTY", "None"], "answer": 1, "explanation": "NULL is not a value, so '==' doesn't work; 'IS' is the correct operator." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Aggregates & Joins",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Which counts the number of rows?", "options": ["SUM", "TOTAL", "COUNT", "SIZE"], "answer": 2, "explanation": "COUNT(*) returns the count of records/tuples." },
+        { "id": "q2", "question": "How do you group results by a field?", "options": ["ORDER BY", "GROUP BY", "PARTITION", "None"], "answer": 1, "explanation": "GROUP BY allows aggregate functions on partitioned sets of data." },
+        { "id": "q3", "question": "Which clause filters grouped results?", "options": ["WHERE", "HAVING", "LIMIT", "FILTER"], "answer": 1, "explanation": "HAVING is used with GROUP BY to apply post-calculation filters." },
+        { "id": "q4", "question": "What is 'AVG' used for?", "options": ["Absolute Value", "Average", "Alignment", "None"], "answer": 1, "explanation": "Returns the mean of a numeric column." },
+        { "id": "q5", "question": "What is a 'Joins' in SQL?", "options": ["Adding data", "Combining columns from multiple tables", "Deleting tables", "None"], "answer": 1, "explanation": "Links records between tables using shared values (like PK/FK)." },
+        { "id": "q6", "question": "What is an 'Equi-Join'?", "options": ["Join on equal values", "Join on unequal", "Join all data", "None"], "answer": 0, "explanation": "Commonly uses '=' operator across two primary tables." },
+        { "id": "q7", "question": "What is a 'Cartesian Product'?", "options": ["Filtered join", "Cross join with every combination", "No join", "None"], "answer": 1, "explanation": "If table A has 3 rows and B has 2, the result has 6 rows." },
+        { "id": "q8", "question": "Which command reverses changes before a commit?", "options": ["UNDONE", "ROLLBACK", "BACKUP", "None"], "answer": 1, "explanation": "Undo a series of DML operations in a transaction." },
+        { "id": "q9", "question": "Which is correct for sorting descending?", "options": ["ORDER BY name DOWN", "ORDER BY name DESC", "ORDER BY name <", "None"], "answer": 1, "explanation": "DESC stands for Descending; ASC is the default." },
+        { "id": "q10", "question": "What is the 'ALIAS' keyword?", "options": ["AS", "LIKE", "SET", "CALL"], "answer": 0, "explanation": "Used to give a temporary name to a column or table for query clarity." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "id": "ch1",
+  "title": "Revision of Python Basics",
+  "highlight": false,
+  "order": 1,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Introduction to Python",
+      "text": "Python is a high-level, interpreted, and general-purpose programming language that has become the gold standard for modern development due to its 'Batteries Included' philosophy. Created by Guido van Rossum and first released in 1991, it emphasizes code readability and allows programmers to express concepts in fewer lines of code than might be possible in languages such as C++ or Java. As an interpreted language, it is processed at runtime by the interpreter, which means you do not need to compile your program before executing it. This makes the development cycle incredibly fast and debugging much more intuitive, though it is slightly slower in execution compared to compiled languages. Today, Python powers everything from simple automation scripts to complex machine learning models at tech giants like Google and NASA."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Key Features of Python",
+      "items": [
+        "Simple and readable syntax reduces learning curve",
+        "Dynamically typed — no need to declare variable types",
+        "Interpreted — executes code line by line",
+        "Supports multiple paradigms (OOP, functional, procedural)",
+        "Huge ecosystem with libraries like NumPy, Pandas, Django",
+        "Cross-platform — runs on Windows, Linux, Mac"
+      ]
+    },
+
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Variables and Data Types",
+      "text": "In Python, variables are essentially names or 'labels' that refer to objects stored in the computer's memory. This is different from languages like C where variables are 'containers'. When you assign a value to a variable, Python creates an object for that value and then points the variable name to it. Python is dynamically typed, meaning you don't need to specify if a variable is an integer or string; the interpreter figures it out at runtime. This flexibility allows a variable to hold a number at one point and a string at another. Standard data types include 'int' for whole numbers, 'float' for decimals, and 'str' for text. Python also introduces 'NoneType' for representing the absence of a value, which is useful for initializing variables or indicating null states."
+    },
+
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "Variable Assignment Example",
+      "code": "name = \"Alice\"\nage = 17\ngpa = 9.8\nis_active = True\n\nprint(type(name))"
+    },
+
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Understanding Data Structures",
+      "text": "Data structures are specialized formats for organizing and storing data so that they can be accessed and modified efficiently. Python’s core built-in structures include Lists (ordered, mutable sequences), Tuples (ordered, immutable sequences), and Dictionaries (unordered key-value mappings). Understanding the difference between 'mutable' (can be changed after creation) and 'immutable' (cannot be changed) is a fundamental pillar of Python programming. For instance, while you can add or remove items from a list, a tuple remains fixed, which makes it faster and more memory-efficient for constant data. Dictionaries, on the other hand, are designed for high-speed retrieval, using a 'hashing' mechanism to locate values instantly by their keys."
+    },
+
+    {
+      "id": "c6",
+      "type": "bullet_list",
+      "heading": "Core Data Types",
+      "items": [
+        "int — whole numbers",
+        "float — decimal values",
+        "str — sequence of characters",
+        "bool — True or False",
+        "list — mutable ordered collection",
+        "tuple — immutable ordered collection",
+        "dict — key-value mapping",
+        "set — unique unordered values"
+      ]
+    },
+
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "Operators in Python",
+      "text": "Operators are the functional symbols that perform specific logical or mathematical transformations on data. Python categorizes these into several groups: Arithmetic operators (+, -, *, /, //, %, **) for calculations; Comparison operators (==, !=, >, <) for evaluating conditions; and Logical operators (and, or, not) for combining multiple boolean expressions. A unique feature in Python is the 'Membership' operators ('in', 'not in') used to check for values within sequences, and 'Identity' operators ('is', 'is not') used to check if two variables point to the exact same memory location. Mastering operator precedence (BODMAS) is crucial to ensure your mathematical expressions evaluate in the correct order."
+    },
+
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "python",
+      "heading": "Operator Example",
+      "code": "a = 10\nb = 3\n\nprint(a + b)\nprint(a > b)\nprint(a % b)"
+    },
+
+    {
+      "id": "c9",
+      "type": "paragraph",
+      "heading": "Input and Output",
+      "text": "Python allows interaction with users through input and output operations. The input() function is used to take user input from the keyboard, while the print() function is used to display output on the screen. These functions are fundamental for creating interactive programs. It is important to remember that input() always returns a string, so type conversion may be required when dealing with numbers."
+    },
+
+    {
+      "id": "c10",
+      "type": "code",
+      "language": "python",
+      "heading": "Input Example",
+      "code": "name = input(\"Enter your name: \")\nprint(\"Hello\", name)"
+    },
+
+    {
+      "id": "c11",
+      "type": "paragraph",
+      "heading": "Conditional Statements",
+      "text": "Conditional statements form the 'decision-making' core of your program, allowing code to execute differently based on changing inputs. The 'if' statement evaluates a boolean condition; if true, its block executes. The optional 'elif' (else if) allows you to check multiple alternative conditions in sequence, while the 'else' block serves as a catch-all for when no previous conditions were met. Python also supports 'Nested Conditionals,' where an if-statement is placed inside another, enabling complex multi-layered logic. These control structures are the foundation of error checking, user authentication, and any scenario where the program must 'think' and react to specific data states."
+    },
+
+    {
+      "id": "c12",
+      "type": "code",
+      "language": "python",
+      "heading": "Conditional Example",
+      "code": "marks = 85\n\nif marks >= 90:\n    print(\"Grade A\")\nelif marks >= 75:\n    print(\"Grade B\")\nelse:\n    print(\"Grade C\")"
+    },
+
+    {
+      "id": "c13",
+      "type": "paragraph",
+      "heading": "Loops in Python",
+      "text": "Loops are designed to automate repetitive tasks, allowing a block of code to run multiple times without rewriting it. Python offers two major types: 'for' loops, which iterate over a sequence (like a list, string, or range), and 'while' loops, which repeat as long as a specific condition remains true. A unique feature of Python is the 'loop-else' construct, where an 'else' block can be executed when a loop completes naturally (without being interrupted by a break statement). Control statements like 'break' (to exit early) and 'continue' (to skip the current turn and jump to the next) provide granular control over how these iterations behave in real-time."
+    },
+
+    {
+      "id": "c14",
+      "type": "code",
+      "language": "python",
+      "heading": "Loop Example",
+      "code": "for i in range(5):\n    print(i)\n\ncount = 0\nwhile count < 3:\n    print(count)\n    count += 1"
+    },
+
+    {
+      "id": "c15",
+      "type": "paragraph",
+      "heading": "Strings and Manipulation",
+      "text": "Strings in Python are sequences of characters and are widely used for handling textual data. Python provides powerful string operations such as indexing, slicing, and built-in methods like lower(), upper(), replace(), and split(). Strings are immutable, meaning their values cannot be changed after creation. Understanding string manipulation is crucial for tasks like data processing, user input handling, and text analysis."
+    },
+
+    {
+      "id": "c16",
+      "type": "code",
+      "language": "python",
+      "heading": "String Example",
+      "code": "text = \"Python\"\n\nprint(text[0])\nprint(text[-1])\nprint(text[0:4])\nprint(text.lower())"
+    },
+    {
+      "id": "c17",
+      "type": "paragraph",
+      "heading": "Indentation (VERY IMPORTANT)",
+      "text": "In Python, indentation is far more than a stylistic choice; it is a vital part of the language's syntax. While languages like C++, Java, or JavaScript use curly braces {} to define code blocks, Python uses whitespace (specifically leading spaces) to determine the grouping of statements. This design forces developers to write clean, visually organized code. The standard convention is to use 4 spaces per indentation level. If your indentation is inconsistent (for example, mixing 2 spaces and 4 spaces), Python will raise an 'IndentationError'. This enforces a mandatory structure that makes Python code exceptionally easy for other developers to read and maintain."
+    },
+
+    {
+      "id": "c18",
+      "type": "code",
+      "language": "python",
+      "heading": "Indentation Example",
+      "code": "if True:\n    print(\"Correct indentation\")\n\n# Wrong indentation will cause error"
+    },
+
+    {
+      "id": "c19",
+      "type": "paragraph",
+      "heading": "Common Errors in Python",
+      "text": "Every programmer encounters errors, and learning to diagnose them is a core skill. Python errors are generally categorized into three types: Syntax Errors occur when your code violates the grammatical rules of the language (like a missing colon); Runtime Errors (also called Exceptions) occur when the program is syntactically correct but encounters a problem during execution (like trying to divide by zero); and Logical Errors occur when the program runs without crashing but produces the wrong result. In the world of Python, 'exception handling' using 'try' and 'except' blocks allows you to catch runtime errors gracefully and prevent your entire application from crashing when something unexpected happens."
+    },
+
+    {
+      "id": "c20",
+      "type": "bullet_list",
+      "heading": "Types of Errors",
+      "items": [
+        "Syntax Error — incorrect code structure",
+        "Runtime Error — error during execution",
+        "Logical Error — incorrect output but no crash"
+      ]
+    },
+
+    {
+      "id": "c21",
+      "type": "paragraph",
+      "heading": "Functions (Introduction)",
+      "text": "Functions are named blocks of reusable code designed to perform a single, specific task. They are the primary tool for 'Modular Programming,' allowing you to break a large, complex problem into smaller, manageable pieces (sub-programs). A function can receive data through 'Parameters' and send results back via the 'return' statement. The primary benefit of functions is 'Abstaction'—you don't need to know exactly how a function works internally to use it; you only need to know what inputs it needs and what output it provides. This promotes code reuse, reduces redundancy, and makes testing and debugging significantly easier."
+    },
+
+    {
+      "id": "c22",
+      "type": "code",
+      "language": "python",
+      "heading": "Function Example",
+      "code": "def greet(name):\n    return \"Hello \" + name\n\nprint(greet(\"Basant\"))"
+    },
+
+    {
+      "id": "c23",
+      "type": "paragraph",
+      "heading": "Real-World Thinking with Python",
+      "text": "Programming is not merely the act of memorizing syntax; it is the art of strategic problem-solving. Every specialized concept in Python has a direct equivalent in complex, real-world systems. For example, conditional logic drives the decision-making engines in autonomous vehicles, loops are the engine behind large-scale data processing in financial markets, and string manipulation is the foundation of Natural Language Processing (NLP) and modern chatbots. By understanding how these basic components act as the DNA of sophisticated software, you shift your mindset from being a student of code to being an architect of solutions."
+    },
+
+    {
+      "id": "c24",
+      "type": "paragraph",
+      "heading": "Best Practices for Beginners",
+      "text": "Writing code that 'just works' is only the first step; writing code that is maintainable and scalable is what defines a professional developer. This involves following established standards like PEP 8 (Python's official style guide), which provides guidelines on naming conventions, indentation, and spacing. You should prioritize clarity over cleverness—code is read far more often than it is written. Breaking complex logic into smaller, testable functions, using descriptive variable names, and documenting your intent with comments are practices that will save hundreds of hours in long-term development and collaboration."
+    },
+
+    {
+      "id": "c25",
+      "type": "bullet_list",
+      "heading": "Best Practices",
+      "items": [
+        "Use meaningful variable names (e.g., age instead of a)",
+        "Keep code clean and readable",
+        "Avoid deep nesting of conditions",
+        "Test code with different inputs",
+        "Practice regularly"
+      ]
+    },
+    {
+      "id": "c26",
+      "type": "paragraph",
+      "heading": "Advanced List Operations",
+      "text": "Lists are the workhorse of Python data storage, offering an incredibly versatile way to manage ordered sequences of data. Beyond basic indexing, Python provides a rich set of methods for sophisticated manipulation. The append() method is used for adding individual items, while extend() is used to merge an entire iterable into the current list. For precise control, insert() allows you to place elements at any index. Removing data is equally flexible: pop() removes and returns an element at a specific position, while remove() deletes the first occurrence of a specific value. Understanding the performance of these operations—such as why appending is faster than inserting at the beginning—is key to writing optimized code."
+    },
+    {
+      "id": "c27",
+      "type": "code",
+      "language": "python",
+      "heading": "List Methods Example",
+      "code": "nums = [3, 1, 4]\nnums.append(2)\nnums.sort()\nnums.pop(0)\nprint(nums)  # Output: [2, 3, 4]"
+    },
+    {
+      "id": "c28",
+      "type": "paragraph",
+      "heading": "Working with Dictionaries",
+      "text": "Dictionaries, often called 'Maps' or 'Hashtables' in other languages, are optimized for near-instantaneous data retrieval regardless of the size of the dataset. They store data in key-value pairs, where each unique key acts as a direct address to its associated value. Modern Python (3.7+) ensures that dictionaries maintain the order of insertion, combining efficiency with predictability. Methods like keys(), values(), and items() allow you to view specific parts of the collection, while the get() method provides a fail-safe way to access data by offering a default value instead of raising a KeyError if a label is missing. This makes dictionaries the ideal choice for representing complex entities like JSON responses or user configuration objects."
+    },
+    {
+      "id": "c29",
+      "type": "code",
+      "language": "python",
+      "heading": "Dictionary Example",
+      "code": "student = {\"name\": \"Rahul\", \"roll\": 10}\nprint(student.get(\"age\", \"Not Found\"))\nstudent[\"age\"] = 18\nprint(student.items())"
+    },
+    {
+      "id": "c30",
+      "type": "paragraph",
+      "heading": "The range() Function",
+      "text": "The range() function is a specialized constructor used to create an immutable sequence of numbers, primarily for controlling the iteration count of for-loops. It is highly memory-efficient because it does not actually store the full list of numbers in memory; instead, it generates each number on-demand as the loop requests it—a concept known as 'lazy evaluation.' By using the start, stop, and step parameters, you can generate complex sequences, such as decreasing count-downs or intervals of even/odd numbers. Range objects also support indexing and slicing, allowing you to treat them like a virtual list without the memory overhead of a traditional array structure."
+    },
+    {
+      "id": "c31",
+      "type": "code",
+      "language": "python",
+      "heading": "Range and Slicing Example",
+      "code": "# range(start, stop, step)\nfor i in range(10, 0, -2):\n    print(i)\n\n# Slicing: [start:stop:step]\nmy_list = [0, 1, 2, 3, 4, 5]\nprint(my_list[1:4])"
+    },
+    {
+      "id": "c32",
+      "type": "bullet_list",
+      "heading": "List vs Tuple: Key Differences",
+      "items": [
+        "Lists are mutable (changeable), Tuples are immutable (fixed)",
+        "Lists use square brackets [], Tuples use parentheses ()",
+        "Lists are slightly slower due to extra memory for mutability",
+        "Tuples are safer for data that should not be changed",
+        "Lists have more methods (append, pop, etc.)"
+      ]
+    },
+    {
+      "id": "c33",
+      "type": "paragraph",
+      "heading": "Introduction to Modules",
+      "text": "Python's true power lies in its modularity—the ability to import and use pre-written code to extend your program's capabilities. A 'Module' is simply a file containing Python definitions and statements. Built-in modules like 'math' provide high-precision mathematical constants and functions, while the 'random' module offers tools for generating deterministic yet unpredictable values. Beyond the standard library, Python's ecosystem includes hundreds of thousands of third-party packages accessible via 'pip' (the Python Package Index). This 'lego-like' architecture allows you to focus on your unique logic while standing on the shoulders of global giants who have already solved standard engineering challenges."
+    },
+    {
+      "id": "c34",
+      "type": "code",
+      "language": "python",
+      "heading": "Module Usage Example",
+      "code": "import math\nimport random\n\nprint(math.factorial(5))\nprint(random.randint(1, 100))"
+    },
+    {
+      "id": "c35",
+      "type": "paragraph",
+      "heading": "Python Tokens: The Building Blocks",
+      "text": "In the context of computer science, a 'Token' is the smallest individual unit in a source program that the Python interpreter can recognize. Just as words and punctuation marks are the building blocks of a sentence, tokens are the 'atoms' of your code. Python categorizes tokens into five distinct classes: Keywords (which have predefined meanings and cannot be used as variable names), Identifiers (user-defined names for variables and functions), Literals (fixed data values), Operators (functional symbols), and Punctuators (syntactic delimiters like brackets and colons). A clear understanding of these tokens is crucial for debugging, as many common errors stem from misidentifying or misused tokens."
+    },
+    {
+      "id": "c36",
+      "type": "bullet_list",
+      "heading": "Rules for Identifiers",
+      "items": [
+        "Must start with a letter (A-Z) or underscore (_)",
+        "Cannot start with a digit (0-9)",
+        "Can only contain letters, digits, and underscores",
+        "Keywords cannot be used as identifiers",
+        "Python is case-sensitive (Age and age are different)"
+      ]
+    },
+    {
+      "id": "c37",
+      "type": "paragraph",
+      "heading": "Anatomy of a Python Program",
+      "text": "The layout of a Python program is governed by a strict hierarchy. A program is composed of 'Logical Lines' (complete instructions to the interpreter), which might span across multiple 'Physical Lines' (the actual lines of text in your editor). These lines contain 'Expressions' that evaluate to values and 'Statements' that perform actions. Groups of statements governed by a header (like a function definition or a condition) form a 'Block' or 'Suite.' Unlike other languages that use brackets to define these blocks, Python uses physical indentation levels, making the visual structure of your code an integral part of its logical execution."
+    },
+    {
+      "id": "c38",
+      "type": "code",
+      "language": "python",
+      "heading": "Program Anatomy Example",
+      "code": "# This is a comment\na = 10          # Statement\nb = a + 5       # Expression produzce value 15\n\nif b > 10:      # Header\n    print(b)    # Part of a Block"
+    },
+    {
+      "id": "c39",
+      "type": "paragraph",
+      "heading": "Understanding Variable Scope",
+      "text": "Scope defines the textual region of a program where a specific variable name remains valid and accessible. Python searches for variables using the **LEGB rule**, which stands for: **Local** (inside the current function), **Enclosing** (in outer functions), **Global** (at the top level of the module), and **Built-in** (predefined Python names). Understanding scope is critical to preventing 'NameErrors' and avoiding accidental side effects where a function unintentionally modifies data that should have remained constant. Proper scoping ensures that your data is correctly isolated and visible only where it is needed."
+    },
+    {
+      "id": "c40",
+      "type": "code",
+      "language": "python",
+      "heading": "Scope Example",
+      "code": "x = \"Global\"  # Global Scope\n\ndef my_func():\n    x = \"Local\"  # Local Scope\n    print(x)\n\nmy_func()  # Prints Local\nprint(x)   # Prints Global"
+    },
+    {
+      "id": "c41",
+      "type": "paragraph",
+      "heading": "Object Identity and The id() Function",
+      "text": "In the Python memory model, 'Identity' is a unique integer (often the memory address) assigned to every object when it is created. It is important to distinguish between **Value Equality (`==`)**, which checks if two objects contain the same data, and **Identity Equality (`is`)**, which checks if two variables refer to the exact same object in memory. While two lists might contain the same numbers, they are distinct objects with different identities. The `id()` function allows you to peek under the hood and verify whether Python is creating a new container or simply providing a different label to an existing one—a distinction that is vital when working with mutable data structures."
+    },
+    {
+      "id": "c42",
+      "type": "code",
+      "language": "python",
+      "heading": "Object Identity Example",
+      "code": "a = [1, 2, 3]\nb = a\n\nprint(id(a) == id(b))  # True\n\na.append(4)\nprint(b)  # b also changes to [1, 2, 3, 4]"
+    }
+  ],
+
+  "summary": {
+    "short_summary": "Python basics form the core foundation of programming and problem solving.",
+
+    "detailed_summary": "This chapter provides a comprehensive revision of Python basics, covering syntax, variables, data types, operators, input/output, conditionals, loops, strings, and functions. It also introduces critical concepts such as indentation, error handling, and best practices. These concepts are not isolated — they work together to build logical and efficient programs. Mastering these basics is essential because every advanced concept in programming builds upon them.",
+
+    "exam_focus": [
+      "Difference between list and tuple",
+      "Working of loops and conditions",
+      "Type casting and input handling",
+      "Common errors in Python",
+      "String operations"
+    ],
+
+    "revision_notes": [
+      "Indentation is mandatory in Python",
+      "input() returns string",
+      "Loops reduce repetition",
+      "Conditions control flow",
+      "Functions improve code reuse"
+    ]
+  },
+
+  "practice": [
+    {
+      "id": "p1",
+      "q": "Explain dynamic typing with an example.",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": [
+        "Think about variable type declaration",
+        "Can type change at runtime?"
+      ],
+      "solution": {
+        "explanation": "Dynamic typing means Python automatically assigns types at runtime.",
+        "example": "x = 10\nx = \"hello\""
+      }
+    },
+
+    {
+      "id": "p2",
+      "q": "Write a program to check if a number is positive, negative, or zero.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Use if-elif-else", "Compare with 0"],
+      "solution": {
+        "code": "num = int(input())\nif num > 0:\n    print(\"Positive\")\nelif num < 0:\n    print(\"Negative\")\nelse:\n    print(\"Zero\")"
+      }
+    },
+
+    {
+      "id": "p3",
+      "q": "Find sum of first N natural numbers.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use loop", "Keep a sum variable"],
+      "solution": {
+        "code": "n = int(input())\nsum = 0\nfor i in range(1, n+1):\n    sum += i\nprint(sum)"
+      }
+    },
+
+    {
+      "id": "p4",
+      "q": "Reverse a string.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use slicing", "[::-1]"],
+      "solution": {
+        "code": "s = input()\nprint(s[::-1])"
+      }
+    },
+
+    {
+      "id": "p5",
+      "q": "Write a function to calculate factorial.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use loop or recursion", "Factorial = n * (n-1)"],
+      "solution": {
+        "code": "def fact(n):\n    res = 1\n    for i in range(1, n+1):\n        res *= i\n    return res"
+      }
+    },
+    {
+      "id": "p6",
+      "q": "Difference between append() and extend() methods in lists.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Adding single item vs multiple items", "Nested list vs flattened list"],
+      "solution": {
+        "explanation": "append() adds its argument as a single element to the end of a list. extend() iterates over its argument adding each element to the list, effectively joining two lists."
+      }
+    },
+    {
+      "id": "p7",
+      "q": "Write a program to count frequency of each character in a string using a dictionary.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Iterate over string", "Use character as key", "Increment value if exists"],
+      "solution": {
+        "code": "s = \"hello world\"\nfreq = {}\nfor char in s:\n    freq[char] = freq.get(char, 0) + 1\nprint(freq)"
+      }
+    },
+    {
+      "id": "p8",
+      "q": "Create a list of squares of even numbers from 1 to 20 using range().",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use range(2, 21, 2)", "Loop and append squared values"],
+      "solution": {
+        "code": "squares = []\nfor i in range(2, 21, 2):\n    squares.append(i**2)\nprint(squares)"
+      }
+    }
+  ]
+}

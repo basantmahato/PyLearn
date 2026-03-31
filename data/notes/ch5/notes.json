@@ -1,0 +1,112 @@
+{
+  "id": "ch5",
+  "title": "Data Structures: The Stack",
+  "highlight": true,
+  "order": 5,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "The LIFO Principle",
+      "text": "A Stack is a linear data structure that follows a specific order in which operations are performed: **Last-In, First-Out (LIFO)**. Think of a physical stack of plates—the last plate you place on the top is the first one you can remove. Similarly, in a computer's memory, the most recently added piece of data is the first to be accessed. While Python lists are versatile, a Stack is a 'Restricted' data structure because you can only add or remove items from one end, commonly called the 'Top'. This restriction makes the Stack an incredibly efficient tool for specific tasks like reversing a string, undoing actions in a text editor, or managing function calls in a computer's memory."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Core Stack Operations",
+      "items": [
+        "Push: Adding an element to the top of the stack",
+        "Pop: Removing and returning the element from the top",
+        "Peek (or Top): Viewing the top element without removing it",
+        "isEmpty: Checking if the stack contains any elements",
+        "Size: Counting the total number of elements currently stored"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Underflow and Overflow",
+      "text": "In any data structure, managing error conditions is as important as the data itself. **Underflow** occurs when you try to 'Pop' (remove) an element from an empty stack—a situation that can lead to program crashes if not handled gracefully. **Overflow**, on the other hand, occurs when you try to 'Push' (add) an element into a stack that has a fixed maximum size and is already full. While Python lists can grow dynamically (making overflow rare), professional developers always include checks like 'if isEmpty()' before attempting extraction to ensure the application remains stable and user-friendly."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "List-Based Stack Implementation",
+      "code": "def push(stack, item):\n    stack.append(item)\n\ndef pop(stack):\n    if not stack: # Underflow Check\n        return \"Underflow Error\"\n    return stack.pop()\n\ndef peek(stack):\n    if not stack:\n        return \"Stack is Empty\"\n    return stack[-1]\n\n# Usage\nmy_stack = []\npush(my_stack, 10)\npush(my_stack, 20)\nprint(pop(my_stack)) # Output: 20"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Real-World Stack Applications",
+      "text": "Stacks are everywhere in modern computing. When you browse the web and click the 'Back' button, you are navigating a stack of URLs. When you use the 'Ctrl+Z' (Undo) shortcut in a word processor, the program pops the last action off a history stack and reverses it. Even more fundamentally, the 'Call Stack' we explored in recursion is a system-level implementation of this data structure, used by the computer to keep track of functioning parts that have not yet finished running. By understanding the Stack, you gain insight into how computers manage state and sequential memory."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "python",
+      "heading": "Reversing a String using a Stack",
+      "code": "def reverse_string(s):\n    stack = []\n    for char in s:\n        stack.append(char) # Push\n    \n    reversed_s = \"\"\n    while stack:\n        reversed_s += stack.pop() # Pop until empty\n    return reversed_s\n\nprint(reverse_string(\"PyLearn\")) # Output: nraeLyP"
+    }
+  ],
+  "summary": {
+    "short_summary": "Stacks are simple yet powerful LIFO (Last-In, First-Out) structures used extensively for managing sequential data and tracking program history.",
+    "detailed_summary": "This chapter introduced the Stack, a fundamental linear data structure essential for problem-solving in Python. We explored the LIFO principle and mastered the core operations of Push and Pop, along with safe strategies for handling Underflow/Overflow conditions. By implementing a Stack using standard Python Lists and applying it to real-world scenarios like string reversal, we learned how restricted access patterns can simplify complex undo/redo logic and memory management.",
+    "exam_focus": [
+      "Defining the LIFO principle with a real-world example",
+      "Writing a modular implementation of Push/Pop in Python",
+      "Distinguishing between Stack Underflow and Overflow",
+      "Application of stacks in 'Undo' operations and expression evaluation",
+      "Using 'Peek' to safely inspect the top element"
+    ],
+    "revision_notes": [
+      "LIFO: Last-In, First-Out",
+      "List.append() is equivalent to Push",
+      "List.pop() with an empty check is equivalent to Pop",
+      "Stack Top is always the last element added",
+      "Underflow = popping from an empty stack"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the result of the following stack operations? Push(10), Push(20), Pop(), Push(30), Pop(), Peek()",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["LIFO order", "Pop removes the most recent"],
+      "solution": {
+        "explanation": "1. Push(10) -> [10]. 2. Push(20) -> [10, 20]. 3. Pop() -> returns 20, stack is [10]. 4. Push(30) -> [10, 30]. 5. Pop() -> returns 30, stack is [10]. 6. Peek() -> returns 10."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Write a function 'isEmpty(stack)' that returns True if the stack is null or has zero elements.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Check the length of the list", "Use len() or directly evaluate the list"],
+      "solution": {
+        "code": "def isEmpty(stack):\n    return len(stack) == 0\n\n# Or simply: return not stack"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Explain Stack Underflow with an example of a list-based implementation.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Empty list", "Popping from nothing"],
+      "solution": {
+        "explanation": "Stack Underflow occurs when an operation like pop() is performed on an empty stack. In a list-based implementation, calling stack.pop() on an empty list [] results in an IndexError, unless you check its length first."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Write a Python program to parse parentheses '()' in a string to check if they are balanced using a Stack.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Push '(' to stack", "Pop on ')' and check if stack was empty"],
+      "solution": {
+        "code": "def is_balanced(expr):\n    stack = []\n    for char in expr:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            if not stack:\n                return False # Underflow means extra ')'\n            stack.pop()\n    return len(stack) == 0 # Balance check at end"
+      }
+    }
+  ]
+}

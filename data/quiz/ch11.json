@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch11",
+  "title": "Boolean Algebra & Logic",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Basic Gates & Truth Tables",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What are the two binary values?", "options": ["0 and 1", "True and False", "Both are correct", "None"], "answer": 2, "explanation": "Binary logic deals with these mutually exclusive states." },
+        { "id": "q2", "question": "Which gate is called an Inverter?", "options": ["AND", "OR", "NOT", "NAND"], "answer": 2, "explanation": "It flips the signal (0 to 1, 1 to 0)." },
+        { "id": "q3", "question": "Which symbol represents AND?", "options": ["+", ".", "'", "!"], "answer": 1, "explanation": "AND is logical multiplication." },
+        { "id": "q4", "question": "Which symbol represents OR?", "options": ["+", ".", "'", "!"], "answer": 0, "explanation": "OR is logical addition." },
+        { "id": "q5", "question": "How many rows are in a 2-variable truth table?", "options": ["2", "4", "8", "6"], "answer": 1, "explanation": "Rows = 2^n. For n=2, 2^2 = 4." },
+        { "id": "q6", "question": "Output of AND gate for (1, 0)?", "options": ["0", "1", "Error", "None"], "answer": 0, "explanation": "AND is 1 ONLY if BOTH inputs are 1." },
+        { "id": "q7", "question": "Output of OR gate for (1, 0)?", "options": ["0", "1", "Error", "None"], "answer": 1, "explanation": "OR is 1 if AT LEAST ONE input is 1." },
+        { "id": "q8", "question": "What is A . 0 according to Identity?", "options": ["A", "0", "1", "None"], "answer": 1, "explanation": "Multiplying anything by 0 results in 0." },
+        { "id": "q9", "question": "What is A + 1 according to Identity?", "options": ["A", "0", "1", "None"], "answer": 2, "explanation": "Adding 1 to anything results in 1 (True state)." },
+        { "id": "q10", "question": "What is A + 0?", "options": ["A", "0", "1", "None"], "answer": 0, "explanation": "Adding 0 is identity (value remains A)." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Theorems & Logic",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "What is the result of A + A'?", "options": ["A", "0", "1", "None"], "answer": 2, "explanation": "Complement Law: Either A or its opposite must be 1." },
+        { "id": "q2", "question": "What is the result of A . A'?", "options": ["A", "0", "1", "None"], "answer": 1, "explanation": "Complement Law: A and its opposite cannot both be 1." },
+        { "id": "q3", "question": "Define Double Negation: (A')'?", "options": ["A", "0", "1", "NOT A"], "answer": 0, "explanation": "Inverting an inversion returns to original." },
+        { "id": "q4", "question": "Which is XOR gate behavior?", "options": ["1 if all are 1", "1 if both are same", "1 if exactly one is 1", "None"], "answer": 2, "explanation": "Exclusive OR is 1 for different inputs only." },
+        { "id": "q5", "question": "What is NAND gate?", "options": ["NOT AND", "NEW AND", "Near AND", "None"], "answer": 0, "explanation": "It's an AND gate followed by an Inverter." },
+        { "id": "q6", "question": "What is NOR gate?", "options": ["NOT OR", "Near OR", "New OR", "None"], "answer": 0, "explanation": "It's an OR gate followed by an Inverter." },
+        { "id": "q7", "question": "State De Morgan's Law for (A.B)'?", "options": ["A' + B'", "A' . B'", "A + B", "None"], "answer": 0, "explanation": "Break the bar and change the sign (Complement of product is sum of complements)." },
+        { "id": "q8", "question": "State De Morgan's Law for (A+B)'?", "options": ["A' + B'", "A' . B'", "A . B", "None"], "answer": 1, "explanation": "Complement of sum is product of complements." },
+        { "id": "q9", "question": "Which are Universal Gates?", "options": ["AND/OR", "NAND/NOR", "XOR/XNOR", "None"], "answer": 1, "explanation": "Any boolean circuit can be built using only NAND or only NOR gates." },
+        { "id": "q10", "question": "Distributive Law: A.(B+C) = ?", "options": ["A.B + C", "A.B + A.C", "A+B . A+C", "None"], "answer": 1, "explanation": "Multiplication distributes over addition." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Circuitry & Simplification",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Simplify A + AB?", "options": ["A", "B", "AB", "1"], "answer": 0, "explanation": "Absorption Law: A(1+B) = A(1) = A." },
+        { "id": "q2", "question": "Simplify A + A'B?", "options": ["A", "B", "A+B", "AB"], "answer": 2, "explanation": "Absorption: (A + A')(A + B) = 1(A + B) = A + B." },
+        { "id": "q3", "question": "What is POS form?", "options": ["Piece OF Shit", "Product of Sums", "Point of Sale", "None"], "answer": 1, "explanation": "Standard logic form like (A+B).(C+D)." },
+        { "id": "q4", "question": "What is SOP form?", "options": ["Standard OF Process", "Sum of Products", "Small OF Parts", "None"], "answer": 1, "explanation": "Standard logic form like (A.B)+(C.D)." },
+        { "id": "q5", "question": "What is 'Minterm' in SOP?", "options": ["A sum", "A single product term", "A key", "None"], "answer": 1, "explanation": "Product term containing all variables of a system exactly once." },
+        { "id": "q6", "question": "What is a 'Maxterm' in POS?", "options": ["A single sum term", "A product", "Total", "None"], "answer": 0, "explanation": "Sum term containing all variables." },
+        { "id": "q7", "question": "How do you derive logic from a truth table?", "options": ["Look at 0s", "Look at 1s and write SOP", "Random", "None"], "answer": 1, "explanation": "Map rows with '1' output to their respective variable states." },
+        { "id": "q8", "question": "What is the result of (A+B).(A+B')?", "options": ["A", "B", "A+B", "None"], "answer": 0, "explanation": "Distributive reverse: A + B.B' = A + 0 = A." },
+        { "id": "q9", "question": "What is a 'Logic Gate' physically?", "options": ["Software loop", "Electronic circuit using transistors", "Cable", "None"], "answer": 1, "explanation": "The hardware realization of boolean functions." },
+        { "id": "q10", "question": "What is the duality principle?", "options": ["Double data", "Switching ./+ and 0/1 to get new valid law", "Mirroring", "None"], "answer": 1, "explanation": "Every boolean identity has a dual identity." }
+      ]
+    }
+  ]
+}

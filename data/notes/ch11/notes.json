@@ -1,0 +1,117 @@
+{
+  "id": "ch11",
+  "title": "Boolean Algebra & Logic",
+  "highlight": false,
+  "order": 11,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Introduction to Boolean Logic",
+      "text": "At its most fundamental level, every computer is built on Boolean Algebra—a branch of mathematics that deals with variables that have only two possible values: **True (1)** and **False (0)**. Developed by George Boole in the mid-19th century, this logic is the backbone of all digital circuitry and modern programming. Whether it is an 'if-statement' in Python or a billion transistors on a microchip, every decision a computer makes is a combination of these simple binary states. By understanding how to combine and manipulate these values, you gain insight into the very 'thinking' process of digital machines."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Basic Logical Operators",
+      "items": [
+        "NOT (Inversion): Flips the value (True becomes False, and vice-versa)",
+        "AND (Conjunction): Result is True only if BOTH inputs are True",
+        "OR (Disjunction): Result is True if AT LEAST ONE input is True",
+        "XOR (Exclusive OR): Result is True if EXACTLY ONE input is True",
+        "NAND/NOR: Inverted versions of AND and OR gates"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Truth Tables",
+      "text": "A **Truth Table** is a mathematical table used to show the relationship between input variables and the resulting output of a logical expression. It lists every possible combination of inputs (2^n combinations for 'n' variables) and the corresponding result of the operation. Truth tables are essential for 'proving' that two logical expressions are equivalent and for designing the physical hardware used in CPUs. For example, a Truth Table can prove that 'NOT (A OR B)' is the exact same thing as '(NOT A) AND (NOT B)'—a fundamental principle in digital design."
+    },
+    {
+      "id": "c4",
+      "type": "paragraph",
+      "heading": "De Morgan's Laws",
+      "text": "De Morgan's Laws are two of the most powerful rules in Boolean Algebra, allowing for the simplification of complex logical expressions. They state: **1. NOT (A AND B) = (NOT A) OR (NOT B)**. **2. NOT (A OR B) = (NOT A) AND (NOT B)**. Mastering these laws is vital for both software developers (to simplify complex if-conditions) and hardware engineers (to reduce the number of electronic gates needed in a chip). Simplification leads to faster execution, lower power consumption, and cleaner, more readable code."
+    },
+    {
+      "id": "c5",
+      "type": "bullet_list",
+      "heading": "Other Important Laws",
+      "items": [
+        "Identity Law: A + 0 = A, A . 1 = A",
+        "Commutative Law: A + B = B + A, A . B = B . A",
+        "Distributive Law: A(B + C) = AB + AC",
+        "Complement Law: A + A' = 1, A . A' = 0",
+        "Double Negation: NOT (NOT A) = A"
+      ]
+    },
+    {
+      "id": "c6",
+      "type": "paragraph",
+      "heading": "Logic Gates & Circuitry",
+      "text": "In hardware, Boolean operations are performed by physical components called **Logic Gates**. These small electronic circuits act as the building blocks of a computer's processor. An AND gate only emits a 'High' signal (1) if both its input wires are powered. A NOT gate (or Inverter) reverses the incoming signal. By combining millions of these gates into complex patterns, engineers create 'Addition Circuits,' 'Memory Cells,' and 'Control Units' that allow a computer to perform calculations and store data. Understanding the logic on the screen helps you appreciate the physical engineering happening inside the silicon chips of your devices."
+    }
+  ],
+  "summary": {
+    "short_summary": "Boolean Algebra handles binary logic (True/False) through operators like AND, OR, and NOT, forming the foundation of digital circuits and programming conditions.",
+    "detailed_summary": "This chapter explored the binary world of Boolean Logic, the mathematical foundation of all digital systems. We analyzed the three primary operators—AND, OR, and NOT—and demonstrated their behavior through the use of Truth Tables. We studied the laws of Boolean Algebra, specifically De Morgan's Theorems, which provide the tools for simplifying complex logical expressions. Finally, we looked at how these abstract mathematical concepts are realized in physical hardware through Logic Gates, bridging the gap between soft code and hard silicon performance.",
+    "exam_focus": [
+      "Drawing Truth Tables for complex expressions (e.g., A + B.C)",
+      "Applying De Morgan's Laws for simplification",
+      "Definitions of primary logic gates (AND, OR, NOT)",
+      "Proving logical equivalence using Truth Tables",
+      "Identifying the 'Complement' and 'Identity' laws"
+    ],
+    "revision_notes": [
+      "AND = Dot (.) = Multiplication logic",
+      "OR = Plus (+) = Addition logic",
+      "NOT = Bar (') = Inversion",
+      "XOR = Exclusive Or",
+      "1 = True, 0 = False",
+      "n inputs = 2^n rows in Truth Table"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "Simplify the expression: (A + B) . (A + C) using the Distributive Law.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Reverse the distributive property", "What is A + BC?"],
+      "solution": {
+        "explanation": "According to the Distributive Law in Boolean Algebra: A + (B . C) = (A + B) . (A + C). Thus, (A + B) . (A + C) simplifies back to A + BC."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Draw the Truth Table for the NAND operation (NOT AND).",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Calculate AND first", "Invert the results"],
+      "solution": {
+        "explanation": "Inputs (A, B): Output = NOT (A.B) | (0,0): 1 | (0,1): 1 | (1,0): 1 | (1,1): 0"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "State De Morgan's first theorem.",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Break the bar", "Change the sign"],
+      "solution": {
+        "explanation": "The theorem states that the complement of a product is equal to the sum of the complements: NOT (A AND B) = (NOT A) OR (NOT B)."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "What is the Double Negation Law?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Inverting an inversion"],
+      "solution": {
+        "explanation": "Double Negation states that a variable which is inverted twice returns to its original state: (A')' = A."
+      }
+    }
+  ]
+}

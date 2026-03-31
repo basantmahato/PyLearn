@@ -1,0 +1,116 @@
+{
+  "id": "ch7",
+  "title": "Protocols & Network Security",
+  "highlight": false,
+  "order": 7,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "What are Protocols?",
+      "text": "For two computers to communicate, they must follow a set of strict rules and conventions called **Protocols**. Just as two people must speak the same language to understand each other, two machines must agree on the same 'digital language' to exchange data. Protocols govern everything from how a file is broken into packets and sent across the globe to how your web browser requests a page from a server. The most fundamental suite of protocols is **TCP/IP**, which provides the foundational instructions for the entire Internet. Without these established standards, the modern digital world would be a disjointed collection of incompatible systems, and global communication would be impossible."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "The TCP/IP Suite",
+      "items": [
+        "TCP (Transmission Control Protocol): Ensures reliable, ordered, and error-checked delivery",
+        "IP (Internet Protocol): Handles the addressing and routing of data packets",
+        "UDP (User Datagram Protocol): Faster but less reliable alternative to TCP (used in streaming)",
+        "DNS (Domain Name System): The 'Phonebook' of the internet, mapping URLs to IP addresses"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Standard Internet Protocols",
+      "text": "Different applications use different high-level protocols. **HTTP (Hypertext Transfer Protocol)** is used for accessing web content, while **HTTPS** adds a layer of encryption (SSL/TLS) for security. **FTP (File Transfer Protocol)** is designed for uploading and downloading files. For email, we use **SMTP (Simple Mail Transfer Protocol)** to send messages and **POP3/IMAP** to receive them. **SSH (Secure Shell)** provides a secure way to access and control remote computers over an unsecured network. Each of these protocols operates on a specific 'Port Number' (like Port 80 for HTTP or Port 443 for HTTPS) to help the computer direct traffic to the right application."
+    },
+    {
+      "id": "c4",
+      "type": "paragraph",
+      "heading": "IPv4 vs IPv6",
+      "text": "Every device on a network needs a unique identifier called an IP address. **IPv4** uses 32-bit addresses (like 192.168.1.1) and provides about 4.3 billion unique combinations. Because the number of connected devices has exploded, we are running out of IPv4 addresses. **IPv6** was developed as a solution, using 128-bit addresses (hexadecimal notation) which provide a nearly infinite number of unique addresses. Transitioning to IPv6 ensures that every single device on the planet—including IoT smart bulbs and sensors—can have its own unique, globally routable identity on the Internet."
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Introduction to Network Security",
+      "text": "As we become more connected, our data becomes more vulnerable to malicious attacks. Network security involves a multilayered approach to protecting data from unauthorized access, modification, or theft. This includes **Firewalls** (which act as a barrier between a trusted and untrusted network), **Antivirus software**, and **Encryption** (coding data so it can't be read without a key). We must also be aware of social threats like **Phishing** (deceptive emails that steal credentials) and **Intellectual Property Rights (IPR)**, which govern the legal ownership and use of digital creative works, software, and data."
+    },
+    {
+      "id": "c6",
+      "type": "bullet_list",
+      "heading": "Common Security Threats",
+      "items": [
+        "Virus: Malicious software that attaches to files and replicates",
+        "Worm: Standalone program that spreads through network vulnerabilities",
+        "Trojan Horse: Malicious code disguised as legitimate software",
+        "Spam: Unsolicited bulk emails used for advertisements or malware delivery",
+        "Cookies: Small data files that track your browsing; can be used for profiling"
+      ]
+    }
+  ],
+  "summary": {
+    "short_summary": "Protocols (TCP/IP) define the rules for communication on the internet, while Network Security protects this data from evolving digital threats.",
+    "detailed_summary": "This chapter explored the languages of the Internet—protocols. We learned how TCP ensures reliability while IP handles the global map of addresses. We distinguished between standard services like HTTP and FTP and analyzed the massive upgrade from IPv4 to IPv6 addresses. Finally, we entered the world of Cybersecurity, identifying malicious software like Viruses and Trojans, and understanding the vital role of Firewalls and Encryption in maintaining privacy and data integrity in an increasingly connected world.",
+    "exam_focus": [
+      "Role of TCP vs UDP protocols",
+      "DNS: Mapping domain names to IP addresses",
+      "Difference between IPv4 (32-bit) and IPv6 (128-bit)",
+      "Importance of the padlock icon (HTTPS) for web security",
+      "Identifying Phishing and Spam as social engineering threats"
+    ],
+    "revision_notes": [
+      "Protocol = Rules for communication",
+      "DNS = URL to IP lookup",
+      "SMTP = Sending email",
+      "POP3 = Receiving email",
+      "IPR = Intellectual Property Rights",
+      "Firewall = Network barrier"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the difference between HTTP and HTTPS?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Security", "Encryption"],
+      "solution": {
+        "explanation": "HTTP (Hypertext Transfer Protocol) transmits data in plain text, meaning it can be intercepted and read by others. HTTPS (Hypertext Transfer Protocol Secure) uses encryption (SSL/TLS) to secure the data, ensuring it remains private between the user and the server."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Explain the role of DNS in web browsing.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Human names vs Machine addresses", "Phonebook comparison"],
+      "solution": {
+        "explanation": "DNS (Domain Name System) acts like a phonebook for the internet. Humans use domain names (like google.com), but computers communicate using IP addresses (like 172.217.16.142). DNS automatically translates the human-readable URL into the machine-readable IP address."
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Why is IPv6 necessary if we already have IPv4?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Address exhaustion", "Number of bits"],
+      "solution": {
+        "explanation": "IPv4 only provides about 4.3 billion unique addresses, and we have nearly run out due to the massive increase in connected devices. IPv6 uses 128-bit addresses, providing a virtually unlimited number of unique identifiers for all current and future devices."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "What is Phishing and how can you protect yourself from it?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Email", "Fake websites", "Verification"],
+      "solution": {
+        "explanation": "Phishing is a cyber attack where attackers send deceptive emails or messages that appear to be from legitimate organizations (like banks) to trick users into revealing sensitive data. You can protect yourself by never clicking suspicious links, checking the sender's actual email address, and enabling Multi-Factor Authentication (MFA)."
+      }
+    }
+  ]
+}

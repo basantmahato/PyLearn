@@ -1,0 +1,151 @@
+{
+  "id": "ch9",
+  "title": "SQL Mastery: The Data Language",
+  "highlight": true,
+  "order": 9,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Introduction to SQL",
+      "text": "SQL (Structured Query Language) is the standard professional language used to communicate with relational databases. Unlike procedural languages (like Python or Java) that tell the computer *how* to do something, SQL is a 'Declarative' language where you specify *what* result you want, and the database engine handles the underlying logic. SQL is divided into several sub-languages: **DDL** (Data Definition Language) for defining tables and constraints, **DML** (Data Manipulation Language) for adding or changing data, and **DQL** (Data Query Language) for retrieving data. Mastering SQL allows you to interact with massive industrial-scale databases used by Google, Amazon, and financial institutions worldwide."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "SQL Data Types",
+      "items": [
+        "INT: Whole numbers (e.g., Roll Number)",
+        "DECIMAL(p,s): Precise decimals (e.g., Price, Salary)",
+        "CHAR(n): Fixed-length string (e.g., Code, Grade)",
+        "VARCHAR(n): Variable-length string (e.g., Name, Address)",
+        "DATE: Date values in YYYY-MM-DD format",
+        "DATE_TIME: Date and time combined"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Data Definition (DDL)",
+      "text": "Data Definition Language (DDL) is used to define, modify, or destroy the structure (schema) of the database. The **CREATE TABLE** statement defines the names of columns, their data types, and any constraints (like PRIMARY KEY or NOT NULL). The **ALTER TABLE** command allows you to change an existing table's structure—such as adding a new column or modifying a constraint—without deleting the entire table and its existing data. Finally, **DROP TABLE** is used when a table is no longer needed, permanently deleting both its structure and all its records. These commands are typically used by database administrators to architect the layout of information."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "sql",
+      "heading": "DDL Commands Example",
+      "code": "-- Create a new table\nCREATE TABLE Student (\n    RollID INT PRIMARY KEY,\n    Name VARCHAR(50) NOT NULL,\n    Email VARCHAR(100) UNIQUE\n);\n\n-- Modify the table structure\nALTER TABLE Student ADD Marks FLOAT;"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Data Manipulation (DML)",
+      "text": "DML is used to work with the actual records stored inside the table. **INSERT** adds new rows of data into the table. **UPDATE** modifies the values of existing records, often using a WHERE clause to target specific rows. For example, you can use UPDATE to change the price of all items in a specific category. **DELETE** removes specific rows from the table. It is crucial to use the WHERE clause with UPDATE and DELETE; without it, the command will affect every single row in the table, potentially leading to catastrophic data loss. These commands are the foundation of 'CRUD' (Create, Read, Update, Delete) operations in modern applications."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "sql",
+      "heading": "DML Commands Example",
+      "code": "-- Add a new record\nINSERT INTO Student VALUES (101, 'Aditi', 'aditi@mail.com', 95.5);\n\n-- Update existing data\nUPDATE Student SET Marks = 98 WHERE RollID = 101;\n\n-- Delete a specific record\nDELETE FROM Student WHERE RollID = 101;"
+    },
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "Querying Data (DQL)",
+      "text": "The most powerful part of SQL is the **SELECT** statement. It allows you to retrieve specific data using complex logic. You can use **WHERE** to filter rows based on conditions, **DISTINCT** to remove duplicate results, and **ORDER BY** to sort the output. SQL also provides built-in 'Aggregate Functions' like SUM(), AVG(), MIN(), MAX(), and COUNT() to perform calculations on entire columns. When combined with the **GROUP BY** clause, you can generate reports—for example, finding the average marks 'grouped by' each subject. The **HAVING** clause allows you to filter these grouped results even further."
+    },
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "sql",
+      "heading": "DQL Query Example",
+      "code": "-- Complex query with grouping and sorting\nSELECT Subject, AVG(Marks) as AvgMarks\nFROM Student\nWHERE Marks > 35\nGROUP BY Subject\nHAVING AvgMarks > 80\nORDER BY AvgMarks DESC;"
+    },
+    {
+      "id": "c9",
+      "type": "paragraph",
+      "heading": "Pattern Matching & Ranges",
+      "text": "SQL provides powerful symbols for flexible searching. The **LIKE** operator with '%' (any string) and '_' (any single character) allows for pattern matching—for example, finding all names that start with 'A'. The **BETWEEN** operator checks if a value falls within a specific range (like marks between 70 and 90), and the **IN** operator checks if a value matches any item in a specific list. These 'operators' make SQL a highly versatile tool for data analysis and precise information retrieval in large-scale systems."
+    },
+    {
+      "id": "c10",
+      "type": "code",
+      "language": "sql",
+      "heading": "SQL Operators Example",
+      "code": "-- Pattern matching and range check\nSELECT * FROM Student \nWHERE Name LIKE 'A%'\nAND Marks BETWEEN 80 AND 100\nAND Subject IN ('CS', 'IP');"
+    }
+  ],
+  "summary": {
+    "short_summary": "SQL is the declarative language for managing relational data, divided into DDL for structure, DML for records, and DQL for powerful querying.",
+    "detailed_summary": "This chapter mastered the syntax of Structured Query Language (SQL), the global standard for database interaction. We covered the three pillars: Data Definition (DDL) for building and altering tables, Data Manipulation (DML) for managing record lifecycle, and Data Querying (DQL) for retrieving precise information. We explored advanced techniques like grouping results with GROUP BY and HAVING, sorting with ORDER BY, and using aggregate functions for data analysis. Through pattern matching and range operators, we saw how SQL simplifies complex data mining tasks.",
+    "exam_focus": [
+      "Distinction between DDL (CREATE/ALTER) and DML (INSERT/UPDATE)",
+      "Importance of the WHERE clause in UPDATE/DELETE",
+      "Using GROUP BY vs HAVING and ORDER BY",
+      "Difference between CHAR (fixed) and VARCHAR (variable) data types",
+      "Aggregate functions: SUM, AVG, COUNT, MAX, MIN",
+      "LIKE operator with '%' and '_' wildcards"
+    ],
+    "revision_notes": [
+      "DDL: Structure (schema)",
+      "DML: Content (data)",
+      "DQL: Retrieval (queries)",
+      "PRIMARY KEY enforces uniqueness",
+      "WHERE filters rows, HAVING filters groups",
+      "SQL is CASE-INSENSITIVE for commands but CASE-SENSITIVE for data"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the difference between CHAR(10) and VARCHAR(10) data types?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Fixed vs Variable length", "Space efficiency"],
+      "solution": {
+        "explanation": "CHAR(10) is a fixed-length string; if you store only 5 characters, it will still use 10 bytes by adding trailing spaces. VARCHAR(10) is a variable-length string; if you store only 5 characters, it uses only 5 bytes. Use CHAR for stable-length data (like bank codes) and VARCHAR for variable-length data (like names)."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Write a query to list all students whose name starts with the letter 'S'.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Use SELECT", "Use LIKE operator", "Use '%'"],
+      "solution": {
+        "code": "SELECT * FROM Student WHERE Name LIKE 'S%';"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "What happens if you run an 'UPDATE Student SET Marks = 100;' command without a WHERE clause?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Whole table vs Specific rows", "Scope of the command"],
+      "solution": {
+        "explanation": "The command will be applied to every single record in the 'Student' table, setting everyone's marks to 100. This is a common and serious database management error."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Write a query to find the maximum marks scored in each division, but only for divisions having more than five students.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Use GROUP BY", "Use MAX()", "Use HAVING with COUNT(*) > 5"],
+      "solution": {
+        "code": "SELECT Division, MAX(Marks) \nFROM Student \nGROUP BY Division \nHAVING COUNT(*) > 5;"
+      }
+    },
+    {
+      "id": "p5",
+      "q": "Distinguish between the DROP and DELETE commands.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Schema vs Data", "DDL vs DML"],
+      "solution": {
+        "explanation": "DROP is a DDL command that deletes the entire table structure along with all its data from the database completely. DELETE is a DML command that removes specific rows (data) from the table while keeping the table structure intact."
+      }
+    }
+  ]
+}

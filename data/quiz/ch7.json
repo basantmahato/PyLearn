@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch7",
+  "title": "Protocols & Network Security",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Protocol Suite",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What is a 'Protocol'?", "options": ["Software", "Set of rules", "A cable", "None"], "answer": 1, "explanation": "A formal set of conventions for communication between autonomous systems." },
+        { "id": "q2", "question": "Which protocol is for reliable delivery?", "options": ["UDP", "IP", "TCP", "HTTP"], "answer": 2, "explanation": "TCP (Transmission Control Protocol) handles error checking and ordering." },
+        { "id": "q3", "question": "Which protocol handles addressing/routing?", "options": ["IP", "DNS", "UDP", "TCP"], "answer": 0, "explanation": "IP (Internet Protocol) assigns unique IDs to packets for mapping." },
+        { "id": "q4", "question": "Which protocol is for fast, unordered datagrams?", "options": ["UDP", "IP", "TCP", "HTTP"], "answer": 0, "explanation": "UDP (User Datagram Protocol) is 'best-effort' used in streaming." },
+        { "id": "q5", "question": "What is the 'address' of a website called?", "options": ["IP", "URL", "DNS", "MAC"], "answer": 1, "explanation": "Uniform Resource Locator is the human-readable path (e.g. google.com)." },
+        { "id": "q6", "question": "Which protocol handles web traffic?", "options": ["FTP", "SMTP", "HTTP", "POP3"], "answer": 2, "explanation": "Hypertext Transfer Protocol is the foundation of the WWW." },
+        { "id": "q7", "question": "Which protocol is for file transfers?", "options": ["FTP", "IP", "UDP", "TCP"], "answer": 0, "explanation": "File Transfer Protocol (FTP) manages data uploads/downloads." },
+        { "id": "q8", "question": "Which protocol handles outgoing email?", "options": ["IMAP", "POP3", "SMTP", "DNS"], "answer": 2, "explanation": "SMTP (Simple Mail Transfer Protocol) sends mail to the server." },
+        { "id": "q9", "question": "Which protocol is for receiving email?", "options": ["HTTP", "POP3", "SMTP", "FTP"], "answer": 1, "explanation": "POP3 (Post Office Protocol) downloads mail locally." },
+        { "id": "q10", "question": "What is the 'Port' for HTTP?", "options": ["80", "443", "21", "25"], "answer": 0, "explanation": "Port 80 is the standard port for unsecured web traffic." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Connectivity & Web",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "What does DNS do?", "options": ["Block data", "Maps URL to IP", "Connect WiFi", "Encrypt files"], "answer": 1, "explanation": "DNS (Domain Name System) is the 'phonebook' of the internet." },
+        { "id": "q2", "question": "What is the size of IPv4 address?", "options": ["32 bits", "64 bits", "128 bits", "256 bits"], "answer": 0, "explanation": "IPv4 uses 4 octets (32-bit total) like 192.168.1.1." },
+        { "id": "q3", "question": "What is the size of IPv6 address?", "options": ["32 bits", "128 bits", "64 bits", "512 bits"], "answer": 1, "explanation": "IPv6 uses a 128-bit hex format to allow nearly infinite addresses." },
+        { "id": "q4", "question": "What does the 'S' in HTTPS stand for?", "options": ["Simple", "Secure (SSL/TLS)", "Staging", "Solid"], "answer": 1, "explanation": "HTTPS is HTTP over an encrypted TLS/SSL layer." },
+        { "id": "q5", "question": "What is a 'MAC' address?", "options": ["Software ID", "Hardcoded hardware ID", "Router IP", "None"], "answer": 1, "explanation": "Medium Access Control address is burnt into the NIC at factory." },
+        { "id": "q6", "question": "Which protocol is for remote command execution?", "options": ["SSH", "TELNET", "Both", "None"], "answer": 2, "explanation": "Both allow remote terminals (Telnet is insecure, SSH is secure)." },
+        { "id": "q7", "question": "What is 'Domain' ownership called?", "options": ["Rent", "Registration", "IP mapping", "DNS lookup"], "answer": 1, "explanation": "Registering a domain marks you as the authority for that name." },
+        { "id": "q8", "question": "Which protocol is for real-time video games?", "options": ["TCP", "UDP", "FTP", "POP3"], "answer": 1, "explanation": "Low latency is preferred, so UDP is used for speed over reliability." },
+        { "id": "q9", "question": "What does 'T' in TCP stand for?", "options": ["Terminal", "Transmission", "Technology", "Traffic"], "answer": 1, "explanation": "Transmission Control Protocol." },
+        { "id": "q10", "question": "What is 'WWW' vs 'Internet'?", "options": ["Same", "Service vs Infrastructure", "Browser vs Server", "None"], "options": ["The Web is a service on top of the hardware Infrastructure"], "answer": 1, "explanation": "The Web is just one of many services (like Email/FTP) on the Internet." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Cybersecurity & Threats",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "What is 'Phishing'?", "options": ["Catching fish", "Deceptive messages used to steal data", "A type of virus", "A network hack"], "answer": 1, "explanation": "Social engineering using fake emails or websites to steal credentials." },
+        { "id": "q2", "question": "Which malware replicates itself across vulnerabilities?", "options": ["Virus", "Worm", "Trojan", "Spam"], "answer": 1, "explanation": "Worms spread automatically through network connections." },
+        { "id": "q3", "question": "What is a 'Trojan Horse'?", "options": ["Virus", "Self-spreading worm", "Malware hidden in useful software", "None"], "answer": 2, "explanation": "It looks safe (like an app) but contains malicious payload." },
+        { "id": "q4", "question": "What is a 'Firewall'?", "options": ["Heater", "Barrier between trusted/untrusted networks", "Cooling fan", "Antivirus software"], "answer": 1, "explanation": "Protects systems by monitoring incoming/outgoing traffic." },
+        { "id": "q5", "question": "What does 'IPR' govern?", "options": ["Internet speed", "Ownership of creative/digital works", "Packet order", "Router logic"], "answer": 1, "explanation": "Intellectual Property Rights handle patents, copyrights, and DMCA." },
+        { "id": "q6", "question": "What is 'Spam'?", "options": ["Meat", "Unsolicited bulk email", "Encoded data", "None"], "answer": 1, "explanation": "Commercial/malicious mass mailings." },
+        { "id": "q7", "question": "What are 'Cookies' in a browser?", "options": ["Snacks", "Text files stored by servers for state", "Hard drive sectors", "None"], "answer": 1, "explanation": "Used for tracking logins and user preferences." },
+        { "id": "q8", "question": "What is 'Adware'?", "options": ["Admin software", "Malware that shows forced ads", "Ad blocking software", "None"], "answer": 1, "explanation": "Software that generates revenue for its author by displaying unwanted ads." },
+        { "id": "q9", "question": "What is 'Encryption'?", "options": ["Deleting data", "Coding data into unreadable text", "Copying data", "None"], "answer": 1, "explanation": "Using keys (like SSL) to ensure only authorized parties read the data." },
+        { "id": "q10", "question": "What is 'Antivirus' effectiveness called?", "options": ["Speed", "Detection rate/Heuristics", "Disk size", "None"], "answer": 1, "explanation": "Heuristic analysis checks for behavior patterns, not just signatures." }
+      ]
+    }
+  ]
+}

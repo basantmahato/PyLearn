@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch10",
+  "title": "Python-MySQL Connectivity",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Connectivity & Workflow",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "Which module allows Python to connect to MySQL?", "options": ["mysql.interface", "mysql.connector", "sql.python", "db.connect"], "answer": 1, "explanation": "mysql-connector acts as the bridge driver between Python and the DB." },
+        { "id": "q2", "question": "What is the result of connect()?", "options": ["Data list", "Connection Object", "Cursor Object", "Boolean"], "answer": 1, "explanation": "Returns a handle representing the active link to the database server." },
+        { "id": "q3", "question": "Which of these is a required connect parameter?", "options": ["host", "user", "password", "All"], "answer": 3, "explanation": "Need server location, credentials, and optionally the database name." },
+        { "id": "q4", "question": "What is the 'Cursor' object?", "options": ["Mouse pointer", "Interface to execute SQL and fetch data", "List of rows", "None"], "answer": 1, "explanation": "Cursors provide the communication layer for specific queries." },
+        { "id": "q5", "question": "Which method is used to send a query?", "options": ["run()", "query()", "execute()", "send()"], "answer": 2, "explanation": "cursor.execute(sql) is the standard for both DDL and DML." },
+        { "id": "q6", "question": "How do you close the connection?", "options": ["db.stop()", "db.close()", "db.quit()", "db.end()"], "answer": 1, "explanation": "Important to free the server-side resources and sockets." },
+        { "id": "q7", "question": "What is the default host for local MySQL?", "options": ["127.0.0.1", "localhost", "Both", "None"], "answer": 2, "explanation": "Standard loopback address for the current machine." },
+        { "id": "q8", "question": "Which variable determines the number of rows affected?", "options": ["rowcount", "size", "total", "affected_rows"], "answer": 0, "explanation": "cursor.rowcount is set after every INSERT/UPDATE/DELETE." },
+        { "id": "q9", "question": "How do you check if the connection is alive?", "options": ["is_alive()", "is_connected()", "check()", "ping()"], "answer": 1, "explanation": "db.is_connected() returns True if the socket is open." },
+        { "id": "q10", "question": "Which step comes after importing the module?", "options": ["Close", "Execute", "Connect", "Fetch"], "answer": 2, "explanation": "Establishing the connection is the first active step in the workflow." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Cursor & Modification",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "What is the purpose of commit()?", "options": ["Saving results in memory", "Making changes permanent in DB", "Deleting data", "Error log"], "answer": 1, "explanation": "Ensures transactional data is written to disk storage." },
+        { "id": "q2", "question": "Which method reverses uncommitted changes?", "options": ["undo()", "rollback()", "redo()", "back()"], "answer": 1, "explanation": "Standard SQL/transactional concept for recovery." },
+        { "id": "q3", "question": "What is a 'Parameterized Query'?", "options": ["Using %s to prevent SQL Injection", "Using + plus", "Hardcoding values", "None"], "answer": 0, "explanation": "Best practice to keep data separate from the SQL structure safely." },
+        { "id": "q4", "question": "Which method is used for bulk insertions?", "options": ["executemany()", "execute()", "executegroup()", "None"], "answer": 0, "explanation": "Efficiently runs one SQL command for a sequence of data tuples." },
+        { "id": "q5", "question": "When is commit() NOT needed?", "options": ["INSERT", "UPDATE", "SELECT", "DELETE"], "answer": 2, "explanation": "Read-only operations (DQL) don't change the database state." },
+        { "id": "q6", "question": "What is the result of executemany()?", "options": ["Multiple updates", "One update", "New database", "None"], "answer": 0, "explanation": "Loops over a list of values and runs the same query multiple times." },
+        { "id": "q7", "question": "What happens if you omit the cursor() call?", "options": ["Works fine", "Cannot execute SQL", "Database closes", "None"], "answer": 1, "explanation": "The connection object itself doesn't possess execute methods." },
+        { "id": "q8", "question": "Which exception class handles connection errors?", "options": ["mysql.connector.Error", "Exception", "DBError", "None"], "answer": 0, "explanation": "The library provides its own exception category for DB-specific issues." },
+        { "id": "q9", "question": "What is the result of using 'autocommit=True'?", "options": ["No commit needed for any query", "Slower database", "Security breach", "None"], "answer": 0, "explanation": "The server automatically commits every DML statement immediately." },
+        { "id": "q10", "question": "What is the cursor 'buffered' argument?", "options": ["Encryption", "Fetching all results into memory immediately", "Deleting cache", "None"], "answer": 1, "explanation": "Buffered cursors allow for multiple query results to be stored locally." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Retrieval Logic",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "What does fetchone() return?", "options": ["A list", "Single tuple/row", "String", "None"], "answer": 1, "explanation": "Retrieves the very next matching row from the result set." },
+        { "id": "q2", "question": "What does fetchall() return?", "options": ["Single row", "List of tuples/rows", "Database file", "None"], "answer": 1, "explanation": "Returns all remaining rows. Caution: Memory intensive for large tables." },
+        { "id": "q3", "question": "What does fetchmany(size) return?", "options": ["Exactly 'size' rows", "All rows", "One row", "None"], "answer": 0, "explanation": "Allows for chunk-based/paginated retrieval of results." },
+        { "id": "q4", "question": "What is the return value of fetchone() if no data is left?", "options": ["Empty tuple", "None", "Error", "Empty list"], "answer": 1, "explanation": "None is the standard signal that the cursor has reached EOR (End of Results)." },
+        { "id": "q5", "question": "Can you fetch data before calling execute()?", "options": ["Yes", "No", "Depends on OS", "Sometimes"], "answer": 1, "explanation": "Fetching relies on a populated result set created by an execute() call." },
+        { "id": "q6", "question": "What is the 'row' object type in fetchall()?", "options": ["List", "Tuple", "Dict", "String"], "answer": 1, "explanation": "Rows are standard Python tuples by default (indexed 0, 1, ...)." },
+        { "id": "q7", "question": "How can you return results as dictionaries?", "options": ["db.dict()", "cursor(dictionary=True)", "set(type=dict)", "None"], "answer": 1, "explanation": "Modern connectors allow mapping columns to dictionary keys (e.g. row['name'])." },
+        { "id": "q8", "question": "What is 'SQL Injection'?", "options": ["Speed boost", "Malicious code injected into SQL queries via user input", "Database hack", "None"], "answer": 1, "explanation": "A critical vulnerability where attackers take control of the database query." },
+        { "id": "q9", "question": "Which method retrieves the last inserted ID (auto-increment)?", "options": ["cursor.lastrowid", "db.get_id()", "id()", "None"], "answer": 0, "explanation": "Useful for getting the ID generated for a new record immediately." },
+        { "id": "q10", "question": "Is MySQL-python the same as MySQL-connector?", "options": ["Yes", "No", "Only for Linux", "None"], "answer": 1, "explanation": "Different libraries/implementations; mysql-connector is the official one from Oracle." }
+      ]
+    }
+  ]
+}

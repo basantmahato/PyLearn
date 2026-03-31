@@ -1,0 +1,118 @@
+{
+  "id": "ch8",
+  "title": "Database Concepts",
+  "highlight": false,
+  "order": 8,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "What is a Database?",
+      "text": "A database is a structured collection of data that can be easily accessed, managed, and updated. Before databases, data was stored in individual 'Flat Files,' which often led to data redundancy (the same data being repeated in different files) and data inconsistency (the same data being different in different places). A **DBMS (Database Management System)** is the software that acts as an interface between the user and the data, providing a secure and efficient way to handle large datasets. By centralizing data, databases eliminate repetition and ensure that information remains accurate across all parts of an organization, from student records in a school to financial transactions in a global bank."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Advantages of DBMS",
+      "items": [
+        "Data Redundancy reduction (eliminating duplicate data)",
+        "Data Sharing (multiple users can access data simultaneously)",
+        "Data Consistency (synchronizing data everywhere)",
+        "Data Security (protecting data with permissions)",
+        "Data Recovery (handling crashes and data loss)"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "The Relational Model (RDBMS)",
+      "text": "The most common way to organize a database is the **Relational Model**, where data is stored in 'Tables' (also called 'Relations'). Each table is a grid made of rows and columns. A **Row (Tuple)** represents a single, complete record (e.g., all data for one student), while a **Column (Attribute)** represent a specific data field (e.g., just the students' names). The number of attributes is called the **Degree**, and the number of tuples is called the **Cardinality**. In a Relational Database (RDBMS), these tables are linked through shared values, allowing for complex queries across multiple related datasets."
+    },
+    {
+      "id": "c4",
+      "type": "paragraph",
+      "heading": "Understanding Database Keys",
+      "text": "Keys are the fundamental tools used to uniquely identify records and establish relationships between tables. A **Primary Key** is a unique attribute (or set of attributes) that identifies each row in a table— it cannot be null and cannot be repeated. A **Candidate Key** is any attribute that has the potential to be a primary key because every value is unique. An **Alternate Key** is a candidate key that was not chosen as the primary key. Finally, the **Foreign Key** is an attribute in one table that refers to the primary key of another table, creating a bridge (or relationship) between them that maintains 'Referential Integrity'."
+    },
+    {
+      "id": "c5",
+      "type": "bullet_list",
+      "heading": "Key Definitions Recap",
+      "items": [
+        "Primary Key: Must be unique and NOT NULL",
+        "Candidate Key: All possible unique identifiers",
+        "Alternate Key: Candidate keys minus the Primary key",
+        "Foreign Key: Linking attribute to another table's Primary Key",
+        "Composite Key: A primary key made of multiple attributes"
+      ]
+    },
+    {
+      "id": "c6",
+      "type": "paragraph",
+      "heading": "Referential Integrity",
+      "text": "Referential integrity is a strict rule that ensures the relationship between tables remains consistent. It dictates that every value in a Foreign Key column must have a matching value in the Primary Key column of the related table (or be null if permitted). This prevents 'orphaned' records—for example, it prevents you from adding a student to a class ID that doesn't exist, or from deleting a teacher if they are still assigned to active modules. This layer of protection is what makes relational databases significantly more powerful and reliable than simple flat-file storage."
+    }
+  ],
+  "summary": {
+    "short_summary": "Databases (RDBMS) organize data into tables, using unique Keys to ensure data integrity and define relationships between records.",
+    "detailed_summary": "This chapter established the core principles of data management. We transitioned from problematic flat-file systems to the structured world of RDBMS. We mastered the terminology of relations (tables), attributes (columns), and tuples (rows), while exploring the mathematical concepts of degree and cardinality. Most importantly, we learned the importance of Keys—Primary, Candidate, and Foreign—in ensuring that every piece of data is uniquely identifiable and correctly linked across the system, maintaining strict referential integrity.",
+    "exam_focus": [
+      "Difference between DBMS and RDBMS",
+      "Defining Primary Key, Candidate Key, and Alternate Key",
+      "Difference between Degree and Cardinality with an example",
+      "Role of Foreign Key in maintaining referential integrity",
+      "Advantages of DBMS over traditional file systems"
+    ],
+    "revision_notes": [
+      "Database = Organized data collection",
+      "DBMS = Software interface",
+      "Table = Relation",
+      "Row = Tuple",
+      "Column = Attribute",
+      "Primary Key = Unique & NOT NULL",
+      "Referential Integrity = Consistent relationships"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the degree and cardinality of a table with 5 attributes and 12 rows?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Degree = Columns", "Cardinality = Rows"],
+      "solution": {
+        "explanation": "The Degree is 5 (number of columns/attributes). The Cardinality is 12 (number of rows/tuples)."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Can a Primary Key contain NULL values? Why?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Uniqueness", "Identification"],
+      "solution": {
+        "explanation": "No, a Primary Key cannot contain NULL values because its purpose is to uniquely identify every record in a table. A NULL value represents an 'unknown' or 'missing' state, which would make it impossible to uniquely identify the row."
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Distinguish between Candidate Key and Primary Key.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Potential vs Actual", "Selection process"],
+      "solution": {
+        "explanation": "A Candidate Key is any attribute (or set of attributes) that uniquely identifies a record. From all the available Candidate Keys, one is chosen as the Primary Key based on its stability and importance. The other Candidate Keys are then referred to as Alternate Keys."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "List four advantages of using a DBMS instead of a file processing system.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Redundancy", "Consistency", "Security", "Sharing"],
+      "solution": {
+        "explanation": "1. Controlled Data Redundancy (avoids duplicates). 2. Enhanced Data Consistency. 3. Improved Data Sharing among multiple users. 4. Robust Security and Access Control."
+      }
+    }
+  ]
+}

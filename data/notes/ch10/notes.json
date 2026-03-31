@@ -1,0 +1,136 @@
+{
+  "id": "ch10",
+  "title": "Python-MySQL Connectivity",
+  "highlight": false,
+  "order": 10,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Connecting Python with Databases",
+      "text": "While Python is excellent at data processing and SQL is the gold standard for data storage, real-world applications (like banking systems or social media) require these two to work together. Python-MySQL Connectivity allows a Python program to act as a bridge, sending SQL commands to a database server and receiving results back for processing. This is achieved using a **Database Connector or Driver**—a specialized library that translates Python's instructions into a language the MySQL server understands. This integration enables developers to build dynamic, data-driven applications that keep information persistent and synchronized across multiple user sessions."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Key Connectivity Terms",
+      "items": [
+        "Connector: A Python module like 'mysql-connector-python'",
+        "Connection Object: Stores the link to the database server (host, user, password, db)",
+        "Cursor Object: Similar to a virtual pointer, it executes SQL commands and stores results",
+        "Result Set: The data retrieved from the database as a set of rows",
+        "Transaction: A logical unit of work that must be 'committed' to save changes"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "The 5-Step Connectivity Workflow",
+      "text": "Every Python-to-MySQL interaction follows a predictable five-step process: **1. Import** the connector module (import mysql.connector). **2. Connect** to the server using mysql.connector.connect() with the host, user, and password. **3. Create a Cursor** object (db.cursor()) to perform operations. **4. Execute SQL** queries using the cursor.execute() method. **5. Process results** using methods like fetchone() or fetchall() if reading, or **Commit** the changes using db.commit() if writing or updating. Finally, always close both the cursor and the connection to ensure the database remains stable and performant."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "Establishing a Connection",
+      "code": "import mysql.connector\n\n# Creating the connection object\ndb = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"password\",\n    database=\"SchoolDB\"\n)\n\nif db.is_connected():\n    print(\"Successfully connected to the database!\")\ncursor = db.cursor()"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Executing Queries (Insert/Update)",
+      "text": "When your application needs to modify the database—such as adding a new user or updating a salary—you use the **cursor.execute()** method with a DML command. However, even if the command is sent successfully, the database will not permanently save the changes until you call the **commit()** method on the main connection object. This is a critical security and reliability feature: if an error occurs mid-process, you can choose not to commit, ensuring the database remains in its last known 'clean' state without corrupted or incomplete data."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "python",
+      "heading": "Data Modification Example",
+      "code": "sql = \"INSERT INTO Student (Roll, Name) VALUES (%s, %s)\"\nval = (102, \"Aarav\")\n\ncursor.execute(sql, val)\ndb.commit() # Mandatory for saving modifications\nprint(cursor.rowcount, \"record(s) inserted.\")"
+    },
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "Fetching Data from Result Sets",
+      "text": "After executing a SELECT query, the results are stored in the cursor object. You can retrieve them using three primary methods: **fetchone()** returns the first matching row as a tuple, **fetchall()** returns all matching rows as a list of tuples, and **fetchmany(n)** returns exactly 'n' rows. These methods are 'sequential,' meaning that each call to fetchone() moves the virtual pointer to the next record. Once all results are fetched, the cursor becomes empty. For large datasets, processing rows one-by-one is significantly more memory-efficient than loading everything at once with fetchall()."
+    },
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "python",
+      "heading": "Data Retrieval Example",
+      "code": "cursor.execute(\"SELECT * FROM Student\")\ndata = cursor.fetchall()\n\nfor record in data:\n    print(f\"Name: {record[1]}, Marks: {record[2]}\")"
+    }
+  ],
+  "summary": {
+    "short_summary": "Python uses connectors to link with MySQL, employing a cursor workflow to execute SQL commands and commit changes for persistent data management.",
+    "detailed_summary": "This chapter explored the powerful intersection of Python programming and SQL database management. We learned the standardized five-step workflow for establishing a connection, creating a cursor, and executing commands. We mastered the distinction between data retrieval (via fetchone and fetchall) and data modification (which requires the critical 'commit' operation). By understanding the role of placeholders (%s) and parameterized queries, we saw how to build secure, error-resistant applications that can scale to industrial requirements.",
+    "exam_focus": [
+      "The role of a 'Cursor' object in connectivity",
+      "Difference between fetchone(), fetchall(), and fetchmany(n)",
+      "Necessity of the commit() command for DML operations",
+      "Determining the number of affected rows using cursor.rowcount",
+      "Correct order of importing, connecting, and closing"
+    ],
+    "revision_notes": [
+      "import mysql.connector first",
+      "connect() to link to server",
+      "cursor.execute() sends SQL to server",
+      "fetchall() returns a list of tuples",
+      "commit() is required for INSERT/UPDATE/DELETE",
+      "is_connected() verifies the link"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is a 'Cursor' object and why is it used?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Virtual pointer", "Communication", "Intermediary"],
+      "solution": {
+        "explanation": "A Cursor object is an interface used to interact with the database. It is responsible for sending SQL queries to the database server, receiving the results, and storing them in a local result set for Python to process."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Write the connection string with host=localhost, user=admin, password=123, and database=Shop.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Use mysql.connector.connect()", "Pass arguments as keywords"],
+      "solution": {
+        "code": "db = mysql.connector.connect(\n    host='localhost',\n    user='admin',\n    password='123',\n    database='Shop'\n)"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "What is the difference between fetchone() and fetchall()?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Quantity of records", "Return type"],
+      "solution": {
+        "explanation": "fetchone() retrieves exactly one row from the result set and returns it as a tuple (or None if empty). fetchall() retrieves all remaining rows and returns them as a list containing multiple tuples."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Why should we use '%s' placeholders instead of concatenating strings directly in dynamic SQL?",
+      "type": "theory",
+      "difficulty": "hard",
+      "hints": ["Security", "SQL Injection", "Performance"],
+      "solution": {
+        "explanation": "Using '%s' placeholders is the standard for 'Parameterized Queries'. This prevents SQL Injection attacks (where a user enters malicious code into an input field) and allows the database to pre-compile and optimize the query structure safely."
+      }
+    },
+    {
+      "id": "p5",
+      "q": "Write a script to delete a student record based on roll_no received from the user.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use cursor.execute()", "Call db.commit()", "Use parameterized query"],
+      "solution": {
+        "code": "roll = input(\"Enter roll range to delete: \")\nsql = \"DELETE FROM Student WHERE Roll = %s\"\ncursor.execute(sql, (roll,))\ndb.commit()\nprint(cursor.rowcount, \"records removed.\")"
+      }
+    }
+  ]
+}

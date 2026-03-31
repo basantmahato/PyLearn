@@ -1,0 +1,116 @@
+{
+  "id": "ch6",
+  "title": "Networking Fundamentals",
+  "highlight": false,
+  "order": 6,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Introduction to Networks",
+      "text": "A computer network is a system of interconnected computers and peripheral devices (like printers, scanners, and servers) that can exchange information and share resources. The evolution of networking began with ARPANET in the late 1960s, which eventually grew into the modern Internet. Today, networks are the backbone of global communication, digital economies, and social interaction. By connecting machines, we gain efficiency through resource sharing (like a single high-end printer for an entire office) and reliability through data redundancy. Whether it is a simple Bluetooth connection between a phone and a watch or the massive fiber-optic cables spanning continents, the underlying principles of routing and switching remain fundamental to how digital data travels."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Network Terminology",
+      "items": [
+        "Nodes: Any device connected to a network (Computers, Laptops, IoT devices)",
+        "Servers: High-power computers that provide services (Web, Database, Print)",
+        "Clients: Devices that request services from a server",
+        "Bandwidth: The data-carrying capacity of a network link (bits per second)",
+        "NFC/NIC: Hardware device (Network Interface Controller) that allows connection"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Geographical Network Types",
+      "text": "Networks are categorized based on the physical area they cover. **PAN (Personal Area Network)** is for individual use within a few meters (like Bluetooth). **LAN (Local Area Network)** covers a limited area such as a school building or an office, providing high speed and low error rates. **MAN (Metropolitan Area Network)** connects LANs across a city or a large campus. The largest is **WAN (Wide Area Network)**, which spans across countries and continents, such as the Internet itself. Each type uses different technologies: LANs often use Ethernet or Wi-Fi, while WANs rely on satellite links and deep-sea fiber optic cables to bridge massive distances."
+    },
+    {
+      "id": "c4",
+      "type": "paragraph",
+      "heading": "Network Topologies",
+      "text": "Topology refers to the physical or logical arrangement of nodes in a network. **Bus Topology** uses a single 'backbone' cable to connect all nodes, making it cheap but prone to failure if the backbone breaks. **Star Topology** connects all nodes to a central hub or switch; it is the most popular today because a failure in one node does not affect others. **Ring Topology** connects nodes in a circle, where data travels in one direction. **Tree Topology** is a hierarchical arrangement (often used in large organizations), combining features of Bus and Star. Choosing the right topology is a critical engineering decision that impacts the network's cost, scalability, and fault tolerance."
+    },
+    {
+      "id": "c5",
+      "type": "bullet_list",
+      "heading": "Comparison of Topologies",
+      "items": [
+        "Bus: Easy to install, but entire network fails if the main cable breaks",
+        "Star: Robust and easy to troubleshoot, but hub failure crashes everything",
+        "Tree: Highly scalable and organized, but management is complex",
+        "Mesh: Every node connects to every other; extremely reliable but very expensive"
+      ]
+    },
+    {
+      "id": "c6",
+      "type": "paragraph",
+      "heading": "Transmission Media",
+      "text": "Data is transmitted through physical channels called media. **Guided Media** (Wired) include Twisted Pair cables (used for telephone and LAN), Coaxial cables (used for cable TV), and Optical Fibers (which use light pulses for ultra-high speed over long distances). **Unguided Media** (Wireless) include Radio waves (used in Wi-Fi and Bluetooth), Microwaves (line-of-sight communication), and Infrared (used in remote controls). Optical Fiber is considered the gold standard for modern networking because it is immune to electromagnetic interference and can carry significantly more data than traditional copper wires."
+    }
+  ],
+  "summary": {
+    "short_summary": "Networking connects devices for sharing data and resources, categorized by geographical scale (LAN/WAN) and physical layout (Topologies).",
+    "detailed_summary": "This chapter explored the foundational concepts of computer networks, from basic nodes and servers to complex transmission media. We analyzed the scaling of networks from personal PANs to global WANs like the Internet. We also examined the architectural designs called Topologies, learning why 'Star' is the industry leader for reliability. Finally, we looked at the physical layer, understanding how data travels through copper, fiber optics, and invisible radio waves.",
+    "exam_focus": [
+      "Difference between LAN, MAN, and WAN",
+      "Pros and cons of Star vs Bus topology",
+      "Role of a NIC (Network Interface Controller)",
+      "Advantages of Optical Fiber over other guided media",
+      "Evolution of networking from ARPANET to Internet"
+    ],
+    "revision_notes": [
+      "PAN: Bluetooth range",
+      "LAN: Single building",
+      "WAN: Global scale",
+      "Star: Central hub layout",
+      "Bus: Linear backbone layout",
+      "Optical Fiber: High speed, no EMI"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the primary disadvantage of a Bus topology?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Backbone cable", "Single point of failure"],
+      "solution": {
+        "explanation": "The main disadvantage is that the entire network depends on a single 'backbone' cable. If this cable fails or breaks at any point, the entire network goes down."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Which network type (PAN/LAN/MAN/WAN) would be used to connect multiple office buildings across a city?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["City scale", "Metropolitan"],
+      "solution": {
+        "explanation": "A MAN (Metropolitan Area Network) is specifically designed to connect multiple local networks across a city or large campus."
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Compare Guided and Unguided transmission media.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Physical wires", "Wireless waves"],
+      "solution": {
+        "explanation": "Guided media use physical conduits (wires/cables) to direct signals, such as Ethernet or Fiber Optics. Unguided media transmit electromagnetic waves through the air or space without physical contact, such as Wi-Fi or Satellite links."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Why is the Star topology considered more reliable than the Bus topology?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Centralization", "Isolation of node failure"],
+      "solution": {
+        "explanation": "In a Star topology, every node has its own dedicated connection to the central hub. If one computer or cable fails, only that node is affected, while the rest of the network remains operational. In a Bus topology, a single cable break can disconnect all nodes."
+      }
+    }
+  ]
+}

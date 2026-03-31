@@ -1,0 +1,220 @@
+{
+  "id": "ch2",
+  "title": "Functions: Modular Programming",
+  "highlight": true,
+  "order": 2,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "The Concept of Modularity",
+      "text": "In programming, modularity is the practice of breaking a large, complex problem into smaller, independent, and manageable sub-tasks. Functions are the primary tool for achieving this. Instead of writing a single thousand-line script, a developer writes discrete functions—each responsible for one specific task. This approach follows the DRY (Don't Repeat Yourself) principle. By isolating logic into functions, you reduce code redundancy, make debugging significantly easier (as you only need to fix a bug in one place), and improve the overall readability of your project. Think of functions as 'black boxes': you provide them with specific inputs, and they perform a transformation to produce a predictable output without the caller needing to know the internal implementation details."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Benefits of Using Functions",
+      "items": [
+        "Code Reusability — write once, use many times",
+        "Improved Readability — logical grouping of code",
+        "Ease of Debugging — isolate errors to specific blocks",
+        "Information Hiding — abstracting complex logic",
+        "Collaborative Development — different people can work on different functions"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Defining and Calling Functions",
+      "text": "In Python, a function is defined using the 'def' keyword, followed by a unique function name and a set of parentheses containing any parameters. The header ends with a colon (:), and the body must be indented. A function only executes when it is 'called' by its name followed by parentheses. Parameters are the variables listed in the function definition, acts as placeholders for the data the function will receive. Arguments, on the other hand, are the actual values passed to the function during a call. If a function is defined with two parameters, it generally expects two arguments during the call, though Python provides several flexible ways to handle inputs."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "Simple Function Syntax",
+      "code": "def greet(name):\n    \"\"\"This function greets the person passed in.\"\"\"\n    print(\"Hello, \" + name + \"! Welcome to PyLearn.\")\n\n# Calling the function\ngreet(\"Basant\")"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Types of Arguments",
+      "text": "Python is exceptionally flexible with how it handles data passed to functions. **Positional Arguments** are matched based on their order in the function call. **Keyword Arguments** allow you to pass values by explicitly naming the parameter, which means the order no longer matters. **Default Parameters** permit you to define a 'fallback' value if an argument is not provided, making the function more versatile. For advanced scenarios, Python uses **Variable-Length Arguments**: '*args' allows a function to receive any number of positional arguments as a tuple, while '**kwargs' allows it to receive any number of keyword arguments as a dictionary. Mastering these allows for the creation of highly adaptable APIs."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "python",
+      "heading": "Advanced Parameter Example",
+      "code": "def person_info(name, age=18, *hobbies, **details):\n    print(f\"Name: {name}, Age: {age}\")\n    print(f\"Hobbies: {hobbies}\")\n    print(f\"Extra Details: {details}\")\n\n# Calling with various argument types\nperson_info(\"Alice\", 25, \"Coding\", \"Hiking\", city=\"London\", status=\"Active\")"
+    },
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "The Return Statement",
+      "text": "The 'return' statement is used to exit a function and send a result back to the caller. Unlike 'print()', which simply displays a value, 'return' gives the data back to the program so it can be stored in a variable or used in further calculations. If a function doesn't explicitly include a return statement, it implicitly returns 'None'. A powerful feature in Python is the ability to return multiple values separated by commas; Python automatically packs these into a 'Tuple,' allowing a single function to provide multiple pieces of related data simultaneously."
+    },
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "python",
+      "heading": "Multiple Returns Example",
+      "code": "def get_stats(numbers):\n    low = min(numbers)\n    high = max(numbers)\n    avg = sum(numbers) / len(numbers)\n    return low, high, avg  # Returns a tuple\n\nminimum, maximum, average = get_stats([10, 20, 30, 40, 50])\nprint(f\"Min: {minimum}, Max: {maximum}\")"
+    },
+    {
+      "id": "c9",
+      "type": "paragraph",
+      "heading": "Understanding Variable Scope (LEGB Rule)",
+      "text": "Scope refers to where a variable can be seen and accessed within your code. Python follows the LEGB rule for searching variable names: **Local** (inside the function), **Enclosing** (in nested functions), **Global** (at the module level), and **Built-in** (Python's internal names). A variable created inside a function is 'Local' and cannot be accessed outside it. Conversely, a function can read a 'Global' variable but cannot modify it directly unless the 'global' keyword is used. This isolation is crucial for protecting data and preventing accidental side effects where one part of a program unexpectedly changes data used by another."
+    },
+    {
+      "id": "c10",
+      "type": "code",
+      "language": "python",
+      "heading": "Global Keyword Example",
+      "code": "count = 0\n\ndef increment():\n    global count  # Allows modification of global variable\n    count += 1\n\nincrement()\nprint(count)  # Output: 1"
+    },
+    {
+      "id": "c11",
+      "type": "paragraph",
+      "heading": "Lambda: Anonymous Functions",
+      "text": "Lambda functions are small, restricted, anonymous functions that can be defined in a single line without a name using the 'lambda' keyword. They follow the syntax: 'lambda arguments : expression'. While they are limited because they can only contain one expression (and no statements like return or for-loops), they are incredibly useful for short-lived tasks, especially when passed as arguments to higher-order functions like map(), filter(), or sort(). They allow for cleaner, 'functional' style code when the logic is simple enough that defining a full formal function would be overkill."
+    },
+    {
+      "id": "c12",
+      "type": "code",
+      "language": "python",
+      "heading": "Lambda Example",
+      "code": "# Sort list of tuples by the second element\npoints = [(1, 9), (4, 2), (3, 5)]\npoints.sort(key=lambda x: x[1])\nprint(points)  # Output: [(4, 2), (3, 5), (1, 9)]"
+    },
+    {
+      "id": "c13",
+      "type": "paragraph",
+      "heading": "Introduction to Recursion",
+      "text": "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. For a recursive function to be successful, it MUST have two parts: a **Base Case** (a simple condition that stops the recursion) and a **Recursive Step** (where the function calls itself with a modified input that moves closer to the base case). While powerful for problems involving trees or nested structures, recursion must be used carefully; if a base case is missing or unreachable, the function will call itself infinitely until the computer runs out of memory, resulting in a 'RecursionError' (Stack Overflow)."
+    },
+    {
+      "id": "c14",
+      "type": "code",
+      "language": "python",
+      "heading": "Recursive Factorial",
+      "code": "def factorial(n):\n    if n == 1:  # Base Case\n        return 1\n    else:\n        return n * factorial(n - 1)  # Recursive Step\n\nprint(factorial(5))  # Output: 120"
+    },
+    {
+      "id": "c15",
+      "type": "paragraph",
+      "heading": "Function Documentation (Docstrings)",
+      "text": "A Docstring (Documentation String) is a literal string placed as the first statement in a function, usually enclosed in triple quotes (\"\"\"). Unlike regular comments, docstrings are stored as an attribute of the function (`__doc__`) and can be accessed at runtime using the help() function or by IDEs to provide tooltips. Professional code always includes docstrings to explain what the function does, what its parameters expect, and what it returns. This 'self-documenting' nature makes codebases significantly easier to maintain and share with other developers."
+    },
+    {
+      "id": "c16",
+      "type": "code",
+      "language": "python",
+      "heading": "Docstring and help()",
+      "code": "def square(n):\n    \"\"\"Returns the square of a number.\"\"\"\n    return n**2\n\nprint(square.__doc__)\n# help(square)"
+    }
+  ],
+  "summary": {
+    "short_summary": "Functions allow us to write modular, reusable, and clean code by grouping logic into named blocks.",
+    "detailed_summary": "This chapter explored the core concept of modularity through Python functions. We covered the syntax of defining and calling functions, the different ways to pass data (positional, keyword, default, and variable-length arguments), and how to return single or multiple values. We also examined the fundamental rules of variable scope (LEGB) and introduced advanced concepts like anonymous Lambda functions and Recursion. Understanding these concepts is vital for building scalable software where logic is decoupled and reusable.",
+    "exam_focus": [
+      "Difference between actual and formal parameters",
+      "Working of positional vs keyword arguments",
+      "Global vs Local variable scope (and the global keyword)",
+      "Anatomy of a recursive function (Base case is mandatory)",
+      "Returning multiple values using tuples"
+    ],
+    "revision_notes": [
+      "Functions use 'def' keyword",
+      "Indentation defines the function body",
+      "Docstrings provide human-readable documentation",
+      "Lambdas are for simple, one-line logic",
+      "Recursion needs a base case to prevent infinite loops"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the difference between a Parameter and an Argument?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": [
+        "One is in the definition, one is in the call",
+        "Think of placeholer vs actual value"
+      ],
+      "solution": {
+        "explanation": "Parameters are the variables listed inside the parentheses in the function definition (placeholders). Arguments are the actual values sent to the function when it is called."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Write a function 'calc_area' that calculates the area of a rectangle. If only one side is provided, assume it's a square.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Use default parameters", "Set the second param equal to the first if not provided"],
+      "solution": {
+        "code": "def calc_area(length, width=None):\n    if width is None:\n        return length * length\n    return length * width\n\nprint(calc_area(10))     # Square\nprint(calc_area(10, 5))  # Rectangle"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "What is the LEGB rule in Python?",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["It's related to variable scope", "L: Local, E: Enclosing, G: Global, B: Built-in"],
+      "solution": {
+        "explanation": "LEGB is the order in which Python looks for variables. It stands for Local (inner function), Enclosing (outer function), Global (module level), and Built-in (standard Python names like print)."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Write a function 'sum_all' that can take any number of numerical arguments and return their sum.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Use *args", "Iterate through the args tuple"],
+      "solution": {
+        "code": "def sum_all(*args):\n    total = 0\n    for n in args:\n        total += n\n    return total\n\nprint(sum_all(1, 2, 3, 4, 5))"
+      }
+    },
+    {
+      "id": "p5",
+      "q": "Explain the importance of a Base Case in a recursive function.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["What happens if there is no stop condition?", "Think about infinite memory usage"],
+      "solution": {
+        "explanation": "The base case is a stopping condition that prevents the function from calling itself infinitely. Without it, the program would eventually crash with a RecursionError once it exhausts the memory stack."
+      }
+    },
+    {
+      "id": "p6",
+      "q": "Write a lambda function to check if a number is even.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Use % operator", "Return True if remainder is 0"],
+      "solution": {
+        "code": "is_even = lambda n : n % 2 == 0\nprint(is_even(10)) # True"
+      }
+    },
+    {
+      "id": "p7",
+      "q": "Create a recursive function to find the nth Fibonacci number.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Base cases: n=0 is 0, n=1 is 1", "Recursive step: fib(n-1) + fib(n-2)"],
+      "solution": {
+        "code": "def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(7))  # Output: 13"
+      }
+    },
+    {
+      "id": "p8",
+      "q": "Predict the output: \nx = 10\ndef change():\n    global x\n    x = 20\nchange()\nprint(x)",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Does 'global' affect variable persistence?", "Is the assignment happening inside or outside?"],
+      "solution": {
+        "explanation": "Output: 20. The 'global' keyword allows the function to modify the variable defined at the module level. Thus, the value of x is permanently changed from 10 to 20."
+      }
+    }
+  ]
+}

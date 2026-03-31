@@ -14,7 +14,8 @@ export const BENTO_CARDS = [
     progress: 80,
     icon: "file-document-outline",
     color: "primary",
-    tag: "80% Read"
+    tag: "80% Read",
+    route: "/notes"
   },
   {
     title: "Quiz",
@@ -22,7 +23,8 @@ export const BENTO_CARDS = [
     progress: 45,
     icon: "help-circle-outline",
     color: "tertiary",
-    tag: "45% Score"
+    tag: "45% Score",
+    route: "/quiz"
   },
   {
     title: "Programs",
@@ -30,7 +32,8 @@ export const BENTO_CARDS = [
     progress: 60,
     icon: "code-tags",
     color: "secondary",
-    tag: "60% Done"
+    tag: "60% Done",
+    route: "/programs"
   },
   {
     title: "Practice",
@@ -38,6 +41,7 @@ export const BENTO_CARDS = [
     progress: 20,
     icon: "console-line",
     color: "primary-container",
-    tag: "20% Mastered"
+    tag: "20% Mastered",
+    route: "/practice"
   }
 ];

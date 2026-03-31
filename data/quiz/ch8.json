@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch8",
+  "title": "Database Concepts",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Introduction to RDBMS",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What is a 'Relation'?", "options": ["A key", "A table", "A row", "A relationship"], "answer": 1, "explanation": "In relational algebra, tables are formally called relations." },
+        { "id": "q2", "question": "What is a 'Tuple'?", "options": ["Column", "Row", "Database", "Key"], "answer": 1, "explanation": "A tuple is a single record/row in a relation." },
+        { "id": "q3", "question": "What is an 'Attribute'?", "options": ["Row", "Column", "Value", "Key"], "answer": 1, "explanation": "Attributes are the fields or columns in a relation." },
+        { "id": "q4", "question": "What is a 'Database'?", "options": ["Single file", "Organized collection of data", "A software", "A list"], "answer": 1, "explanation": "Structured data that is easily accessible and managed." },
+        { "id": "q5", "question": "What does DBMS stand for?", "options": ["Data Base Man System", "Database Management System", "Digital Base Map", "None"], "answer": 1, "explanation": "Software used to define, create, and maintain a database." },
+        { "id": "q6", "question": "Which of these is a popular RDBMS?", "options": ["Excel", "MySQL", "Notepad", "Word"], "answer": 1, "explanation": "MySQL is a widely used relational database engine." },
+        { "id": "q7", "question": "What is 'Domain'?", "options": ["Website name", "Set of permissible values for an attribute", "Total size", "None"], "answer": 1, "explanation": "Defines the pool of values a column can pull from." },
+        { "id": "q8", "question": "What is 'Data Redundancy'?", "options": ["Fast access", "Duplication of data", "Encryption", "None"], "answer": 1, "explanation": "Storing the same data in multiple places unnecessarily." },
+        { "id": "q9", "question": "What is 'Data Inconsistency'?", "options": ["Fast access", "Different values for same data", "Encryption", "None"], "answer": 1, "explanation": "Multiple copies of data not being synchronized (e.g. name changed in one place but not another)." },
+        { "id": "q10", "question": "What is the primary benefit of a DBMS?", "options": ["Controlled Redundancy", "Fast Typing", "Cooling", "None"], "answer": 0, "explanation": "Centralizing data helps minimize duplication and errors." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Schema & Keys",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "Which key uniquely identifies every record?", "options": ["Primary Key", "Foreign Key", "Candidate Key", "Alternate Key"], "answer": 0, "explanation": "A Primary Key must be unique and cannot contain NULL values." },
+        { "id": "q2", "question": "What is a 'Candidate Key'?", "options": ["A student leader", "Any unique identifier", "The chosen primary key", "A row ID"], "answer": 1, "explanation": "All unique attributes that have the potential to be a primary key." },
+        { "id": "q3", "question": "What is an 'Alternate Key'?", "options": ["Candidate key NOT chosen as primary", "A copy of primary key", "A foreign link", "None"], "answer": 0, "explanation": "The 'backup' unique identifiers left over after picking a Primary Key." },
+        { "id": "q4", "question": "What is a 'Foreign Key'?", "options": ["International key", "Primary key of another table", "Secondary key", "None"], "answer": 1, "explanation": "Used to link two tables together while maintaining integrity." },
+        { "id": "q5", "question": "What is 'Referential Integrity'?", "options": ["Speed limit", "Ensuring data in foreign key exists in primary table", "Encryption", "None"], "answer": 1, "explanation": "Prevents 'orphaned' records by enforcing shared values." },
+        { "id": "q6", "question": "Can a Primary Key have NULL values?", "options": ["Yes", "No", "Depends on OS", "Sometimes"], "answer": 1, "explanation": "NULL represents 'unknown,' which contradicts the purpose of a unique ID." },
+        { "id": "q7", "question": "What is a 'Composite Key'?", "options": ["Simple key", "Multiple attributes working as one primary key", "A foreign key", "None"], "answer": 1, "explanation": "Using more than one column to uniquely identify a row." },
+        { "id": "q8", "question": "What is a 'Schema'?", "options": ["Data contents", "Structural design", "A virus", "None"], "answer": 1, "explanation": "The logical blueprint or skeleton of the database." },
+        { "id": "q9", "question": "What is the 'View' of a database?", "options": ["Watching data", "Virtual table derived from other tables", "Printout", "None"], "answer": 1, "explanation": "A filtered 'window' into the underlying physical data." },
+        { "id": "q10", "question": "Which constraint ensures 'No duplicate names'?", "options": ["PRIMARY KEY", "UNIQUE", "NOT NULL", "CHECK"], "answer": 1, "explanation": "UNIQUE forces all values in a column to be distinct." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Operations & Cardinality",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "What is 'Degree'?", "options": ["Temperature", "Number of attributes (columns)", "Number of tuples", "None"], "answer": 1, "explanation": "The total count of columns in a relation." },
+        { "id": "q2", "question": "What is 'Cardinality'?", "options": ["Number of attributes", "Number of tuples (rows)", "Total data", "None"], "answer": 1, "explanation": "The total count of rows in a relation." },
+        { "id": "q3", "question": "What is 'Normalization'?", "options": ["Making data normal", "Organizing data to reduce redundancy", "Deleting data", "None"], "answer": 1, "explanation": "The mathematical process of structured design for efficiency." },
+        { "id": "q4", "question": "What is 'Atomicity'?", "options": ["Nuclear power", "Database transaction all-or-nothing", "Fast access", "None"], "answer": 1, "explanation": "Either the whole transaction finishes, or none of it does." },
+        { "id": "q5", "question": "What is 'Data Independence'?", "options": ["Data not connected", "Ability to change schema without affecting app", "No security", "None"], "answer": 1, "explanation": "Separating the physical storage from the logical interface." },
+        { "id": "q6", "question": "What is a 'Data Dictionary'?", "options": ["Metadata about the database", "List of words", "Hard drive log", "None"], "answer": 0, "explanation": "Centralized repository of metadata (information about columns, types, etc)." },
+        { "id": "q7", "question": "What is an 'Index'?", "options": ["Pointer array for faster queries", "List of keys", "Security log", "None"], "answer": 0, "explanation": "Improves selection performance at the cost of disk space and write speed." },
+        { "id": "q8", "question": "Which model does MySQL follow?", "options": ["Hierarchical", "Network", "Relational", "Object-Oriented"], "answer": 2, "explanation": "MySQL is a Relational Database Management System (RDBMS)." },
+        { "id": "q9", "question": "What is a 'Relationship' 1:M?", "options": ["One to One", "One to Many", "Many to Many", "None"], "answer": 1, "explanation": "One record in table A connects to many in table B (e.g. Teacher:Students)." },
+        { "id": "q10", "question": "What is 'Concurrency Control'?", "options": ["Speed increase", "Preventing multiple users from conflicting", "Security", "None"], "answer": 1, "explanation": "Ensures data remains consistent when millions of users use it at once." }
+      ]
+    }
+  ]
+}

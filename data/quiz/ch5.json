@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch5",
+  "title": "Data Structures: The Stack",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Stack Basics",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What does LIFO stand for?", "options": ["Last-In, First-Out", "List-In, First-Out", "Loop-In, Field-Out", "None"], "answer": 0, "explanation": "The most recent item added is the first one removed." },
+        { "id": "q2", "question": "Which operation adds to the stack?", "options": ["Pop", "Push", "Peek", "Append"], "answer": 1, "explanation": "Push is the term for inserting onto the top of the stack." },
+        { "id": "q3", "question": "Which operation removes from the stack?", "options": ["Push", "Pop", "Pull", "Drop"], "answer": 2, "explanation": "Pop removes and returns the topmost element." },
+        { "id": "q4", "question": "Where do stack operations occur?", "options": ["Both ends", "Bottom only", "Top only", "Middle only"], "answer": 2, "explanation": "Stacks are a restricted structure where access is only at the 'Top'." },
+        { "id": "q5", "question": "What is 'Peek' operation?", "options": ["Remove item", "Inspect top item", "Empty stack", "Search"], "answer": 1, "explanation": "Peek returns the top value without modifying the stack." },
+        { "id": "q6", "question": "Is Stack a linear structure?", "options": ["Yes", "No", "Only on Linux", "None"], "answer": 0, "explanation": "Data elements are logically arranged in a sequence." },
+        { "id": "q7", "question": "What is 'isEmpty' function?", "options": ["Delete data", "Check if stack is empty", "Reset pointer", "None"], "answer": 1, "explanation": "Used to prevent Underflow errors before a Pop." },
+        { "id": "q8", "question": "Can a Stack store different data types?", "options": ["Yes", "No", "Only if fixed", "None"], "answer": 0, "explanation": "In Python, a list-based stack can contain any combination of objects." },
+        { "id": "q9", "question": "Which of these is a LIFO structure?", "options": ["Queue", "Stack", "Linked List", "Tree"], "answer": 1, "explanation": "Stack is the standard LIFO ADT." },
+        { "id": "q10", "question": "What is the size of an empty stack?", "options": ["-1", "0", "1", "None"], "answer": 1, "explanation": "A stack with no elements has a length/size of zero." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Underflow & Implementation",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "What is 'Stack Underflow'?", "options": ["Pushing to full stack", "Popping from empty stack", "Memory leak", "Loop error"], "answer": 1, "explanation": "Trying to remove an item when count is zero." },
+        { "id": "q2", "question": "What is 'Stack Overflow'?", "options": ["Pushing to full stack", "Popping from empty stack", "Disk error", "None"], "answer": 0, "explanation": "Occurs when a fixed-size stack has no room left for a Push." },
+        { "id": "q3", "question": "Which Python list method is equivalent to Push?", "options": ["insert()", "append()", "extend()", "push()"], "answer": 1, "explanation": "append(x) puts 'x' at the end of the list (top of stack)." },
+        { "id": "q4", "question": "Which Python list method is equivalent to Pop?", "options": ["remove()", "pop()", "del()", "clear()"], "answer": 1, "explanation": "pop() removes and returns the last (topmost) element." },
+        { "id": "q5", "question": "How do you implement 'Peek' in a list named 'S'?", "options": ["S[0]", "S[-1]", "S[top]", "S.peek()"], "answer": 1, "explanation": "Negative indexing S[-1] points to the last (top) element." },
+        { "id": "q6", "question": "What is an ADT?", "options": ["Abstract Data Type", "Active Data Tool", "Auto Data Transfer", "None"], "answer": 0, "explanation": "A conceptual model that defines operations but not implementation." },
+        { "id": "q7", "question": "How do we initialize a stack in Python?", "options": ["S = []", "S = stack()", "S = push()", "None"], "answer": 0, "explanation": "An empty list is the most common starting point." },
+        { "id": "q8", "question": "What is the time complexity of Pop()?", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "answer": 0, "explanation": "Removing from the end is a constant-time operation in lists." },
+        { "id": "q9", "question": "What is the time complexity of Push()?", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "answer": 0, "explanation": "Adding to the end is constant-time on average (amortized O(1))." },
+        { "id": "q10", "question": "What happens if you pop([10, 20])?", "options": ["Returns 10", "Returns 20", "Returns [10]", "Error"], "answer": 1, "explanation": "20 is at the top (last index)." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Real World Stacks & Complexities",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Which of these uses a Stack?", "options": ["Print queue", "Undo in an editor", "Keyboard buffer", "Supermarket checkout"], "answer": 1, "explanation": "Undo/Redo is the classic LIFO application." },
+        { "id": "q2", "question": "What is 'Infix to Postfix' conversion?", "options": ["Math operation", "Algorithm used by compilers", "String sorting", "Binary search"], "answer": 1, "explanation": "Compilers use stacks to change human math (A+B) to machine logic (AB+)." },
+        { "id": "q3", "question": "Which system component uses a stack for parameters?", "options": ["Call Stack", "Hard Disk", "Cache", "Ethernet card"], "answer": 0, "explanation": "Memory management uses a stack for every function call." },
+        { "id": "q4", "question": "What is the result of 'abc' reversed using stack?", "options": ["abc", "cba", "bac", "None"], "answer": 1, "explanation": "Pushing 'a','b','c' and popping them results in 'c','b','a'." },
+        { "id": "q5", "question": "Can we implement a Queue using two Stacks?", "options": ["Yes", "No", "Only in Java", "None"], "answer": 0, "explanation": "By shifting items between two stacks, we can simulate FIFO behavior." },
+        { "id": "q6", "question": "What is the 'Top' variable?", "options": ["A function", "Pointer to latest element", "Total size", "None"], "answer": 1, "explanation": "A pointer or index tracking the last valid position." },
+        { "id": "q7", "question": "What is a 'persistent' stack?", "options": ["Saved to disk", "Keep old versions after edit", "Encrypted", "Fixed size"], "answer": 1, "explanation": "Functional programming use-case where old states aren't destroyed." },
+        { "id": "q8", "question": "What is 'Stack Smashing'?", "options": ["Hardware crash", "Exploiting buffer overflow for security hack", "Cleaning memory", "None"], "answer": 1, "explanation": "A security vulnerability involving the call stack." },
+        { "id": "q9", "question": "How is 'Undo' differ from 'Redo' in stack terms?", "options": ["Two different stacks", "One stack forward", "None", "Random"], "answer": 0, "explanation": "Undoing pushes to Redo stack; redoing pushes back to Undo stack." },
+        { "id": "q10", "question": "What is the space complexity of a stack of n items?", "options": ["O(1)", "O(n)", "O(n^2)", "O(log n)"], "answer": 1, "explanation": "Memory grows linearly with the number of elements stored." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "ch3",
+  "title": "File Handling in Python",
+  "highlight": false,
+  "order": 3,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "Introduction to Files",
+      "text": "Data stored in variables is volatile—it disappears once the program stops running. To make data persistent, we store it in local files on the hard disk. File Handling is the process of creating, reading, writing, and manipulating these files using Python. A file is essentially a collection of bytes stored under a specific name. Python distinguishes between two primary types of files: **Text Files** (which store data in human-readable ASCII or Unicode characters) and **Binary Files** (which store data in the form of raw bytes, such as images, compiled code, or serialized objects). Understanding how to efficiently manage files is crucial for applications that need to save user settings, process large datasets, or log system events."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "File Types & EOL",
+      "items": [
+        "Text Files: Human-readable, uses End-of-Line (EOL) characters like \\n or \\r\\n",
+        "Binary Files: Not human-readable, no specific EOL, stores data as it is in memory",
+        "Common Formats: .txt, .py (Text) vs .jpg, .dat, .exe (Binary)"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "The File Access Flow",
+      "text": "Regardless of the file type, the workflow for file handling in Python follows a standard three-step sequence: **Open → Process (Read/Write) → Close**. Opening a file requires the open() function, which creates a 'file object' acting as a bridge between your code and the disk. You must specify an 'access mode' (like 'r' for read or 'w' for write). Once processing is finished, it is vital to close the file using close() to free up system resources and ensure all data is correctly flushed to the disk. To automate this, Python provides the **'with' statement** (context manager), which automatically closes the file even if an error occurs during execution, making it the industry standard for safe file handling."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "The 'with' Statement Pattern",
+      "code": "# Modern way to handle files safely\nwith open(\"sample.txt\", \"w\") as f:\n    f.write(\"Hello PyLearn!\\n\")\n    f.write(\"Persistent storage is easy.\")\n\n# File is automatically closed here"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Working with Text Files",
+      "text": "Text files are manipulated using standard string operations. For reading, Python offers read() (reads the entire file), readline() (reads one line at a time), and readlines() (returns a list of all lines). For writing, write() requires a string input, while writelines() takes a list of strings and writes them to the file. A common pitfall is the 'w' (write) mode, which overwrites the entire file if it already exists; to add data without deleting the old content, you must use 'a' (append) mode. Additionally, the 'r+' mode allows for both reading and writing simultaneously, but requires precise control over the file pointer position."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "python",
+      "heading": "Text File Read/Write Operations",
+      "code": "# Writing and then Reading lines\nlines = [\"Python\\n\", \"Java\\n\", \"C++\\n\"]\nwith open(\"langs.txt\", \"w\") as f:\n    f.writelines(lines)\n\nwith open(\"langs.txt\", \"r\") as f:\n    content = f.readlines()\n    for line in content:\n        print(line.strip())"
+    },
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "Binary Files & The pickle Module",
+      "text": "Binary files store data that cannot be represented as simple text, such as Python objects (lists, dictionaries). To handle this, Python provides the **pickle module**, which performs Serialization (Pickling)—converting an object into a byte stream—and Deserialization (Unpickling)—converting bytes back into an object. Binary files must be opened in 'rb' (read binary) or 'wb' (write binary) modes. This is extremely useful for saving the state of a program, such as a high score in a game or a complex database of student records, ensuring the data remains exactly as it was when loaded back into memory."
+    },
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "python",
+      "heading": "Pickling and Unpickling",
+      "code": "import pickle\n\ndata = {\"name\": \"Rahul\", \"score\": 95, \"rank\": 1}\n\n# Serialization\nwith open(\"student.dat\", \"wb\") as f:\n    pickle.dump(data, f)\n\n# Deserialization\nwith open(\"student.dat\", \"rb\") as f:\n    loaded_data = pickle.load(f)\n    print(loaded_data[\"name\"])"
+    },
+    {
+      "id": "c9",
+      "type": "paragraph",
+      "heading": "CSV File Handling",
+      "text": "CSV (Comma Separated Values) is a widely used multi-platform format for tabular data (like spreadsheets). The **csv module** provides optimized tools for handling these files. Using csv.writer() and csv.reader(), you can easily convert Python lists into rows of a spreadsheet and vice-versa. One important detail is the 'newline' parameter in the open() function: when working with CSVs on Windows, setting newline='' prevents the injection of extra blank rows between data. This makes Python an excellent tool for data science and administrative automation tasks where spreadsheet processing is frequent."
+    },
+    {
+      "id": "c10",
+      "type": "code",
+      "language": "python",
+      "heading": "CSV Read/Write Operations",
+      "code": "import csv\n\nheader = ['ID', 'Name', 'Marks']\nrows = [[1, 'Amit', 92], [2, 'Sumit', 88]]\n\n# Writing CSV\nwith open(\"results.csv\", \"w\", newline='') as f:\n    writer = csv.writer(f)\n    writer.writerow(header)\n    writer.writerows(rows)\n\n# Reading CSV\nwith open(\"results.csv\", \"r\") as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)"
+    },
+    {
+      "id": "c11",
+      "type": "paragraph",
+      "heading": "The File Pointer and Navigation",
+      "text": "Every open file has a 'File Pointer' (or cursor) that indicates the current position from which reading or writing will occur. Python provides two vital methods for navigation: tell() returns the current position of the pointer in bytes from the start, and seek(offset, from_where) is used to move the pointer to a target location. By default, seek(0) moves the cursor to the very beginning of the file. This granular control is essential for 'random access'—when you need to modify or read a specific chunk of data in a large file without processing everything that comes before it."
+    }
+  ],
+  "summary": {
+    "short_summary": "File handling enables persistent storage by allowing Python to interact with the local disk for long-term data management.",
+    "detailed_summary": "This chapter covered the essential lifecycle of file handling (Open, Process, Close) and the distinction between Text and Binary files. We explored how the 'with' statement ensures safe resource management and practiced operations on diverse file formats including standard .txt files, serialized binary data via the pickle module, and tabular data using the csv module. We also mastered the use of the file pointer through tell() and seek() to navigate and manipulate specific parts of a file efficiently.",
+    "exam_focus": [
+      "Difference between Read and Write modes (w, a, r+)",
+      "Importance of the 'with' statement for resource safety",
+      "Serialization vs Deserialization using pickle",
+      "Handling newlines in CSV files to prevent blank rows",
+      "Using seek() and tell() for file navigation"
+    ],
+    "revision_notes": [
+      "open() creates a file object",
+      "'w' overwrites, 'a' appends",
+      "pickle.dump() writes binary, pickle.load() reads binary",
+      "csv.writerows() takes a nested list of data",
+      "seek(0) takes you back to the start"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What is the difference between 'w' and 'a' modes in file handling?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Overwrite vs Append", "What happens to existing data?"],
+      "solution": {
+        "explanation": "In 'w' (write) mode, if the file already exists, its content is deleted (overwritten) before new writing starts. In 'a' (append) mode, the file pointer is placed at the end, and new data is added without deleting existing content."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Write a program to count the number of lines in a text file 'story.txt'.",
+      "type": "coding",
+      "difficulty": "easy",
+      "hints": ["Read all lines into a list", "Use len()"],
+      "solution": {
+        "code": "with open(\"story.txt\", \"r\") as f:\n    lines = f.readlines()\n    print(\"Total lines:\", len(lines))"
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Explain the role of 'pickle.dump()' and 'pickle.load()'.",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["Serialization and Deserialization", "Binary format"],
+      "solution": {
+        "explanation": "pickle.dump() is used to serialize a Python object and write it into a binary file. pickle.load() is used to read the serialized byte-stream from a binary file and transform it back into a Python object."
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Write a function 'search_student(roll_no)' that reads 'students.dat' (binary) and prints details of a student with the matching roll number.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Use pickle.load() in a loop", "Handle EOFError when file ends"],
+      "solution": {
+        "code": "import pickle\n\ndef search_student(roll_no):\n    try:\n        with open(\"students.dat\", \"rb\") as f:\n            while True:\n                student = pickle.load(f)\n                if student['roll'] == roll_no:\n                    print(student)\n                    break\n    except EOFError:\n        print(\"Not Found\")"
+      }
+    },
+    {
+      "id": "p5",
+      "q": "How do you move the file pointer to the beginning of the file?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Use seek()", "What is the byte offset of the start?"],
+      "solution": {
+        "explanation": "You can move the file pointer to the beginning using 'f.seek(0)', where 'f' is the file object."
+      }
+    }
+  ]
+}

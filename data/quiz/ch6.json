@@ -1,0 +1,57 @@
+{
+  "chapterId": "ch6",
+  "title": "Networking Fundamentals",
+  "sets": [
+    {
+      "setId": "s1",
+      "setName": "Types & Scales",
+      "difficulty": "Easy",
+      "questions": [
+        { "id": "q1", "question": "What is a computer network?", "options": ["Single computer", "Interconnected systems", "A printer", "Software"], "answer": 1, "explanation": "A collection of autonomous computers linked to exchange resources." },
+        { "id": "q2", "question": "Which network spans a city?", "options": ["PAN", "LAN", "MAN", "WAN"], "answer": 2, "explanation": "MAN (Metropolitan Area Network) covers a metropolitan area like a city." },
+        { "id": "q3", "question": "What is the smallest network type?", "options": ["PAN", "LAN", "WAN", "MAN"], "answer": 0, "explanation": "PAN (Personal Area Network) is for personal devices like phone/watch." },
+        { "id": "q4", "question": "The Internet is an example of which network?", "options": ["LAN", "PAN", "MAN", "WAN"], "answer": 3, "explanation": "WAN (Wide Area Network) spans global distances." },
+        { "id": "q5", "question": "What is a 'node'?", "options": ["Connection cable", "A connected device", "A protocol", "Data packet"], "answer": 1, "explanation": "Any device (PC, server, printer) in a network is a node." },
+        { "id": "q6", "question": "Which network is localized in a single building?", "options": ["PAN", "LAN", "MAN", "WAN"], "answer": 1, "explanation": "LAN (Local Area Network) is for homes, offices, and schools." },
+        { "id": "q7", "question": "What is ARPANET?", "options": ["First computer", "First packet-switched network", "A router", "A web browser"], "answer": 1, "explanation": "The ancestor of the modern internet, started by DARPA." },
+        { "id": "q8", "question": "What does NIU stand for?", "options": ["Network Internal Unit", "Network Interface Unit", "Node Info Unit", "None"], "answer": 1, "explanation": "Also called a Network Interface Card (NIC), it links the PC to the medium." },
+        { "id": "q9", "question": "What is 'interoperability'?", "options": ["Different systems talking", "Speed of network", "Security", "Cost"], "answer": 0, "explanation": "The ability of diverse hardware/software to communicate using standards." },
+        { "id": "q10", "question": "Which provides the highest speed?", "options": ["LAN", "WAN", "PAN", "Internet"], "answer": 0, "explanation": "LANs offer superior bandwidth due to short cable distances." }
+      ]
+    },
+    {
+      "setId": "s2",
+      "setName": "Topologies & Hardware",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "What is 'Topology'?", "options": ["Network speed", "Geometric arrangement of nodes", "Encryption", "Server name"], "answer": 1, "explanation": "The physical or logical layout of devices in a network." },
+        { "id": "q2", "question": "Which topology has a central hub/switch?", "options": ["Bus", "Star", "Ring", "Mesh"], "answer": 1, "explanation": "All nodes connect directly to a central controller." },
+        { "id": "q3", "question": "Which topology uses a single backbone cable?", "options": ["Star", "Ring", "Bus", "Mesh"], "answer": 2, "explanation": "Bus topology uses a single common path called the trunk." },
+        { "id": "q4", "question": "Which topology is most fault-tolerant?", "options": ["Full Mesh", "Star", "Bus", "Ring"], "answer": 0, "explanation": "Mesh provides redundant paths between every node." },
+        { "id": "q5", "question": "What is a 'Hub'?", "options": ["Smart device", "Legacy broadcasting device", "Security layer", "IP address"], "answer": 1, "explanation": "Hubs repeat signals to all ports, making them inefficient." },
+        { "id": "q6", "question": "What is a 'Switch'?", "options": ["Legacy hub", "Intelligent data router within LAN", "Light switch", "None"], "answer": 1, "explanation": "Switches use MAC addresses to send data only to the correct destination." },
+        { "id": "q7", "question": "Which device connects two different networks?", "options": ["Switch", "Hub", "Router", "Modem"], "answer": 2, "explanation": "Routers handle pathfinding between heterogeneous networks (e.g. LAN to WAN)." },
+        { "id": "q8", "question": "What does a Modem do?", "options": ["Store files", "Convert Analog to Digital", "Block viruses", "Encryption"], "answer": 1, "explanation": "MOdulator-DEModulator translates between binary and carrier signals." },
+        { "id": "q9", "question": "What is a 'Repeater'?", "options": ["Amplifies signal", "Stores data", "Deletes packets", "None"], "answer": 0, "explanation": "Repeaters regenerate signals to overcome attenuation over long distances." },
+        { "id": "q10", "question": "What is a 'Gateway'?", "options": ["Entry point for networks with different protocols", "A cable", "A hard drive", "A router"], "answer": 0, "explanation": "Gateways translate between different architectural standards." }
+      ]
+    },
+    {
+      "setId": "s3",
+      "setName": "Transmission Media & Bandwidth",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "What is 'Bandwidth'?", "options": ["Cable length", "Max data transfer rate", "User count", "Latency"], "answer": 1, "explanation": "The capacity of a communication channel in bits per second." },
+        { "id": "q2", "question": "Which is guided (wired) media?", "options": ["Radio Waves", "Coaxial", "Satellite", "Infrared"], "answer": 1, "explanation": "Coaxial cables use physical copper paths." },
+        { "id": "q3", "question": "Which is unguided (wireless) media?", "options": ["Ethernet", "Optical Fiber", "Microwave", "Telephone line"], "answer": 2, "explanation": "Microwaves travel through the atmosphere without wires." },
+        { "id": "q4", "question": "Which medium uses light for transmission?", "options": ["Twisted Pair", "Coaxial", "Fiber Optic", "WiFi"], "answer": 2, "explanation": "Total Internal Reflection in glass strands allows light travel." },
+        { "id": "q5", "question": "Which twisted pair is better shielded?", "options": ["UTP", "STP", "Ethernet", "Standard"], "answer": 1, "explanation": "Shielded Twisted Pair reduces electromagnetic interference." },
+        { "id": "q6", "question": "What is 'Attenuation'?", "options": ["Signal gain", "Signal loss over distance", "Encryption", "Fast speed"], "answer": 1, "explanation": "The weakening of energy as a signal travels further." },
+        { "id": "q7", "question": "Which frequency does Satellite communication use?", "options": ["MHz", "GHz", "KHz", "Hz"], "answer": 1, "explanation": "High-frequency microwaves (GigaHertz) are needed to reach orbit." },
+        { "id": "q8", "question": "What is the standard unit for data rate?", "options": ["MHz", "Bps (bits per second)", "RPM", "Watts"], "answer": 1, "explanation": "Bandwidth is measured in bps, Kbps, Mbps, or Gbps." },
+        { "id": "q9", "question": "Which medium is immune to EMI?", "options": ["Copper", "Iron", "Fiber Optic", "Aluminum"], "answer": 2, "explanation": "Glass doesn't conduct electricity, so it ignores magnetic interference." },
+        { "id": "q10", "question": "What is 'Crosstalk'?", "options": ["Chatting on phone", "Interference between adjacent wires", "Multiple users", "Network error"], "answer": 1, "explanation": "Coupling of signals between parallel transmission lines." }
+      ]
+    }
+  ]
+}

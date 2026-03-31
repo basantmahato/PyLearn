@@ -1,0 +1,124 @@
+{
+  "id": "ch4",
+  "title": "Recursion: Elegant Logic",
+  "highlight": false,
+  "order": 4,
+  "content": [
+    {
+      "id": "c1",
+      "type": "paragraph",
+      "heading": "The Power of Recursion",
+      "text": "Recursion is a programming technique where a function solves a problem by calling a smaller instance of itself. While it may seem counterintuitive at first, recursion is a fundamental tool in computer science used for solving tasks that have a repetitive, 'nested' structure—such as traversing tree-like data or implementing complex sorting algorithms. Instead of using traditional loops (Iteration), a recursive function breaks the problem down until it reaches a trivial state that can be solved directly, then 'unwinds' those solutions back to the original caller. This approach often results in code that is mathematically elegant, concise, and closer to a formal problem definition than its iterative equivalent."
+    },
+    {
+      "id": "c2",
+      "type": "bullet_list",
+      "heading": "Anatomy of a Recursive Function",
+      "items": [
+        "Base Case: A simple, non-recursive condition that terminates the function",
+        "Recursive Step: The part of the function that calls itself with a modified input",
+        "Convergence: Every recursive call must move closer to the base case",
+        "Stack Memory: Each call creates a new environment (frame) in the computer's memory"
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "paragraph",
+      "heading": "Understanding the Call Stack",
+      "text": "Every time a function calls itself, Python creates a new 'Stack Frame' in the computer's memory. This frame stores the function's local variables and its current execution state. These frames are organized in a **Last-In, First-Out (LIFO)** data structure called the 'Call Stack.' As the recursion deepens, more frames are pushed onto the stack. Once the base case is reached, the functions begin returning results, and their frames are 'popped' off the stack one by one. This is why recursion can be memory-intensive; if a function calls itself too many times without reaching the base case, Python raises a 'RecursionError: maximum recursion depth exceeded'—a fail-safe mechanism to prevent your computer from crashing."
+    },
+    {
+      "id": "c4",
+      "type": "code",
+      "language": "python",
+      "heading": "Factorial: The Classic Example",
+      "code": "def factorial(n):\n    if n == 0 or n == 1:  # Base Case\n        return 1\n    else:                # Recursive Step\n        return n * factorial(n - 1)\n\nprint(factorial(5)) # Output: 120"
+    },
+    {
+      "id": "c5",
+      "type": "paragraph",
+      "heading": "Infinite Recursion & Depth Limit",
+      "text": "Recursion without a base case is like a loop without an exit condition—it will run 'infinitely' until it consumes all available memory. By default, Python limits the maximum recursion depth (usually around 1000 calls) to protect the system. You can check this limit using the sys.getrecursionlimit() function and even modify it if your application specifically requires deep recursion. However, a 'RecursionError' is almost always a sign of a missing base case or a logical flaw where the recursive step fails to move the input closer to the termination condition. Before writing recursive code, you must manually trace a simple case to ensure the logic eventually terminates."
+    },
+    {
+      "id": "c6",
+      "type": "code",
+      "language": "python",
+      "heading": "The Fibonacci Sequence",
+      "code": "# fib(n) = fib(n-1) + fib(n-2)\ndef fib(n):\n    if n <= 1:           # Base Case\n        return n\n    return fib(n-1) + fib(n-2)\n\n# Note: This version is slow for large n due to many repeated calls\nprint(fib(10)) # Output: 55"
+    },
+    {
+      "id": "c7",
+      "type": "paragraph",
+      "heading": "Iteration vs. Recursion",
+      "text": "Every recursive problem can be solved iteratively using loops, and vice-versa. So, why choose one over the other? **Recursion** is often cleaner for problems involving branching or hierarchical data (like searching through nested folders on a computer). However, **Iteration** is generally more memory-efficient and faster because it doesn't have the overhead of repeatedly creating and managing stack frames. Professional developers choose recursion when it makes the logic significantly easier to read and maintain, but they switch to iteration or 'tail-recursion' optimization when performance becomes a critical factor for large datasets."
+    },
+    {
+      "id": "c8",
+      "type": "code",
+      "language": "python",
+      "heading": "Binary Search (Recursive)",
+      "code": "def binary_search(arr, low, high, x):\n    if high >= low:\n        mid = (high + low) // 2\n        if arr[mid] == x:\n            return mid\n        elif arr[mid] > x:\n            return binary_search(arr, low, mid - 1, x)\n        else:\n            return binary_search(arr, mid + 1, high, x)\n    else:\n        return -1"
+    }
+  ],
+  "summary": {
+    "short_summary": "Recursion involves a function calling itself to solve sub-problems, requiring a strict base case to prevent infinite memory usage.",
+    "detailed_summary": "In this chapter, we explored recursion as an elegant alternative to iterative loops. We mastered the two essential pillars of recursive design: the base case (to stop) and the recursive step (to continue). We learned how the Python Call Stack manages these nested function calls and why recursion depth limits are necessary for system safety. Through classic algorithms like Factorial, Fibonacci, and Binary Search, we saw how recursive thinking simplifies complex branching logic into readable, modular code.",
+    "exam_focus": [
+      "Defining 'Base Case' and its absolute necessity",
+      "Tracing the flow of execution in a recursive function",
+      "Calculating the complexity of simple recursion (e.g., Factorial)",
+      "RecursionError and the Stack Overflow concept",
+      "Comparing space/time efficiency of loops vs recursion"
+    ],
+    "revision_notes": [
+      "Recursion = Self-calling function",
+      "Base case is mandatory",
+      "Recursive calls push frames onto the Stack",
+      "Stack frames store local variables",
+      "Maximum depth limit prevents memory exhaustion"
+    ]
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "q": "What happens if a recursive function does not have a base case?",
+      "type": "theory",
+      "difficulty": "easy",
+      "hints": ["Infinite calling", "Memory usage"],
+      "solution": {
+        "explanation": "If there is no base case, the function will call itself infinitely. In Python, this quickly reaches the maximum recursion depth, causing the program to crash with a 'RecursionError'."
+      }
+    },
+    {
+      "id": "p2",
+      "q": "Trace the call stack for factorial(3).",
+      "type": "theory",
+      "difficulty": "medium",
+      "hints": ["How many calls?", "What value is returned at each step?"],
+      "solution": {
+        "explanation": "1. factorial(3) calls 3 * factorial(2). 2. factorial(2) calls 2 * factorial(1). 3. factorial(1) hits the base case and returns 1. 4. Results bubble back: (2*1) returns 2, then (3*2) returns 6."
+      }
+    },
+    {
+      "id": "p3",
+      "q": "Rewrite the recursive factorial function using a 'while' loop.",
+      "type": "coding",
+      "difficulty": "medium",
+      "hints": ["Start from n and multiply downwards", "Use a result variable"],
+      "solution": {
+        "code": "def factorial_iter(n):\n    res = 1\n    while n > 1:\n        res *= n\n        n -= 1\n    return res"
+      }
+    },
+    {
+      "id": "p4",
+      "q": "Write a recursive function to find the sum of all elements in a list.",
+      "type": "coding",
+      "difficulty": "hard",
+      "hints": ["Base case: empty list returns 0", "Recursive step: first element + sum(rest of list)"],
+      "solution": {
+        "code": "def list_sum(arr):\n    if not arr:\n        return 0\n    return arr[0] + list_sum(arr[1:])"
+      }
+    }
+  ]
+}
