@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-2",
+  "title": "Python Basics - Data Types Deep Dive",
+  "subtitle": "Understanding Python's Core Data Types",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Easy",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What is the type of 3.14?", "options": ["int", "float", "str", "complex"], "answer": 1 },
+        { "id": "A2", "question": "Which function converts a value to an integer?", "options": ["int()", "str()", "float()", "bool()"], "answer": 0 },
+        { "id": "A3", "question": "What is the result of type(True)?", "options": ["int", "bool", "str", "NoneType"], "answer": 1 },
+        { "id": "A4", "question": "Which is a mutable data type?", "options": ["tuple", "str", "list", "int"], "answer": 2 },
+        { "id": "A5", "question": "What is the output of print(type([]))?", "options": ["list", "tuple", "dict", "set"], "answer": 0 },
+        { "id": "A6", "question": "Which data type stores key-value pairs?", "options": ["list", "tuple", "dict", "set"], "answer": 2 },
+        { "id": "A7", "question": "What is type(5+3j)?", "options": ["int", "float", "complex", "str"], "answer": 2 },
+        { "id": "A8", "question": "Which operator checks if two values are equal?", "options": ["=", "==", "!=", "<>"], "answer": 1 },
+        { "id": "A9", "question": "What is the boolean value of empty string ''?", "options": ["True", "False", "None", "Error"], "answer": 1 },
+        { "id": "A10", "question": "Which function returns the memory address of an object?", "options": ["id()", "type()", "len()", "str()"], "answer": 0 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Differentiate between mutable and immutable data types with two examples each.", "marks": 3, "keywords": ["mutable", "immutable", "list", "tuple", "modify", "change"] },
+        { "id": "B2", "question": "Explain type conversion with examples of implicit and explicit conversion.", "marks": 3, "keywords": ["implicit", "explicit", "int()", "str()", "automatic", "manual"] },
+        { "id": "B3", "question": "What are Python's numeric data types? Explain each briefly.", "marks": 3, "keywords": ["int", "float", "complex", "whole number", "decimal", "imaginary"] },
+        { "id": "B4", "question": "Write the output: print(5 + 3.0). Explain why.", "marks": 2, "keywords": ["8.0", "implicit conversion", "float", "type promotion"] },
+        { "id": "B5", "question": "What is None in Python? How is it different from 0 or False?", "marks": 3, "keywords": ["null", "absence", "no value", "singleton", "NoneType"] },
+        { "id": "B6", "question": "Explain the difference between is and == operators.", "marks": 3, "keywords": ["identity", "equality", "memory address", "value", "reference"] },
+        { "id": "B7", "question": "What is the difference between ' and \" in Python strings?", "marks": 2, "keywords": ["same", "interchangeable", "quote", "nesting"] },
+        { "id": "B8", "question": "How do you create a multiline string in Python?", "marks": 2, "keywords": ["triple quotes", "\"\"\"", "'''", "multiline", "docstring"] },
+        { "id": "B9", "question": "What are the sequence data types in Python? List them.", "marks": 3, "keywords": ["list", "tuple", "string", "range", "ordered", "indexed"] },
+        { "id": "B10", "question": "Explain the concept of type() function with an example.", "marks": 3, "keywords": ["type()", "data type", "object class", "runtime"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to demonstrate all basic arithmetic operations on two numbers.", "marks": 5, "hints": ["Use +, -, *, /, //, %, **", "Print each result with labels"] },
+        { "id": "C2", "question": "Create a program that takes user input and displays its type.", "marks": 5, "hints": ["Use input() function", "Use type() function", "Convert and check types"] },
+        { "id": "C3", "question": "Write a program to convert temperature from Celsius to Fahrenheit.", "marks": 5, "hints": ["Formula: F = (C × 9/5) + 32", "Use float() for input", "Display result"] },
+        { "id": "C4", "question": "Create a program that swaps two variables without using a temporary variable.", "marks": 5, "hints": ["Use tuple unpacking", "a, b = b, a", "Multiple assignment"] },
+        { "id": "C5", "question": "Write a program to calculate the area and circumference of a circle.", "marks": 5, "hints": ["Use math.pi or 3.14159", "Area = πr²", "Circumference = 2πr"] },
+        { "id": "C6", "question": "Create a program that demonstrates type casting between int, float, and str.", "marks": 5, "hints": ["Use int(), float(), str()", "Show before and after", "Print types"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find the error:\n\nx = '5'\ny = 10\nprint(x + y)", "marks": 3, "answer": "TypeError: can only concatenate str (not 'int') to str", "explanation": "Cannot add string and int directly. Need to convert x to int first." },
+        { "id": "D2", "question": "Predict output:\n\na = 5\nprint(type(a))\na = 'hello'\nprint(type(a))", "marks": 2, "answer": "<class 'int'>\\n<class 'str'>", "explanation": "Python is dynamically typed. Variable 'a' changes type from int to str." },
+        { "id": "D3", "question": "Find and fix:\n\nprint = 'Hello'\nprint(print)", "marks": 3, "answer": "SyntaxError or unexpected behavior. 'print' is a built-in function name.", "explanation": "Don't use built-in function names as variable names. Use different variable name." },
+        { "id": "D4", "question": "Predict output:\n\nprint(5 / 2)\nprint(5 // 2)", "marks": 2, "answer": "2.5\\n2", "explanation": "/ does float division, // does floor (integer) division." },
+        { "id": "D5", "question": "Find error:\n\nvalue = input('Enter number: ')\nresult = value + 10", "marks": 3, "answer": "TypeError: must be str, not int", "explanation": "input() returns string. Convert to int: int(value) + 10." },
+        { "id": "D6", "question": "Predict output:\n\nx = None\nprint(bool(x))\nprint(x == 0)\nprint(x == False)", "marks": 3, "answer": "False\\nFalse\\nFalse", "explanation": "None is falsy but not equal to 0 or False. None is its own type." },
+        { "id": "D7", "question": "Find error:\n\nnum = 3.14.15", "marks": 2, "answer": "SyntaxError: invalid syntax", "explanation": "Invalid float literal. Numbers can only have one decimal point." },
+        { "id": "D8", "question": "Predict output:\n\na = 5\nb = 5.0\nprint(a == b)\nprint(a is b)", "marks": 2, "answer": "True\\nFalse", "explanation": "== checks value equality, is checks identity. Different types have different memory addresses." }
+      ]
+    }
+  ]
+}

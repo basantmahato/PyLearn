@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-8",
+  "title": "String Manipulation Deep Dive",
+  "subtitle": "Advanced string operations and methods",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What does 'hello'.upper() return?", "options": ["hello", "HELLO", "Hello", "Error"], "answer": 1 },
+        { "id": "A2", "question": "Which method removes whitespace from both ends?", "options": ["trim()", "strip()", "clean()", "remove()"], "answer": 1 },
+        { "id": "A3", "question": "What is 'Python'[::-1]?", "options": ["nohtyP", "Python", "P", "Error"], "answer": 0 },
+        { "id": "A4", "question": "Which method finds first occurrence of substring?", "options": ["find()", "search()", "locate()", "indexOf()"], "answer": 0 },
+        { "id": "A5", "question": "What does 'a,b,c'.split(',') return?", "options": ["['a,b,c']", "['a', 'b', 'c']", "'abc'", "Error"], "answer": 1 },
+        { "id": "A6", "question": "Which method replaces all occurrences?", "options": ["replace()", "substitute()", "swap()", "change()"], "answer": 0 },
+        { "id": "A7", "question": "What is '  hello  '.strip()?", "options": ["  hello  ", "hello", "hello  ", "  hello"], "answer": 1 },
+        { "id": "A8", "question": "Which checks if string starts with prefix?", "options": ["begins()", "starts_with()", "startswith()", "prefix()"], "answer": 2 },
+        { "id": "A9", "question": "What does '-'.join(['a', 'b', 'c']) produce?", "options": ["abc", "a-b-c", "-abc-", "Error"], "answer": 1 },
+        { "id": "A10", "question": "Which method returns string length?", "options": ["length()", "size()", "len()", "count()"], "answer": 2 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between find() and index() methods.", "marks": 3, "keywords": ["-1", "exception", "ValueError", "substring", "not found", "safe"] },
+        { "id": "B2", "question": "What is string slicing? Explain start:stop:step with examples.", "marks": 3, "keywords": ["substring", "extract", "indices", "skip", "reverse", "[: ]"] },
+        { "id": "B3", "question": "Differentiate between isalpha(), isdigit(), and isalnum().", "marks": 3, "keywords": ["letters only", "digits only", "letters and digits", "check", "validation"] },
+        { "id": "B4", "question": "Explain the join() method. Why is it preferred over string concatenation in loops?", "marks": 3, "keywords": ["iterable", "separator", "efficient", "O(n)", "list comprehension"] },
+        { "id": "B5", "question": "What are f-strings? How do they improve string formatting?", "marks": 3, "keywords": ["formatted string literal", "expression", "embedded", "readable", "performance"] },
+        { "id": "B6", "question": "Explain the difference between capitalize(), title(), and upper().", "marks": 3, "keywords": ["first letter", "every word", "all letters", "case conversion", "style"] },
+        { "id": "B7", "question": "What is the zfill() method? When is it useful?", "marks": 3, "keywords": ["zero padding", "width", "numbers", "alignment", "fixed width", "binary"] },
+        { "id": "B8", "question": "Explain partition() and rpartition() methods with examples.", "marks": 3, "keywords": ["split into three", "first occurrence", "last occurrence", "separator", "tuple"] },
+        { "id": "B9", "question": "What is string interning? Why does Python do it?", "marks": 3, "keywords": ["memory optimization", "immutable", "reuse", "identity", "is operator", "small strings"] },
+        { "id": "B10", "question": "Explain maketrans() and translate() methods for character replacement.", "marks": 3, "keywords": ["translation table", "multiple replace", "mapping", "character swap", "efficient"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to check if a string is a palindrome (ignoring case and spaces).", "marks": 5, "hints": ["Use lower() and replace()", "Remove spaces", "Compare with reversed"] },
+        { "id": "C2", "question": "Create a program to count vowels, consonants, digits, and special characters.", "marks": 5, "hints": ["Loop through characters", "Use isalpha(), isdigit()", "Check vowels in set"] },
+        { "id": "C3", "question": "Write a program to find the longest word in a sentence.", "marks": 5, "hints": ["Split by spaces", "Track max length", "Handle punctuation"] },
+        { "id": "C4", "question": "Create a Caesar cipher program to encrypt/decrypt text.", "marks": 5, "hints": ["Shift characters by key", "Use ord() and chr()", "Handle wrap-around"] },
+        { "id": "C5", "question": "Write a program to format a number as currency (e.g., $1,234.56).", "marks": 5, "hints": ["Use format() or f-string", "Thousands separator", "Two decimal places"] },
+        { "id": "C6", "question": "Create a password validator (min 8 chars, upper, lower, digit, special).", "marks": 5, "hints": ["Check length", "Use any() with isupper(), islower()", "Check for digits and special chars"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\ns = 'hello'\nprint(s[1:4])\nprint(s[:3])\nprint(s[3:])", "marks": 3, "answer": "ell\\nhel\\nlo", "explanation": "[1:4] is indices 1,2,3='ell'. [:3] is 0,1,2='hel'. [3:] is 3 onwards='lo'." },
+        { "id": "D2", "question": "Find error:\n\ntext = 'hello'\ntext[0] = 'H'\nprint(text)", "marks": 2, "answer": "TypeError: 'str' object does not support item assignment", "explanation": "Strings are immutable. Use text = 'H' + text[1:] or text.replace('h', 'H')." },
+        { "id": "D3", "question": "Predict output:\n\nwords = ['Python', 'is', 'fun']\nprint(' '.join(words))\nprint('-'.join(words))", "marks": 2, "answer": "Python is fun\\nPython-is-fun", "explanation": "join() concatenates list elements with separator between them." },
+        { "id": "D4", "question": "Find error:\n\nprint('Value: %d' % '5')", "marks": 2, "answer": "TypeError: %d format: a number is required, not str", "explanation": "%d requires integer. Use %s for strings or convert: %d % int('5')." },
+        { "id": "D5", "question": "Predict output:\n\ns = 'hello world'\nprint(s.find('o'))\nprint(s.rfind('o'))\nprint(s.find('z'))", "marks": 3, "answer": "4\\n7\\n-1", "explanation": "find() returns first 'o' at 4. rfind() returns last 'o' at 7. find('z') returns -1 (not found)." },
+        { "id": "D6", "question": "Find error:\n\nname = 'john'\nprint(name.capitalize())\nprint(name)", "marks": 2, "answer": "Not an error, but misunderstanding expected", "explanation": "Strings are immutable. capitalize() returns NEW string. Original 'name' stays 'john'." },
+        { "id": "D7", "question": "Predict output:\n\ns = 'abc123'\nprint(s.isalnum())\nprint(s.isalpha())\nprint(s.isdigit())", "marks": 3, "answer": "True\\nFalse\\nFalse", "explanation": "isalnum() true (letters+digits). isalpha() false (has digits). isdigit() false (has letters)." },
+        { "id": "D8", "question": "Find error:\n\nresult = 'hello'.split('')", "marks": 3, "answer": "ValueError: empty separator", "explanation": "Cannot use empty string as separator in split(). Use list('hello') to get individual characters." }
+      ]
+    }
+  ]
+}

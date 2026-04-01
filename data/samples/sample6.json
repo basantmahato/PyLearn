@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-6",
+  "title": "Conditional Statements and Decision Making",
+  "subtitle": "Master if-else, elif, and nested conditions",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Easy",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which keyword is used for 'else if' in Python?", "options": ["elseif", "else if", "elif", "elsif"], "answer": 2 },
+        { "id": "A2", "question": "How many elif blocks can follow an if?", "options": ["0", "1", "2", "Any number"], "answer": 3 },
+        { "id": "A3", "question": "What is mandatory after if statement?", "options": ["Semicolon", "Colon", "Comma", "Nothing"], "answer": 1 },
+        { "id": "A4", "question": "What is the output of: True if 5 > 3 else False", "options": ["True", "False", "Error", "None"], "answer": 0 },
+        { "id": "A5", "question": "Which is NOT a comparison operator?", "options": ["==", "!=", "=>", "<="], "answer": 2 },
+        { "id": "A6", "question": "What does pass do in an if block?", "options": ["Skip", "Do nothing", "Break", "Continue"], "answer": 1 },
+        { "id": "A7", "question": "How to write 'if x is between 1 and 10'?", "options": ["if 1 < x < 10:", "if x > 1 and x < 10:", "Both", "None"], "answer": 2 },
+        { "id": "A8", "question": "What is the ternary operator syntax?", "options": ["x if C else y", "C ? x : y", "if C then x else y", "C ? x : y : z"], "answer": 0 },
+        { "id": "A9", "question": "Can if statements be nested?", "options": ["Yes", "No", "Only 2 levels", "Only in loops"], "answer": 0 },
+        { "id": "A10", "question": "What happens if condition is False and no else?", "options": ["Error", "Skip block", "Execute anyway", "Crash"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between if, elif, and else with a flow diagram.", "marks": 3, "keywords": ["condition", "mutually exclusive", "alternative", "fallback", "branching"] },
+        { "id": "B2", "question": "What is nested if? When should it be used? Give an example.", "marks": 3, "keywords": ["if inside if", "multiple conditions", "hierarchy", "complex decisions", "levels"] },
+        { "id": "B3", "question": "Explain the inline if-else (ternary) operator with an example.", "marks": 3, "keywords": ["conditional expression", "one line", "compact", "return value", "value_if_true"] },
+        { "id": "B4", "question": "What is the difference between == and is operators? When to use each?", "marks": 3, "keywords": ["equality", "identity", "value comparison", "memory address", "content", "reference"] },
+        { "id": "B5", "question": "Explain the role of indentation in Python conditional statements.", "marks": 3, "keywords": ["block", "scope", "4 spaces", "mandatory", "structure", "readability"] },
+        { "id": "B6", "question": "How to check if a variable exists before using it in a condition?", "marks": 3, "keywords": ["in locals()", "try except", "NameError", "globals()", "vars()"] },
+        { "id": "B7", "question": "Explain truthy and falsy values in Python with examples.", "marks": 3, "keywords": ["bool()", "empty", "zero", "None", "non-empty", "implicit conversion"] },
+        { "id": "B8", "question": "What is short-circuit evaluation in logical operators?", "marks": 3, "keywords": ["lazy", "and", "or", "stop early", "optimize", "left to right"] },
+        { "id": "B9", "question": "Explain match-case statement (Python 3.10+). How is it better than if-elif?", "marks": 3, "keywords": ["pattern matching", "structural", "cleaner", "multiple patterns", "switch"] },
+        { "id": "B10", "question": "Write syntax for checking if a number is positive, negative, or zero.", "marks": 3, "keywords": ["> 0", "< 0", "== 0", "if elif else", "number classification"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to find the largest of three numbers using nested if-else.", "marks": 5, "hints": ["Compare first two", "Then compare with third", "Use nested if or elif"] },
+        { "id": "C2", "question": "Create a program to check if a year is a leap year.", "marks": 5, "hints": ["Divisible by 4", "Not divisible by 100 unless by 400", "Use nested conditions"] },
+        { "id": "C3", "question": "Write a program to calculate electricity bill based on units consumed.", "marks": 5, "hints": ["Different rates for slabs", "First 100 units: ₹5", "Next 100: ₹7", "Above 200: ₹10"] },
+        { "id": "C4", "question": "Create a simple calculator using if-elif to perform +, -, *, / operations.", "marks": 5, "hints": ["Take two numbers and operator", "Use if-elif for each operation", "Handle division by zero"] },
+        { "id": "C5", "question": "Write a program to determine grade based on percentage using if-elif.", "marks": 5, "hints": ["A: >=90", "B: 80-89", "C: 70-79", "D: 60-69", "F: <60"] },
+        { "id": "C6", "question": "Create a program to check if a triangle is valid and its type (equilateral, isosceles, scalene).", "marks": 5, "hints": ["Sum of any two sides > third", "All equal = equilateral", "Two equal = isosceles", "All different = scalene"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find error:\n\nif x > 5\n    print('Greater')", "marks": 2, "answer": "SyntaxError: expected ':'", "explanation": "Python requires a colon (:) after the if condition." },
+        { "id": "D2", "question": "Predict output:\n\nx = 10\nif x > 5:\n    print('A')\nelif x > 8:\n    print('B')\nelse:\n    print('C')", "marks": 2, "answer": "A", "explanation": "Only the first true condition executes. x>5 is true, so 'A' prints. x>8 check is skipped." },
+        { "id": "D3", "question": "Find error:\n\nif x = 10:\n    print('Ten')", "marks": 2, "answer": "SyntaxError: invalid syntax", "explanation": "Using assignment (=) instead of comparison (==). Should be: if x == 10:" },
+        { "id": "D4", "question": "Predict output:\n\nage = 20\nstatus = 'Adult' if age >= 18 else 'Minor'\nprint(status)", "marks": 2, "answer": "Adult", "explanation": "Ternary operator: condition is true (20>=18), so 'Adult' is assigned." },
+        { "id": "D5", "question": "Find error:\n\nif True:\n    print('Yes')\n        print('Definitely')", "marks": 3, "answer": "IndentationError: unexpected indent", "explanation": "Both print statements must have same indentation level to be in the same block." },
+        { "id": "D6", "question": "Predict output:\n\nx = 5\nif x > 10:\n    print('A')\nif x > 3:\n    print('B')\nelse:\n    print('C')", "marks": 3, "answer": "B", "explanation": "Two separate if statements. First is false, second is true, so only 'B' prints." },
+        { "id": "D7", "question": "Find error:\n\nif 'hello':\n    print('Truthy')\nelse\n    print('Falsy')", "marks": 2, "answer": "SyntaxError: expected ':' after else", "explanation": "else statement also requires a colon (:) like if statement." },
+        { "id": "D8", "question": "Predict output:\n\nnum = 0\nif num:\n    print('Yes')\nelse:\n    print('No')", "marks": 2, "answer": "No", "explanation": "0 is falsy in Python. The if condition evaluates to False, so else block executes." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-15",
+  "title": "Modules and Packages",
+  "subtitle": "Import, create, and manage Python modules",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which keyword imports a module?", "options": ["include", "import", "use", "require"], "answer": 1 },
+        { "id": "A2", "question": "How to import specific function from module?", "options": ["from module import func", "import module.func", "include func from module", "use module.func"], "answer": 0 },
+        { "id": "A3", "question": "What is __init__.py for?", "options": ["Initialize module", "Mark package directory", "Constructor", "Main entry"], "answer": 1 },
+        { "id": "A4", "question": "Which reloads a module after changes?", "options": ["reload()", "importlib.reload()", "module.reload()", "refresh()"], "answer": 1 },
+        { "id": "A5", "question": "What does if __name__ == '__main__': do?", "options": ["Check module name", "Entry point when run directly", "Check Python version", "Import guard"], "answer": 1 },
+        { "id": "A6", "question": "How to alias an import?", "options": ["import numpy as np", "alias numpy np", "import np from numpy", "from numpy import np"], "answer": 0 },
+        { "id": "A7", "question": "What is sys.path?", "options": ["Module paths", "Python file locations", "Import search paths", "System directories"], "answer": 2 },
+        { "id": "A8", "question": "Which imports everything from module?", "options": ["import all", "from module import *", "import module.*", "include *"], "answer": 1 },
+        { "id": "A9", "question": "What is PYTHONPATH?", "options": ["Python installation path", "Import search path env var", "Python version", "Package manager path"], "answer": 1 },
+        { "id": "A10", "question": "What is pip used for?", "options": ["Running Python", "Installing packages", "Debugging", "Compiling"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between import module and from module import func.", "marks": 3, "keywords": ["namespace", "prefix required", "direct access", "clarity", "name collision", "explicit"] },
+        { "id": "B2", "question": "What is a Python package? How is it different from a module?", "marks": 3, "keywords": ["directory", "__init__.py", "multiple modules", "hierarchy", "organization", "namespace package"] },
+        { "id": "B3", "question": "Explain absolute vs relative imports with examples.", "marks": 3, "keywords": ["from package.module", "from .module", "from ..module", "explicit", "implicit", "PEP 328"] },
+        { "id": "B4", "question": "What happens when a module is imported twice? Why?", "marks": 3, "keywords": ["cached", "sys.modules", "executed once", "singleton", "performance", "idempotent"] },
+        { "id": "B5", "question": "Explain the purpose of __all__ in a module.", "marks": 3, "keywords": ["public API", "from module import *", "control exports", "explicit interface", "wildcard import"] },
+        { "id": "B6", "question": "What are circular imports? How to avoid them?", "marks": 3, "keywords": ["A imports B, B imports A", "ImportError", "refactor", "lazy import", "move to function", "design issue"] },
+        { "id": "B7", "question": "Explain how Python finds modules during import.", "marks": 3, "keywords": ["sys.path", "current directory", "PYTHONPATH", "site-packages", "built-in", "search order"] },
+        { "id": "B8", "question": "What is site-packages directory? Where is it located?", "marks": 3, "keywords": ["third-party packages", "pip install", "user site", "dist-packages", "venv/lib"] },
+        { "id": "B9", "question": "Explain pip, conda, and poetry as package managers.", "marks": 3, "keywords": ["PyPI", "Anaconda", "dependency resolution", "virtual environment", "lock file", "reproducible"] },
+        { "id": "B10", "question": "What is a virtual environment and why use it?", "marks": 3, "keywords": ["isolated", "venv", "python -m venv", "activate", "project dependencies", "version conflicts"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Create a simple calculator module with add, sub, mul, div functions.", "marks": 5, "hints": ["Create calculator.py", "Define 4 functions", "Include error handling", "Add __all__", "Create test in if __name__ block"] },
+        { "id": "C2", "question": "Write a package structure with nested subpackages and demonstrate imports.", "marks": 5, "hints": ["Create mypackage/", "Add utils/, data/ subpackages", "Use __init__.py", "Show absolute imports", "Show relative imports"] },
+        { "id": "C3", "question": "Create a configuration module that reads settings from JSON file.", "marks": 5, "hints": ["config.py module", "Load JSON in __init__", "Provide get_setting() function", "Cache settings", "Handle missing file"] },
+        { "id": "C4", "question": "Write a logging utility module with different log levels.", "marks": 5, "hints": ["Use logging module", "Configure handlers", "Provide debug(), info(), error()", "Support file and console output"] },
+        { "id": "C5", "question": "Create a plugin system that dynamically loads modules from a directory.", "marks": 5, "hints": ["Use importlib.import_module()", "Scan directory for .py files", "Load each as module", "Call register() if exists", "Handle errors gracefully"] },
+        { "id": "C6", "question": "Write a requirements.txt generator that scans imports in Python files.", "marks": 5, "hints": ["Parse import statements", "Distinguish stdlib vs third-party", "Use ast module or regex", "Output requirements format"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\n# mymodule.py\nprint('Module loaded')\n# main.py\nimport mymodule\nimport mymodule", "marks": 2, "answer": "Module loaded (printed once)", "explanation": "Module is cached in sys.modules after first import. Second import uses cached version, doesn't re-execute." },
+        { "id": "D2", "question": "Find error:\n\nfrom math import sqrt\nprint(math.sqrt(16))", "marks": 2, "answer": "NameError: name 'math' is not defined", "explanation": "Only sqrt imported, not math module. Use 'sqrt(16)' directly or 'import math' to use math.sqrt." },
+        { "id": "D3", "question": "Predict output:\n\n# pkg/__init__.py\nprint('Init')\nx = 10\n# main.py\nfrom pkg import x\nprint(x)", "marks": 2, "answer": "Init\\n10", "explanation": "Package __init__.py executes on import. x is imported from pkg namespace." },
+        { "id": "D4", "question": "Find error:\n\n# mymod.py\ndef func():\n    import nonexistent\nfunc()", "marks": 3, "answer": "ModuleNotFoundError: No module named 'nonexistent'", "explanation": "Import inside function still needs module to exist. Error raised when func() called." },
+        { "id": "D5", "question": "Predict output:\n\nif __name__ == '__main__':\n    print('Running directly')\nelse:\n    print('Imported as module')", "marks": 2, "answer": "Running directly", "explanation": "When file executed directly, __name__ is '__main__'. When imported, __name__ is module name." },
+        { "id": "D6", "question": "Find error:\n\nimport sys\nsys.path.append('/my/modules')\nfrom mymodule import *", "marks": 3, "answer": "ModuleNotFoundError (if mymodule.py doesn't define __all__)", "explanation": "from X import * only imports names in __all__ or names without leading underscore. May not include expected names." },
+        { "id": "D7", "question": "Predict output:\n\n# main.py\nimport mymod\nprint(mymod.__file__)", "marks": 2, "answer": "Full path to mymod.py or mymod.pyc", "explanation": "__file__ attribute shows where module was loaded from. Usually absolute path to .py or cached .pyc." },
+        { "id": "D8", "question": "Find error:\n\n# mypackage/module.py\nfrom . import sibling", "marks": 3, "answer": "ImportError: attempted relative import with no known parent package", "explanation": "Relative imports only work inside packages. Running module.py directly makes it __main__, not a package. Use -m flag or absolute imports." }
+      ]
+    }
+  ]
+}

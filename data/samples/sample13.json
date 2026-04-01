@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-13",
+  "title": "Exception Handling",
+  "subtitle": "Try-except, finally, custom exceptions, and best practices",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which keyword catches exceptions?", "options": ["catch", "except", "handle", "error"], "answer": 1 },
+        { "id": "A2", "question": "Which executes always, exception or not?", "options": ["try", "except", "finally", "else"], "answer": 2 },
+        { "id": "A3", "question": "Which block runs when no exception?", "options": ["except", "else", "finally", "catch"], "answer": 1 },
+        { "id": "A4", "question": "How to raise an exception?", "options": ["throw", "raise", "error", "except"], "answer": 1 },
+        { "id": "A5", "question": "What does except Exception as e: do?", "options": ["Ignores error", "Catches all, stores in e", "Rethrows", "Skips block"], "answer": 1 },
+        { "id": "A6", "question": "Which catches division by zero?", "options": ["ValueError", "TypeError", "ZeroDivisionError", "ArithmeticError"], "answer": 2 },
+        { "id": "A7", "question": "How to create custom exception?", "options": ["def MyError", "class MyError(Exception)", "exception MyError", "raise MyError"], "answer": 1 },
+        { "id": "A8", "question": "What does assert do?", "options": ["Log message", "Test condition, raise if False", "Ignore errors", "Print output"], "answer": 1 },
+        { "id": "A9", "question": "Which is base class for all exceptions?", "options": ["Error", "Exception", "BaseException", "StandardError"], "answer": 2 },
+        { "id": "A10", "question": "What happens if exception not caught?", "options": ["Ignored", "Program continues", "Program terminates with traceback", "Returns None"], "answer": 2 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain try-except-else-finally block execution flow.", "marks": 3, "keywords": ["try first", "except on error", "else if no error", "always finally", "cleanup", "sequence"] },
+        { "id": "B2", "question": "What is the difference between except: and except Exception:?", "marks": 3, "keywords": ["bare except", "catches all", "BaseException", "KeyboardInterrupt", "SystemExit", "bad practice"] },
+        { "id": "B3", "question": "Explain exception hierarchy in Python with diagram.", "marks": 3, "keywords": ["BaseException", "Exception", "ArithmeticError", "LookupError", "inheritance", "specific to general"] },
+        { "id": "B4", "question": "How to raise an exception with custom message? Give example.", "marks": 3, "keywords": ["raise ValueError", "message", "constructor", "context", "information", "debug"] },
+        { "id": "B5", "question": "Explain exception chaining with 'raise from'.", "marks": 3, "keywords": ["__cause__", "context", "exception hierarchy", "PEP 3134", "preserve traceback", "wrapper"] },
+        { "id": "B6", "question": "What are EAFP and LBYL programming styles? Which does Python prefer?", "marks": 3, "keywords": ["Easier to Ask Forgiveness", "Look Before You Leap", "try-except", "if-check", "idiomatic Python"] },
+        { "id": "B7", "question": "Explain traceback module and how to print full traceback.", "marks": 3, "keywords": ["traceback.print_exc()", "stack trace", "debugging", "log errors", "format_exc", "detailed info"] },
+        { "id": "B8", "question": "When should you NOT catch an exception? Best practices.", "marks": 3, "keywords": ["silent fail", "mask bugs", "log and re-raise", "specific exceptions", "don't catch all", "design"] },
+        { "id": "B9", "question": "What is contextlib and @contextmanager for exception handling?", "marks": 3, "keywords": ["with statement", "context manager", "enter exit", "resource cleanup", "decorator", "generator"] },
+        { "id": "B10", "question": "Explain sys.exc_info() and its use cases.", "marks": 3, "keywords": ["current exception", "type value traceback", "thread-safe", "legacy", "inspect error"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a function that safely divides two numbers with proper exception handling.", "marks": 5, "hints": ["Catch ZeroDivisionError", "Catch TypeError for non-numbers", "Return None or message on error", "Use isinstance() or try-convert"] },
+        { "id": "C2", "question": "Create a context manager for timing code execution using contextlib.", "marks": 5, "hints": ["@contextmanager decorator", "yield between setup/cleanup", "Print elapsed time", "Handle exceptions gracefully"] },
+        { "id": "C3", "question": "Write a program that reads file and handles all possible file-related exceptions.", "marks": 5, "hints": ["FileNotFoundError", "PermissionError", "IsADirectoryError", "UnicodeDecodeError", "General IOError"] },
+        { "id": "C4", "question": "Create a retry decorator that retries function up to 3 times on exception.", "marks": 5, "hints": ["Wrap in for loop", "Count attempts", "try-except inside", "Reraise if all fail", "Use functools.wraps"] },
+        { "id": "C5", "question": "Write a custom ValidationError exception class with additional attributes.", "marks": 5, "hints": ["Inherit from Exception", "Add __init__ with custom args", "Store field name and value", "Override __str__"] },
+        { "id": "C6", "question": "Create a function that converts string to int with fallback default value on error.", "marks": 5, "hints": ["try-except ValueError", "Return default if fails", "Use parameter for default", "Test with valid and invalid"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict behavior:\n\ntry:\n    x = 1 / 0\nexcept:\n    print('Error')\nelse:\n    print('Success')\nfinally:\n    print('Done')", "marks": 3, "answer": "Error\\nDone", "explanation": "Division by zero raises exception, caught by except. else skips. finally always executes." },
+        { "id": "D2", "question": "Find error:\n\ntry:\n    f = open('file.txt')\nexcept FileNotFoundError:\n    print('Missing')\nfinally:\n    f.close()", "marks": 3, "answer": "NameError: name 'f' is not defined (if file missing)", "explanation": "If file doesn't exist, f is never assigned. finally tries to close undefined f. Use with statement or check." },
+        { "id": "D3", "question": "Predict output:\n\ndef func():\n    try:\n        return 1\n    finally:\n        return 2\nprint(func())", "marks": 3, "answer": "2", "explanation": "finally always executes and its return overrides try's return. Returns 2, not 1." },
+        { "id": "D4", "question": "Find issue:\n\nexcept Exception as e:\n    print('Error:', e)\n    raise e", "marks": 2, "answer": "Loses original traceback", "explanation": "raise e creates new exception point. Use bare 'raise' to preserve original traceback." },
+        { "id": "D5", "question": "Predict behavior:\n\nfor i in [1, 'a', 2]:\n    try:\n        print(int(i))\n    except ValueError:\n        continue\n    print('OK')", "marks": 3, "answer": "1\\nOK\\nOK (from next iteration)", "explanation": "For 'a', ValueError caught, continue skips 'OK'. Output: 1, OK, 2, OK on separate lines." },
+        { "id": "D6", "question": "Find error:\n\ntry:\n    risky()\nexcept:\n    pass", "marks": 2, "answer": "No error but bad practice (bare except)", "explanation": "Bare except catches KeyboardInterrupt, SystemExit. Use except Exception: or be more specific." },
+        { "id": "D7", "question": "Predict output:\n\ntry:\n    raise ValueError('bad value')\nexcept ValueError as e:\n    print(e)", "marks": 2, "answer": "bad value", "explanation": "Exception caught, message printed. String representation of exception is the message passed to constructor." },
+        { "id": "D8", "question": "Find error:\n\nclass MyError:\n    pass\nraise MyError('error')", "marks": 2, "answer": "TypeError: catching classes that do not inherit from BaseException is not allowed", "explanation": "Custom exceptions must inherit from Exception (or BaseException). Fix: class MyError(Exception):" }
+      ]
+    }
+  ]
+}

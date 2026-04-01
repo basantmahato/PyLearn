@@ -52,6 +52,125 @@
         { "id": "q9", "question": "What is a 'Logic Gate' physically?", "options": ["Software loop", "Electronic circuit using transistors", "Cable", "None"], "answer": 1, "explanation": "The hardware realization of boolean functions." },
         { "id": "q10", "question": "What is the duality principle?", "options": ["Double data", "Switching ./+ and 0/1 to get new valid law", "Mirroring", "None"], "answer": 1, "explanation": "Every boolean identity has a dual identity." }
       ]
+    },
+    {
+      "setId": "s4",
+      "setName": "Boolean Laws & Postulates",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "Which law states X + Y = Y + X?", "options": ["Associative", "Commutative", "Distributive", "Idempotent"], "answer": 1, "explanation": "Commutative law states that order of variables doesn't matter." },
+        { "id": "q2", "question": "What is X . X according to Idempotent Law?", "options": ["0", "1", "X", "X^2"], "answer": 2, "explanation": "Repeating the same operation with the same variable yields the variable itself." },
+        { "id": "q3", "question": "Which law is X + (Y + Z) = (X + Y) + Z?", "options": ["Commutative", "Distributive", "Associative", "Absorption"], "answer": 2, "explanation": "Associative law deals with grouping of variables." },
+        { "id": "q4", "question": "What is the result of X + X'?", "options": ["X", "0", "1", "None"], "answer": 2, "explanation": "Complementarity law: One must be True." },
+        { "id": "q5", "question": "What is X + X?", "options": ["2X", "X", "1", "0"], "answer": 1, "explanation": "Idempotent Law for addition." },
+        { "id": "q6", "question": "Which law is X(Y + Z) = XY + XZ?", "options": ["Commutative", "Associative", "Distributive", "Identity"], "answer": 2, "explanation": "AND distributes over OR." },
+        { "id": "q7", "question": "What is X . 1?", "options": ["1", "0", "X", "None"], "answer": 2, "explanation": "Identity Law for multiplication." },
+        { "id": "q8", "question": "What is X + 0?", "options": ["X", "0", "1", "None"], "answer": 0, "explanation": "Identity Law for addition." },
+        { "id": "q9", "question": "What is (X')'?", "options": ["X'", "0", "1", "X"], "answer": 3, "explanation": "Involution Law: Double negation returns original." },
+        { "id": "q10", "question": "Which law states X + 1 = 1?", "options": ["Identity", "Dominance/Null", "Absorption", "Idempotent"], "answer": 1, "explanation": "Null Law: True OR anything is True." }
+      ]
+    },
+    {
+      "setId": "s5",
+      "setName": "De Morgan's & Duality Applications",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Dual of A + 0 = A is:", "options": ["A . 1 = A", "A + 1 = 1", "A . 0 = 0", "None"], "answer": 0, "explanation": "Swap + for . and 0 for 1." },
+        { "id": "q2", "question": "Simplify (A + B)' using De Morgan's Law:", "options": ["A' + B'", "A' . B'", "A . B", "A + B"], "answer": 1, "explanation": "Complement of sum is product of complements." },
+        { "id": "q3", "question": "Simplify (A . B . C)'", "options": ["A'B'C'", "A' + B' + C'", "ABC", "None"], "answer": 1, "explanation": "Generalized De Morgan's Law for multiple variables." },
+        { "id": "q4", "question": "Duality of X + XY = X is:", "options": ["X(X+Y) = X", "X + X = X", "X . 0 = 0", "None"], "answer": 0, "explanation": "Swap + to . and vice versa." },
+        { "id": "q5", "question": "What happens to a literal 'A' when finding a Dual?", "options": ["It becomes A'", "It stays A", "It becomes 1", "It becomes 0"], "answer": 1, "explanation": "Duality only swaps operators and identity elements (0/1), not the variables." },
+        { "id": "q6", "question": "Simplify (A' + B)'", "options": ["A + B'", "A . B'", "A' . B'", "A + B"], "answer": 1, "explanation": "(A')' . B' = A . B'." },
+        { "id": "q7", "question": "Complement of F = A + BC is:", "options": ["A' . (B' + C')", "A' + B'C'", "A(B+C)", "None"], "answer": 0, "explanation": "Using De Morgan's: F' = (A + (BC))' = A' . (BC)' = A' . (B' + C')." },
+        { "id": "q8", "question": "Which is correct for Duality?", "options": ["Complement variables", "Keep variables same", "Swap operators", "Both B and C"], "answer": 3, "explanation": "Duality does not complement variables." },
+        { "id": "q9", "question": "Complement of 1 is:", "options": ["1", "0", "A", "None"], "answer": 1, "explanation": "Logical NOT of True is False." },
+        { "id": "q10", "question": "Complement of A'B + AB' is:", "options": ["(A+B')(A'+B)", "AB + A'B'", "A+B", "None"], "answer": 0, "explanation": "XNOR form, derived by De Morgan's application." }
+      ]
+    },
+    {
+      "setId": "s6",
+      "setName": "Canonical Forms (SOP & POS)",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "SOP stands for:", "options": ["System of Products", "Sum of Products", "Smallest of Products", "None"], "answer": 1, "explanation": "Logical OR of logical AND terms." },
+        { "id": "q2", "question": "POS stands for:", "options": ["Product of Sums", "Part of Sums", "Point of Sale", "None"], "answer": 0, "explanation": "Logical AND of logical OR terms." },
+        { "id": "q3", "question": "In SOP, a literal A represents:", "options": ["0", "1", "Both", "None"], "answer": 1, "explanation": "In Minterms (SOP), uncomplemented variables represent 1." },
+        { "id": "q4", "question": "In POS, a literal A represents:", "options": ["0", "1", "Both", "None"], "answer": 0, "explanation": "In Maxterms (POS), uncomplemented variables represent 0." },
+        { "id": "q5", "question": "A minterm of A=1, B=0 is:", "options": ["A + B'", "AB'", "A'B", "A + B"], "answer": 1, "explanation": "Minterms are products: A(1) . B'(0 inverted)." },
+        { "id": "q6", "question": "A maxterm of A=1, B=0 is:", "options": ["A' + B", "AB'", "A + B'", "A'B"], "answer": 0, "explanation": "Maxterms are sums: A'(1 inverted) + B(0)." },
+        { "id": "q7", "question": "Summation symbol (Σ) represents:", "options": ["SOP", "POS", "Product", "None"], "answer": 0, "explanation": "Σ used for minterm indices." },
+        { "id": "q8", "question": "Product symbol (Π) represents:", "options": ["SOP", "POS", "Sum", "None"], "answer": 1, "explanation": "Π used for maxterm indices." },
+        { "id": "q9", "question": "Canonical form must contain:", "options": ["Some variables", "All variables in each term", "Only numbers", "None"], "answer": 1, "explanation": "Canonical (Standard) forms include every variable once per term." },
+        { "id": "q10", "question": "Minterm $m_3$ for 2 variables (A, B) is:", "options": ["AB", "A'B'", "AB'", "A'B"], "answer": 0, "explanation": "Binary 3 is 11, so AB." }
+      ]
+    },
+    {
+      "setId": "s7",
+      "setName": "Universal Gates (NAND & NOR)",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Why is NAND called a Universal gate?", "options": ["Used everywhere", "Can implement any logic function", "It is cheap", "None"], "answer": 1, "explanation": "NAND alone can create NOT, AND, and OR." },
+        { "id": "q2", "question": "How many NAND gates make a NOT gate?", "options": ["1", "2", "3", "4"], "answer": 0, "explanation": "Join inputs of a NAND together." },
+        { "id": "q3", "question": "How many NAND gates make an AND gate?", "options": ["1", "2", "3", "4"], "answer": 1, "explanation": "NAND gate followed by another NAND as an inverter." },
+        { "id": "q4", "question": "How many NOR gates make a NOT gate?", "options": ["1", "2", "3", "4"], "answer": 0, "explanation": "Join inputs of a NOR together." },
+        { "id": "q5", "question": "Boolean expression for NAND:", "options": ["A + B", "A . B", "(A . B)'", "(A + B)'"], "answer": 2, "explanation": "Inverse of AND." },
+        { "id": "q6", "question": "Boolean expression for NOR:", "options": ["A + B", "A . B", "(A . B)'", "(A + B)'"], "answer": 3, "explanation": "Inverse of OR." },
+        { "id": "q7", "question": "NOR gate is a combination of:", "options": ["OR + NOT", "AND + NOT", "NOT + NOT", "None"], "answer": 0, "explanation": "NOT of an OR output." },
+        { "id": "q8", "question": "Output of NOR for (0, 0) is:", "options": ["0", "1", "Error", "None"], "answer": 1, "explanation": "OR(0,0)=0, so NOR(0,0)=1." },
+        { "id": "q9", "question": "Output of NAND for (1, 1) is:", "options": ["0", "1", "Error", "None"], "answer": 0, "explanation": "AND(1,1)=1, so NAND(1,1)=0." },
+        { "id": "q10", "question": "Bubbled AND is equivalent to:", "options": ["NAND", "NOR", "XOR", "XNOR"], "answer": 1, "explanation": "A' . B' = (A + B)' by De Morgan." }
+      ]
+    },
+    {
+      "setId": "s8",
+      "setName": "Karnaugh Maps (K-Map) Basics",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "What is a K-Map?", "options": ["Geography map", "Graphical tool for logic simplification", "Logic gate", "None"], "answer": 1, "explanation": "Organizes truth tables to find adjacent 1s for grouping." },
+        { "id": "q2", "question": "K-Map uses which coding system?", "options": ["Binary", "Decimal", "Gray Code", "Hex"], "answer": 2, "explanation": "Gray code ensures only one bit changes between adjacent cells." },
+        { "id": "q3", "question": "Number of cells in 3-variable K-Map:", "options": ["4", "6", "8", "16"], "answer": 2, "explanation": "2^3 = 8 cells." },
+        { "id": "q4", "question": "Number of cells in 4-variable K-Map:", "options": ["8", "12", "16", "32"], "answer": 2, "explanation": "2^4 = 16 cells." },
+        { "id": "q5", "question": "In K-Map, a group of 4 adjacent 1s is called:", "options": ["Pair", "Quad", "Octet", "None"], "answer": 1, "explanation": "Quad eliminates two variables." },
+        { "id": "q6", "question": "In K-Map, a group of 8 adjacent 1s is called:", "options": ["Pair", "Quad", "Octet", "None"], "answer": 2, "explanation": "Octet eliminates three variables." },
+        { "id": "q7", "question": "Adjacent cells must differ by how many bits?", "options": ["1", "2", "All", "None"], "answer": 0, "explanation": "Requirement for grouping/simplification." },
+        { "id": "q8", "question": "Can K-Map groups wrap around edges?", "options": ["Yes", "No", "Only for 4-var", "None"], "answer": 0, "explanation": "The map is considered toroidal (edges touch)." },
+        { "id": "q9", "question": "What do we group to get POS form in K-Map?", "options": ["1s", "0s", "Both", "None"], "answer": 1, "explanation": "Grouping 0s provides Maxterms for POS." },
+        { "id": "q10", "question": "What do we group to get SOP form in K-Map?", "options": ["1s", "0s", "Both", "None"], "answer": 0, "explanation": "Grouping 1s provides Minterms for SOP." }
+      ]
+    },
+    {
+      "setId": "s9",
+      "setName": "XOR & XNOR Logic",
+      "difficulty": "Medium",
+      "questions": [
+        { "id": "q1", "question": "Boolean expression for XOR:", "options": ["AB + A'B'", "A'B + AB'", "A + B", "None"], "answer": 1, "explanation": "Exclusive OR: True if inputs are different." },
+        { "id": "q2", "question": "Boolean expression for XNOR:", "options": ["AB + A'B'", "A'B + AB'", "A + B", "None"], "answer": 0, "explanation": "Exclusive NOR: True if inputs are same." },
+        { "id": "q3", "question": "A XOR 0 = ?", "options": ["0", "1", "A", "A'"], "answer": 2, "explanation": "If A=1, 1 XOR 0 = 1. If A=0, 0 XOR 0 = 0." },
+        { "id": "q4", "question": "A XOR 1 = ?", "options": ["0", "1", "A", "A'"], "answer": 3, "explanation": "XORing with 1 acts as a NOT gate." },
+        { "id": "q5", "question": "A XOR A = ?", "options": ["0", "1", "A", "A'"], "answer": 0, "explanation": "Anything XORed with itself is 0." },
+        { "id": "q6", "question": "A XNOR A = ?", "options": ["0", "1", "A", "None"], "answer": 1, "explanation": "Inputs are same, so output is 1." },
+        { "id": "q7", "question": "XOR is often used in:", "options": ["Memory", "Adders (Arithmetic circuits)", "Power supply", "None"], "answer": 1, "explanation": "Crucial for half-adders and full-adders." },
+        { "id": "q8", "question": "Result of (A XOR B)':", "options": ["A XOR B", "A XNOR B", "A AND B", "None"], "answer": 1, "explanation": "XNOR is the complement of XOR." },
+        { "id": "q9", "question": "Is XOR associative?", "options": ["Yes", "No", "Only for 2 vars", "None"], "answer": 0, "explanation": "A XOR (B XOR C) = (A XOR B) XOR C." },
+        { "id": "q10", "question": "XOR is also known as:", "options": ["Coincidence gate", "Inequality detector", "Equality detector", "None"], "answer": 1, "explanation": "It outputs 1 when inputs are not equal." }
+      ]
+    },
+    {
+      "setId": "s10",
+      "setName": "Board Exam Comprehensive Prep",
+      "difficulty": "Hard",
+      "questions": [
+        { "id": "q1", "question": "Identity for A + A'B:", "options": ["A", "B", "A+B", "AB"], "answer": 2, "explanation": "Redundancy Law / Absorption variant." },
+        { "id": "q2", "question": "Which gate returns 0 if any input is 1?", "options": ["OR", "NOR", "AND", "NAND"], "answer": 1, "explanation": "NOR is 1 only when all are 0." },
+        { "id": "q3", "question": "Logic diagram for Y = A'B + AB' uses which gates?", "options": ["NOT, AND, OR", "NAND only", "NOR only", "All of these"], "answer": 3, "explanation": "Can be built with basic gates or universal gates." },
+        { "id": "q4", "question": "In a 3-variable K-Map, how many 1s are in a Quad?", "options": ["2", "4", "8", "16"], "answer": 1, "explanation": "Quad = Group of 4." },
+        { "id": "q5", "question": "Represent decimal 5 as a minterm ($m_5$) for 3 variables (A, B, C):", "options": ["A'BC'", "AB'C", "ABC", "A'B'C"], "answer": 1, "explanation": "Binary 5 is 101, so AB'C." },
+        { "id": "q6", "question": "Represent decimal 2 as a maxterm ($M_2$) for 3 variables (A, B, C):", "options": ["A+B'+C", "A'+B+C'", "A+B+C", "None"], "answer": 0, "explanation": "Binary 2 is 010, so A + B' + C (Maxterm logic)." },
+        { "id": "q7", "question": "Which law states X(X + Y) = X?", "options": ["Associative", "Idempotent", "Absorption", "Distributive"], "answer": 2, "explanation": "Standard Absorption Law." },
+        { "id": "q8", "question": "A Logic circuit with 3 inputs has how many possible input combinations?", "options": ["3", "6", "8", "9"], "answer": 2, "explanation": "2^3 = 8 combinations." },
+        { "id": "q9", "question": "Simplify A . (A + B):", "options": ["A", "B", "AB", "A+B"], "answer": 0, "explanation": "A.A + A.B = A + AB = A(1+B) = A." },
+        { "id": "q10", "question": "Which principle allows swapping operators in a valid identity?", "options": ["Involution", "Duality", "Redundancy", "None"], "answer": 1, "explanation": "Duality is the fundamental symmetry in Boolean Algebra." }
+      ]
     }
   ]
 }

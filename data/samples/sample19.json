@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-19",
+  "title": "Python Best Practices and Idioms",
+  "subtitle": "Writing clean, Pythonic code",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What is 'Pythonic' code?", "options": ["Fast code", "Idiomatic Python", "Short code", "Complex code"], "answer": 1 },
+        { "id": "A2", "question": "Which is preferred: x is None or x == None?", "options": ["x == None", "x is None", "Both same", "Neither"], "answer": 1 },
+        { "id": "A3", "question": "What does 'Explicit is better than implicit' mean?", "options": ["PEP 8", "Zen of Python", "PEP 20", "Python motto"], "answer": 1 },
+        { "id": "A4", "question": "Which is Pythonic way to check empty list?", "options": ["if len(lst) == 0", "if lst == []", "if not lst:", "if lst is None"], "answer": 2 },
+        { "id": "A5", "question": "What is PEP 8?", "options": ["Python version", "Style guide", "Performance guide", "Package format"], "answer": 1 },
+        { "id": "A6", "question": "Which tool checks code style?", "options": ["python", "pylint", "pytest", "pip"], "answer": 1 },
+        { "id": "A7", "question": "What is EAFP?", "options": ["Ask permission", "Ask forgiveness", "Check first", "Assume valid"], "answer": 1 },
+        { "id": "A8", "question": "Which is preferred for truth check?", "options": ["if x == True", "if x is True", "if x:", "if bool(x)"], "answer": 2 },
+        { "id": "A9", "question": "What is the naming convention for functions?", "options": ["camelCase", "snake_case", "PascalCase", "kebab-case"], "answer": 1 },
+        { "id": "A10", "question": "Which docstring format is recommended?", "options": ["Plain text", "Google style", "reStructuredText", "Any consistent format"], "answer": 3 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the Zen of Python. How to view it?", "marks": 3, "keywords": ["import this", "Tim Peters", "19 aphorisms", "philosophy", "guiding principles", "easter egg"] },
+        { "id": "B2", "question": "What is the difference between is and ==? When to use each?", "marks": 3, "keywords": ["identity", "equality", "None check", "value comparison", "singleton", "immutable"] },
+        { "id": "B3", "question": "Explain EAFP vs LBYL programming styles.", "marks": 3, "keywords": ["Easier to Ask Forgiveness", "Look Before You Leap", "try-except", "if-check", "performance", "race conditions"] },
+        { "id": "B4", "question": "What are Python naming conventions? Explain all types.", "marks": 3, "keywords": ["snake_case functions", "PascalCase classes", "_protected", "__private", "UPPER_CASE constants", "dunder methods"] },
+        { "id": "B5", "question": "Explain list comprehension vs for loop. Which is more Pythonic?", "marks": 3, "keywords": ["compact", "expression focus", "functional", "readability counts", "single purpose", "avoid overuse"] },
+        { "id": "B6", "question": "What are context managers? Explain with and __enter__/__exit__.", "marks": 3, "keywords": ["resource management", "cleanup", "guaranteed", "exception safe", "protocol", "contextlib"] },
+        { "id": "B7", "question": "Explain the drawbacks of from module import *.", "marks": 3, "keywords": ["namespace pollution", "unknown names", "shadowing", "explicit better", "maintenance", "readability"] },
+        { "id": "B8", "question": "What is type hinting? Why use it despite Python being dynamic?", "marks": 3, "keywords": ["typing module", "documentation", "IDE support", "mypy", "catch errors early", "self-documenting"] },
+        { "id": "B9", "question": "Explain the use of __all__ in modules.", "marks": 3, "keywords": ["public API", "wildcard import", "control exports", "explicit interface", "documentation", "module design"] },
+        { "id": "B10", "question": "What tools help with Python code quality? List and explain.", "marks": 3, "keywords": ["pylint", "flake8", "black", "mypy", "pytest", "coverage", "pre-commit", "CI/CD"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Refactor nested for loops with list comprehensions.", "marks": 5, "hints": ["Original: nested loops with append", "Use [expr for x in A for y in B]", "Keep readable", "Add condition if needed", "Compare performance"] },
+        { "id": "C2", "question": "Write a context manager for database transaction using contextlib.", "marks": 5, "hints": ["@contextmanager", "yield for operation", "Commit on success", "Rollback on exception", "Always close connection"] },
+        { "id": "C3", "question": "Convert imperative code to functional style using map/filter.", "marks": 5, "hints": ["Replace loops", "Use lambda or named functions", "Chain operations", "Compare readability", "Consider performance"] },
+        { "id": "C4", "question": "Create a well-documented function following PEP 257 docstring conventions.", "marks": 5, "hints": ["Triple quotes", "One-line summary", "Args and Returns", "Raises section", "Example usage", "Type hints"] },
+        { "id": "C5", "question": "Implement a generator-based pipeline for processing large datasets.", "marks": 5, "hints": ["Each stage is generator", "yield from", "Memory efficient", "Chain with pipe", "Lazy evaluation"] },
+        { "id": "C6", "question": "Write code demonstrating proper exception handling with specific exceptions.", "marks": 5, "hints": ["Avoid bare except", "Catch specific exceptions", "Log and re-raise", "Clean up resources", "Use finally or context manager"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find issue:\n\ndef get_data():\n    try:\n        with open('file.txt') as f:\n            return f.read()\n    except:\n        pass", "marks": 3, "answer": "Bare except is bad practice; also returns None silently on any error", "explanation": "Should catch specific exceptions. Bare except catches KeyboardInterrupt, SystemExit. Silent failure hides bugs." },
+        { "id": "D2", "question": "Predict output:\n\nif []:\n    print('Yes')\nelse:\n    print('No')", "marks": 2, "answer": "No", "explanation": "Empty list is falsy. 'if not lst:' is Pythonic way to check empty." },
+        { "id": "D3", "question": "Find issue:\n\nfrom math import *\nfrom numpy import *", "marks": 2, "answer": "Namespace pollution; potential name conflicts", "explanation": "Both modules have functions with same names. Last import wins. Use explicit imports: import numpy as np." },
+        { "id": "D4", "question": "Predict output:\n\ndef func(x=[]):\n    x.append(1)\n    return x\nprint(func())\nprint(func())", "marks": 3, "answer": "[1]\\n[1, 1]", "explanation": "Mutable default argument persists! Classic gotcha. Use x=None and initialize inside." },
+        { "id": "D5", "question": "Find issue:\n\nfor i in range(len(items)):\n    do_something(items[i])", "marks": 2, "answer": "Not Pythonic; use 'for item in items:' instead", "explanation": "Direct iteration is cleaner. Only use range(len()) when index needed. Consider enumerate() if need both." },
+        { "id": "D6", "question": "Predict behavior:\n\nclass MyClass:\n    value = []\n    def add(self, x):\n        self.value.append(x)\na, b = MyClass(), MyClass()\na.add(1)\nprint(b.value)", "marks": 3, "answer": "[1]", "explanation": "Class variable shared by all instances! Both a and b share same list. Use self.value = [] in __init__." },
+        { "id": "D7", "question": "Find issue:\n\nif x == None:\n    print('Empty')", "marks": 2, "answer": "Should use 'is None' not '== None'", "explanation": "Identity comparison for None is faster and more correct. None is singleton. Use 'if x is None:'." },
+        { "id": "D8", "question": "Predict output:\n\nsquares = {x: x**2 for x in range(5)}\nprint(squares.get(3, 0))\nprint(squares.get(10, 0))", "marks": 2, "answer": "9\\n0", "explanation": "Dict comprehension creates {0:0, 1:1, 2:4, 3:9, 4:16}. get(3) returns 9. get(10, 0) returns default 0." }
+      ]
+    }
+  ]
+}

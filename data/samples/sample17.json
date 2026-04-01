@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-17",
+  "title": "Comprehensive Python Practice 2",
+  "subtitle": "Mixed topics: Functions, OOP, File handling",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which defines a function?", "options": ["func", "def", "function", "lambda"], "answer": 1 },
+        { "id": "A2", "question": "What is self in class methods?", "options": ["Class", "Instance", "Module", "Global"], "answer": 1 },
+        { "id": "A3", "question": "Which opens file for append?", "options": ["'r'", "'w'", "'a'", "'x'"], "answer": 2 },
+        { "id": "A4", "question": "What does json.loads() do?", "options": ["Load file", "Parse string", "Dump to file", "Serialize"], "answer": 1 },
+        { "id": "A5", "question": "Which catches all exceptions?", "options": ["except:", "except Exception:", "except BaseException:", "Both A and B"], "answer": 3 },
+        { "id": "A6", "question": "What is a decorator?", "options": ["Function wrapper", "Class modifier", "Variable", "Import"], "answer": 0 },
+        { "id": "A7", "question": "Which creates instance variable?", "options": ["self.x", "cls.x", "Class.x", "x"], "answer": 0 },
+        { "id": "A8", "question": "What does super() do?", "options": ["Call parent", "Create object", "Delete", "Import"], "answer": 0 },
+        { "id": "A9", "question": "Which module handles CSV?", "options": ["csv", "excel", "data", "table"], "answer": 0 },
+        { "id": "A10", "question": "What is __init__.py?", "options": ["Package marker", "Constructor", "Main file", "Config"], "answer": 0 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain *args and **kwargs with examples.", "marks": 3, "keywords": ["variable arguments", "positional", "keyword", "unpacking", "flexible"] },
+        { "id": "B2", "question": "What is inheritance? Explain with example.", "marks": 3, "keywords": ["parent class", "child class", "is-a relationship", "code reuse", "extends"] },
+        { "id": "B3", "question": "Explain try-except-else-finally blocks.", "marks": 3, "keywords": ["error handling", "catch", "always executes", "no exception", "cleanup"] },
+        { "id": "B4", "question": "What is the difference between @staticmethod and @classmethod?", "marks": 3, "keywords": ["no self", "cls parameter", "instance method", "utility", "factory"] },
+        { "id": "B5", "question": "Explain file context manager and its benefits.", "marks": 3, "keywords": ["with statement", "auto close", "cleanup", "exception safe", "resource"] },
+        { "id": "B6", "question": "What is method overriding? When to use it?", "marks": 3, "keywords": ["same name", "parent child", "different implementation", "polymorphism", "customize"] },
+        { "id": "B7", "question": "Explain the difference between read() and readlines().", "marks": 3, "keywords": ["string", "list", "one call", "memory", "iteration", "efficient"] },
+        { "id": "B8", "question": "What is a lambda function? When is it useful?", "marks": 3, "keywords": ["anonymous", "inline", "single expression", "short function", "sort key"] },
+        { "id": "B9", "question": "Explain __str__ and __repr__ methods.", "marks": 3, "keywords": ["string representation", "readable", "unambiguous", "print", "debug"] },
+        { "id": "B10", "question": "What is the purpose of if __name__ == '__main__':?", "marks": 3, "keywords": ["entry point", "direct run", "imported", "module", "script"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a decorator that logs function calls with arguments.", "marks": 5, "hints": ["Use functools.wraps", "Print function name and args", "Call original function", "Return result"] },
+        { "id": "C2", "question": "Create a Shape class with Circle and Rectangle subclasses.", "marks": 5, "hints": ["Abstract area method", "Circle uses radius", "Rectangle uses width height", "Implement __str__"] },
+        { "id": "C3", "question": "Write a program to copy CSV file with data transformation.", "marks": 5, "hints": ["Read with csv.reader", "Transform rows", "Write with csv.writer", "Handle headers"] },
+        { "id": "C4", "question": "Create a custom exception hierarchy for banking errors.", "marks": 5, "hints": ["Base BankingError class", "InsufficientFunds, InvalidAccount subclasses", "Add error codes", "Raise appropriately"] },
+        { "id": "C5", "question": "Write a recursive function with memoization for Fibonacci.", "marks": 5, "hints": ["Use dictionary cache", "Check cache first", "Store result before return", "Base cases 0 and 1"] },
+        { "id": "C6", "question": "Create a config manager class that reads/writes JSON settings.", "marks": 5, "hints": ["Load on init", "get() and set() methods", "Save on change", "Default values", "Handle missing file"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nclass A:\n    def __init__(self):\n        self.x = 10\na = A()\nprint(a.x)", "marks": 2, "answer": "10", "explanation": "__init__ sets instance variable x to 10. Accessible via instance a." },
+        { "id": "D2", "question": "Find error:\n\ndef outer():\n    x = 5\n    def inner():\n        x += 1\n    inner()\nouter()", "marks": 3, "answer": "UnboundLocalError: local variable 'x' referenced before assignment", "explanation": "Need 'nonlocal x' in inner() to modify outer's x. Otherwise Python thinks x is local." },
+        { "id": "D3", "question": "Predict output:\n\ntry:\n    1/0\nexcept ZeroDivisionError:\n    print('Zero')\nexcept Exception:\n    print('General')", "marks": 2, "answer": "Zero", "explanation": "Specific exception caught first. ZeroDivisionError is subclass of Exception but matches first." },
+        { "id": "D4", "question": "Find error:\n\nwith open('file.txt', 'w') as f:\n    f.write('Hello')\nprint(f.read())", "marks": 2, "answer": "ValueError: I/O operation on closed file", "explanation": "with statement closes file when block exits. Can't read from closed file outside with block." },
+        { "id": "D5", "question": "Predict output:\n\n@decorator\ndef func():\n    return 42\nprint(func())", "marks": 2, "answer": "Depends on decorator (or NameError if decorator undefined)", "explanation": "Decorator must be defined. If decorator returns wrapped function properly, prints 42 or decorated result." },
+        { "id": "D6", "question": "Find error:\n\nimport json\ndata = {'date': datetime.now()}\nprint(json.dumps(data))", "marks": 3, "answer": "TypeError: Object of type datetime is not JSON serializable", "explanation": "datetime not JSON serializable by default. Use custom encoder or convert to string first." },
+        { "id": "D7", "question": "Predict output:\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        self.y = 20\nb = B()\nprint(b.x, b.y)", "marks": 2, "answer": "10 20", "explanation": "super().__init__() calls parent's __init__ setting x=10. Then y=20 set in B's __init__." },
+        { "id": "D8", "question": "Find error:\n\nfor i in range(5):\n    if i == 3:\n        break\nelse:\n    print('Done')", "marks": 2, "answer": "No output (not error)", "explanation": "for-else: else only executes if loop completed without break. break at i=3 prevents else execution." }
+      ]
+    }
+  ]
+}

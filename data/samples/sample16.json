@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-16",
+  "title": "Comprehensive Python Practice 1",
+  "subtitle": "Mixed topics: Data types, operators, control flow",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What is 5 // 2 in Python?", "options": ["2.5", "2", "2.0", "3"], "answer": 1 },
+        { "id": "A2", "question": "Which is immutable?", "options": ["list", "dict", "tuple", "set"], "answer": 2 },
+        { "id": "A3", "question": "What does 'abc' * 2 produce?", "options": ["abcabc", "abc2", "Error", "['abc', 'abc']"], "answer": 0 },
+        { "id": "A4", "question": "What is result of True + True?", "options": ["True", "2", "1", "Error"], "answer": 1 },
+        { "id": "A5", "question": "Which operator checks membership?", "options": ["contains", "in", "has", "exists"], "answer": 1 },
+        { "id": "A6", "question": "What does range(3, 8, 2) produce?", "options": ["[3,5,7]", "[3,5,7,9]", "[4,6,8]", "[3,4,5,6,7,8]"], "answer": 0 },
+        { "id": "A7", "question": "What is len('hello world')?", "options": ["10", "11", "12", "9"], "answer": 1 },
+        { "id": "A8", "question": "Which creates an empty set?", "options": ["{}", "set()", "[]", "()"], "answer": 1 },
+        { "id": "A9", "question": "What is output of 2 ** 3 ** 2?", "options": ["64", "512", "36", "Error"], "answer": 1 },
+        { "id": "A10", "question": "What does list('abc') return?", "options": ["['abc']", "['a', 'b', 'c']", "Error", "('a', 'b', 'c')"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between == and is operators.", "marks": 3, "keywords": ["value equality", "identity", "memory location", "content", "reference"] },
+        { "id": "B2", "question": "What is list slicing? Explain with [start:stop:step].", "marks": 3, "keywords": ["substring", "extract", "indices", "skip", "reverse"] },
+        { "id": "B3", "question": "Explain the difference between break and continue.", "marks": 3, "keywords": ["exit loop", "skip iteration", "terminate", "next iteration"] },
+        { "id": "B4", "question": "What are truthy and falsy values? Give examples.", "marks": 3, "keywords": ["bool()", "empty", "zero", "None", "non-empty", "conversion"] },
+        { "id": "B5", "question": "Explain type casting in Python with examples.", "marks": 3, "keywords": ["int()", "str()", "float()", "implicit", "explicit", "conversion"] },
+        { "id": "B6", "question": "What is the difference between / and // operators?", "marks": 3, "keywords": ["division", "floor", "float", "integer", "quotient"] },
+        { "id": "B7", "question": "Explain dictionary.get() vs dictionary[key] access.", "marks": 3, "keywords": ["default value", "KeyError", "safe access", "missing key", "None"] },
+        { "id": "B8", "question": "What is string formatting? Explain f-strings.", "marks": 3, "keywords": ["f'...{var}'", "interpolation", "embed expression", "readable", "format()"] },
+        { "id": "B9", "question": "Explain how to swap two variables in Python.", "marks": 3, "keywords": ["tuple unpacking", "a, b = b, a", "no temp variable", "multiple assignment"] },
+        { "id": "B10", "question": "What is the use of enumerate() function?", "marks": 3, "keywords": ["index", "value", "loop counter", "iteration", "counter", "position"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to find all prime numbers between 1 and 100.", "marks": 5, "hints": ["Loop from 2 to 100", "Check divisibility", "Use nested loop or sqrt optimization", "Collect primes in list"] },
+        { "id": "C2", "question": "Create a program to count the frequency of each character in a string.", "marks": 5, "hints": ["Use dictionary", "Loop through characters", "Increment count", "Handle case sensitivity"] },
+        { "id": "C3", "question": "Write a program to find the second largest element in a list.", "marks": 5, "hints": ["Remove duplicates using set", "Sort and get second", "Or track two max values", "Handle edge cases"] },
+        { "id": "C4", "question": "Create a program to check if a string is a palindrome.", "marks": 5, "hints": ["Remove spaces/punctuation", "Convert to lowercase", "Compare with reverse", "Use slicing [::-1]"] },
+        { "id": "C5", "question": "Write a program to generate Pascal's triangle up to n rows.", "marks": 5, "hints": ["Each row starts and ends with 1", "Inner values sum of two above", "Use nested lists", "Print formatted"] },
+        { "id": "C6", "question": "Create a simple contact book with add, search, and delete operations.", "marks": 5, "hints": ["Use dictionary", "Name as key", "Details as value", "Menu-driven interface", "Handle not found"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nx = [1, 2, 3, 4, 5]\nprint(x[1:4:2])", "marks": 2, "answer": "[2, 4]", "explanation": "Start at index 1, stop before 4, step 2. Gets elements at 1 and 3." },
+        { "id": "D2", "question": "Find error:\n\nif x > 5:\n    print('Greater')", "marks": 2, "answer": "NameError: name 'x' is not defined", "explanation": "x is not defined before use. Initialize x = some_value first." },
+        { "id": "D3", "question": "Predict output:\n\na = 5\nb = 5.0\nprint(a == b, a is b)", "marks": 2, "answer": "True False", "explanation": "== checks value (5 == 5.0), is checks identity (different types, different memory)." },
+        { "id": "D4", "question": "Find error:\n\nfor i in range(5):\n    print(i)\ni += 1", "marks": 2, "answer": "No error but i modification outside loop scope", "explanation": "Loop variable i exists after loop in Python. No error, but modifying it may be confusing." },
+        { "id": "D5", "question": "Predict output:\n\ns = 'hello'\ns = s.upper()\nprint(s)", "marks": 2, "answer": "HELLO", "explanation": "upper() returns new string, doesn't modify original. Reassignment makes s point to new string." },
+        { "id": "D6", "question": "Find error:\n\ndef func():\n    x = 10\nfunc()\nprint(x)", "marks": 2, "answer": "NameError: name 'x' is not defined", "explanation": "x is local to func(). Not accessible outside. Use return x or make x global." },
+        { "id": "D7", "question": "Predict output:\n\nmy_dict = {'a': 1, 'b': 2}\nprint('c' in my_dict)\nprint(my_dict.get('c', 0))", "marks": 2, "answer": "False\\n0", "explanation": "in checks keys, 'c' not present so False. get() with default returns 0 for missing key." },
+        { "id": "D8", "question": "Find error:\n\nL = [1, 2, 3]\nprint(L[3])", "marks": 2, "answer": "IndexError: list index out of range", "explanation": "Valid indices are 0, 1, 2. Index 3 doesn't exist." }
+      ]
+    }
+  ]
+}

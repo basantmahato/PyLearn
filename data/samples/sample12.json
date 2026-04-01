@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-12",
+  "title": "File Handling and I/O",
+  "subtitle": "Working with files, CSV, and JSON in Python",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which mode opens file for writing?", "options": ["'r'", "'w'", "'a'", "'x'"], "answer": 1 },
+        { "id": "A2", "question": "Which mode appends to existing file?", "options": ["'w'", "'r+'", "'a'", "'x'"], "answer": 2 },
+        { "id": "A3", "question": "What does read() return?", "options": ["List of lines", "Single string", "Bytes", "File object"], "answer": 1 },
+        { "id": "A4", "question": "Which reads all lines into list?", "options": ["read()", "readline()", "readlines()", "list(file)"], "answer": 2 },
+        { "id": "A5", "question": "What is the with statement for?", "options": ["Decorators", "Context manager", "Loops", "Exceptions"], "answer": 1 },
+        { "id": "A6", "question": "Which module handles CSV files?", "options": ["csv", "csvfile", "spreadsheet", "excel"], "answer": 0 },
+        { "id": "A7", "question": "What does json.dumps() do?", "options": ["Read JSON file", "Parse JSON string", "Convert Python to JSON string", "Write to file"], "answer": 2 },
+        { "id": "A8", "question": "Which method writes string to file?", "options": ["print()", "write()", "writeline()", "put()"], "answer": 1 },
+        { "id": "A9", "question": "What does 'rb' mode mean?", "options": ["Read binary", "Read bytes", "Read buffer", "Read block"], "answer": 0 },
+        { "id": "A10", "question": "Which checks if file exists?", "options": ["os.exists()", "os.path.exists()", "file.exists()", "path.exists()"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain file modes: r, w, a, x, b, + with examples.", "marks": 3, "keywords": ["read", "write", "append", "exclusive", "binary", "update", "text mode"] },
+        { "id": "B2", "question": "What is the advantage of using with statement for files?", "marks": 3, "keywords": ["context manager", "auto close", "cleanup", "exception safe", "finally block", "resource management"] },
+        { "id": "B3", "question": "Explain seek() and tell() methods for file positioning.", "marks": 3, "keywords": ["move cursor", "current position", "offset", "whence", "beginning", "current", "end", "random access"] },
+        { "id": "B4", "question": "What is the difference between readline() and readlines()?", "marks": 3, "keywords": ["one line", "all lines", "string", "list", "iterator", "memory", "efficient"] },
+        { "id": "B5", "question": "Explain CSV module: reader vs DictReader, writer vs DictWriter.", "marks": 3, "keywords": ["comma separated", "dictionary", "header row", "fieldnames", "rows", "columns", "structured data"] },
+        { "id": "B6", "question": "What are JSON and pickle modules? Compare their use cases.", "marks": 3, "keywords": ["text format", "binary format", "human readable", "Python objects", "serialization", "cross language"] },
+        { "id": "B7", "question": "Explain file encoding and why UTF-8 is recommended.", "marks": 3, "keywords": ["character set", "ASCII", "Unicode", "special characters", "language support", "encoding parameter"] },
+        { "id": "B8", "question": "How to handle large files that don't fit in memory?", "marks": 3, "keywords": ["chunk reading", "buffer", "streaming", "line by line", "generator", "lazy loading"] },
+        { "id": "B9", "question": "Explain os and shutil modules for file operations.", "marks": 3, "keywords": ["rename", "delete", "copy", "move", "directory", "path operations", "high level", "shell utilities"] },
+        { "id": "B10", "question": "What is file buffering and flush() method?", "marks": 3, "keywords": ["write buffer", "immediate write", "performance", "disk write", "close implicit flush", "force write"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to count lines, words, and characters in a file.", "marks": 5, "hints": ["Open with with statement", "Iterate lines", "Split words", "Sum lengths"] },
+        { "id": "C2", "question": "Create a program to copy one file to another (binary mode).", "marks": 5, "hints": ["Open source in 'rb'", "Open dest in 'wb'", "Read chunks", "Write chunks", "Close both"] },
+        { "id": "C3", "question": "Write a CSV reader that calculates average of numeric columns.", "marks": 5, "hints": ["Use csv.DictReader", "Skip header", "Convert to float", "Accumulate sums", "Calculate average"] },
+        { "id": "C4", "question": "Create a JSON converter that transforms CSV to JSON format.", "marks": 5, "hints": ["Read CSV with DictReader", "Convert to list of dicts", "Use json.dump()", "Write to JSON file"] },
+        { "id": "C5", "question": "Write a log file analyzer that counts ERROR vs WARNING entries.", "marks": 5, "hints": ["Open log file", "Iterate lines", "Check line.startswith() or 'in'", "Maintain counters", "Print summary"] },
+        { "id": "C6", "question": "Create a configuration file parser (simple key=value format).", "marks": 5, "hints": ["Read line by line", "Split on '='", "Strip whitespace", "Store in dictionary", "Handle comments with #"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find error:\n\nf = open('data.txt')\nf.write('Hello')\nf.close()", "marks": 3, "answer": "io.UnsupportedOperation: not writable", "explanation": "File opened in default read mode ('r'). Cannot write. Use 'w' or 'a' mode for writing." },
+        { "id": "D2", "question": "Predict behavior:\n\nwith open('test.txt', 'w') as f:\n    f.write('Line 1')\n    f.write('Line 2')\nprint(f.closed)", "marks": 2, "answer": "True", "explanation": "with statement automatically closes file when block exits. f.closed will be True." },
+        { "id": "D3", "question": "Find error:\n\nf = open('data.txt', 'r')\nprint(f.read())\nprint(f.read())\nf.close()", "marks": 2, "answer": "Second read() returns empty string (not error)", "explanation": "After first read(), cursor is at end. Second read() returns ''. Use f.seek(0) to reset." },
+        { "id": "D4", "question": "Predict output:\n\nimport json\ndata = {'a': 1, 'b': [2, 3]}\nprint(json.dumps(data, indent=2))", "marks": 3, "answer": "{\n  \"a\": 1,\n  \"b\": [\n    2,\n    3\n  ]\n}", "explanation": "dumps() converts dict to JSON string. indent=2 adds pretty formatting with 2-space indentation." },
+        { "id": "D5", "question": "Find error:\n\nimport csv\nwith open('data.csv', 'r') as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row[5])", "marks": 3, "answer": "IndexError: list index out of range", "explanation": "Row may not have 6 elements. Check len(row) before accessing or use DictReader with field validation." },
+        { "id": "D6", "question": "Predict behavior:\n\nf = open('test.txt', 'w')\nf.write('Hello')\n# Forgot to close\nprint('Done')", "marks": 2, "answer": "Data may not be written to disk (buffered)", "explanation": "Without close() or flush(), data stays in buffer. Use with statement or explicit f.close()." },
+        { "id": "D7", "question": "Find error:\n\nwith open('data.txt', 'rb') as f:\n    content = f.read()\n    print(content.upper())", "marks": 2, "answer": "AttributeError: 'bytes' object has no attribute 'upper'", "explanation": "'rb' mode returns bytes, not string. Use .decode() or open in text mode 'r' with encoding." },
+        { "id": "D8", "question": "Predict output:\n\nwith open('test.txt', 'w') as f:\n    print('Hello', 'World', sep='-', file=f)\n# File now contains", "marks": 3, "answer": "Hello-World\\n", "explanation": "print() with file= writes to file instead of stdout. sep='-' joins args. print adds newline by default." }
+      ]
+    }
+  ]
+}

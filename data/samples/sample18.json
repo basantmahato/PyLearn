@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-18",
+  "title": "Comprehensive Python Practice 3",
+  "subtitle": "Mixed topics: Data structures, algorithms, best practices",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What is time complexity of list.append()?", "options": ["O(1) amortized", "O(n)", "O(log n)", "O(n²)"], "answer": 0 },
+        { "id": "A2", "question": "Which data structure for fast lookups?", "options": ["list", "dict", "tuple", "str"], "answer": 1 },
+        { "id": "A3", "question": "What is list comprehension syntax?", "options": ["[x for x in items]", "{x for x in items}", "(x for x in items)", "<x for x in items>"], "answer": 0 },
+        { "id": "A4", "question": "Which is NOT a Python sequence?", "options": ["list", "dict", "tuple", "range"], "answer": 1 },
+        { "id": "A5", "question": "What does zip() return in Python 3?", "options": ["list", "iterator", "tuple", "dict"], "answer": 1 },
+        { "id": "A6", "question": "What is the default recursion limit?", "options": ["500", "1000", "2000", "unlimited"], "answer": 1 },
+        { "id": "A7", "question": "Which sorts in-place?", "options": ["sorted()", "list.sort()", "reversed()", "Both A and B"], "answer": 1 },
+        { "id": "A8", "question": "What is a generator function?", "options": ["Returns iterator", "Returns list", "Returns dict", "Returns tuple"], "answer": 0 },
+        { "id": "A9", "question": "Which keyword creates generator?", "options": ["return", "yield", "generate", "iter"], "answer": 1 },
+        { "id": "A10", "question": "What is time complexity of dict lookup?", "options": ["O(1) average", "O(n)", "O(log n)", "O(n²)"], "answer": 0 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between list and generator comprehension.", "marks": 3, "keywords": ["memory", "lazy evaluation", "[] vs ()", "immediate", "on demand", "iterator"] },
+        { "id": "B2", "question": "What is the difference between deep copy and shallow copy?", "marks": 3, "keywords": ["nested objects", "independent", "same reference", "recursive", "copy module", "deepcopy"] },
+        { "id": "B3", "question": "Explain the map(), filter(), and reduce() functions.", "marks": 3, "keywords": ["apply function", "select elements", "accumulate", "functional", "lambda", "comprehension alternative"] },
+        { "id": "B4", "question": "What are Python's built-in data structures? Compare them.", "marks": 3, "keywords": ["list", "tuple", "set", "dict", "frozen set", "performance", "use cases"] },
+        { "id": "B5", "question": "Explain the any() and all() functions.", "marks": 3, "keywords": ["boolean check", "at least one", "all true", "iterable", "short circuit", "membership"] },
+        { "id": "B6", "question": "What is memoization? How to implement it?", "marks": 3, "keywords": ["cache results", "fibonacci", "dictionary", "functools.lru_cache", "performance", "recursive"] },
+        { "id": "B7", "question": "Explain itertools module and common functions.", "marks": 3, "keywords": ["count", "cycle", "chain", "groupby", "combinations", "permutations", "iterator tools"] },
+        { "id": "B8", "question": "What is the difference between sort() and sorted()?", "marks": 3, "keywords": ["in place", "new list", "returns None", "stable sort", "key function", "reverse"] },
+        { "id": "B9", "question": "Explain the collections module: Counter, defaultdict, OrderedDict.", "marks": 3, "keywords": ["count elements", "default factory", "remember order", "specialized containers", "convenience"] },
+        { "id": "B10", "question": "What are Python's time complexities for common operations?", "marks": 3, "keywords": ["list append O(1)", "dict lookup O(1)", "list search O(n)", "set operations", "Big O notation"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Implement binary search on a sorted list.", "marks": 5, "hints": ["O(log n) time", "Use two pointers", "Compare with middle", "Adjust search range", "Handle not found"] },
+        { "id": "C2", "question": "Create a custom queue class using collections.deque.", "marks": 5, "hints": ["Use deque for O(1) operations", "Implement enqueue, dequeue", "Add peek and is_empty", "Use append() and popleft()"] },
+        { "id": "C3", "question": "Write a function to flatten nested lists of any depth.", "marks": 5, "hints": ["Use recursion", "Check isinstance(list)", "Yield from recursive call", "Generator for memory efficiency"] },
+        { "id": "C4", "question": "Implement LRU cache using OrderedDict or dict + linked list concept.", "marks": 5, "hints": ["Track access order", "Move to end on access", "Remove first when full", "Use OrderedDict or dict with custom node"] },
+        { "id": "C5", "question": "Write a function to find all permutations of a string.", "marks": 5, "hints": ["Use recursion or itertools.permutations", "Backtracking approach", "Swap characters", "Collect results"] },
+        { "id": "C6", "question": "Create a priority queue implementation using heapq module.", "marks": 5, "hints": ["Use heapq.heappush", "Use heapq.heappop", "Store (priority, item) tuples", "Lowest priority first"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nsquares = [x**2 for x in range(5)]\nprint(squares)", "marks": 2, "answer": "[0, 1, 4, 9, 16]", "explanation": "List comprehension squares each number 0-4. Creates new list with results." },
+        { "id": "D2", "question": "Find error:\n\ngen = (x**2 for x in range(3))\nprint(len(gen))", "marks": 2, "answer": "TypeError: object of type 'generator' has no len()", "explanation": "Generators don't support len(). They produce values on demand and don't store them all." },
+        { "id": "D3", "question": "Predict output:\n\nfrom functools import reduce\nresult = reduce(lambda a, b: a * b, [1, 2, 3, 4])\nprint(result)", "marks": 2, "answer": "24", "explanation": "reduce applies function cumulatively: ((1*2)*3)*4 = 24. Product of all elements." },
+        { "id": "D4", "question": "Find error:\n\ndef infinite():\n    n = 0\n    while True:\n        yield n\n        n += 1\nlist(infinite())", "marks": 3, "answer": "MemoryError or hangs/crashes", "explanation": "Trying to convert infinite generator to list never ends. Use islice() or take first N with next() in loop." },
+        { "id": "D5", "question": "Predict output:\n\na = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a, b)", "marks": 2, "answer": "[1, 2, 3] [1, 2, 3, 4]", "explanation": "copy() creates shallow copy. a and b are independent lists. Modifying b doesn't affect a." },
+        { "id": "D6", "question": "Find error:\n\nimport copy\na = [[1], [2], [3]]\nb = copy.copy(a)\nb[0][0] = 99\nprint(a)", "marks": 3, "answer": "[[99], [2], [3]] - not error but unexpected", "explanation": "shallow copy copies outer list but nested lists are still references. Use deepcopy() for full independence." },
+        { "id": "D7", "question": "Predict output:\n\nfrom collections import Counter\nwords = ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple']\nc = Counter(words)\nprint(c.most_common(2))", "marks": 3, "answer": "[('apple', 3), ('banana', 2)]", "explanation": "Counter counts occurrences. most_common(2) returns top 2 items sorted by count descending." },
+        { "id": "D8", "question": "Find error:\n\nitems = [3, 1, 4, 1, 5]\nitems.sort().reverse()\nprint(items)", "marks": 2, "answer": "AttributeError: 'NoneType' object has no attribute 'reverse'", "explanation": "sort() returns None (in-place). Can't chain methods that return None. Use items.sort() then items.reverse()." }
+      ]
+    }
+  ]
+}

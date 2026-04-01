@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-14",
+  "title": "Object-Oriented Programming Basics",
+  "subtitle": "Classes, objects, inheritance, and encapsulation",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which keyword defines a class?", "options": ["class", "struct", "object", "define"], "answer": 0 },
+        { "id": "A2", "question": "What is __init__?", "options": ["Destructor", "Constructor", "Initializer", "Finalizer"], "answer": 2 },
+        { "id": "A3", "question": "What is self in instance methods?", "options": ["Class", "Instance", "Module", "Global"], "answer": 1 },
+        { "id": "A4", "question": "Which creates instance of class Foo?", "options": ["Foo()", "new Foo", "create Foo", "instance Foo"], "answer": 0 },
+        { "id": "A5", "question": "What is inheritance in OOP?", "options": ["Data hiding", "Code reuse from parent", "Polymorphism", "Encapsulation"], "answer": 1 },
+        { "id": "A6", "question": "Which method is called when object created?", "options": ["__del__", "__init__", "__new__", "__create__"], "answer": 1 },
+        { "id": "A7", "question": "What does super() do?", "options": ["Calls parent class method", "Creates instance", "Deletes object", "Imports module"], "answer": 0 },
+        { "id": "A8", "question": "Which naming convention indicates private?", "options": ["name", "_name", "__name", "name_"], "answer": 2 },
+        { "id": "A9", "question": "What is @property decorator for?", "options": ["Class method", "Getter method", "Static method", "Private method"], "answer": 1 },
+        { "id": "A10", "question": "What is __str__ used for?", "options": ["String representation", "String conversion", "String comparison", "String creation"], "answer": 0 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between class and object with examples.", "marks": 3, "keywords": ["blueprint", "instance", "template", "actual", "multiple objects", "one class"] },
+        { "id": "B2", "question": "What are the four pillars of OOP? Explain each briefly.", "marks": 3, "keywords": ["encapsulation", "inheritance", "polymorphism", "abstraction", "data hiding", "code reuse"] },
+        { "id": "B3", "question": "Explain __init__, __str__, and __repr__ methods.", "marks": 3, "keywords": ["constructor", "string representation", "debug", "print", "eval", "unambiguous"] },
+        { "id": "B4", "question": "What is the difference between class methods and static methods?", "marks": 3, "keywords": ["@classmethod", "@staticmethod", "cls", "self", "instance vs class", "utility"] },
+        { "id": "B5", "question": "Explain single vs multiple inheritance in Python.", "marks": 3, "keywords": ["one parent", "multiple parents", "MRO", "diamond problem", "Method Resolution Order", "super()"] },
+        { "id": "B6", "question": "What is encapsulation? How is it achieved in Python?", "marks": 3, "keywords": ["data hiding", "private", "public", "protected", "getter", "setter", "property"] },
+        { "id": "B7", "question": "Explain the purpose of self and cls parameters.", "marks": 3, "keywords": ["instance reference", "class reference", "convention", "automatic", "bind method", "access attributes"] },
+        { "id": "B8", "question": "What is method overriding? When is it useful?", "marks": 3, "keywords": ["same name", "parent child", "different implementation", "polymorphism", "customize behavior", "super()"] },
+        { "id": "B9", "question": "Explain __name__ == '__main__' in OOP context.", "marks": 3, "keywords": ["module entry point", "prevent execution on import", "test code", "script vs module", "best practice"] },
+        { "id": "B10", "question": "What are abstract base classes? How to create them?", "marks": 3, "keywords": ["ABC", "abstractmethod", "cannot instantiate", "must implement", "abc module", "interface"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Create a BankAccount class with deposit, withdraw, and balance methods.", "marks": 5, "hints": ["__init__ with balance", "Validate amount > 0", "Check sufficient funds", "Private balance attribute", "Property getter"] },
+        { "id": "C2", "question": "Write a Rectangle class with area and perimeter methods. Include validation.", "marks": 5, "hints": ["Width and height attributes", "Validate positive numbers", "Area = w*h", "Perimeter = 2*(w+h)", "__str__ method"] },
+        { "id": "C3", "question": "Create a Student class with inheritance: Person -> Student -> GraduateStudent.", "marks": 5, "hints": ["Person has name, age", "Student adds grade, subjects", "Graduate adds thesis, advisor", "Use super().__init__()", "Override methods"] },
+        { "id": "C4", "question": "Implement a counter class using __iter__ and __next__ for custom iteration.", "marks": 5, "hints": ["Store current value", "Implement iterator protocol", "__iter__ returns self", "__next__ increments and returns", "StopIteration at limit"] },
+        { "id": "C5", "question": "Create a Vector class supporting + and * operators using operator overloading.", "marks": 5, "hints": ["__add__ for +", "__mul__ for *", "Component-wise operations", "Return new Vector", "Validate same dimensions"] },
+        { "id": "C6", "question": "Write a Singleton class ensuring only one instance exists.", "marks": 5, "hints": ["Override __new__", "Store instance in class attribute", "Check if exists before creating", "Thread-safe consideration"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find error:\n\nclass Foo:\n    def __init__():\n        self.x = 10\nf = Foo()", "marks": 2, "answer": "TypeError: __init__() takes 0 positional arguments but 1 was given", "explanation": "__init__ needs self parameter. Should be def __init__(self):." },
+        { "id": "D2", "question": "Predict output:\n\nclass Counter:\n    count = 0\n    def __init__(self):\n        Counter.count += 1\na = Counter()\nb = Counter()\nprint(Counter.count)", "marks": 3, "answer": "2", "explanation": "count is class variable shared by all instances. Each __init__ increments it." },
+        { "id": "D3", "question": "Find error:\n\nclass Parent:\n    def greet(self):\n        print('Hello')\nclass Child(Parent):\n    def greet(self):\n        super.greet()\n        print('Hi')\nc = Child()\nc.greet()", "marks": 2, "answer": "TypeError: super() argument 1 must be type, not None", "explanation": "super() needs parentheses. Should be super().greet() in Python 3." },
+        { "id": "D4", "question": "Predict output:\n\nclass Box:\n    def __init__(self, x):\n        self.__x = x\nb = Box(5)\nprint(b._Box__x)", "marks": 3, "answer": "5", "explanation": "Name mangling: __x becomes _Box__x. Can still access via mangled name, though not recommended." },
+        { "id": "D5", "question": "Find error:\n\nclass Math:\n    @staticmethod\n    def add(a, b):\n        return a + b\nm = Math()\nprint(m.add(2, 3))", "marks": 2, "answer": "No error (works correctly)", "explanation": "Static methods can be called on instance or class. Both work fine." },
+        { "id": "D6", "question": "Predict behavior:\n\nclass A:\n    x = 1\na1 = A()\na2 = A()\na1.x = 2\nprint(a2.x)\nprint(A.x)", "marks": 3, "answer": "1\\n1", "explanation": "a1.x creates instance variable. a2.x still refers to class variable (1). A.x is 1." },
+        { "id": "D7", "question": "Find error:\n\nclass Circle:\n    def __init__(self, r):\n        self.r = r\n    def area(self):\n        return 3.14 * r ** 2\nc = Circle(5)\nprint(c.area())", "marks": 2, "answer": "NameError: name 'r' is not defined", "explanation": "Should use self.r to access instance variable. r alone refers to undefined local variable." },
+        { "id": "D8", "question": "Predict output:\n\nclass Num:\n    def __init__(self, n):\n        self.n = n\n    def __str__(self):\n        return f'Num({self.n})'\n    def __repr__(self):\n        return str(self.n)\nn = Num(42)\nprint(n)\nprint([n])", "marks": 3, "answer": "Num(42)\\n[42]", "explanation": "print() uses __str__. List uses __repr__ for elements. Different representations." }
+      ]
+    }
+  ]
+}

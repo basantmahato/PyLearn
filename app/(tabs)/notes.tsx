@@ -1,14 +1,14 @@
-import React, { useState, useMemo } from "react";
-import { ScrollView, View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+import React, { useMemo, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { UNITS } from "@/constants/chapters";
-import { Header } from "@/components/ui/Header";
 import { SearchHero } from "@/components/notes/SearchHero";
-import { UnitSection } from "@/components/notes/UnitSection";
 import { TopicDiscovery } from "@/components/notes/TopicDiscovery";
+import { UnitSection } from "@/components/notes/UnitSection";
+import { Header } from "@/components/ui/Header";
+import { UNITS } from "@/constants/chapters";
 
 export default function NotesScreen() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,11 +41,8 @@ export default function NotesScreen() {
     <SafeAreaView className="flex-1 bg-background" edges={["top"]}>
       <StatusBar style="dark" />
 
-      {/* Shared Header Component with Search Toggle */}
-      <Header 
-        showSearch={true} 
-        onSearchPress={() => {/* Optional: focus search input if needed */}} 
-      />
+      {/* Shared Header Component */}
+      <Header showSearch={false} />
 
       <ScrollView contentContainerClassName="pb-32" showsVerticalScrollIndicator={false}>
         <View className="max-w-5xl self-center w-full px-6 pt-8 md:pt-12">

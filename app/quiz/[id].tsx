@@ -1,13 +1,15 @@
-import React, { useState, useMemo } from "react";
-import { View, Text, Pressable, ScrollView, Dimensions } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import React, { useMemo, useState } from "react";
+import { Dimensions, Pressable, ScrollView, Text, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, Layout } from "react-native-reanimated";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 // Import all quiz data
 import ch1Data from "@/data/quiz/ch1.json";
+import ch10Data from "@/data/quiz/ch10.json";
+import ch11Data from "@/data/quiz/ch11.json";
 import ch2Data from "@/data/quiz/ch2.json";
 import ch3Data from "@/data/quiz/ch3.json";
 import ch4Data from "@/data/quiz/ch4.json";
@@ -16,8 +18,6 @@ import ch6Data from "@/data/quiz/ch6.json";
 import ch7Data from "@/data/quiz/ch7.json";
 import ch8Data from "@/data/quiz/ch8.json";
 import ch9Data from "@/data/quiz/ch9.json";
-import ch10Data from "@/data/quiz/ch10.json";
-import ch11Data from "@/data/quiz/ch11.json";
 
 const QUIZ_REGISTRY: Record<string, any> = {
   "1": ch1Data,
@@ -38,6 +38,7 @@ const { width } = Dimensions.get("window");
 export default function QuizPlayerScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
+  const insets = useSafeAreaInsets();
 
   // Parse ID: "chapterId_setId" e.g. "1_s1"
   const [chapterId, setId] = (id as string).split("_");
@@ -154,7 +155,7 @@ export default function QuizPlayerScreen() {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-background" edges={["top"]}>
+    <SafeAreaView className="flex-1 bg-background" edges={["top", "bottom"]}>
       <StatusBar style="dark" />
       
       {/* Header & Progress */}
@@ -244,7 +245,7 @@ export default function QuizPlayerScreen() {
       </ScrollView>
 
       {/* Action Footer */}
-      <View className="px-6 pb-8 pt-4 border-t border-outline-variant/10">
+      <View className="px-6 pt-4 border-t border-outline-variant/10" style={{ paddingBottom: Math.max(insets.bottom, 16) }}>
         {!isAnswered ? (
           <Pressable
             disabled={selectedOption === null}

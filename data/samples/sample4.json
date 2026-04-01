@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-4",
+  "title": "Input/Output and String Basics",
+  "subtitle": "Mastering User Interaction and String Manipulation",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Easy",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What does input() function return?", "options": ["int", "float", "str", "bool"], "answer": 2 },
+        { "id": "A2", "question": "Which function displays output on screen?", "options": ["display()", "show()", "print()", "output()"], "answer": 2 },
+        { "id": "A3", "question": "What is the default end parameter of print()?", "options": ["' '", "''", "'\\n'", "None"], "answer": 2 },
+        { "id": "A4", "question": "How to get length of a string?", "options": ["length()", "len()", "size()", "count()"], "answer": 1 },
+        { "id": "A5", "question": "What is 'Hello' + 'World'?", "options": ["HelloWorld", "Hello World", "Error", "Hello+World"], "answer": 0 },
+        { "id": "A6", "question": "What does 'Hi' * 3 produce?", "options": ["HiHiHi", "Hi 3", "Error", "[Hi, Hi, Hi]"], "answer": 0 },
+        { "id": "A7", "question": "Which escape sequence creates a new line?", "options": ["/n", "\\n", "\\t", "\\r"], "answer": 1 },
+        { "id": "A8", "question": "What is s[0] if s = 'Python'?", "options": ["P", "p", "Python", "Error"], "answer": 0 },
+        { "id": "A9", "question": "What does s[-1] return?", "options": ["First character", "Last character", "Error", "None"], "answer": 1 },
+        { "id": "A10", "question": "How to format: print('Value:', x)?", "options": ["f'Value: {x}'", "'Value: %x' % x", "Both", "None"], "answer": 2 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between input() and print() functions.", "marks": 3, "keywords": ["input", "output", "read", "display", "user", "console"] },
+        { "id": "B2", "question": "What is string concatenation? Give two ways to concatenate strings.", "marks": 3, "keywords": ["join", "+", "+=", "format", "f-string", "concatenate"] },
+        { "id": "B3", "question": "Explain string indexing with positive and negative indices.", "marks": 3, "keywords": ["0", "-1", "first", "last", "position", "character"] },
+        { "id": "B4", "question": "What are f-strings? How are they different from regular strings?", "marks": 3, "keywords": ["formatted", "interpolation", "f'...{var}'", "embedded", "expression"] },
+        { "id": "B5", "question": "Explain the sep and end parameters of print() function.", "marks": 3, "keywords": ["separator", "terminator", "space", "newline", "customize"] },
+        { "id": "B6", "question": "What is string immutability? Why are strings immutable in Python?", "marks": 3, "keywords": ["cannot change", "new object", "hashable", "memory", "security"] },
+        { "id": "B7", "question": "Explain string slicing syntax with start, stop, and step.", "marks": 3, "keywords": ["[start:stop:step]", "substring", "extract", "range"] },
+        { "id": "B8", "question": "How to convert a number to string and vice versa?", "marks": 2, "keywords": ["str()", "int()", "float()", "type cast", "convert"] },
+        { "id": "B9", "question": "What is the difference between str() and repr()?", "marks": 3, "keywords": ["readable", "unambiguous", "debug", "representation", "eval"] },
+        { "id": "B10", "question": "Explain raw strings with an example. When are they useful?", "marks": 3, "keywords": ["r'...'", "backslash", "escape", "regex", "path", "literal"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to get user's name and print a personalized greeting.", "marks": 5, "hints": ["Use input() for name", "Use f-string for greeting", "Include the name in output"] },
+        { "id": "C2", "question": "Create a program that takes two numbers and prints their sum, difference, product, and quotient.", "marks": 5, "hints": ["Convert input to float/int", "Perform calculations", "Print with labels"] },
+        { "id": "C3", "question": "Write a program to format and display a student's marks card with name, marks, and percentage.", "marks": 5, "hints": ["Use f-strings", "Align columns", "Show percentage calculation"] },
+        { "id": "C4", "question": "Create a program that reverses a user-input string using slicing.", "marks": 5, "hints": ["Use [::-1] slicing", "Print original and reversed", "Works for any length"] },
+        { "id": "C5", "question": "Write a program to demonstrate all string repetition and concatenation operations.", "marks": 5, "hints": ["Show + operator", "Show * operator", "Use variables and literals"] },
+        { "id": "C6", "question": "Create a program that extracts first, middle, and last characters from a string.", "marks": 5, "hints": ["Use indexing [0]", "Use len() for middle", "Use [-1] for last"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find error:\n\nage = input('Age: ')\nprint('In 5 years:', age + 5)", "marks": 3, "answer": "TypeError: can only concatenate str (not 'int') to str", "explanation": "input() returns string. Convert: int(age) + 5 or age = int(input(...))" },
+        { "id": "D2", "question": "Predict output:\n\ns = 'Python'\nprint(s[0])\nprint(s[-1])\nprint(s[2:4])", "marks": 3, "answer": "P\\nn\\nth", "explanation": "[0] is first char 'P', [-1] is last 'n', [2:4] is index 2,3 = 'th'" },
+        { "id": "D3", "question": "Find error:\n\ns = 'Hello'\ns[0] = 'h'\nprint(s)", "marks": 3, "answer": "TypeError: 'str' object does not support item assignment", "explanation": "Strings are immutable. Use s = 'h' + s[1:] or s.replace('H', 'h')." },
+        { "id": "D4", "question": "Predict output:\n\nprint('A', 'B', 'C', sep='-', end='!')", "marks": 2, "answer": "A-B-C!", "explanation": "sep='-' joins arguments with -, end='!' replaces default newline with !" },
+        { "id": "D5", "question": "Find error:\n\nprint('Result: %d' % '5')", "marks": 2, "answer": "TypeError: %d format: a number is required, not str", "explanation": "%d expects integer. Use %s for string or convert to int first." },
+        { "id": "D6", "question": "Predict output:\n\ns = 'abcd'\nprint(s[::2])\nprint(s[::-1])", "marks": 2, "answer": "ac\\ndcba", "explanation": "[::2] takes every 2nd char starting from 0. [::-1] reverses the string." },
+        { "id": "D7", "question": "Find error:\n\nname = input('Name: ')\nprint(f'Hello, {Name}')", "marks": 2, "answer": "NameError: name 'Name' is not defined", "explanation": "Case-sensitive! Variable is 'name' (lowercase), used 'Name' (capitalized)." },
+        { "id": "D8", "question": "Predict output:\n\na = '5'\nb = '10'\nprint(a + b)\nprint(int(a) + int(b))", "marks": 3, "answer": "510\\n15", "explanation": "First: string concatenation '5'+'10'='510'. Second: integer addition 5+10=15." }
+      ]
+    }
+  ]
+}

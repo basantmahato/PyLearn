@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-5",
+  "title": "Python Basics Comprehensive",
+  "subtitle": "Complete Assessment of Python Fundamentals",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which is a valid variable name?", "options": ["2name", "_name", "name-2", "class"], "answer": 1 },
+        { "id": "A2", "question": "What is the output of print(type(5/2))?", "options": ["<class 'int'>", "<class 'float'>", "<class 'str'>", "Error"], "answer": 1 },
+        { "id": "A3", "question": "Which is NOT a Python keyword?", "options": ["True", "false", "None", "lambda"], "answer": 1 },
+        { "id": "A4", "question": "What does 'pass' statement do?", "options": ["Skip loop iteration", "Do nothing", "Exit function", "Print blank"], "answer": 1 },
+        { "id": "A5", "question": "How to check if object is of specific type?", "options": ["type()", "isinstance()", "typeof()", "checktype()"], "answer": 1 },
+        { "id": "A6", "question": "What is the scope of a variable defined inside a function?", "options": ["Global", "Local", "Built-in", "Enclosed"], "answer": 1 },
+        { "id": "A7", "question": "Which function rounds a number to nearest integer?", "options": ["ceil()", "floor()", "round()", "int()"], "answer": 2 },
+        { "id": "A8", "question": "What is the result of '5' + str(5)?", "options": ["10", "55", "'55'", "Error"], "answer": 2 },
+        { "id": "A9", "question": "How to get ASCII value of a character?", "options": ["ascii()", "ord()", "chr()", "value()"], "answer": 1 },
+        { "id": "A10", "question": "What does help() function do?", "options": ["Print error help", "Show documentation", "Debug code", "Get system help"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between keywords and identifiers with examples.", "marks": 3, "keywords": ["reserved", "predefined", "variable names", "def", "class", "if", "naming"] },
+        { "id": "B2", "question": "What are Python's naming conventions for variables? List the rules.", "marks": 3, "keywords": ["letters", "underscore", "numbers", "no special", "case sensitive", "snake_case"] },
+        { "id": "B3", "question": "Explain the concept of dynamic typing in Python. How is it different from static typing?", "marks": 3, "keywords": ["runtime", "type checking", "no declaration", "flexible", "duck typing"] },
+        { "id": "B4", "question": "What is the difference between global and local variables?", "marks": 3, "keywords": ["scope", "function", "outside", "inside", "global keyword", "lifetime"] },
+        { "id": "B5", "question": "Explain the use of del statement with examples.", "marks": 3, "keywords": ["delete", "remove", "variable", "list item", "free memory", "unbind"] },
+        { "id": "B6", "question": "What are docstrings? How are they different from comments?", "marks": 3, "keywords": ["documentation", "\"\"\"", "help()", "__doc__", "runtime accessible", "module"] },
+        { "id": "B7", "question": "Explain the assert statement with a practical example.", "marks": 3, "keywords": ["debug", "assertion", "condition", "AssertionError", "testing", "sanity check"] },
+        { "id": "B8", "question": "What is the difference between eval() and exec() functions?", "marks": 3, "keywords": ["expression", "statement", "execute", "return value", "security", "string"] },
+        { "id": "B9", "question": "Explain the concept of garbage collection in Python.", "marks": 3, "keywords": ["memory management", "reference counting", "del", "unused objects", "automatic"] },
+        { "id": "B10", "question": "What is the purpose of __name__ == '__main__'? Explain.", "marks": 3, "keywords": ["entry point", "direct run", "imported", "module", "script", "conditional"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program that calculates compound interest using the formula A = P(1 + r/n)^(nt).", "marks": 5, "hints": ["Take P, r, n, t as input", "Use ** for power", "Convert percentage to decimal", "Format output"] },
+        { "id": "C2", "question": "Create a program to convert binary to decimal and vice versa.", "marks": 5, "hints": ["Use int(string, 2) for binary to decimal", "Use bin() for decimal to binary", "Remove '0b' prefix"] },
+        { "id": "C3", "question": "Write a program to solve a quadratic equation ax² + bx + c = 0.", "marks": 5, "hints": ["Calculate discriminant b²-4ac", "Use math.sqrt for square root", "Handle real and complex roots"] },
+        { "id": "C4", "question": "Create a program that generates a simple password from user's initials and birth year.", "marks": 5, "hints": ["Get name and year as input", "Extract initials using split() and indexing", "Concatenate with year"] },
+        { "id": "C5", "question": "Write a program to format a number with comma separators and fixed decimal places.", "marks": 5, "hints": ["Use format() or f-string", "{:,.2f} format specifier", "Show large number example"] },
+        { "id": "C6", "question": "Create a program that calculates age in years, months, and days from birthdate.", "marks": 5, "hints": ["Use datetime module", "Get current date", "Calculate difference", "Break into components"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Find error:\n\ndef calculate():\n    result = 10\nprint(result)", "marks": 3, "answer": "NameError: name 'result' is not defined", "explanation": "result is a local variable inside calculate(). It's not accessible outside the function." },
+        { "id": "D2", "question": "Predict output:\n\nx = 10\ndef func():\n    x = 20\n    print(x)\nfunc()\nprint(x)", "marks": 3, "answer": "20\\n10", "explanation": "Local x shadows global x. Inside func(), local x=20 is used. Outside, global x=10 is used." },
+        { "id": "D3", "question": "Find error:\n\ndef greet(name='World', greeting):\n    print(greeting, name)", "marks": 3, "answer": "SyntaxError: non-default argument follows default argument", "explanation": "Default arguments must come after non-default arguments. Reverse the order." },
+        { "id": "D4", "question": "Predict output:\n\nprint(0.1 + 0.2 == 0.3)\nprint(round(0.1 + 0.2, 1) == 0.3)", "marks": 2, "answer": "False\\nTrue", "explanation": "Floating point precision issue. 0.1+0.2 is actually 0.30000000000000004. Round fixes this." },
+        { "id": "D5", "question": "Find error:\n\nnumbers = [1, 2, 3]\nprint(numbers[3])", "marks": 2, "answer": "IndexError: list index out of range", "explanation": "Valid indices are 0, 1, 2 for a 3-element list. Index 3 doesn't exist." },
+        { "id": "D6", "question": "Predict output:\n\na = [1, 2, 3]\nb = a\nc = a[:]\na.append(4)\nprint(b)\nprint(c)", "marks": 3, "answer": "[1, 2, 3, 4]\\n[1, 2, 3]", "explanation": "b is reference to same list as a. c is a shallow copy using slicing, so it's independent." },
+        { "id": "D7", "question": "Find error:\n\nimport math\nprint(math.pi())", "marks": 2, "answer": "TypeError: 'float' object is not callable", "explanation": "math.pi is a constant (float), not a function. Remove the parentheses." },
+        { "id": "D8", "question": "Predict output:\n\nmy_dict = {'a': 1, 'b': 2}\nprint(my_dict.get('c', 'Not found'))\nprint(my_dict['c'])", "marks": 2, "answer": "Not found\\nKeyError: 'c'", "explanation": "get() returns default if key missing. Direct access with [] raises KeyError if key missing." }
+      ]
+    }
+  ]
+}

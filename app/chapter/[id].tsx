@@ -1,16 +1,18 @@
-import React, { useMemo } from "react";
-import { View, Text, ScrollView, Pressable, Platform } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import React, { useMemo } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 // Content Renderer Components
-import { ParagraphBlock, ListBlock, CodeBlock } from "@/components/chapter/ContentBlocks";
+import { CodeBlock, ListBlock, ParagraphBlock } from "@/components/chapter/ContentBlocks";
 import { PracticeSection } from "@/components/chapter/PracticeSection";
 
 // Data Source Mapping (Simulating dynamic local content)
 import ch1Data from "@/data/notes/ch1/notes.json";
+import ch10Data from "@/data/notes/ch10/notes.json";
+import ch11Data from "@/data/notes/ch11/notes.json";
 import ch2Data from "@/data/notes/ch2/notes.json";
 import ch3Data from "@/data/notes/ch3/notes.json";
 import ch4Data from "@/data/notes/ch4/notes.json";
@@ -19,8 +21,6 @@ import ch6Data from "@/data/notes/ch6/notes.json";
 import ch7Data from "@/data/notes/ch7/notes.json";
 import ch8Data from "@/data/notes/ch8/notes.json";
 import ch9Data from "@/data/notes/ch9/notes.json";
-import ch10Data from "@/data/notes/ch10/notes.json";
-import ch11Data from "@/data/notes/ch11/notes.json";
 
 /**
  * Chapter Detail Screen: The primary learning interface.
@@ -72,7 +72,7 @@ export default function ChapterDetailScreen() {
   }
 
   return (
-    <View className="flex-1 bg-background">
+    <SafeAreaView className="flex-1 bg-background" edges={["bottom"]}>
       <StatusBar style="dark" />
       
       {/* Precision Navigation Header */}
@@ -152,6 +152,6 @@ export default function ChapterDetailScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }

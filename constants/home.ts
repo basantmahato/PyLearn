@@ -36,12 +36,12 @@ export const BENTO_CARDS = [
     route: "/programs"
   },
   {
-    title: "Practice",
-    subtitle: "Live terminal playground",
+    title: "Sample Papers",
+    subtitle: "Previous year questions",
     progress: 20,
-    icon: "console-line",
+    icon: "file-document-multiple",
     color: "primary-container",
-    tag: "20% Mastered",
-    route: "/practice"
+    tag: "20% Done",
+    route: "/sample-papers"
   }
 ];

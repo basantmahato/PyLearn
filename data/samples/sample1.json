@@ -1,0 +1,250 @@
+{
+  "paperId": "py-sample-1",
+  "title": "Python Mastery Sample Paper",
+  "subtitle": "Class 11 Revision - Comprehensive Assessment",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        {
+          "id": "A1",
+          "question": "Which of the following is NOT a Python data type?",
+          "options": ["int", "float", "char", "str"],
+          "answer": 2
+        },
+        {
+          "id": "A2",
+          "question": "What is the output of print(2 ** 3)?",
+          "options": ["6", "8", "9", "Error"],
+          "answer": 1
+        },
+        {
+          "id": "A3",
+          "question": "Which symbol is used for comments in Python?",
+          "options": ["//", "/*", "#", "--"],
+          "answer": 2
+        },
+        {
+          "id": "A4",
+          "question": "What does len([1, 2, 3, 4]) return?",
+          "options": ["3", "4", "5", "Error"],
+          "answer": 1
+        },
+        {
+          "id": "A5",
+          "question": "Which keyword is used to define a function in Python?",
+          "options": ["func", "def", "function", "define"],
+          "answer": 1
+        },
+        {
+          "id": "A6",
+          "question": "What is the result of 10 // 3?",
+          "options": ["3.33", "3", "3.0", "Error"],
+          "answer": 1
+        },
+        {
+          "id": "A7",
+          "question": "Which method adds an element to the end of a list?",
+          "options": ["add()", "append()", "insert()", "extend()"],
+          "answer": 1
+        },
+        {
+          "id": "A8",
+          "question": "What is the output of 'hello'[1:4]?",
+          "options": ["hel", "ell", "llo", "hello"],
+          "answer": 1
+        },
+        {
+          "id": "A9",
+          "question": "Which operator is used for exponentiation?",
+          "options": ["^", "**", "//", "%%"],
+          "answer": 1
+        },
+        {
+          "id": "A10",
+          "question": "What does the range(5) produce?",
+          "options": ["[1,2,3,4,5]", "[0,1,2,3,4]", "[0,1,2,3,4,5]", "Error"],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        {
+          "id": "B1",
+          "question": "Explain the difference between a list and a tuple in Python. Give two key differences.",
+          "marks": 3,
+          "keywords": ["mutable", "immutable", "square brackets", "parentheses", "[]", "()"]
+        },
+        {
+          "id": "B2",
+          "question": "What is type casting? Write the functions used for converting: (a) string to integer, (b) integer to string, (c) string to float.",
+          "marks": 3,
+          "keywords": ["int()", "str()", "float()", "conversion", "type conversion"]
+        },
+        {
+          "id": "B3",
+          "question": "Write the output of the following code:\n\nx = 5\ny = 2\nprint(x // y)\nprint(x ** y)",
+          "marks": 2,
+          "keywords": ["2", "25"]
+        },
+        {
+          "id": "B4",
+          "question": "Explain the use of break and continue statements with examples.",
+          "marks": 3,
+          "keywords": ["loop", "terminate", "skip", "iteration", "exit"]
+        },
+        {
+          "id": "B5",
+          "question": "What are Python's logical operators? Write their symbols and meanings.",
+          "marks": 3,
+          "keywords": ["and", "or", "not", "&&", "||", "!"]
+        },
+        {
+          "id": "B6",
+          "question": "Differentiate between break and continue with a code example for each.",
+          "marks": 4,
+          "keywords": ["break", "continue", "loop", "skip", "exit"]
+        },
+        {
+          "id": "B7",
+          "question": "What is a dictionary in Python? How is it different from a list?",
+          "marks": 3,
+          "keywords": ["key-value", "mapping", "unordered", "ordered", "hash", "index"]
+        },
+        {
+          "id": "B8",
+          "question": "Write a Python expression to check if a number 'n' is even.",
+          "marks": 2,
+          "keywords": ["n % 2 == 0", "n%2", "even", "modulo", "remainder"]
+        },
+        {
+          "id": "B9",
+          "question": "Explain the concept of string slicing with an example.",
+          "marks": 3,
+          "keywords": ["[: ]", "index", "start", "stop", "step", "substring"]
+        },
+        {
+          "id": "B10",
+          "question": "What is the purpose of the 'in' and 'not in' operators? Give an example.",
+          "marks": 2,
+          "keywords": ["membership", "exists", "contains", "list", "string", "check"]
+        }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        {
+          "id": "C1",
+          "question": "Write a Python program to calculate the factorial of a number using a for loop.",
+          "marks": 5,
+          "hints": ["Use range()", "Initialize result = 1", "Multiply in each iteration"]
+        },
+        {
+          "id": "C2",
+          "question": "Write a program to check if a given string is a palindrome.",
+          "marks": 5,
+          "hints": ["Reverse the string using [::-1]", "Compare with original"]
+        },
+        {
+          "id": "C3",
+          "question": "Write a function that accepts a list and returns the sum of all even numbers in it.",
+          "marks": 5,
+          "hints": ["Use % 2 == 0 to check even", "Iterate through list", "Accumulate sum"]
+        },
+        {
+          "id": "C4",
+          "question": "Create a program to print the Fibonacci series up to n terms (user input).",
+          "marks": 5,
+          "hints": ["Initialize first two terms", "Use loop", "Add previous two numbers"]
+        },
+        {
+          "id": "C5",
+          "question": "Write a program that counts the frequency of each character in a string using a dictionary.",
+          "marks": 5,
+          "hints": ["Use dict to store counts", "Iterate through string", "Use get() method"]
+        },
+        {
+          "id": "C6",
+          "question": "Write a function to find the maximum of three numbers without using max().",
+          "marks": 5,
+          "hints": ["Use if-elif-else", "Compare two at a time", "Return the largest"]
+        }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        {
+          "id": "D1",
+          "question": "Find the error in the following code and correct it:\n\nmyList = [1, 2, 3]\nmyList.append[4]\nprint(myList)",
+          "marks": 3,
+          "answer": "Error: Using square brackets instead of parentheses.\nCorrection: myList.append(4)",
+          "explanation": "append() is a method that uses parentheses (), not square brackets []"
+        },
+        {
+          "id": "D2",
+          "question": "Predict the output:\n\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+          "marks": 2,
+          "answer": "[1, 2, 3, 4]",
+          "explanation": "Lists are mutable objects; y is a reference to the same list as x"
+        },
+        {
+          "id": "D3",
+          "question": "Find and fix the error:\n\nif x > 5\n    print('x is greater')\nelse:\n    print('x is smaller')",
+          "marks": 3,
+          "answer": "Error: Missing colon after if condition.\nCorrection: if x > 5:",
+          "explanation": "Python requires a colon (:) after if, for, while, def, class statements"
+        },
+        {
+          "id": "D4",
+          "question": "Predict the output:\n\nfor i in range(3):\n    print(i, end=' ')\nelse:\n    print('Done')",
+          "marks": 2,
+          "answer": "0 1 2 Done",
+          "explanation": "The else block executes after the loop completes normally (no break)"
+        },
+        {
+          "id": "D5",
+          "question": "Find the error:\n\nt = (1, 2, 3)\nt[0] = 5\nprint(t)",
+          "marks": 3,
+          "answer": "TypeError: 'tuple' object does not support item assignment",
+          "explanation": "Tuples are immutable - they cannot be modified after creation"
+        },
+        {
+          "id": "D6",
+          "question": "Predict output:\n\na = 5\nb = 2\nprint(a / b)\nprint(a // b)",
+          "marks": 2,
+          "answer": "2.5\\n2",
+          "explanation": "/ returns float division, // returns integer (floor) division"
+        },
+        {
+          "id": "D7",
+          "question": "What is wrong with this code?\n\nif x = 10:\n    print('Ten')",
+          "marks": 2,
+          "answer": "Syntax Error: Using assignment (=) instead of comparison (==).\nCorrection: if x == 10:",
+          "explanation": "In if statements, use == for comparison, not = for assignment"
+        },
+        {
+          "id": "D8",
+          "question": "Predict output:\n\ns = 'Python'\nprint(s[1:4])\nprint(s[-1])",
+          "marks": 3,
+          "answer": "yth\\nn",
+          "explanation": "s[1:4] slices from index 1 to 3 (characters 1,2,3). s[-1] gets the last character"
+        }
+      ]
+    }
+  ]
+}

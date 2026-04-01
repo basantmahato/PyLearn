@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-10",
+  "title": "Tuples, Sets, and Dictionaries",
+  "subtitle": "Python's collection data structures",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which creates a single-item tuple?", "options": ["(1)", "(1,)", "tuple(1)", "[1]"], "answer": 1 },
+        { "id": "A2", "question": "Are tuples mutable?", "options": ["Yes", "No", "Sometimes", "Only elements"], "answer": 1 },
+        { "id": "A3", "question": "Which creates an empty set?", "options": ["{}", "set()", "[]", "()"], "answer": 1 },
+        { "id": "A4", "question": "What is {1,2,2,3}?", "options": ["{1,2,2,3}", "{1,2,3}", "Error", "[1,2,3]"], "answer": 1 },
+        { "id": "A5", "question": "Which dict method returns all keys?", "options": ["keys()", "all_keys()", "get_keys()", "key_list()"], "answer": 0 },
+        { "id": "A6", "question": "What is d.get('x', 0)?", "options": ["KeyError", "0 if key missing", "None", "'x'"], "answer": 1 },
+        { "id": "A7", "question": "Which set operation gives common elements?", "options": ["union", "intersection", "difference", "symmetric"], "answer": 1 },
+        { "id": "A8", "question": "Can tuple be dict key?", "options": ["Yes", "No", "Only integers", "Only strings"], "answer": 0 },
+        { "id": "A9", "question": "What is frozenset()?", "options": ["Frozen set", "Immutable set", "Both", "None"], "answer": 2 },
+        { "id": "A10", "question": "Which removes and returns arbitrary element?", "options": ["pop()", "remove()", "discard()", "get()"], "answer": 0 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Differentiate between tuple and list with 3 key differences.", "marks": 3, "keywords": ["immutable", "mutable", "parentheses", "brackets", "hashable", "faster"] },
+        { "id": "B2", "question": "Explain tuple packing and unpacking with examples.", "marks": 3, "keywords": ["assign multiple", "comma separated", "extract values", "a, b = tuple", "swap"] },
+        { "id": "B3", "question": "What are set operations? Explain union, intersection, difference.", "marks": 3, "keywords": ["union all unique", "common elements", "in A not B", "| & - operators", "mathematical"] },
+        { "id": "B4", "question": "Explain dictionary comprehension with an example.", "marks": 3, "keywords": ["key:value", "for in", "if condition", "curly braces", "mapping", "transform"] },
+        { "id": "B5", "question": "When to use set vs list? Explain with use cases.", "marks": 3, "keywords": ["unique elements", "fast lookup", "no duplicates", "ordered", "membership testing", "O(1)"] },
+        { "id": "B6", "question": "Explain defaultdict and Counter from collections module.", "marks": 3, "keywords": ["default factory", "automatic value", "count elements", "frequency", "import collections", "specialized"] },
+        { "id": "B7", "question": "What is dictionary view object? Why are they dynamic?", "marks": 3, "keywords": ["keys()", "values()", "items()", "reflect changes", "not copy", "iterable", "real-time"] },
+        { "id": "B8", "question": "Explain setdefault() method with practical example.", "marks": 3, "keywords": ["get or set", "initialize", "missing key", "default value", "atomic operation", "convenient"] },
+        { "id": "B9", "question": "Can a list be a dictionary key? Why or why not?", "marks": 3, "keywords": ["unhashable", "mutable", "hash table", "keys must be hashable", "TypeError", "immutable"] },
+        { "id": "B10", "question": "Explain how to merge two dictionaries (Python 3.9+ vs older).", "marks": 3, "keywords": ["| operator", "update()", "{**d1, **d2}", "PEP 584", "union", "override"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to find symmetric difference of two sets.", "marks": 5, "hints": ["Elements in either but not both", "Use ^ operator or method", "Return as set or sorted list"] },
+        { "id": "C2", "question": "Create a word frequency counter using dictionary.", "marks": 5, "hints": ["Split text into words", "Use dict.get() or Counter", "Display top N words"] },
+        { "id": "C3", "question": "Write a program to invert a dictionary (swap keys and values).", "marks": 5, "hints": ["Handle duplicate values", "Use dict comprehension", "Values become keys"] },
+        { "id": "C4", "question": "Create a function that returns unique elements preserving order using set for tracking.", "marks": 5, "hints": ["Use seen = set()", "Loop through input", "Check 'if x not in seen'", "Add to seen and result"] },
+        { "id": "C5", "question": "Write a program to group words by their first letter using defaultdict.", "marks": 5, "hints": ["Import defaultdict from collections", "Use list as default factory", "Append words to appropriate key"] },
+        { "id": "C6", "question": "Create a tuple unpacking program that swaps values of multiple variables.", "marks": 5, "hints": ["a, b, c = c, a, b", "Multiple assignment", "Circular swap"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nt = (1, 2, 3)\nprint(t[0])\na, b, c = t\nprint(b)", "marks": 2, "answer": "1\\n2", "explanation": "t[0] is first element 1. Unpacking assigns a=1, b=2, c=3, so b is 2." },
+        { "id": "D2", "question": "Find error:\n\nt = (1, 2, 3)\nt[0] = 4\nprint(t)", "marks": 2, "answer": "TypeError: 'tuple' object does not support item assignment", "explanation": "Tuples are immutable. Cannot modify elements after creation." },
+        { "id": "D3", "question": "Predict output:\n\ns1 = {1, 2, 3}\ns2 = {2, 3, 4}\nprint(s1 | s2)\nprint(s1 & s2)", "marks": 2, "answer": "{1, 2, 3, 4}\\n{2, 3}", "explanation": "| is union (all unique). & is intersection (common elements only)." },
+        { "id": "D4", "question": "Find error:\n\nd = {'a': 1, 'b': 2}\nprint(d['c'])", "marks": 2, "answer": "KeyError: 'c'", "explanation": "Key 'c' doesn't exist. Use d.get('c') to avoid error, or check first." },
+        { "id": "D5", "question": "Predict output:\n\nd = {'a': 1, 'b': 2}\nprint(list(d.keys()))\nprint(list(d.values()))", "marks": 2, "answer": "['a', 'b']\\n[1, 2]", "explanation": "keys() and values() return view objects. Converting to list gives the keys and values." },
+        { "id": "D6", "question": "Find error:\n\nmy_set = {[1, 2], [3, 4]}", "marks": 2, "answer": "TypeError: unhashable type: 'list'", "explanation": "Lists are mutable/unhashable and cannot be set elements. Use tuples instead." },
+        { "id": "D7", "question": "Predict output:\n\nt = (1, 2, [3, 4])\nt[2].append(5)\nprint(t)", "marks": 3, "answer": "(1, 2, [3, 4, 5])", "explanation": "Tuple is immutable but mutable objects inside can be modified. The list inside is modified." },
+        { "id": "D8", "question": "Find error:\n\nd = {'a': 1, 'b': 2}\nfor k, v in d.items():\n    if v == 1:\n        del d[k]", "marks": 3, "answer": "RuntimeError: dictionary changed size during iteration", "explanation": "Cannot modify dict while iterating. Create list of keys to delete first, or use dict comprehension." }
+      ]
+    }
+  ]
+}

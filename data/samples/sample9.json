@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-9",
+  "title": "List Operations and Methods",
+  "subtitle": "Master Python lists - indexing, slicing, methods, and comprehensions",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which method adds item at end of list?", "options": ["add()", "append()", "insert()", "extend()"], "answer": 1 },
+        { "id": "A2", "question": "What is [1,2,3] + [4,5]?", "options": ["[1,2,3,4,5]", "[[1,2,3],4,5]", "Error", "[5,7,8]"], "answer": 0 },
+        { "id": "A3", "question": "Which removes item by value?", "options": ["remove()", "pop()", "delete()", "discard()"], "answer": 0 },
+        { "id": "A4", "question": "What does L.pop() do?", "options": ["Removes first", "Removes last", "Clears list", "Sorts list"], "answer": 1 },
+        { "id": "A5", "question": "Which creates shallow copy?", "options": ["L2 = L1", "L2 = L1.copy()", "L2 = L1.deepcopy()", "Both A and B"], "answer": 1 },
+        { "id": "A6", "question": "What is [0] * 3?", "options": ["[0,0,0]", "[0,3]", "Error", "0"], "answer": 0 },
+        { "id": "A7", "question": "Which sorts list in-place?", "options": ["sorted(L)", "L.sort()", "L.order()", "L.arrange()"], "answer": 1 },
+        { "id": "A8", "question": "What does enumerate(L) return?", "options": ["List of values", "List of (index, value) tuples", "Dictionary", "Iterator"], "answer": 1 },
+        { "id": "A9", "question": "Which inserts at specific index?", "options": ["append()", "insert()", "add()", "put()"], "answer": 1 },
+        { "id": "A10", "question": "What is list('abc')?", "options": ["['abc']", "['a','b','c']", "Error", "'abc'"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between append() and extend() with examples.", "marks": 3, "keywords": ["single item", "iterable", "unpack", "add one", "add multiple", "flatten"] },
+        { "id": "B2", "question": "What is list comprehension? Write syntax and give an example.", "marks": 3, "keywords": ["compact", "expression", "for in", "if condition", "square brackets", "functional"] },
+        { "id": "B3", "question": "Differentiate between sort() and sorted() functions.", "marks": 3, "keywords": ["in-place", "returns new", "original modified", "copy", "key parameter", "reverse"] },
+        { "id": "B4", "question": "Explain shallow copy vs deep copy with examples.", "marks": 3, "keywords": ["reference", "copy module", "nested objects", "deepcopy()", "same object", "independent"] },
+        { "id": "B5", "question": "What are list methods for stack operations? Explain LIFO.", "marks": 3, "keywords": ["push", "pop", "append", "remove", "last in first out", "stack data structure"] },
+        { "id": "B6", "question": "Explain how to use list as a queue. What are the performance implications?", "marks": 3, "keywords": ["FIFO", "pop(0)", "slow", "deque", "collections", "first in first out"] },
+        { "id": "B7", "question": "What is slicing assignment? How to replace part of a list?", "marks": 3, "keywords": ["L[1:3] = [new]", "insert", "delete", "replace slice", "resize", "flexible"] },
+        { "id": "B8", "question": "Explain the zip() function with lists and unpacking.", "marks": 3, "keywords": ["parallel iteration", "pair elements", "multiple lists", "unzip", "transpose", "matrix"] },
+        { "id": "B9", "question": "What are all() and any() functions? When are they useful with lists?", "marks": 3, "keywords": ["all true", "at least one", "boolean check", "comprehension", "condition", "membership"] },
+        { "id": "B10", "question": "Explain list slicing with negative indices and step parameter.", "marks": 3, "keywords": ["-1", "reverse", "step -1", "last element", "count backwards", "[::-1]"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to find second largest and second smallest elements.", "marks": 5, "hints": ["Remove duplicates using set()", "Sort or find manually", "Handle edge cases"] },
+        { "id": "C2", "question": "Create a program to flatten a nested list of arbitrary depth.", "marks": 5, "hints": ["Use recursion", "Check isinstance(x, list)", "Build result list"] },
+        { "id": "C3", "question": "Write a program to remove all duplicates while preserving order.", "marks": 5, "hints": ["Use dict.fromkeys() for Python 3.7+", "Or use set with seen list", "Loop and check membership"] },
+        { "id": "C4", "question": "Create a program to rotate list elements left/right by k positions.", "marks": 5, "hints": ["Use slicing: L[k:] + L[:k]", "Handle k > len(L)", "In-place or new list"] },
+        { "id": "C5", "question": "Write a program to find all pairs in list that sum to target.", "marks": 5, "hints": ["Use nested loop or hash set", "Two-pointer technique", "Return list of tuples"] },
+        { "id": "C6", "question": "Create a program implementing custom list filter using list comprehension.", "marks": 5, "hints": ["Function takes predicate", "Return [x for x in lst if pred(x)]", "Test with lambda"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\na = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)", "marks": 2, "answer": "[1, 2, 3, 4]", "explanation": "b references the same list as a. Modifying b affects a too." },
+        { "id": "D2", "question": "Find error:\n\nmy_list = [1, 2, 3]\nprint(my_list[3])", "marks": 2, "answer": "IndexError: list index out of range", "explanation": "Valid indices are 0, 1, 2. Index 3 doesn't exist in a 3-element list." },
+        { "id": "D3", "question": "Predict output:\n\nL = [3, 1, 4, 1, 5]\nprint(L.count(1))\nprint(L.index(4))", "marks": 2, "answer": "2\\n2", "explanation": "count(1) finds two 1s. index(4) returns first position of 4, which is at index 2." },
+        { "id": "D4", "question": "Find error:\n\nL = [1, 2, 3]\nL = L.append(4)\nprint(L)", "marks": 2, "answer": "None (not an error but prints 'None')", "explanation": "append() returns None. L becomes None. Should be L.append(4) without assignment." },
+        { "id": "D5", "question": "Predict output:\n\nx = [i**2 for i in range(5)]\nprint(x)", "marks": 2, "answer": "[0, 1, 4, 9, 16]", "explanation": "List comprehension squares each number from 0 to 4." },
+        { "id": "D6", "question": "Find error:\n\nL = [[1, 2], [3, 4]]\nM = L.copy()\nM[0][0] = 99\nprint(L)", "marks": 3, "answer": "[[99, 2], [3, 4]] - not an error but unexpected", "explanation": "copy() is shallow. Nested lists are still references. Use deepcopy() for full independence." },
+        { "id": "D7", "question": "Predict output:\n\nL = [1, 2, 3, 4, 5]\nprint(L[1:4:2])\nprint(L[::-1])", "marks": 3, "answer": "[2, 4]\\n[5, 4, 3, 2, 1]", "explanation": "[1:4:2] starts at 1, stops before 4, step 2 → indices 1,3 → [2,4]. [::-1] reverses." },
+        { "id": "D8", "question": "Find error:\n\nfor i in range(len(L)):\n    if L[i] % 2 == 0:\n        L.remove(L[i])", "marks": 2, "answer": "IndexError or skips elements", "explanation": "Modifying list while iterating by index causes issues. List shrinks but index increases." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-7",
+  "title": "Loops - for and while",
+  "subtitle": "Master iteration with for loops, while loops, and control statements",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Medium",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What does range(5) produce?", "options": ["[0,1,2,3,4,5]", "[1,2,3,4,5]", "[0,1,2,3,4]", "[5,4,3,2,1]"], "answer": 2 },
+        { "id": "A2", "question": "Which loop is used when iterations are known?", "options": ["while", "for", "do-while", "repeat"], "answer": 1 },
+        { "id": "A3", "question": "What does break do?", "options": ["Skip iteration", "Exit loop", "Pause", "Continue to next"], "answer": 1 },
+        { "id": "A4", "question": "What does continue do?", "options": ["Stop loop", "Skip current iteration", "Restart loop", "Break outer loop"], "answer": 1 },
+        { "id": "A5", "question": "What is range(2, 10, 2)?", "options": ["[2,4,6,8]", "[2,4,6,8,10]", "[2,3,4,5,6,7,8,9]", "[0,2,4,6,8]"], "answer": 0 },
+        { "id": "A6", "question": "Can for loop have else block?", "options": ["Yes", "No", "Only in Python 2", "Only with try"], "answer": 0 },
+        { "id": "A7", "question": "When does while-else else block execute?", "options": ["Always", "When break used", "When condition false", "Never"], "answer": 2 },
+        { "id": "A8", "question": "What creates an infinite loop?", "options": ["while True:", "for i in range(1000000):", "while False:", "for i in []:"], "answer": 0 },
+        { "id": "A9", "question": "What is enumerate([a,b,c])?", "options": ["[(0,a),(1,b),(2,c)]", "[0,1,2]", "['a','b','c']", "Error"], "answer": 0 },
+        { "id": "A10", "question": "How to iterate over two lists simultaneously?", "options": ["for i in list1, list2:", "zip(list1, list2)", "list1 + list2", "for i in range(len(list1))"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Differentiate between for loop and while loop with examples.", "marks": 3, "keywords": ["sequence", "condition", "known iterations", "unknown", "range", "collection"] },
+        { "id": "B2", "question": "Explain the difference between break and continue statements.", "marks": 3, "keywords": ["terminate", "skip", "exit", "next iteration", "remaining code"] },
+        { "id": "B3", "question": "What is the use of range() function? Explain its three forms.", "marks": 3, "keywords": ["sequence", "start", "stop", "step", "arithmetic progression", "integer sequence"] },
+        { "id": "B4", "question": "Explain for-else and while-else with practical examples.", "marks": 3, "keywords": ["loop completion", "no break", "search pattern", "found", "not found"] },
+        { "id": "B5", "question": "What is nested loop? When is it useful? Give example.", "marks": 3, "keywords": ["loop inside loop", "multi-dimensional", "matrix", "pattern", "combination", "iteration"] },
+        { "id": "B6", "question": "Explain enumerate() function with an example.", "marks": 3, "keywords": ["index", "value", "counter", "iteration", "tuple", "unpacking"] },
+        { "id": "B7", "question": "What is zip() function? How to iterate multiple sequences?", "marks": 3, "keywords": ["parallel iteration", "pairwise", "aggregate", "shortest sequence", "tuple"] },
+        { "id": "B8", "question": "How to reverse a list using a loop? Show two methods.", "marks": 3, "keywords": ["reversed()", "[::-1]", "range(len-1,-1,-1)", "backwards", "index"] },
+        { "id": "B9", "question": "Explain list comprehension vs regular for loop.", "marks": 3, "keywords": ["compact", "single line", "expression", "faster", "functional", "[] syntax"] },
+        { "id": "B10", "question": "What is an infinite loop? How to prevent it?", "marks": 3, "keywords": ["never ends", "ctrl+c", "condition never false", "increment", "proper termination"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a program to print the multiplication table of a given number.", "marks": 5, "hints": ["Use for i in range(1, 11):", "Multiply by input number", "Format output nicely"] },
+        { "id": "C2", "question": "Create a program to calculate factorial using while loop.", "marks": 5, "hints": ["Initialize result = 1", "While n > 0:", "result *= n", "n -= 1"] },
+        { "id": "C3", "question": "Write a program to print Fibonacci series up to n terms.", "marks": 5, "hints": ["Initialize a=0, b=1", "Loop n times", "Print a", "Update a,b = b, a+b"] },
+        { "id": "C4", "question": "Create a program to check if a number is prime using for-else.", "marks": 5, "hints": ["Loop from 2 to sqrt(n)", "If divisible, break", "Else block prints 'Prime'", "Use for-else construct"] },
+        { "id": "C5", "question": "Write a program to print patterns: pyramid, inverted pyramid, diamond.", "marks": 5, "hints": ["Use nested loops", "Outer loop for rows", "Inner for spaces and stars", "Adjust ranges for each pattern"] },
+        { "id": "C6", "question": "Create a program to find sum of digits and reverse of a number.", "marks": 5, "hints": ["While num > 0:", "Extract last digit: num % 10", "Add to sum", "Build reverse: rev * 10 + digit"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nfor i in range(3):\n    print(i, end=' ')", "marks": 2, "answer": "0 1 2 ", "explanation": "range(3) produces 0, 1, 2. end=' ' adds space after each instead of newline." },
+        { "id": "D2", "question": "Find error:\n\nwhile x < 10:\n    print(x)", "marks": 2, "answer": "NameError: name 'x' is not defined", "explanation": "x is not initialized before use. Need x = 0 before while loop." },
+        { "id": "D3", "question": "Predict output:\n\nfor i in range(5):\n    if i == 3:\n        break\n    print(i)", "marks": 2, "answer": "0\\n1\\n2", "explanation": "break exits loop when i==3. So only 0, 1, 2 are printed." },
+        { "id": "D4", "question": "Find error:\n\nfor i in range(5):\n    if i == 2:\n        continue\n        print(i)", "marks": 2, "answer": "Unreachable code warning (not error), or logical error.", "explanation": "print(i) after continue is never executed. Indentation or logic is wrong." },
+        { "id": "D5", "question": "Predict output:\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\nelse:\n    print('Done')", "marks": 2, "answer": "0\\n1\\n2\\nDone", "explanation": "while-else: else executes when loop completes normally (no break)." },
+        { "id": "D6", "question": "Find error:\n\nfor i in range(5, 0):\n    print(i)", "marks": 2, "answer": "No output (not an error)", "explanation": "range(5, 0) produces nothing because default step is +1. Use range(5, 0, -1) for reverse." },
+        { "id": "D7", "question": "Predict output:\n\ncount = 0\nwhile count < 5:\n    if count == 3:\n        count += 1\n        continue\n    print(count)\n    count += 1", "marks": 3, "answer": "0\\n1\\n2\\n4", "explanation": "When count==3, we skip printing due to continue. Output is 0,1,2,4 (3 is skipped)." },
+        { "id": "D8", "question": "Find error:\n\nmy_list = [1, 2, 3]\nfor i in range(len(my_list)):\n    print(my_list[i])\n    my_list.pop(i)", "marks": 3, "answer": "IndexError: pop index out of range", "explanation": "Modifying list while iterating causes index issues. List shrinks but index increases." }
+      ]
+    }
+  ]
+}

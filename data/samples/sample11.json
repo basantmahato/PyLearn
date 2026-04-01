@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-11",
+  "title": "Functions and Scope",
+  "subtitle": "Understanding Python functions, arguments, and variable scope",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "Which keyword defines a function?", "options": ["func", "def", "function", "define"], "answer": 1 },
+        { "id": "A2", "question": "What is a lambda function?", "options": ["Named function", "Anonymous function", "Recursive function", "Generator"], "answer": 1 },
+        { "id": "A3", "question": "Which is a valid default argument?", "options": ["def f(a=5, b)", "def f(a, b=5)", "def f(a=5, b=10, c)", "Both B and C"], "answer": 1 },
+        { "id": "A4", "question": "What does *args represent?", "options": ["Keyword args", "Variable positional args", "Required args", "Named args"], "answer": 1 },
+        { "id": "A5", "question": "What does **kwargs represent?", "options": ["Positional args", "Variable keyword args", "Required args", "Tuple args"], "answer": 1 },
+        { "id": "A6", "question": "What is the scope of a variable inside a function?", "options": ["Global", "Local", "Built-in", "Module"], "answer": 1 },
+        { "id": "A7", "question": "How to access global variable inside function?", "options": ["global keyword", "nonlocal", "extern", "static"], "answer": 0 },
+        { "id": "A8", "question": "What is a recursive function?", "options": ["Calls itself", "Calls another", "Returns nothing", "Takes no args"], "answer": 0 },
+        { "id": "A9", "question": "What is returned if function has no return?", "options": ["0", "None", "\"\"", "Error"], "answer": 1 },
+        { "id": "A10", "question": "Which decorator is used for memoization?", "options": ["@cache", "@memoize", "@lru_cache", "@remember"], "answer": 2 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain the difference between parameters and arguments with examples.", "marks": 3, "keywords": ["parameter", "argument", "definition", "call", "formal", "actual", "placeholder"] },
+        { "id": "B2", "question": "What are *args and **kwargs? When are they useful?", "marks": 3, "keywords": ["variable arguments", "positional", "keyword", "unpacking", "flexible", "arbitrary"] },
+        { "id": "B3", "question": "Explain LEGB rule for variable scope in Python.", "marks": 3, "keywords": ["Local", "Enclosing", "Global", "Built-in", "search order", "namespace"] },
+        { "id": "B4", "question": "What is the difference between global and nonlocal keywords?", "marks": 3, "keywords": ["module level", "outer function", "nested", "write access", "closure", "enclosing scope"] },
+        { "id": "B5", "question": "Explain first-class functions in Python with examples.", "marks": 3, "keywords": ["assign to variable", "pass as argument", "return from function", "higher-order", "callback"] },
+        { "id": "B6", "question": "What is a closure? When does Python create a closure?", "marks": 3, "keywords": ["nested function", "enclosing scope", "remember", "cell object", "factory function"] },
+        { "id": "B7", "question": "Explain function decorators with a practical example.", "marks": 3, "keywords": ["@syntax", "wrapper", "modify behavior", "higher-order", "logging", "timing"] },
+        { "id": "B8", "question": "What are pure functions? Why are they important?", "marks": 3, "keywords": ["no side effects", "same input same output", "deterministic", "testable", "referential transparency"] },
+        { "id": "B9", "question": "Explain type hints and function annotations in Python.", "marks": 3, "keywords": ["typing module", "-> return type", "int, str", "mypy", "documentation", "IDE support"] },
+        { "id": "B10", "question": "What is recursion depth limit? How to handle it?", "marks": 3, "keywords": ["1000", "RecursionError", "sys.setrecursionlimit", "base case", "iterative alternative"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a recursive function to calculate factorial with memoization.", "marks": 5, "hints": ["Use dict to store results", "Check cache before computing", "Base case n <= 1"] },
+        { "id": "C2", "question": "Create a decorator that logs function execution time.", "marks": 5, "hints": ["Import time module", "Use @functools.wraps", "Print time taken", "Return function result"] },
+        { "id": "C3", "question": "Write a function that accepts any number of arguments and returns their product.", "marks": 5, "hints": ["Use *args", "Initialize result = 1", "Loop and multiply", "Handle empty case"] },
+        { "id": "C4", "question": "Create a closure that generates unique incrementing IDs.", "marks": 5, "hints": ["Outer function with counter", "Inner function increments and returns", "Each call gets new ID"] },
+        { "id": "C5", "question": "Write a higher-order function that takes a function and applies it twice.", "marks": 5, "hints": ["accept function as arg", "return new function", "apply twice: f(f(x))", "test with double"] },
+        { "id": "C6", "question": "Create a function with default mutable argument fix.", "marks": 5, "hints": ["Use None as default", "Initialize list inside function", "Avoid shared mutable default"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\ndef f():\n    x = 10\nf()\nprint(x)", "marks": 2, "answer": "NameError: name 'x' is not defined", "explanation": "x is local to f(). Not accessible outside function scope." },
+        { "id": "D2", "question": "Find error:\n\ndef greet(name, greeting='Hello'):\n    print(greeting, name)\ngreet(greeting='Hi', 'John')", "marks": 3, "answer": "SyntaxError: positional argument follows keyword argument", "explanation": "Keyword args must come after positional args. Swap order: greet('John', greeting='Hi')" },
+        { "id": "D3", "question": "Predict output:\n\nx = 5\ndef func():\n    global x\n    x = 10\nfunc()\nprint(x)", "marks": 2, "answer": "10", "explanation": "global x allows modifying module-level x. After func(), x becomes 10." },
+        { "id": "D4", "question": "Find error:\n\ndef outer():\n    x = 5\n    def inner():\n        x += 1\n    inner()\nouter()", "marks": 3, "answer": "UnboundLocalError: local variable 'x' referenced before assignment", "explanation": "Need 'nonlocal x' in inner() to modify outer's x, or declare differently." },
+        { "id": "D5", "question": "Predict output:\n\ndef f(a, L=[]):\n    L.append(a)\n    return L\nprint(f(1))\nprint(f(2))", "marks": 3, "answer": "[1]\\n[1, 2]", "explanation": "Default mutable argument persists! L is same list across calls. Classic Python gotcha." },
+        { "id": "D6", "question": "Find error:\n\nlambda x: x + 1\nprint(result(5))", "marks": 2, "answer": "NameError: name 'result' is not defined", "explanation": "Lambda wasn't assigned to variable. Should be: result = lambda x: x + 1" },
+        { "id": "D7", "question": "Predict output:\n\ndef func(*args, **kwargs):\n    print(args)\n    print(kwargs)\nfunc(1, 2, a=3, b=4)", "marks": 3, "answer": "(1, 2)\\n{'a': 3, 'b': 4}", "explanation": "*args collects positional args as tuple. **kwargs collects keyword args as dict." },
+        { "id": "D8", "question": "Find error:\n\ndef add(a, b):\n    return a + b\nprint(add(1, 2, 3))", "marks": 2, "answer": "TypeError: add() takes 2 positional arguments but 3 were given", "explanation": "Function defined for 2 args but 3 provided. Use *args for variable args." }
+      ]
+    }
+  ]
+}

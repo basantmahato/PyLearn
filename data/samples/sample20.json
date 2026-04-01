@@ -1,0 +1,72 @@
+{
+  "paperId": "py-sample-20",
+  "title": "Final Comprehensive Assessment",
+  "subtitle": "Complete Python knowledge test",
+  "duration": "90 minutes",
+  "totalMarks": 100,
+  "difficulty": "Hard",
+  "sections": [
+    {
+      "sectionId": "A",
+      "title": "Multiple Choice Questions",
+      "marks": 20,
+      "questions": [
+        { "id": "A1", "question": "What is Python's design philosophy?", "options": ["Speed first", "Readability counts", "Minimal code", "Complex is better"], "answer": 1 },
+        { "id": "A2", "question": "Which is NOT a Python feature?", "options": ["Dynamic typing", "Automatic memory", "Compiled language", "Indentation-based"], "answer": 2 },
+        { "id": "A3", "question": "What does GIL stand for?", "options": ["Global Interpreter Lock", "General Input Loop", "Graph Interface Library", "Global Index List"], "answer": 0 },
+        { "id": "A4", "question": "What is a Python package?", "options": ["Single module", "Directory with __init__.py", "ZIP file", "Compiled binary"], "answer": 1 },
+        { "id": "A5", "question": "Which is used for web development?", "options": ["Django", "NumPy", "Pandas", "Matplotlib"], "answer": 0 },
+        { "id": "A6", "question": "What is the latest Python 3 version?", "options": ["3.8", "3.10", "3.12", "3.15"], "answer": 2 },
+        { "id": "A7", "question": "Which is standard GUI library?", "options": ["tkinter", "PyQt", "Kivy", "All of these"], "answer": 0 },
+        { "id": "A8", "question": "What is pip?", "options": ["Python package manager", "Python IDE", "Python compiler", "Python debugger"], "answer": 0 },
+        { "id": "A9", "question": "Which executes Python bytecode?", "options": ["Compiler", "Interpreter", "Linker", "Assembler"], "answer": 1 },
+        { "id": "A10", "question": "What is Jupyter Notebook?", "options": ["IDE", "Web-based interactive computing", "Package manager", "Database"], "answer": 1 }
+      ]
+    },
+    {
+      "sectionId": "B",
+      "title": "Short Answer Questions",
+      "marks": 30,
+      "questions": [
+        { "id": "B1", "question": "Explain Python's execution model: source code to execution.", "marks": 3, "keywords": ["source .py", "bytecode .pyc", "__pycache__", "PVM", "interpreted", "platform independent", "compile then interpret"] },
+        { "id": "B2", "question": "What makes Python beginner-friendly yet powerful?", "marks": 3, "keywords": ["simple syntax", "English-like", "batteries included", "extensive libraries", "rapid prototyping", "enterprise scale"] },
+        { "id": "B3", "question": "Explain Python's memory management and garbage collection.", "marks": 3, "keywords": ["reference counting", "cyclic GC", "generations", "gc module", "del", "memory pool", "pymalloc"] },
+        { "id": "B4", "question": "What are Python's key strengths and weaknesses?", "marks": 3, "keywords": ["productivity", "ecosystem", "slow execution", "GIL", "mobile", "dynamic typing pros cons", "two language problem"] },
+        { "id": "B5", "question": "Explain the difference between Python 2 and Python 3.", "marks": 3, "keywords": ["print function", "unicode strings", "integer division", "xrange", "async", "end of life 2020", "not backward compatible"] },
+        { "id": "B6", "question": "What is the Python Software Foundation? Role and importance?", "marks": 3, "keywords": ["non-profit", "governance", "license", "community", "PyCon", "open source", "contributor agreement"] },
+        { "id": "B7", "question": "Explain Python's standard library philosophy.", "marks": 3, "keywords": ["batteries included", "rich stdlib", "reduce dependencies", "stable API", "quality", "maintenance burden debate"] },
+        { "id": "B8", "question": "What is CPython, and how is it different from other implementations?", "marks": 3, "keywords": ["reference implementation", "C language", "Jython JVM", "IronPython .NET", "PyPy JIT", "Stackless", "MicroPython"] },
+        { "id": "B9", "question": "Explain Python's approach to concurrency: threading, multiprocessing, asyncio.", "marks": 3, "keywords": ["GIL limits threading", "true parallelism with multiprocessing", "asyncio for IO-bound", "event loop", "coroutines", "concurrent.futures"] },
+        { "id": "B10", "question": "What are Python's most popular applications and domains?", "marks": 3, "keywords": ["web dev Django Flask", "data science NumPy Pandas", "AI ML TensorFlow PyTorch", "automation scripting", "DevOps", "education"] }
+      ]
+    },
+    {
+      "sectionId": "C",
+      "title": "Code Writing",
+      "marks": 30,
+      "questions": [
+        { "id": "C1", "question": "Write a complete command-line TODO application with file persistence.", "marks": 5, "hints": ["Use argparse for CLI", "JSON file storage", "Add, list, complete, delete", "Load on start", "Save on change"] },
+        { "id": "C2", "question": "Create a simple HTTP API client using only standard library (urllib).", "marks": 5, "hints": ["urllib.request", "Handle GET and POST", "JSON parsing", "Error handling", "Context managers"] },
+        { "id": "C3", "question": "Implement a password manager with encryption using cryptography library.", "marks": 5, "hints": ["Fernet symmetric encryption", "Master password hash", "JSON storage", "Add/retrieve passwords", "Base64 encoding"] },
+        { "id": "C4", "question": "Write a web scraper that extracts and saves data from HTML.", "marks": 5, "hints": ["urllib or requests", "html.parser or BeautifulSoup", "Extract links/titles", "Save to CSV/JSON", "Handle exceptions"] },
+        { "id": "C5", "question": "Create a multithreaded file downloader with progress display.", "marks": 5, "hints": ["threading module", "Queue for URLs", "Progress bar or percentage", "Save with original filenames", "Handle errors gracefully"] },
+        { "id": "C6", "question": "Implement a mini testing framework with decorators and assertions.", "marks": 5, "hints": ["@test decorator", "Track pass/fail", "assert_equal function", "Test discovery", "Report generation"] }
+      ]
+    },
+    {
+      "sectionId": "D",
+      "title": "Error Finding & Output Prediction",
+      "marks": 20,
+      "questions": [
+        { "id": "D1", "question": "Predict output:\n\nimport sys\nprint(sys.version_info[:2])", "marks": 2, "answer": "(3, x) - major and minor version", "explanation": "sys.version_info is a named tuple. [:2] gets (major, minor), e.g., (3, 12) for Python 3.12." },
+        { "id": "D2", "question": "Find issue:\n\ndef process(items=[]):\n    for i in items:\n        yield i * 2\n    items.append(1)", "marks": 3, "answer": "Logic error: items.append(1) runs after loop, modifying default", "explanation": "Mutable default modified after first use. Append happens after yield loop completes. Subsequent calls see modified default." },
+        { "id": "D3", "question": "Predict behavior:\n\nimport threading\ncounter = 0\ndef inc():\n    global counter\n    for _ in range(1000):\n        counter += 1\nthreads = [threading.Thread(target=inc) for _ in range(10)]\n[t.start() for t in threads]\n[t.join() for t in threads]\nprint(counter)", "marks": 3, "answer": "Less than 10000 due to race condition", "explanation": "No locking. += is not atomic. Threads read-modify-write concurrently causing lost updates. Use Lock or atomic operations." },
+        { "id": "D4", "question": "Find error:\n\nasync def fetch(url):\n    return requests.get(url)\nresults = [fetch(u) for u in urls]", "marks": 3, "answer": "Not awaiting; returns coroutine objects", "explanation": "Should use 'await fetch(u)' inside async function, or asyncio.gather(). List comprehension creates coroutines but doesn't run them." },
+        { "id": "D5", "question": "Predict output:\n\nfrom dataclasses import dataclass\n@dataclass\nclass Point:\n    x: float\n    y: float\np = Point(1, 2)\nprint(p)", "marks": 2, "answer": "Point(x=1, y=2)", "explanation": "@dataclass automatically generates __init__, __repr__, __eq__. Clean syntax for data containers." },
+        { "id": "D6", "question": "Find issue:\n\ndef outer():\n    x = 10\n    def inner():\n        print(x)\n        x = 20\n    inner()\nouter()", "marks": 3, "answer": "UnboundLocalError: local variable 'x' referenced before assignment", "explanation": "Python sees 'x = 20' in inner, makes x local to inner. But 'print(x)' tries to read before assignment." },
+        { "id": "D7", "question": "Predict output:\n\nclass Config:\n    _instance = None\n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n        return cls._instance\na = Config()\nb = Config()\nprint(a is b)", "marks": 2, "answer": "True", "explanation": "Singleton pattern using __new__. _instance stored in class. Subsequent calls return same instance." },
+        { "id": "D8", "question": "Find issue:\n\nwith open('data.txt', 'r') as f:\n    data = f.readlines()\nfor line in data:\n    process(line)\nprint('Processed', len(data), 'lines')", "marks": 2, "answer": "No error but memory inefficient for large files", "explanation": "readlines() loads entire file. Better: 'for line in f:' iterates lazily. Memory efficient for large files." }
+      ]
+    }
+  ]
+}
