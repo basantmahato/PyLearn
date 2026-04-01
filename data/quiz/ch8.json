@@ -7,16 +7,106 @@
       "setName": "Introduction to RDBMS",
       "difficulty": "Easy",
       "questions": [
-        { "id": "q1", "question": "What is a 'Relation'?", "options": ["A key", "A table", "A row", "A relationship"], "answer": 1, "explanation": "In relational algebra, tables are formally called relations." },
-        { "id": "q2", "question": "What is a 'Tuple'?", "options": ["Column", "Row", "Database", "Key"], "answer": 1, "explanation": "A tuple is a single record/row in a relation." },
-        { "id": "q3", "question": "What is an 'Attribute'?", "options": ["Row", "Column", "Value", "Key"], "answer": 1, "explanation": "Attributes are the fields or columns in a relation." },
-        { "id": "q4", "question": "What is a 'Database'?", "options": ["Single file", "Organized collection of data", "A software", "A list"], "answer": 1, "explanation": "Structured data that is easily accessible and managed." },
-        { "id": "q5", "question": "What does DBMS stand for?", "options": ["Data Base Man System", "Database Management System", "Digital Base Map", "None"], "answer": 1, "explanation": "Software used to define, create, and maintain a database." },
-        { "id": "q6", "question": "Which of these is a popular RDBMS?", "options": ["Excel", "MySQL", "Notepad", "Word"], "answer": 1, "explanation": "MySQL is a widely used relational database engine." },
-        { "id": "q7", "question": "What is 'Domain'?", "options": ["Website name", "Set of permissible values for an attribute", "Total size", "None"], "answer": 1, "explanation": "Defines the pool of values a column can pull from." },
-        { "id": "q8", "question": "What is 'Data Redundancy'?", "options": ["Fast access", "Duplication of data", "Encryption", "None"], "answer": 1, "explanation": "Storing the same data in multiple places unnecessarily." },
-        { "id": "q9", "question": "What is 'Data Inconsistency'?", "options": ["Fast access", "Different values for same data", "Encryption", "None"], "answer": 1, "explanation": "Multiple copies of data not being synchronized (e.g. name changed in one place but not another)." },
-        { "id": "q10", "question": "What is the primary benefit of a DBMS?", "options": ["Controlled Redundancy", "Fast Typing", "Cooling", "None"], "answer": 0, "explanation": "Centralizing data helps minimize duplication and errors." }
+        {
+          "id": "q1",
+          "question": "What is a 'Relation'?",
+          "options": ["A key", "A table", "A row", "A relationship"],
+          "answer": 1,
+          "explanation": "In relational algebra, tables are formally called relations."
+        },
+        {
+          "id": "q2",
+          "question": "What is a 'Tuple'?",
+          "options": ["Column", "Row", "Database", "Key"],
+          "answer": 1,
+          "explanation": "A tuple is a single record/row in a relation."
+        },
+        {
+          "id": "q3",
+          "question": "What is an 'Attribute'?",
+          "options": ["Row", "Column", "Value", "Key"],
+          "answer": 1,
+          "explanation": "Attributes are the fields or columns in a relation."
+        },
+        {
+          "id": "q4",
+          "question": "What is a 'Database'?",
+          "options": [
+            "Single file",
+            "Organized collection of data",
+            "A software",
+            "A list"
+          ],
+          "answer": 1,
+          "explanation": "Structured data that is easily accessible and managed."
+        },
+        {
+          "id": "q5",
+          "question": "What does DBMS stand for?",
+          "options": [
+            "Data Base Man System",
+            "Database Management System",
+            "Digital Base Map",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Software used to define, create, and maintain a database."
+        },
+        {
+          "id": "q6",
+          "question": "Which of these is a popular RDBMS?",
+          "options": ["Excel", "MySQL", "Notepad", "Word"],
+          "answer": 1,
+          "explanation": "MySQL is a widely used relational database engine."
+        },
+        {
+          "id": "q7",
+          "question": "What is 'Domain'?",
+          "options": [
+            "Website name",
+            "Set of permissible values for an attribute",
+            "Total size",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Defines the pool of values a column can pull from."
+        },
+        {
+          "id": "q8",
+          "question": "What is 'Data Redundancy'?",
+          "options": [
+            "Fast access",
+            "Duplication of data",
+            "Encryption",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Storing the same data in multiple places unnecessarily."
+        },
+        {
+          "id": "q9",
+          "question": "What is 'Data Inconsistency'?",
+          "options": [
+            "Fast access",
+            "Different values for same data",
+            "Encryption",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Multiple copies of data not being synchronized (e.g. name changed in one place but not another)."
+        },
+        {
+          "id": "q10",
+          "question": "What is the primary benefit of a DBMS?",
+          "options": [
+            "Controlled Redundancy",
+            "Fast Typing",
+            "Cooling",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Centralizing data helps minimize duplication and errors."
+        }
       ]
     },
     {
@@ -24,16 +114,111 @@
       "setName": "Schema & Keys",
       "difficulty": "Medium",
       "questions": [
-        { "id": "q1", "question": "Which key uniquely identifies every record?", "options": ["Primary Key", "Foreign Key", "Candidate Key", "Alternate Key"], "answer": 0, "explanation": "A Primary Key must be unique and cannot contain NULL values." },
-        { "id": "q2", "question": "What is a 'Candidate Key'?", "options": ["A student leader", "Any unique identifier", "The chosen primary key", "A row ID"], "answer": 1, "explanation": "All unique attributes that have the potential to be a primary key." },
-        { "id": "q3", "question": "What is an 'Alternate Key'?", "options": ["Candidate key NOT chosen as primary", "A copy of primary key", "A foreign link", "None"], "answer": 0, "explanation": "The 'backup' unique identifiers left over after picking a Primary Key." },
-        { "id": "q4", "question": "What is a 'Foreign Key'?", "options": ["International key", "Primary key of another table", "Secondary key", "None"], "answer": 1, "explanation": "Used to link two tables together while maintaining integrity." },
-        { "id": "q5", "question": "What is 'Referential Integrity'?", "options": ["Speed limit", "Ensuring data in foreign key exists in primary table", "Encryption", "None"], "answer": 1, "explanation": "Prevents 'orphaned' records by enforcing shared values." },
-        { "id": "q6", "question": "Can a Primary Key have NULL values?", "options": ["Yes", "No", "Depends on OS", "Sometimes"], "answer": 1, "explanation": "NULL represents 'unknown,' which contradicts the purpose of a unique ID." },
-        { "id": "q7", "question": "What is a 'Composite Key'?", "options": ["Simple key", "Multiple attributes working as one primary key", "A foreign key", "None"], "answer": 1, "explanation": "Using more than one column to uniquely identify a row." },
-        { "id": "q8", "question": "What is a 'Schema'?", "options": ["Data contents", "Structural design", "A virus", "None"], "answer": 1, "explanation": "The logical blueprint or skeleton of the database." },
-        { "id": "q9", "question": "What is the 'View' of a database?", "options": ["Watching data", "Virtual table derived from other tables", "Printout", "None"], "answer": 1, "explanation": "A filtered 'window' into the underlying physical data." },
-        { "id": "q10", "question": "Which constraint ensures 'No duplicate names'?", "options": ["PRIMARY KEY", "UNIQUE", "NOT NULL", "CHECK"], "answer": 1, "explanation": "UNIQUE forces all values in a column to be distinct." }
+        {
+          "id": "q1",
+          "question": "Which key uniquely identifies every record?",
+          "options": [
+            "Primary Key",
+            "Foreign Key",
+            "Candidate Key",
+            "Alternate Key"
+          ],
+          "answer": 0,
+          "explanation": "A Primary Key must be unique and cannot contain NULL values."
+        },
+        {
+          "id": "q2",
+          "question": "What is a 'Candidate Key'?",
+          "options": [
+            "A student leader",
+            "Any unique identifier",
+            "The chosen primary key",
+            "A row ID"
+          ],
+          "answer": 1,
+          "explanation": "All unique attributes that have the potential to be a primary key."
+        },
+        {
+          "id": "q3",
+          "question": "What is an 'Alternate Key'?",
+          "options": [
+            "Candidate key NOT chosen as primary",
+            "A copy of primary key",
+            "A foreign link",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "The 'backup' unique identifiers left over after picking a Primary Key."
+        },
+        {
+          "id": "q4",
+          "question": "What is a 'Foreign Key'?",
+          "options": [
+            "International key",
+            "Primary key of another table",
+            "Secondary key",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Used to link two tables together while maintaining integrity."
+        },
+        {
+          "id": "q5",
+          "question": "What is 'Referential Integrity'?",
+          "options": [
+            "Speed limit",
+            "Ensuring data in foreign key exists in primary table",
+            "Encryption",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Prevents 'orphaned' records by enforcing shared values."
+        },
+        {
+          "id": "q6",
+          "question": "Can a Primary Key have NULL values?",
+          "options": ["Yes", "No", "Depends on OS", "Sometimes"],
+          "answer": 1,
+          "explanation": "NULL represents 'unknown,' which contradicts the purpose of a unique ID."
+        },
+        {
+          "id": "q7",
+          "question": "What is a 'Composite Key'?",
+          "options": [
+            "Simple key",
+            "Multiple attributes working as one primary key",
+            "A foreign key",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Using more than one column to uniquely identify a row."
+        },
+        {
+          "id": "q8",
+          "question": "What is a 'Schema'?",
+          "options": ["Data contents", "Structural design", "A virus", "None"],
+          "answer": 1,
+          "explanation": "The logical blueprint or skeleton of the database."
+        },
+        {
+          "id": "q9",
+          "question": "What is the 'View' of a database?",
+          "options": [
+            "Watching data",
+            "Virtual table derived from other tables",
+            "Printout",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "A filtered 'window' into the underlying physical data."
+        },
+        {
+          "id": "q10",
+          "question": "Which constraint ensures 'No duplicate names'?",
+          "options": ["PRIMARY KEY", "UNIQUE", "NOT NULL", "CHECK"],
+          "answer": 1,
+          "explanation": "UNIQUE forces all values in a column to be distinct."
+        }
       ]
     },
     {
@@ -41,16 +226,1010 @@
       "setName": "Operations & Cardinality",
       "difficulty": "Hard",
       "questions": [
-        { "id": "q1", "question": "What is 'Degree'?", "options": ["Temperature", "Number of attributes (columns)", "Number of tuples", "None"], "answer": 1, "explanation": "The total count of columns in a relation." },
-        { "id": "q2", "question": "What is 'Cardinality'?", "options": ["Number of attributes", "Number of tuples (rows)", "Total data", "None"], "answer": 1, "explanation": "The total count of rows in a relation." },
-        { "id": "q3", "question": "What is 'Normalization'?", "options": ["Making data normal", "Organizing data to reduce redundancy", "Deleting data", "None"], "answer": 1, "explanation": "The mathematical process of structured design for efficiency." },
-        { "id": "q4", "question": "What is 'Atomicity'?", "options": ["Nuclear power", "Database transaction all-or-nothing", "Fast access", "None"], "answer": 1, "explanation": "Either the whole transaction finishes, or none of it does." },
-        { "id": "q5", "question": "What is 'Data Independence'?", "options": ["Data not connected", "Ability to change schema without affecting app", "No security", "None"], "answer": 1, "explanation": "Separating the physical storage from the logical interface." },
-        { "id": "q6", "question": "What is a 'Data Dictionary'?", "options": ["Metadata about the database", "List of words", "Hard drive log", "None"], "answer": 0, "explanation": "Centralized repository of metadata (information about columns, types, etc)." },
-        { "id": "q7", "question": "What is an 'Index'?", "options": ["Pointer array for faster queries", "List of keys", "Security log", "None"], "answer": 0, "explanation": "Improves selection performance at the cost of disk space and write speed." },
-        { "id": "q8", "question": "Which model does MySQL follow?", "options": ["Hierarchical", "Network", "Relational", "Object-Oriented"], "answer": 2, "explanation": "MySQL is a Relational Database Management System (RDBMS)." },
-        { "id": "q9", "question": "What is a 'Relationship' 1:M?", "options": ["One to One", "One to Many", "Many to Many", "None"], "answer": 1, "explanation": "One record in table A connects to many in table B (e.g. Teacher:Students)." },
-        { "id": "q10", "question": "What is 'Concurrency Control'?", "options": ["Speed increase", "Preventing multiple users from conflicting", "Security", "None"], "answer": 1, "explanation": "Ensures data remains consistent when millions of users use it at once." }
+        {
+          "id": "q1",
+          "question": "What is 'Degree'?",
+          "options": [
+            "Temperature",
+            "Number of attributes (columns)",
+            "Number of tuples",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "The total count of columns in a relation."
+        },
+        {
+          "id": "q2",
+          "question": "What is 'Cardinality'?",
+          "options": [
+            "Number of attributes",
+            "Number of tuples (rows)",
+            "Total data",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "The total count of rows in a relation."
+        },
+        {
+          "id": "q3",
+          "question": "What is 'Normalization'?",
+          "options": [
+            "Making data normal",
+            "Organizing data to reduce redundancy",
+            "Deleting data",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "The mathematical process of structured design for efficiency."
+        },
+        {
+          "id": "q4",
+          "question": "What is 'Atomicity'?",
+          "options": [
+            "Nuclear power",
+            "Database transaction all-or-nothing",
+            "Fast access",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Either the whole transaction finishes, or none of it does."
+        },
+        {
+          "id": "q5",
+          "question": "What is 'Data Independence'?",
+          "options": [
+            "Data not connected",
+            "Ability to change schema without affecting app",
+            "No security",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Separating the physical storage from the logical interface."
+        },
+        {
+          "id": "q6",
+          "question": "What is a 'Data Dictionary'?",
+          "options": [
+            "Metadata about the database",
+            "List of words",
+            "Hard drive log",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Centralized repository of metadata (information about columns, types, etc)."
+        },
+        {
+          "id": "q7",
+          "question": "What is an 'Index'?",
+          "options": [
+            "Pointer array for faster queries",
+            "List of keys",
+            "Security log",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Improves selection performance at the cost of disk space and write speed."
+        },
+        {
+          "id": "q8",
+          "question": "Which model does MySQL follow?",
+          "options": [
+            "Hierarchical",
+            "Network",
+            "Relational",
+            "Object-Oriented"
+          ],
+          "answer": 2,
+          "explanation": "MySQL is a Relational Database Management System (RDBMS)."
+        },
+        {
+          "id": "q9",
+          "question": "What is a 'Relationship' 1:M?",
+          "options": ["One to One", "One to Many", "Many to Many", "None"],
+          "answer": 1,
+          "explanation": "One record in table A connects to many in table B (e.g. Teacher:Students)."
+        },
+        {
+          "id": "q10",
+          "question": "What is 'Concurrency Control'?",
+          "options": [
+            "Speed increase",
+            "Preventing multiple users from conflicting",
+            "Security",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Ensures data remains consistent when millions of users use it at once."
+        }
+      ]
+    },
+    {
+      "setId": "s4",
+      "setName": "Normalization & Normal Forms",
+      "difficulty": "Medium-Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is the goal of normalization?",
+          "options": [
+            "Increase data size",
+            "Reduce redundancy and anomalies",
+            "Speed up deletion",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Normalization restructures data to eliminate duplication and improve integrity."
+        },
+        {
+          "id": "q2",
+          "question": "What is 1NF (First Normal Form)?",
+          "options": [
+            "Atomic values only",
+            "No partial dependencies",
+            "No transitive dependencies",
+            "All keys identified"
+          ],
+          "answer": 0,
+          "explanation": "Each attribute contains only atomic (indivisible) values, no lists or arrays."
+        },
+        {
+          "id": "q3",
+          "question": "What is 2NF (Second Normal Form)?",
+          "options": [
+            "All atomic values",
+            "1NF plus no partial dependencies",
+            "No transitive dependencies",
+            "All PK identified"
+          ],
+          "answer": 1,
+          "explanation": "1NF plus all non-key attributes depend on the entire primary key."
+        },
+        {
+          "id": "q4",
+          "question": "What is 3NF (Third Normal Form)?",
+          "options": [
+            "All atomic",
+            "2NF plus no partial dependencies",
+            "2NF plus no transitive dependencies",
+            "None"
+          ],
+          "answer": 2,
+          "explanation": "2NF plus no non-key attribute depends on another non-key attribute."
+        },
+        {
+          "id": "q5",
+          "question": "What is a 'Functional Dependency'?",
+          "options": [
+            "One column depends on another",
+            "Data independence",
+            "Key relationship",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Attribute B depends on A if every value of A maps to exactly one B."
+        },
+        {
+          "id": "q6",
+          "question": "What is a 'Partial Dependency'?",
+          "options": [
+            "Full column dependence",
+            "Non-key attribute depends on part of composite key",
+            "Key independence",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Violation of 2NF: non-key field depends on only part of the primary key."
+        },
+        {
+          "id": "q7",
+          "question": "What is a 'Transitive Dependency'?",
+          "options": [
+            "Key relationship",
+            "Non-key attribute depends on another non-key attribute",
+            "Direct dependence",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Violation of 3NF: A→B→C (if A changes, C indirectly changes)."
+        },
+        {
+          "id": "q8",
+          "question": "What is BCNF (Boyce-Codd Normal Form)?",
+          "options": [
+            "Same as 3NF",
+            "Stricter than 3NF for complex keys",
+            "Less strict than 2NF",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Handles edge cases of 3NF with multiple overlapping candidate keys."
+        },
+        {
+          "id": "q9",
+          "question": "What is 4NF (Fourth Normal Form)?",
+          "options": [
+            "Same as 3NF",
+            "Handles multi-valued dependencies",
+            "No dependencies allowed",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Beyond BCNF: eliminates multi-valued dependencies."
+        },
+        {
+          "id": "q10",
+          "question": "What is 5NF (Fifth Normal Form)?",
+          "options": [
+            "Rarely used",
+            "Handles join dependencies",
+            "Complete isolation",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Deals with join dependencies; rarely used in practical database design."
+        }
+      ]
+    },
+    {
+      "setId": "s5",
+      "setName": "SQL Fundamentals & DDL",
+      "difficulty": "Medium",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What does SQL stand for?",
+          "options": [
+            "Structured Query Language",
+            "Simple Query Logic",
+            "Standard Query Logic",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "SQL is the standard language for relational database queries."
+        },
+        {
+          "id": "q2",
+          "question": "What is DDL?",
+          "options": [
+            "Data Definition Language",
+            "Data Delivery Logic",
+            "Digital Data Link",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "DDL includes CREATE, ALTER, DROP - commands that define schema."
+        },
+        {
+          "id": "q3",
+          "question": "What is DML?",
+          "options": [
+            "Data Manipulation Language",
+            "Direct Machine Link",
+            "Database Mapping Logic",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "DML includes SELECT, INSERT, UPDATE, DELETE - commands that manipulate data."
+        },
+        {
+          "id": "q4",
+          "question": "What does CREATE TABLE do?",
+          "options": [
+            "Adds data",
+            "Defines a new relation",
+            "Deletes table",
+            "Views data"
+          ],
+          "answer": 1,
+          "explanation": "Creates a new table with specified columns and constraints."
+        },
+        {
+          "id": "q5",
+          "question": "What does ALTER TABLE do?",
+          "options": [
+            "Deletes table",
+            "Modifies table structure",
+            "Adds data only",
+            "Removes constraints"
+          ],
+          "answer": 1,
+          "explanation": "Allows adding/removing columns or changing constraints."
+        },
+        {
+          "id": "q6",
+          "question": "What is a PRIMARY KEY constraint?",
+          "options": [
+            "Optional field",
+            "Uniquely identifies each record",
+            "Allows duplicates",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Ensures every row is uniquely identifiable and cannot be NULL."
+        },
+        {
+          "id": "q7",
+          "question": "What is a FOREIGN KEY constraint?",
+          "options": [
+            "Internal key",
+            "Links to primary key of another table",
+            "Duplicate key",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Maintains referential integrity between related tables."
+        },
+        {
+          "id": "q8",
+          "question": "What does DROP TABLE do?",
+          "options": [
+            "Removes data only",
+            "Deletes entire table and structure",
+            "Modifies table",
+            "Views table"
+          ],
+          "answer": 1,
+          "explanation": "Completely removes the table definition from the database."
+        },
+        {
+          "id": "q9",
+          "question": "What is a UNIQUE constraint?",
+          "options": [
+            "Allows one NULL",
+            "All values must be distinct",
+            "No duplicates except NULL",
+            "All answers"
+          ],
+          "answer": 3,
+          "explanation": "Ensures no duplicates; multiple NULL values are allowed (unlike PK)."
+        },
+        {
+          "id": "q10",
+          "question": "What is a CHECK constraint?",
+          "options": [
+            "Validates entries",
+            "Limits values based on condition",
+            "Checks for NULL",
+            "All above"
+          ],
+          "answer": 3,
+          "explanation": "Ensures data meets specified conditions (e.g., Age > 18)."
+        }
+      ]
+    },
+    {
+      "setId": "s6",
+      "setName": "SQL DML & Queries",
+      "difficulty": "Medium-Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What does SELECT do?",
+          "options": [
+            "Inserts data",
+            "Retrieves data",
+            "Deletes data",
+            "Updates data"
+          ],
+          "answer": 1,
+          "explanation": "SELECT retrieves specified columns/rows from one or more tables."
+        },
+        {
+          "id": "q2",
+          "question": "What is a WHERE clause used for?",
+          "options": [
+            "Insert conditions",
+            "Filter results",
+            "Join tables",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Specifies conditions to filter which rows are returned."
+        },
+        {
+          "id": "q3",
+          "question": "What does INSERT do?",
+          "options": [
+            "Removes rows",
+            "Adds new records",
+            "Modifies data",
+            "Views data"
+          ],
+          "answer": 1,
+          "explanation": "Inserts one or more new records into a table."
+        },
+        {
+          "id": "q4",
+          "question": "What does UPDATE do?",
+          "options": [
+            "Adds records",
+            "Modifies existing data",
+            "Deletes records",
+            "Views records"
+          ],
+          "answer": 1,
+          "explanation": "Changes values of existing records based on specified conditions."
+        },
+        {
+          "id": "q5",
+          "question": "What does DELETE do?",
+          "options": [
+            "Removes table structure",
+            "Removes rows",
+            "Adds data",
+            "Modifies data"
+          ],
+          "answer": 1,
+          "explanation": "Removes one or more records from a table."
+        },
+        {
+          "id": "q6",
+          "question": "What is a JOIN operation?",
+          "options": [
+            "Deletes rows",
+            "Combines rows from multiple tables",
+            "Renames table",
+            "Creates backup"
+          ],
+          "answer": 1,
+          "explanation": "Combines columns from two or more tables based on common keys."
+        },
+        {
+          "id": "q7",
+          "question": "What is an INNER JOIN?",
+          "options": [
+            "Returns all rows",
+            "Returns matching rows from both tables",
+            "Returns unmatched rows",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Returns only rows where there are matches in both tables."
+        },
+        {
+          "id": "q8",
+          "question": "What is a LEFT JOIN?",
+          "options": [
+            "Returns right matches only",
+            "Returns all rows from left + matching from right",
+            "Returns right rows",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Returns all rows from left table, plus matching rows from right."
+        },
+        {
+          "id": "q9",
+          "question": "What is a GROUP BY clause?",
+          "options": [
+            "Sorts data",
+            "Groups rows by column values",
+            "Filters groups",
+            "Joins tables"
+          ],
+          "answer": 1,
+          "explanation": "Combines rows with same values; typically used with aggregate functions."
+        },
+        {
+          "id": "q10",
+          "question": "What is a HAVING clause?",
+          "options": [
+            "Groups data",
+            "Filters WHERE results",
+            "Filters GROUP BY results",
+            "Joins tables"
+          ],
+          "answer": 2,
+          "explanation": "Filters groups created by GROUP BY (WHERE filters before grouping)."
+        }
+      ]
+    },
+    {
+      "setId": "s7",
+      "setName": "Aggregate Functions & Queries",
+      "difficulty": "Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What does COUNT() function do?",
+          "options": [
+            "Sums values",
+            "Counts rows/values",
+            "Finds average",
+            "Finds maximum"
+          ],
+          "answer": 1,
+          "explanation": "Counts the number of rows or non-NULL values in a column."
+        },
+        {
+          "id": "q2",
+          "question": "What does SUM() function do?",
+          "options": [
+            "Counts rows",
+            "Adds all values",
+            "Finds average",
+            "Finds minimum"
+          ],
+          "answer": 1,
+          "explanation": "Returns the total sum of numeric values in a column."
+        },
+        {
+          "id": "q3",
+          "question": "What does AVG() function do?",
+          "options": [
+            "Counts items",
+            "Finds sum",
+            "Calculates average",
+            "Finds median"
+          ],
+          "answer": 2,
+          "explanation": "Returns the arithmetic mean of numeric values."
+        },
+        {
+          "id": "q4",
+          "question": "What does MAX() function do?",
+          "options": [
+            "Counts max",
+            "Finds sum",
+            "Finds largest value",
+            "Finds minimum"
+          ],
+          "answer": 2,
+          "explanation": "Returns the highest value in a column."
+        },
+        {
+          "id": "q5",
+          "question": "What does MIN() function do?",
+          "options": [
+            "Counts min",
+            "Finds sum",
+            "Finds largest",
+            "Finds smallest value"
+          ],
+          "answer": 3,
+          "explanation": "Returns the lowest value in a column."
+        },
+        {
+          "id": "q6",
+          "question": "What is a subquery?",
+          "options": [
+            "Inner query within outer query",
+            "Multiple queries",
+            "Deleted query",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "A query nested inside another query for filtering or calculations."
+        },
+        {
+          "id": "q7",
+          "question": "Can a subquery return multiple rows?",
+          "options": [
+            "No",
+            "Only in SELECT",
+            "Yes, with proper operators",
+            "Never"
+          ],
+          "answer": 2,
+          "explanation": "Yes, if using IN, EXISTS, or other multi-row operators."
+        },
+        {
+          "id": "q8",
+          "question": "What is DISTINCT keyword used for?",
+          "options": [
+            "Selects duplicates",
+            "Removes duplicates",
+            "Finds unique IDs",
+            "Groups data"
+          ],
+          "answer": 1,
+          "explanation": "Shows only unique/different values, removing duplicates."
+        },
+        {
+          "id": "q9",
+          "question": "What does ORDER BY do?",
+          "options": [
+            "Groups data",
+            "Filters data",
+            "Sorts result set",
+            "Joins tables"
+          ],
+          "answer": 2,
+          "explanation": "Sorts results in ascending (ASC) or descending (DESC) order."
+        },
+        {
+          "id": "q10",
+          "question": "What is LIMIT clause used for?",
+          "options": [
+            "Filters rows",
+            "Restricts number of rows returned",
+            "Sorts data",
+            "Joins tables"
+          ],
+          "answer": 1,
+          "explanation": "Limits output to a specified number of rows (varies by DBMS)."
+        }
+      ]
+    },
+    {
+      "setId": "s8",
+      "setName": "Transactions & ACID Properties",
+      "difficulty": "Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is a 'Transaction'?",
+          "options": [
+            "Single query",
+            "Set of operations as single unit",
+            "Database backup",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Sequence of database operations that either all succeed or all fail."
+        },
+        {
+          "id": "q2",
+          "question": "What does 'Atomicity' mean in ACID?",
+          "options": [
+            "Individual operations",
+            "All-or-nothing execution",
+            "Data consistency",
+            "Isolation"
+          ],
+          "answer": 1,
+          "explanation": "Transaction completes entirely or rolls back completely; no partial updates."
+        },
+        {
+          "id": "q3",
+          "question": "What does 'Consistency' mean in ACID?",
+          "options": [
+            "Unique values",
+            "Database moves from valid state to valid state",
+            "No duplicates",
+            "Ordering"
+          ],
+          "answer": 1,
+          "explanation": "All integrity constraints are satisfied before and after transaction."
+        },
+        {
+          "id": "q4",
+          "question": "What does 'Isolation' mean in ACID?",
+          "options": [
+            "Single user",
+            "Concurrent transactions don't interfere",
+            "Encryption",
+            "Backup"
+          ],
+          "answer": 1,
+          "explanation": "Each transaction executes independently; changes not visible until committed."
+        },
+        {
+          "id": "q5",
+          "question": "What does 'Durability' mean in ACID?",
+          "options": [
+            "Long lasting",
+            "Committed data persists even after failures",
+            "No corruption",
+            "Backup"
+          ],
+          "answer": 1,
+          "explanation": "Once committed, data survives system failures (crashes, power loss)."
+        },
+        {
+          "id": "q6",
+          "question": "What does COMMIT do?",
+          "options": [
+            "Starts transaction",
+            "Saves changes permanently",
+            "Undoes changes",
+            "Rolls back"
+          ],
+          "answer": 1,
+          "explanation": "Finalizes transaction and makes all changes permanent in database."
+        },
+        {
+          "id": "q7",
+          "question": "What does ROLLBACK do?",
+          "options": [
+            "Commits changes",
+            "Reverts all changes in transaction",
+            "Saves data",
+            "Backs up"
+          ],
+          "answer": 1,
+          "explanation": "Undoes all operations since the beginning of the transaction."
+        },
+        {
+          "id": "q8",
+          "question": "What is a 'Deadlock'?",
+          "options": [
+            "Transaction failure",
+            "Two transactions waiting for each other indefinitely",
+            "Network error",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Mutual wait condition preventing either transaction from proceeding."
+        },
+        {
+          "id": "q9",
+          "question": "What is 'Dirty Read'?",
+          "options": [
+            "Corrupt data",
+            "Reading uncommitted changes",
+            "Read error",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Reading data modified by uncommitted transaction (may be rolled back)."
+        },
+        {
+          "id": "q10",
+          "question": "What is 'Lost Update' problem?",
+          "options": [
+            "Data deletion",
+            "Two transactions overwrite each other's updates",
+            "Network loss",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "When concurrent transactions overwrite changes, losing one transaction's work."
+        }
+      ]
+    },
+    {
+      "setId": "s9",
+      "setName": "Database Security & Backup",
+      "difficulty": "Medium-Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is 'Authentication'?",
+          "options": [
+            "Authorization",
+            "Verifying user identity",
+            "Encryption",
+            "Backup"
+          ],
+          "answer": 1,
+          "explanation": "Confirming user is who they claim to be through login credentials."
+        },
+        {
+          "id": "q2",
+          "question": "What is 'Authorization'?",
+          "options": [
+            "User verification",
+            "Granting permissions to access data",
+            "Encryption",
+            "Auditing"
+          ],
+          "answer": 1,
+          "explanation": "Determining what authenticated users are allowed to do."
+        },
+        {
+          "id": "q3",
+          "question": "What is 'Encryption'?",
+          "options": [
+            "Compression",
+            "Converting data to unreadable format",
+            "Backup",
+            "Archiving"
+          ],
+          "answer": 1,
+          "explanation": "Scrambling sensitive data so only authorized users can read it."
+        },
+        {
+          "id": "q4",
+          "question": "What is a 'User Account' in database?",
+          "options": [
+            "Bank account",
+            "Login identity with permissions",
+            "Table record",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Identity created for users to access database with assigned privileges."
+        },
+        {
+          "id": "q5",
+          "question": "What is 'GRANT' command used for?",
+          "options": [
+            "Restrict access",
+            "Give permissions to user",
+            "Remove user",
+            "Modify data"
+          ],
+          "answer": 1,
+          "explanation": "Assigns specific privileges (SELECT, INSERT, etc) to users."
+        },
+        {
+          "id": "q6",
+          "question": "What is 'REVOKE' command used for?",
+          "options": [
+            "Grant access",
+            "Remove permissions from user",
+            "Encrypt data",
+            "Backup"
+          ],
+          "answer": 1,
+          "explanation": "Withdraws previously granted privileges from users."
+        },
+        {
+          "id": "q7",
+          "question": "What is a 'Backup'?",
+          "options": [
+            "Original data",
+            "Copy of database for recovery",
+            "Log file",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Duplicate of database data stored separately for disaster recovery."
+        },
+        {
+          "id": "q8",
+          "question": "What is 'Full Backup'?",
+          "options": [
+            "Partial copy",
+            "Complete copy of all data",
+            "Only changes",
+            "Incremental copy"
+          ],
+          "answer": 1,
+          "explanation": "Complete copy of entire database at a specific point in time."
+        },
+        {
+          "id": "q9",
+          "question": "What is 'Incremental Backup'?",
+          "options": [
+            "Full copy",
+            "Only changes since last backup",
+            "Partial copy",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Backs up only data modified since the last backup (faster, less storage)."
+        },
+        {
+          "id": "q10",
+          "question": "What is an 'Audit Trail'?",
+          "options": [
+            "Database map",
+            "Log of who accessed/modified data",
+            "Backup copy",
+            "Security key"
+          ],
+          "answer": 1,
+          "explanation": "Record of database activities for accountability and security analysis."
+        }
+      ]
+    },
+    {
+      "setId": "s10",
+      "setName": "Advanced Database Concepts",
+      "difficulty": "Very Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is 'Denormalization'?",
+          "options": [
+            "Reducing dependencies",
+            "Intentionally adding redundancy for performance",
+            "Removing tables",
+            "Deleting data"
+          ],
+          "answer": 1,
+          "explanation": "Deliberately breaking normal forms to improve query performance (trade-off)."
+        },
+        {
+          "id": "q2",
+          "question": "What is a 'Stored Procedure'?",
+          "options": [
+            "Data backup",
+            "Pre-compiled SQL code stored in database",
+            "Query log",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Reusable SQL code executed on server-side, improving performance/security."
+        },
+        {
+          "id": "q3",
+          "question": "What is a 'Trigger'?",
+          "options": [
+            "Alert message",
+            "Code executed automatically on table events",
+            "Index",
+            "View"
+          ],
+          "answer": 1,
+          "explanation": "Automatic action executed when INSERT, UPDATE, or DELETE occurs."
+        },
+        {
+          "id": "q4",
+          "question": "What is a 'Database Cursor'?",
+          "options": [
+            "Visual pointer",
+            "Mechanism to fetch one row at a time",
+            "Index",
+            "Backup"
+          ],
+          "answer": 1,
+          "explanation": "Pointer used in stored procedures to navigate through result set."
+        },
+        {
+          "id": "q5",
+          "question": "What is 'Query Optimization'?",
+          "options": [
+            "Faster typing",
+            "Improving SQL performance through indexing/rewriting",
+            "Compression",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Techniques to execute queries efficiently with minimal resource consumption."
+        },
+        {
+          "id": "q6",
+          "question": "What is a 'Replication'?",
+          "options": [
+            "Backup only",
+            "Copying database to multiple servers for redundancy",
+            "Archiving",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Maintains synchronized copies across multiple servers for fault tolerance."
+        },
+        {
+          "id": "q7",
+          "question": "What is 'Partitioning'?",
+          "options": [
+            "Fragmentation",
+            "Dividing large table into smaller segments",
+            "Compression",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Splitting tables by range/hash to improve performance and manageability."
+        },
+        {
+          "id": "q8",
+          "question": "What is a 'Data Warehouse'?",
+          "options": [
+            "Storage room",
+            "Large centralized repository for analytics",
+            "Backup system",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Integrated data from multiple sources optimized for reporting/analysis."
+        },
+        {
+          "id": "q9",
+          "question": "What is 'OLTP'?",
+          "options": [
+            "Offline Transaction Processing",
+            "Online Transaction Processing - day-to-day operations",
+            "Data warehouse",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Systems handling real-time transactional operations (banks, e-commerce)."
+        },
+        {
+          "id": "q10",
+          "question": "What is 'OLAP'?",
+          "options": [
+            "Transactional system",
+            "Online Analytical Processing - data analysis/reporting",
+            "Backup system",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Systems designed for complex analytical queries and historical analysis."
+        }
       ]
     }
   ]

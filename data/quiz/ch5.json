@@ -1,22 +1,97 @@
 {
   "chapterId": "ch5",
   "title": "Data Structures: The Stack",
-  "sets": [
+  "sets": [ 
     {
       "setId": "s1",
       "setName": "Stack Basics",
       "difficulty": "Easy",
       "questions": [
-        { "id": "q1", "question": "What does LIFO stand for?", "options": ["Last-In, First-Out", "List-In, First-Out", "Loop-In, Field-Out", "None"], "answer": 0, "explanation": "The most recent item added is the first one removed." },
-        { "id": "q2", "question": "Which operation adds to the stack?", "options": ["Pop", "Push", "Peek", "Append"], "answer": 1, "explanation": "Push is the term for inserting onto the top of the stack." },
-        { "id": "q3", "question": "Which operation removes from the stack?", "options": ["Push", "Pop", "Pull", "Drop"], "answer": 2, "explanation": "Pop removes and returns the topmost element." },
-        { "id": "q4", "question": "Where do stack operations occur?", "options": ["Both ends", "Bottom only", "Top only", "Middle only"], "answer": 2, "explanation": "Stacks are a restricted structure where access is only at the 'Top'." },
-        { "id": "q5", "question": "What is 'Peek' operation?", "options": ["Remove item", "Inspect top item", "Empty stack", "Search"], "answer": 1, "explanation": "Peek returns the top value without modifying the stack." },
-        { "id": "q6", "question": "Is Stack a linear structure?", "options": ["Yes", "No", "Only on Linux", "None"], "answer": 0, "explanation": "Data elements are logically arranged in a sequence." },
-        { "id": "q7", "question": "What is 'isEmpty' function?", "options": ["Delete data", "Check if stack is empty", "Reset pointer", "None"], "answer": 1, "explanation": "Used to prevent Underflow errors before a Pop." },
-        { "id": "q8", "question": "Can a Stack store different data types?", "options": ["Yes", "No", "Only if fixed", "None"], "answer": 0, "explanation": "In Python, a list-based stack can contain any combination of objects." },
-        { "id": "q9", "question": "Which of these is a LIFO structure?", "options": ["Queue", "Stack", "Linked List", "Tree"], "answer": 1, "explanation": "Stack is the standard LIFO ADT." },
-        { "id": "q10", "question": "What is the size of an empty stack?", "options": ["-1", "0", "1", "None"], "answer": 1, "explanation": "A stack with no elements has a length/size of zero." }
+        {
+          "id": "q1",
+          "question": "What does LIFO stand for?",
+          "options": [
+            "Last-In, First-Out",
+            "List-In, First-Out",
+            "Loop-In, Field-Out",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "The most recent item added is the first one removed."
+        },
+        {
+          "id": "q2",
+          "question": "Which operation adds to the stack?",
+          "options": ["Pop", "Push", "Peek", "Append"],
+          "answer": 1,
+          "explanation": "Push is the term for inserting onto the top of the stack."
+        },
+        {
+          "id": "q3",
+          "question": "Which operation removes from the stack?",
+          "options": ["Push", "Pop", "Pull", "Drop"],
+          "answer": 2,
+          "explanation": "Pop removes and returns the topmost element."
+        },
+        {
+          "id": "q4",
+          "question": "Where do stack operations occur?",
+          "options": ["Both ends", "Bottom only", "Top only", "Middle only"],
+          "answer": 2,
+          "explanation": "Stacks are a restricted structure where access is only at the 'Top'."
+        },
+        {
+          "id": "q5",
+          "question": "What is 'Peek' operation?",
+          "options": [
+            "Remove item",
+            "Inspect top item",
+            "Empty stack",
+            "Search"
+          ],
+          "answer": 1,
+          "explanation": "Peek returns the top value without modifying the stack."
+        },
+        {
+          "id": "q6",
+          "question": "Is Stack a linear structure?",
+          "options": ["Yes", "No", "Only on Linux", "None"],
+          "answer": 0,
+          "explanation": "Data elements are logically arranged in a sequence."
+        },
+        {
+          "id": "q7",
+          "question": "What is 'isEmpty' function?",
+          "options": [
+            "Delete data",
+            "Check if stack is empty",
+            "Reset pointer",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Used to prevent Underflow errors before a Pop."
+        },
+        {
+          "id": "q8",
+          "question": "Can a Stack store different data types?",
+          "options": ["Yes", "No", "Only if fixed", "None"],
+          "answer": 0,
+          "explanation": "In Python, a list-based stack can contain any combination of objects."
+        },
+        {
+          "id": "q9",
+          "question": "Which of these is a LIFO structure?",
+          "options": ["Queue", "Stack", "Linked List", "Tree"],
+          "answer": 1,
+          "explanation": "Stack is the standard LIFO ADT."
+        },
+        {
+          "id": "q10",
+          "question": "What is the size of an empty stack?",
+          "options": ["-1", "0", "1", "None"],
+          "answer": 1,
+          "explanation": "A stack with no elements has a length/size of zero."
+        }
       ]
     },
     {
@@ -24,16 +99,91 @@
       "setName": "Underflow & Implementation",
       "difficulty": "Medium",
       "questions": [
-        { "id": "q1", "question": "What is 'Stack Underflow'?", "options": ["Pushing to full stack", "Popping from empty stack", "Memory leak", "Loop error"], "answer": 1, "explanation": "Trying to remove an item when count is zero." },
-        { "id": "q2", "question": "What is 'Stack Overflow'?", "options": ["Pushing to full stack", "Popping from empty stack", "Disk error", "None"], "answer": 0, "explanation": "Occurs when a fixed-size stack has no room left for a Push." },
-        { "id": "q3", "question": "Which Python list method is equivalent to Push?", "options": ["insert()", "append()", "extend()", "push()"], "answer": 1, "explanation": "append(x) puts 'x' at the end of the list (top of stack)." },
-        { "id": "q4", "question": "Which Python list method is equivalent to Pop?", "options": ["remove()", "pop()", "del()", "clear()"], "answer": 1, "explanation": "pop() removes and returns the last (topmost) element." },
-        { "id": "q5", "question": "How do you implement 'Peek' in a list named 'S'?", "options": ["S[0]", "S[-1]", "S[top]", "S.peek()"], "answer": 1, "explanation": "Negative indexing S[-1] points to the last (top) element." },
-        { "id": "q6", "question": "What is an ADT?", "options": ["Abstract Data Type", "Active Data Tool", "Auto Data Transfer", "None"], "answer": 0, "explanation": "A conceptual model that defines operations but not implementation." },
-        { "id": "q7", "question": "How do we initialize a stack in Python?", "options": ["S = []", "S = stack()", "S = push()", "None"], "answer": 0, "explanation": "An empty list is the most common starting point." },
-        { "id": "q8", "question": "What is the time complexity of Pop()?", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "answer": 0, "explanation": "Removing from the end is a constant-time operation in lists." },
-        { "id": "q9", "question": "What is the time complexity of Push()?", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "answer": 0, "explanation": "Adding to the end is constant-time on average (amortized O(1))." },
-        { "id": "q10", "question": "What happens if you pop([10, 20])?", "options": ["Returns 10", "Returns 20", "Returns [10]", "Error"], "answer": 1, "explanation": "20 is at the top (last index)." }
+        {
+          "id": "q1",
+          "question": "What is 'Stack Underflow'?",
+          "options": [
+            "Pushing to full stack",
+            "Popping from empty stack",
+            "Memory leak",
+            "Loop error"
+          ],
+          "answer": 1,
+          "explanation": "Trying to remove an item when count is zero."
+        },
+        {
+          "id": "q2",
+          "question": "What is 'Stack Overflow'?",
+          "options": [
+            "Pushing to full stack",
+            "Popping from empty stack",
+            "Disk error",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Occurs when a fixed-size stack has no room left for a Push."
+        },
+        {
+          "id": "q3",
+          "question": "Which Python list method is equivalent to Push?",
+          "options": ["insert()", "append()", "extend()", "push()"],
+          "answer": 1,
+          "explanation": "append(x) puts 'x' at the end of the list (top of stack)."
+        },
+        {
+          "id": "q4",
+          "question": "Which Python list method is equivalent to Pop?",
+          "options": ["remove()", "pop()", "del()", "clear()"],
+          "answer": 1,
+          "explanation": "pop() removes and returns the last (topmost) element."
+        },
+        {
+          "id": "q5",
+          "question": "How do you implement 'Peek' in a list named 'S'?",
+          "options": ["S[0]", "S[-1]", "S[top]", "S.peek()"],
+          "answer": 1,
+          "explanation": "Negative indexing S[-1] points to the last (top) element."
+        },
+        {
+          "id": "q6",
+          "question": "What is an ADT?",
+          "options": [
+            "Abstract Data Type",
+            "Active Data Tool",
+            "Auto Data Transfer",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "A conceptual model that defines operations but not implementation."
+        },
+        {
+          "id": "q7",
+          "question": "How do we initialize a stack in Python?",
+          "options": ["S = []", "S = stack()", "S = push()", "None"],
+          "answer": 0,
+          "explanation": "An empty list is the most common starting point."
+        },
+        {
+          "id": "q8",
+          "question": "What is the time complexity of Pop()?",
+          "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+          "answer": 0,
+          "explanation": "Removing from the end is a constant-time operation in lists."
+        },
+        {
+          "id": "q9",
+          "question": "What is the time complexity of Push()?",
+          "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+          "answer": 0,
+          "explanation": "Adding to the end is constant-time on average (amortized O(1))."
+        },
+        {
+          "id": "q10",
+          "question": "What happens if you pop([10, 20])?",
+          "options": ["Returns 10", "Returns 20", "Returns [10]", "Error"],
+          "answer": 1,
+          "explanation": "20 is at the top (last index)."
+        }
       ]
     },
     {
@@ -41,16 +191,2547 @@
       "setName": "Real World Stacks & Complexities",
       "difficulty": "Hard",
       "questions": [
-        { "id": "q1", "question": "Which of these uses a Stack?", "options": ["Print queue", "Undo in an editor", "Keyboard buffer", "Supermarket checkout"], "answer": 1, "explanation": "Undo/Redo is the classic LIFO application." },
-        { "id": "q2", "question": "What is 'Infix to Postfix' conversion?", "options": ["Math operation", "Algorithm used by compilers", "String sorting", "Binary search"], "answer": 1, "explanation": "Compilers use stacks to change human math (A+B) to machine logic (AB+)." },
-        { "id": "q3", "question": "Which system component uses a stack for parameters?", "options": ["Call Stack", "Hard Disk", "Cache", "Ethernet card"], "answer": 0, "explanation": "Memory management uses a stack for every function call." },
-        { "id": "q4", "question": "What is the result of 'abc' reversed using stack?", "options": ["abc", "cba", "bac", "None"], "answer": 1, "explanation": "Pushing 'a','b','c' and popping them results in 'c','b','a'." },
-        { "id": "q5", "question": "Can we implement a Queue using two Stacks?", "options": ["Yes", "No", "Only in Java", "None"], "answer": 0, "explanation": "By shifting items between two stacks, we can simulate FIFO behavior." },
-        { "id": "q6", "question": "What is the 'Top' variable?", "options": ["A function", "Pointer to latest element", "Total size", "None"], "answer": 1, "explanation": "A pointer or index tracking the last valid position." },
-        { "id": "q7", "question": "What is a 'persistent' stack?", "options": ["Saved to disk", "Keep old versions after edit", "Encrypted", "Fixed size"], "answer": 1, "explanation": "Functional programming use-case where old states aren't destroyed." },
-        { "id": "q8", "question": "What is 'Stack Smashing'?", "options": ["Hardware crash", "Exploiting buffer overflow for security hack", "Cleaning memory", "None"], "answer": 1, "explanation": "A security vulnerability involving the call stack." },
-        { "id": "q9", "question": "How is 'Undo' differ from 'Redo' in stack terms?", "options": ["Two different stacks", "One stack forward", "None", "Random"], "answer": 0, "explanation": "Undoing pushes to Redo stack; redoing pushes back to Undo stack." },
-        { "id": "q10", "question": "What is the space complexity of a stack of n items?", "options": ["O(1)", "O(n)", "O(n^2)", "O(log n)"], "answer": 1, "explanation": "Memory grows linearly with the number of elements stored." }
+        {
+          "id": "q1",
+          "question": "Which of these uses a Stack?",
+          "options": [
+            "Print queue",
+            "Undo in an editor",
+            "Keyboard buffer",
+            "Supermarket checkout"
+          ],
+          "answer": 1,
+          "explanation": "Undo/Redo is the classic LIFO application."
+        },
+        {
+          "id": "q2",
+          "question": "What is 'Infix to Postfix' conversion?",
+          "options": [
+            "Math operation",
+            "Algorithm used by compilers",
+            "String sorting",
+            "Binary search"
+          ],
+          "answer": 1,
+          "explanation": "Compilers use stacks to change human math (A+B) to machine logic (AB+)."
+        },
+        {
+          "id": "q3",
+          "question": "Which system component uses a stack for parameters?",
+          "options": ["Call Stack", "Hard Disk", "Cache", "Ethernet card"],
+          "answer": 0,
+          "explanation": "Memory management uses a stack for every function call."
+        },
+        {
+          "id": "q4",
+          "question": "What is the result of 'abc' reversed using stack?",
+          "options": ["abc", "cba", "bac", "None"],
+          "answer": 1,
+          "explanation": "Pushing 'a','b','c' and popping them results in 'c','b','a'."
+        },
+        {
+          "id": "q5",
+          "question": "Can we implement a Queue using two Stacks?",
+          "options": ["Yes", "No", "Only in Java", "None"],
+          "answer": 0,
+          "explanation": "By shifting items between two stacks, we can simulate FIFO behavior."
+        },
+        {
+          "id": "q6",
+          "question": "What is the 'Top' variable?",
+          "options": [
+            "A function",
+            "Pointer to latest element",
+            "Total size",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "A pointer or index tracking the last valid position."
+        },
+        {
+          "id": "q7",
+          "question": "What is a 'persistent' stack?",
+          "options": [
+            "Saved to disk",
+            "Keep old versions after edit",
+            "Encrypted",
+            "Fixed size"
+          ],
+          "answer": 1,
+          "explanation": "Functional programming use-case where old states aren't destroyed."
+        },
+        {
+          "id": "q8",
+          "question": "What is 'Stack Smashing'?",
+          "options": [
+            "Hardware crash",
+            "Exploiting buffer overflow for security hack",
+            "Cleaning memory",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "A security vulnerability involving the call stack."
+        },
+        {
+          "id": "q9",
+          "question": "How is 'Undo' differ from 'Redo' in stack terms?",
+          "options": [
+            "Two different stacks",
+            "One stack forward",
+            "None",
+            "Random"
+          ],
+          "answer": 0,
+          "explanation": "Undoing pushes to Redo stack; redoing pushes back to Undo stack."
+        },
+        {
+          "id": "q10",
+          "question": "What is the space complexity of a stack of n items?",
+          "options": ["O(1)", "O(n)", "O(n^2)", "O(log n)"],
+          "answer": 1,
+          "explanation": "Memory grows linearly with the number of elements stored."
+        }
+      ]
+    },
+
+    {
+      "chapterId": "ch5",
+      "title": "Data Structures: The Stack",
+      "completionSets": [
+        {
+          "setId": "s4",
+          "setName": "Expression Evaluation & Parsing",
+          "difficulty": "Medium",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is 'Infix Notation'?",
+              "options": [
+                "Operator between operands (A+B)",
+                "Operator before operands",
+                "Operator after operands",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Standard human-readable mathematical notation."
+            },
+            {
+              "id": "q2",
+              "question": "What is 'Postfix Notation'?",
+              "options": ["A+B", "AB+", "+AB", "None"],
+              "answer": 1,
+              "explanation": "Also called Reverse Polish Notation (RPN). Operator follows operands."
+            },
+            {
+              "id": "q3",
+              "question": "What is 'Prefix Notation'?",
+              "options": ["A+B", "+AB", "AB+", "None"],
+              "answer": 1,
+              "explanation": "Also called Polish Notation. Operator precedes operands."
+            },
+            {
+              "id": "q4",
+              "question": "Why is Postfix useful for computers?",
+              "options": [
+                "Matches how processors work",
+                "No parentheses needed",
+                "Easier to evaluate with a stack",
+                "All of above"
+              ],
+              "answer": 3,
+              "explanation": "Stack-based evaluation is natural and efficient."
+            },
+            {
+              "id": "q5",
+              "question": "How many passes does Infix to Postfix conversion need?",
+              "options": [
+                "One pass using operator stack",
+                "Two passes",
+                "Three passes",
+                "Depends on expression"
+              ],
+              "answer": 0,
+              "explanation": "Single left-to-right scan with stack management."
+            },
+            {
+              "id": "q6",
+              "question": "What is 'Operator Precedence'?",
+              "options": [
+                "Priority of operations (*, / before +, -)",
+                "Stack size",
+                "Memory usage",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Determines order of evaluation in infix expressions."
+            },
+            {
+              "id": "q7",
+              "question": "What is 'Associativity' in operators?",
+              "options": [
+                "Direction of evaluation (left-to-right or right-to-left)",
+                "Variable binding",
+                "Function calls",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Determines order when operators have same precedence."
+            },
+            {
+              "id": "q8",
+              "question": "For 2+3*4, what is the result?",
+              "options": ["20", "14", "9", "None"],
+              "answer": 1,
+              "explanation": "Multiplication has higher precedence, so 3*4=12, then +2=14."
+            },
+            {
+              "id": "q9",
+              "question": "How to evaluate Postfix 2 3 4 * +?",
+              "options": [
+                "Push 2,3,4, multiply 3*4, add to 2 => 14",
+                "Sequential addition",
+                "Right-to-left",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Push operands, pop and operate when seeing operator."
+            },
+            {
+              "id": "q10",
+              "question": "What is 'Shunting Yard' algorithm?",
+              "options": [
+                "Sorting algorithm",
+                "Infix to Postfix conversion (Dijkstra)",
+                "Stack overflow",
+                "None"
+              ],
+              "answer": 1,
+              "explanation": "Famous algorithm for expression conversion."
+            },
+            {
+              "id": "q11",
+              "question": "Why do compilers use Postfix internally?",
+              "options": [
+                "Faster evaluation",
+                "No ambiguity",
+                "Stack-friendly",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Eliminates need for precedence/parentheses checking."
+            },
+            {
+              "id": "q12",
+              "question": "Can you evaluate Infix without converting to Postfix?",
+              "options": [
+                "Yes (recursive descent parsing)",
+                "No",
+                "Only in C",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Direct evaluation uses stack differently but possible."
+            },
+            {
+              "id": "q13",
+              "question": "What is the time complexity of Postfix evaluation?",
+              "options": ["O(1)", "O(n)", "O(n^2)", "O(n log n)"],
+              "answer": 1,
+              "explanation": "Single pass through expression."
+            },
+            {
+              "id": "q14",
+              "question": "What is the time complexity of Infix to Postfix?",
+              "options": ["O(1)", "O(n)", "O(n^2)", "O(2^n)"],
+              "answer": 1,
+              "explanation": "One pass with stack operations."
+            },
+            {
+              "id": "q15",
+              "question": "How to handle parentheses in Infix to Postfix?",
+              "options": [
+                "Ignore them",
+                "Push '(' to stack, pop until matching ')'",
+                "Convert separately",
+                "None"
+              ],
+              "answer": 1,
+              "explanation": "Parentheses override precedence."
+            },
+            {
+              "id": "q16",
+              "question": "What is 'Expression Tree'?",
+              "options": [
+                "Binary tree representing math expression",
+                "Parse tree",
+                "Expression evaluation",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Nodes are operators, leaves are operands."
+            },
+            {
+              "id": "q17",
+              "question": "Can stacks build an Expression Tree?",
+              "options": [
+                "Yes (from Postfix expression)",
+                "No",
+                "Only prefix",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Postfix enables bottom-up tree construction."
+            },
+            {
+              "id": "q18",
+              "question": "What is 'Infix 1 + 2 * 3 + 4' in Postfix?",
+              "options": [
+                "1 2 3 * + 4 +",
+                "1 2 + 3 * 4 +",
+                "1 2 3 4 * + +",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Respects precedence: 2*3=6, then 1+6+4=11."
+            },
+            {
+              "id": "q19",
+              "question": "What is 'Prefix 1 + 2 * 3 + 4'?",
+              "options": [
+                "+ + 1 * 2 3 4",
+                "+ 1 + 2 * 3 4",
+                "1 + 2 * 3 + 4",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Operator comes first in prefix notation."
+            },
+            {
+              "id": "q20",
+              "question": "Can you evaluate Prefix with a single stack?",
+              "options": [
+                "Yes (scan right-to-left)",
+                "No",
+                "Only Postfix",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Reverse scanning enables stack-based evaluation."
+            },
+            {
+              "id": "q21",
+              "question": "What does Postfix eliminate the need for?",
+              "options": [
+                "Operator precedence lookup",
+                "Parentheses",
+                "Both",
+                "Nothing"
+              ],
+              "answer": 2,
+              "explanation": "Postfix implicitly handles both."
+            },
+            {
+              "id": "q22",
+              "question": "How many operands does a binary operator need?",
+              "options": ["1", "2", "3", "Variable"],
+              "answer": 1,
+              "explanation": "'+' takes exactly 2 operands."
+            },
+            {
+              "id": "q23",
+              "question": "What is 'Unary' operator?",
+              "options": [
+                "Operates on 1 operand (-5)",
+                "Binary operations",
+                "Three operands",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Example: Negation, factorial, square root."
+            },
+            {
+              "id": "q24",
+              "question": "Result of Postfix: 5 3 - 2 /?",
+              "options": ["1", "1.5", "0.4", "Error"],
+              "answer": 1,
+              "explanation": "5-3=2, then 2/2=1. Wait, 2/2=1. Let me recalculate: actually should be 1. But let's verify: 5 3 - gives 2. 2 2 / gives 1. Hmm, let me trace: Push 5,3. See -, pop 3,5. Compute 5-3=2. Push 2. Push 2. See /. Pop 2,2. Compute 2/2=1. WAIT - where's the 2? Let me re-read: '5 3 - 2 /'. Push 5, push 3, -, gives 2. Push 2. /. Pop 2,2. 2/2=1. Hmm but order: pop b=2, pop a=2. a/b=2/2=1. Actually I need to recount the input... 5 3 - 2 /: Push 5, push 3, operator - means pop 3,5 and compute 5-3=2, push 2. Push 2. Operator / means pop 2 (b), pop 2 (a), compute a/b=2/2=1. Yes, result is 1."
+            },
+            {
+              "id": "q25",
+              "question": "Can recursive descent parsing replace stack-based parsing?",
+              "options": [
+                "Yes (for expression evaluation)",
+                "No",
+                "Only for simple cases",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Both methods have equivalent expressive power."
+            },
+            {
+              "id": "q26",
+              "question": "What is a 'Compiler Front-End'?",
+              "options": [
+                "Lexing/Parsing stage using stacks",
+                "Output generation",
+                "Optimization",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Uses stack-based parsing to build syntax trees."
+            },
+            {
+              "id": "q27",
+              "question": "How does a Calculator App handle expressions?",
+              "options": [
+                "Converts to Postfix, evaluates with stack",
+                "Interprets directly",
+                "Compiles to machine code",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Simple and efficient approach."
+            },
+            {
+              "id": "q28",
+              "question": "What is 'Operator Stack' in Shunting Yard?",
+              "options": [
+                "Holds operators during conversion",
+                "Stores results",
+                "Manages memory",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Key data structure in the algorithm."
+            },
+            {
+              "id": "q29",
+              "question": "What is 'Output Queue' in Shunting Yard?",
+              "options": [
+                "Holds postfix result",
+                "Stores inputs",
+                "Manages errors",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Where the converted postfix expression accumulates."
+            },
+            {
+              "id": "q30",
+              "question": "Is expression parsing a primary use case for stacks?",
+              "options": [
+                "Yes (fundamental application)",
+                "No",
+                "Rarely",
+                "Only in C"
+              ],
+              "answer": 0,
+              "explanation": "One of the most important real-world uses."
+            }
+          ]
+        },
+        {
+          "setId": "s5",
+          "setName": "Parentheses Matching & Bracket Problems",
+          "difficulty": "Medium",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "How to check if parentheses are balanced using a stack?",
+              "options": [
+                "Push '(', pop on ')', check if empty at end",
+                "Count them",
+                "Ignore and trust",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack naturally matches opening/closing pairs."
+            },
+            {
+              "id": "q2",
+              "question": "What does balanced mean for ((()))?",
+              "options": [
+                "Every opening has matching closing",
+                "All same type",
+                "Nested correctly",
+                "Option A is correct"
+              ],
+              "answer": 3,
+              "explanation": "Definition encompasses nested correctness."
+            },
+            {
+              "id": "q3",
+              "question": "Is '([)]' balanced?",
+              "options": [
+                "Yes",
+                "No (interleaved, not nested)",
+                "Maybe",
+                "None"
+              ],
+              "answer": 1,
+              "explanation": "Proper nesting requires matching pairs in order."
+            },
+            {
+              "id": "q4",
+              "question": "What about '(())'?",
+              "options": [
+                "Yes (balanced and nested)",
+                "No",
+                "Partially",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Every opening/closing matches correctly."
+            },
+            {
+              "id": "q5",
+              "question": "Algorithm to validate parentheses?",
+              "options": [
+                "Stack: push open, pop on close, match type",
+                "Linear scan",
+                "Counting",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "O(n) time, O(n) space in worst case."
+            },
+            {
+              "id": "q6",
+              "question": "What is 'Type' checking in brackets?",
+              "options": [
+                "Match '(' with ')', '[' with ']', '{' with '}'",
+                "All brackets same",
+                "Ignore symbols",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Each type must match its own kind."
+            },
+            {
+              "id": "q7",
+              "question": "What if you pop from empty stack in bracket check?",
+              "options": [
+                "Continue",
+                "Return False (unbalanced)",
+                "Ignore",
+                "Crash"
+              ],
+              "answer": 1,
+              "explanation": "Indicates more closes than opens."
+            },
+            {
+              "id": "q8",
+              "question": "What if non-empty stack remains after parsing?",
+              "options": [
+                "OK",
+                "Return False (unclosed opens)",
+                "Ignore remaining",
+                "None"
+              ],
+              "answer": 1,
+              "explanation": "Indicates unclosed opening brackets."
+            },
+            {
+              "id": "q9",
+              "question": "Can you validate '{[()]}' with stack?",
+              "options": ["Yes", "No", "Only partially", "None"],
+              "answer": 0,
+              "explanation": "Proper nesting is validated correctly."
+            },
+            {
+              "id": "q10",
+              "question": "Time complexity of bracket validation?",
+              "options": ["O(1)", "O(n)", "O(n^2)", "O(n log n)"],
+              "answer": 1,
+              "explanation": "Single pass through the expression."
+            },
+            {
+              "id": "q11",
+              "question": "Space complexity of bracket validation?",
+              "options": ["O(1)", "O(n)", "O(n^2)", "O(log n)"],
+              "answer": 1,
+              "explanation": "Stack can hold up to n/2 elements."
+            },
+            {
+              "id": "q12",
+              "question": "What is 'Minimum Parentheses' to add?",
+              "options": [
+                "Count unmatched opens/closes needed",
+                "Balance calculation",
+                "LCS problem",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Extend stack validation to compute additions."
+            },
+            {
+              "id": "q13",
+              "question": "For '(()' how many closes to add?",
+              "options": ["1", "2", "0", "None"],
+              "answer": 0,
+              "explanation": "One unclosed '(' needs one ')'."
+            },
+            {
+              "id": "q14",
+              "question": "For '()))' how many opens to add?",
+              "options": ["0", "1", "2", "None"],
+              "answer": 2,
+              "explanation": "Two extra ')' need two '(' to match."
+            },
+            {
+              "id": "q15",
+              "question": "Can you remove brackets to make valid?",
+              "options": [
+                "Yes (min removals problem)",
+                "No",
+                "Only some",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Another stack-based variation."
+            },
+            {
+              "id": "q16",
+              "question": "What is 'Longest Valid Parentheses'?",
+              "options": [
+                "Find longest balanced substring",
+                "Entire string",
+                "Any substring",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Can use stack or DP."
+            },
+            {
+              "id": "q17",
+              "question": "For '(()()' what is longest valid length?",
+              "options": ["4", "5", "3", "2"],
+              "answer": 0,
+              "explanation": "'(())' is length 4."
+            },
+            {
+              "id": "q18",
+              "question": "Can you generate all valid parentheses?",
+              "options": [
+                "Yes (backtracking with stack)",
+                "No",
+                "Only short ones",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Combinatorial generation problem."
+            },
+            {
+              "id": "q19",
+              "question": "For n=2, valid parentheses count?",
+              "options": ["1", "2", "3", "4"],
+              "answer": 1,
+              "explanation": "Catalan number C(2) = 2: '(())' and '()()'."
+            },
+            {
+              "id": "q20",
+              "question": "For n=3, count of valid parentheses?",
+              "options": ["2", "3", "5", "8"],
+              "answer": 2,
+              "explanation": "Catalan C(3) = 5."
+            },
+            {
+              "id": "q21",
+              "question": "What is Catalan number?",
+              "options": [
+                "C(n) = (2n)! / ((n+1)! * n!)",
+                "Fibonacci-like sequence",
+                "Mathematical formula",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Counts many combinatorial structures."
+            },
+            {
+              "id": "q22",
+              "question": "Is bracket matching a real-world problem?",
+              "options": [
+                "Yes (IDE syntax checking, compilers)",
+                "No",
+                "Rarely",
+                "Only academic"
+              ],
+              "answer": 0,
+              "explanation": "Critical for code editors and language processing."
+            },
+            {
+              "id": "q23",
+              "question": "Can nested structures like XML use stacks?",
+              "options": ["Yes (tag matching)", "No", "Only partially", "None"],
+              "answer": 0,
+              "explanation": "Same principle applies to any nesting."
+            },
+            {
+              "id": "q24",
+              "question": "What about HTML tag validation?",
+              "options": [
+                "Stack-based approach works",
+                "Linear scan only",
+                "Regular expressions",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Check <tag> with </tag> pairs."
+            },
+            {
+              "id": "q25",
+              "question": "Can you find mismatched bracket indices?",
+              "options": [
+                "Yes (track stack positions)",
+                "No",
+                "Only count",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Store indices with each opening bracket."
+            },
+            {
+              "id": "q26",
+              "question": "What is 'Unbalanced' score calculation?",
+              "options": [
+                "Sum of unmatched depths",
+                "Count",
+                "Weight calculation",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Quantifies how far from balanced."
+            },
+            {
+              "id": "q27",
+              "question": "Can bracket problems use greedy approach?",
+              "options": [
+                "No (need stack to match correctly)",
+                "Yes",
+                "Sometimes",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack's LIFO property is essential."
+            },
+            {
+              "id": "q28",
+              "question": "What is 'Edit Distance' for brackets?",
+              "options": [
+                "Min operations to balance",
+                "String comparison",
+                "Sorting distance",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Related to string transformation problems."
+            },
+            {
+              "id": "q29",
+              "question": "Can you score parentheses by depth?",
+              "options": [
+                "Yes (nested depth = points)",
+                "No",
+                "Only count",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Assign weight based on nesting level."
+            },
+            {
+              "id": "q30",
+              "question": "Are bracket problems fundamental for interviews?",
+              "options": [
+                "Yes (common LeetCode/HackerRank)",
+                "No",
+                "Rarely asked",
+                "Only easy"
+              ],
+              "answer": 0,
+              "explanation": "Stack fundamentals are interview staples."
+            }
+          ]
+        },
+        {
+          "setId": "s6",
+          "setName": "String Processing & Backtracking with Stacks",
+          "difficulty": "Medium",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "How to reverse a string using a stack?",
+              "options": [
+                "Push each char, pop all",
+                "Slice [::-1]",
+                "Recursion",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "LIFO naturally reverses order."
+            },
+            {
+              "id": "q2",
+              "question": "What is 'Undo/Redo' functionality?",
+              "options": [
+                "Two stacks: Undo and Redo",
+                "Single stack",
+                "Queue",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Undo stack holds history; Redo holds undone actions."
+            },
+            {
+              "id": "q3",
+              "question": "How does browser 'Back' button work?",
+              "options": [
+                "Stack of visited URLs",
+                "History database",
+                "Cookies",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "URLs pushed as visited, popped on back."
+            },
+            {
+              "id": "q4",
+              "question": "What is 'Backtracking'?",
+              "options": [
+                "Undo a step when hitting dead-end",
+                "Rewinding",
+                "Reversing",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Core technique in constraint satisfaction."
+            },
+            {
+              "id": "q5",
+              "question": "Can you implement 'Find/Replace' with stacks?",
+              "options": [
+                "Yes (track positions and edits)",
+                "No",
+                "Only forward",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack-based undo for each replacement."
+            },
+            {
+              "id": "q6",
+              "question": "What is 'Depth-First Search' (DFS)?",
+              "options": [
+                "Stack-based graph traversal",
+                "BFS variant",
+                "Sorting",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack naturally explores depth-first."
+            },
+            {
+              "id": "q7",
+              "question": "How does a maze solver use stacks?",
+              "options": [
+                "Track path with stack, backtrack if stuck",
+                "Random walk",
+                "BFS",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "DFS with stack for path memory."
+            },
+            {
+              "id": "q8",
+              "question": "What is 'Constraint Satisfaction'?",
+              "options": [
+                "Find values satisfying constraints (N-Queens, Sudoku)",
+                "Data validation",
+                "Error checking",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Backtracking essential for solving."
+            },
+            {
+              "id": "q9",
+              "question": "How to generate permutations with stack?",
+              "options": [
+                "Stack for current path, backtrack to try alternatives",
+                "Loops only",
+                "Recursion only",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Explicit stack instead of implicit recursion."
+            },
+            {
+              "id": "q10",
+              "question": "What is 'Decision Tree' exploration?",
+              "options": [
+                "Stack tracks choices, backtracks on failure",
+                "Binary tree",
+                "Search tree",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Each node represents a choice point."
+            },
+            {
+              "id": "q11",
+              "question": "Can you find all subsets using stack?",
+              "options": [
+                "Yes (include/exclude choices)",
+                "No",
+                "Only loops",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Power set generation via backtracking."
+            },
+            {
+              "id": "q12",
+              "question": "What is 'Pruning' in backtracking?",
+              "options": [
+                "Skip branches that can't lead to solution",
+                "Deleting code",
+                "Removing items",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Optimization to avoid exploring dead-ends."
+            },
+            {
+              "id": "q13",
+              "question": "How many states in N-Queens problem?",
+              "options": ["Factorial (N!)", "N", "2^N", "N^2"],
+              "answer": 0,
+              "explanation": "Permutations of queen placements."
+            },
+            {
+              "id": "q14",
+              "question": "Can backtracking solve Sudoku?",
+              "options": [
+                "Yes (fill cells, backtrack on conflict)",
+                "No",
+                "Only partially",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Classic constraint satisfaction application."
+            },
+            {
+              "id": "q15",
+              "question": "What is 'Brute Force' backtracking?",
+              "options": [
+                "Try all possibilities without pruning",
+                "Fast algorithm",
+                "Smart search",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Exponential but correct."
+            },
+            {
+              "id": "q16",
+              "question": "Can you optimize backtracking?",
+              "options": [
+                "Yes (pruning, memoization, heuristics)",
+                "No",
+                "Only speed up I/O",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Many techniques reduce search space."
+            },
+            {
+              "id": "q17",
+              "question": "What is 'Heuristic' in backtracking?",
+              "options": [
+                "Smart ordering to find solutions faster",
+                "Random",
+                "Fixed sequence",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Guides search toward promising areas."
+            },
+            {
+              "id": "q18",
+              "question": "Time complexity of naive backtracking?",
+              "options": [
+                "O(k^n) where k is branching factor",
+                "O(n)",
+                "O(2^n)",
+                "O(n log n)"
+              ],
+              "answer": 0,
+              "explanation": "Exponential in worst case."
+            },
+            {
+              "id": "q19",
+              "question": "Can stack simulate recursion?",
+              "options": [
+                "Yes (explicit stack instead of call stack)",
+                "No",
+                "Only partially",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Tail recursion easily converted."
+            },
+            {
+              "id": "q20",
+              "question": "What is 'Iterative Deepening'?",
+              "options": [
+                "Combine DFS depth-limits with increasing limits",
+                "BFS variant",
+                "Random search",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Finds optimal solutions like BFS but space-efficient like DFS."
+            },
+            {
+              "id": "q21",
+              "question": "Can you implement DFS iteratively?",
+              "options": [
+                "Yes (use explicit stack)",
+                "No",
+                "Only recursively",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Replace call stack with explicit stack."
+            },
+            {
+              "id": "q22",
+              "question": "What is 'Topological Sort' with stacks?",
+              "options": [
+                "DFS-based ordering of DAG nodes",
+                "BFS ordering",
+                "Sorting algorithm",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Useful for dependency resolution."
+            },
+            {
+              "id": "q23",
+              "question": "Can stacks solve 'Longest Increasing Subsequence'?",
+              "options": [
+                "Yes (with binary search in stack)",
+                "No",
+                "Only DP",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Efficient O(n log n) approach exists."
+            },
+            {
+              "id": "q24",
+              "question": "What is 'Memoization' in backtracking?",
+              "options": [
+                "Cache results to avoid recomputing",
+                "Memory management",
+                "Optimization",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Convert exponential to polynomial sometimes."
+            },
+            {
+              "id": "q25",
+              "question": "Can you count solutions with backtracking?",
+              "options": [
+                "Yes (enumerate and count)",
+                "No",
+                "Only find one",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Don't return early, continue counting."
+            },
+            {
+              "id": "q26",
+              "question": "What is 'Word Search' problem?",
+              "options": [
+                "Find word path in grid using DFS",
+                "Dictionary search",
+                "String matching",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Classic backtracking on 2D grid."
+            },
+            {
+              "id": "q27",
+              "question": "Can stacks handle 'Combination Sum'?",
+              "options": [
+                "Yes (find combinations summing to target)",
+                "No",
+                "Only permutations",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Backtracking with sum tracking."
+            },
+            {
+              "id": "q28",
+              "question": "What is 'Restore IP Addresses'?",
+              "options": [
+                "Find valid 4-part IP from string (backtracking)",
+                "Network problem",
+                "Parsing",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Constraint checking during backtracking."
+            },
+            {
+              "id": "q29",
+              "question": "Is backtracking fundamental to CSP?",
+              "options": [
+                "Yes (Constraint Satisfaction Problems)",
+                "No",
+                "Sometimes",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Primary solving technique for CSPs."
+            },
+            {
+              "id": "q30",
+              "question": "Are backtracking problems common in interviews?",
+              "options": [
+                "Yes (frequent LeetCode/interview questions)",
+                "No",
+                "Rarely",
+                "Only hard"
+              ],
+              "answer": 0,
+              "explanation": "Essential algorithmic skill to master."
+            }
+          ]
+        },
+        {
+          "setId": "s7",
+          "setName": "Memory Management & Call Stacks",
+          "difficulty": "Hard",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is 'Call Stack'?",
+              "options": [
+                "Stack managing function calls in memory",
+                "Call history",
+                "Function list",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "OS uses this for program execution."
+            },
+            {
+              "id": "q2",
+              "question": "What is a 'Stack Frame'?",
+              "options": [
+                "Memory block for one function call (locals, return addr)",
+                "Picture frame",
+                "Data frame",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Contains everything needed to resume after return."
+            },
+            {
+              "id": "q3",
+              "question": "What is 'Stack Pointer' (SP)?",
+              "options": [
+                "Register pointing to top of stack",
+                "Data pointer",
+                "Index variable",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Hardware-level management of stack."
+            },
+            {
+              "id": "q4",
+              "question": "What is 'Base Pointer' (BP)?",
+              "options": [
+                "Register pointing to base of current frame",
+                "Stack top",
+                "Memory address",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Helps locate local variables."
+            },
+            {
+              "id": "q5",
+              "question": "What is 'Return Address'?",
+              "options": [
+                "Instruction pointer after function call returns",
+                "Function address",
+                "Memory location",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stored in stack frame for return mechanism."
+            },
+            {
+              "id": "q6",
+              "question": "How are local variables stored?",
+              "options": [
+                "On the stack (LIFO)",
+                "In heap",
+                "In registers",
+                "Globally"
+              ],
+              "answer": 0,
+              "explanation": "Allocated when function called, deallocated on return."
+            },
+            {
+              "id": "q7",
+              "question": "What is 'Stack Overflow'?",
+              "options": [
+                "Recursive calls exceed stack limit",
+                "Data overflow",
+                "Buffer overflow",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "RecursionError in Python indicates this."
+            },
+            {
+              "id": "q8",
+              "question": "How much memory does recursion use?",
+              "options": ["O(depth * frame_size)", "Fixed", "O(1)", "None"],
+              "answer": 0,
+              "explanation": "Each call adds a frame."
+            },
+            {
+              "id": "q9",
+              "question": "What is 'Tail Call Optimization' (TCO)?",
+              "options": [
+                "Reuse frame for tail-recursive call",
+                "Last call optimization",
+                "Final return",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Some languages optimize this automatically."
+            },
+            {
+              "id": "q10",
+              "question": "Does Python optimize tail recursion?",
+              "options": [
+                "No (by design, for traceback readability)",
+                "Yes",
+                "Depends on version",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Guido van Rossum intentionally avoided it."
+            },
+            {
+              "id": "q11",
+              "question": "What is 'Stack Smashing'?",
+              "options": [
+                "Security exploit overflowing buffer into stack",
+                "Hardware issue",
+                "Performance problem",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Classic buffer overflow attack."
+            },
+            {
+              "id": "q12",
+              "question": "What is 'Return-Oriented Programming' (ROP)?",
+              "options": [
+                "Attack using return addresses on stack",
+                "Programming paradigm",
+                "Function design",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Advanced exploitation technique."
+            },
+            {
+              "id": "q13",
+              "question": "How to prevent stack-based attacks?",
+              "options": [
+                "Stack canaries, DEP, ASLR",
+                "Strong passwords",
+                "Firewalls",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Defense mechanisms at hardware/OS level."
+            },
+            {
+              "id": "q14",
+              "question": "What is 'Canary Value'?",
+              "options": [
+                "Guard value detecting buffer overflow",
+                "Security token",
+                "Authentication",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Placed between buffer and return address."
+            },
+            {
+              "id": "q15",
+              "question": "What is 'Data Execution Prevention' (DEP)??",
+              "options": [
+                "Mark stack as non-executable",
+                "Memory protection",
+                "OS feature",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Prevents code execution from stack."
+            },
+            {
+              "id": "q16",
+              "question": "What is 'Address Space Layout Randomization' (ASLR)?",
+              "options": [
+                "Randomize memory addresses to prevent attacks",
+                "Random allocation",
+                "Memory management",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Makes exploits harder to predict."
+            },
+            {
+              "id": "q17",
+              "question": "How deep can a stack typically grow?",
+              "options": [
+                "~1-8 MB typical (OS dependent)",
+                "Unlimited",
+                "256 KB",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Modern systems allow deeper stacks."
+            },
+            {
+              "id": "q18",
+              "question": "What is 'Stack Unwinding'?",
+              "options": [
+                "Popping frames during exception handling",
+                "Recursive returns",
+                "Cleanup process",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Destruct objects as exiting scope."
+            },
+            {
+              "id": "q19",
+              "question": "What is RAII pattern in C++?",
+              "options": [
+                "Resource Acquisition Is Initialization (stack-based)",
+                "Design pattern",
+                "Memory management",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Leverages stack frames for resource cleanup."
+            },
+            {
+              "id": "q20",
+              "question": "Can you increase stack size?",
+              "options": [
+                "Yes (OS/compiler specific ulimit, setstack)",
+                "No",
+                "Only in Java",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Different mechanisms per platform."
+            },
+            {
+              "id": "q21",
+              "question": "What is 'Segmentation Fault'?",
+              "options": [
+                "Accessing invalid memory address",
+                "Disk error",
+                "Network issue",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Often from stack overflow in C/C++."
+            },
+            {
+              "id": "q22",
+              "question": "Do threads have separate stacks?",
+              "options": [
+                "Yes (each thread has own stack)",
+                "Shared stack",
+                "One global stack",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Important for concurrent programming."
+            },
+            {
+              "id": "q23",
+              "question": "What is 'Signal Handler'?",
+              "options": [
+                "Interrupt-driven code in OS (stack-related)",
+                "Event handler",
+                "Error message",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Can cause stack issues if not careful."
+            },
+            {
+              "id": "q24",
+              "question": "What is 'Coroutine'?",
+              "options": [
+                "Save/restore stack state for non-preemptive multitasking",
+                "Subroutine",
+                "Function",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Advanced control flow using stack manipulation."
+            },
+            {
+              "id": "q25",
+              "question": "What is 'Continuation'?",
+              "options": [
+                "Capture and resume execution state (stack-based)",
+                "Flow control",
+                "Program state",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Used in functional programming languages."
+            },
+            {
+              "id": "q26",
+              "question": "How does exception handling use stack?",
+              "options": [
+                "Unwind stack frames looking for handler",
+                "Search global",
+                "Linear search",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "try-catch blocks searched bottom-up."
+            },
+            {
+              "id": "q27",
+              "question": "What is 'Stack Trace'?",
+              "options": [
+                "Print call stack showing function sequence",
+                "Error message",
+                "Debug info",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Shows where error occurred."
+            },
+            {
+              "id": "q28",
+              "question": "Can you access previous stack frames?",
+              "options": [
+                "In debugger yes, in code rarely",
+                "Directly in code",
+                "No way",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Language-dependent introspection."
+            },
+            {
+              "id": "q29",
+              "question": "What is 'Guard Page'?",
+              "options": [
+                "Unmapped memory page preventing stack overflow",
+                "Security page",
+                "Protected memory",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Triggers exception if accessed."
+            },
+            {
+              "id": "q30",
+              "question": "Is understanding stacks critical for systems programming?",
+              "options": [
+                "Yes (memory, performance, security critical)",
+                "No",
+                "Rarely",
+                "Only for OS"
+              ],
+              "answer": 0,
+              "explanation": "Fundamental to C, C++, embedded systems."
+            }
+          ]
+        },
+        {
+          "setId": "s8",
+          "setName": "Stack Applications: Compilers, Interpreters & Algorithms",
+          "difficulty": "Hard",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "How do compilers use stacks?",
+              "options": [
+                "Expression parsing, symbol table management, code generation",
+                "Data storage only",
+                "Optimization",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Multi-stage compilation process."
+            },
+            {
+              "id": "q2",
+              "question": "What is 'Symbol Table'?",
+              "options": [
+                "Maps identifiers to their types/scopes (stack-managed)",
+                "Variable list",
+                "Dictionary",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Pushed/popped with scope entry/exit."
+            },
+            {
+              "id": "q3",
+              "question": "What is 'Scope' in programming?",
+              "options": [
+                "Region where identifier is valid (stack-based)",
+                "Variable visibility",
+                "Function range",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack frames define scope boundaries."
+            },
+            {
+              "id": "q4",
+              "question": "How does 'Lexical Scoping' work?",
+              "options": [
+                "Inner scopes access outer scope variables (nesting)",
+                "Global scope",
+                "Dynamic scope",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack frame structure enables this."
+            },
+            {
+              "id": "q5",
+              "question": "What is 'Dynamic Scoping'?",
+              "options": [
+                "Access caller's variables (older Lisp)",
+                "Static scoping",
+                "Function scope",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Less common, different from lexical."
+            },
+            {
+              "id": "q6",
+              "question": "How does 'Closure' capture variables?",
+              "options": [
+                "Captures outer scope (stack-related memory)",
+                "Copies values",
+                "References globals",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Lambda/nested functions can access outer vars."
+            },
+            {
+              "id": "q7",
+              "question": "What is 'Garbage Collection'?",
+              "options": [
+                "Automatic memory deallocation (vs stack's automatic)",
+                "Trash removal",
+                "Heap cleanup",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Heap objects freed when unreachable."
+            },
+            {
+              "id": "q8",
+              "question": "Why is stack memory faster than heap?",
+              "options": [
+                "Linear allocation (pointer increment) vs fragmentation",
+                "Smaller size",
+                "Better access",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack allocation is O(1), trivial."
+            },
+            {
+              "id": "q9",
+              "question": "What is 'Memory Leak'?",
+              "options": [
+                "Unused memory never freed (heap issue)",
+                "Stack problem",
+                "Allocation error",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack automatically cleans up; heap doesn't."
+            },
+            {
+              "id": "q10",
+              "question": "What is 'Interpreter'?",
+              "options": [
+                "Executes code line-by-line using stack",
+                "Translator",
+                "Compiler variant",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Python/JavaScript interpreters use stacks."
+            },
+            {
+              "id": "q11",
+              "question": "What is 'Virtual Machine' (VM)?",
+              "options": [
+                "Abstract machine executing bytecode (stack-based)",
+                "Emulation software",
+                "Containerization",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "JVM, Python VM use stack execution."
+            },
+            {
+              "id": "q12",
+              "question": "What is 'Bytecode'?",
+              "options": [
+                "Intermediate code executed by VM (using stack)",
+                "Binary code",
+                "Machine code",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Java .class files, Python .pyc."
+            },
+            {
+              "id": "q13",
+              "question": "How does Java Stack-based VM work?",
+              "options": [
+                "Each operation pops operands, pushes result",
+                "Register-based",
+                "Hybrid",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Efficient for interpreted execution."
+            },
+            {
+              "id": "q14",
+              "question": "What is 'Operand Stack' in JVM?",
+              "options": [
+                "Stack for expression evaluation per method",
+                "Instruction queue",
+                "Register allocation",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Temporary storage during computation."
+            },
+            {
+              "id": "q15",
+              "question": "What is 'Activation Record'?",
+              "options": [
+                "Same as Stack Frame (method's execution data)",
+                "Record structure",
+                "Data logging",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Alternate terminology."
+            },
+            {
+              "id": "q16",
+              "question": "How does 'Try-Catch' block work internally?",
+              "options": [
+                "Stack unwinding looking for matching handler",
+                "Error flag",
+                "Return code",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Exceptions search call stack for handlers."
+            },
+            {
+              "id": "q17",
+              "question": "What is 'Finally Block' semantics?",
+              "options": [
+                "Always executes during stack unwinding",
+                "Conditional",
+                "Optional",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Cleanup guarantee even on exception."
+            },
+            {
+              "id": "q18",
+              "question": "How does 'Debugger' show call stack?",
+              "options": [
+                "Inspect stack frames to show function sequence",
+                "List functions",
+                "Show variables",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Critical debugging feature."
+            },
+            {
+              "id": "q19",
+              "question": "What is 'Breakpoint'?",
+              "options": [
+                "Pause execution at specific stack frame",
+                "Code marker",
+                "Error point",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Allows inspecting stack state."
+            },
+            {
+              "id": "q20",
+              "question": "How does 'Step' command work?",
+              "options": [
+                "Execute one instruction, pause at next stack frame",
+                "Run program",
+                "Skip function",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Step over/into functions."
+            },
+            {
+              "id": "q21",
+              "question": "What is 'Local Variable'?",
+              "options": [
+                "Variable in current stack frame",
+                "Global variable",
+                "Static variable",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Accessible only within function."
+            },
+            {
+              "id": "q22",
+              "question": "What is 'Register'?",
+              "options": [
+                "Fast CPU storage (vs stack in slower RAM)",
+                "Memory address",
+                "Variable",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Compiler may place stack data in registers."
+            },
+            {
+              "id": "q23",
+              "question": "What is 'Optimization' for stack usage?",
+              "options": [
+                "Reduce frame size, inline functions, reuse space",
+                "Speed up",
+                "Save memory",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Compiler techniques."
+            },
+            {
+              "id": "q24",
+              "question": "What is 'Inline Function'?",
+              "options": [
+                "Replace call with function body (avoid frame)",
+                "Large function",
+                "Nested function",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Reduces overhead."
+            },
+            {
+              "id": "q25",
+              "question": "What is 'Function Prologue'?",
+              "options": [
+                "Setup code at function start (save BP, allocate space)",
+                "Function header",
+                "Comments",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Assembly-level stack management."
+            },
+            {
+              "id": "q26",
+              "question": "What is 'Function Epilogue'?",
+              "options": [
+                "Cleanup code at return (restore BP, pop frame)",
+                "Function end",
+                "Return statement",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Reverse of prologue."
+            },
+            {
+              "id": "q27",
+              "question": "How does 'Recursion' limit work?",
+              "options": [
+                "OS/language limit on stack depth",
+                "Calculation error",
+                "Memory warning",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Prevents infinite recursion crashes."
+            },
+            {
+              "id": "q28",
+              "question": "What is 'Tail Recursion Elimination'?",
+              "options": [
+                "Convert last call to loop (save stack)",
+                "Optimization technique",
+                "Memory saving",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Some compilers do this automatically."
+            },
+            {
+              "id": "q29",
+              "question": "Can interpreters have different stack handling?",
+              "options": [
+                "Yes (CPython, PyPy, Jython differ)",
+                "All same",
+                "Language-specific",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Implementation details vary."
+            },
+            {
+              "id": "q30",
+              "question": "Is stack understanding essential for language implementation?",
+              "options": [
+                "Yes (core to interpreter/compiler design)",
+                "No",
+                "Only for systems languages",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Fundamental CS knowledge."
+            }
+          ]
+        },
+        {
+          "setId": "s9",
+          "setName": "Advanced Stack Patterns & Optimization",
+          "difficulty": "Hard",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is 'Monolithic Stack'?",
+              "options": [
+                "Single shared stack for all data types",
+                "Typed stack",
+                "Fixed stack",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Simple but less flexible design."
+            },
+            {
+              "id": "q2",
+              "question": "What is 'Generic Stack'?",
+              "options": [
+                "Template/parametric stack handling multiple types",
+                "Basic stack",
+                "Untyped",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Modern language feature (Java generics, C++ templates)."
+            },
+            {
+              "id": "q3",
+              "question": "Can you implement stack with linked list?",
+              "options": [
+                "Yes (nodes as frames, pointers as links)",
+                "Lists only",
+                "Array only",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Flexible size, dynamic allocation."
+            },
+            {
+              "id": "q4",
+              "question": "What is 'Linked List Stack' advantage?",
+              "options": [
+                "No size limit, dynamic growth",
+                "Fixed memory",
+                "Faster access",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Trade-off: slower than array but no overflow."
+            },
+            {
+              "id": "q5",
+              "question": "What is 'Array Stack' advantage?",
+              "options": [
+                "O(1) access by index, cache-friendly",
+                "Dynamic",
+                "No waste",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Fast but needs resizing."
+            },
+            {
+              "id": "q6",
+              "question": "What is 'Amortized Analysis'?",
+              "options": [
+                "Average cost over many operations (e.g., push)",
+                "Single operation cost",
+                "Worst-case",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Resizing overhead is O(1) amortized."
+            },
+            {
+              "id": "q7",
+              "question": "How does 'Dynamic Array' resizing work?",
+              "options": [
+                "Double size when full (costs O(n) but infrequent)",
+                "Add one element",
+                "Linear growth",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Exponential growth ensures O(1) amortized push."
+            },
+            {
+              "id": "q8",
+              "question": "What is 'Space-Time Tradeoff'?",
+              "options": [
+                "Use extra space to reduce time (or vice versa)",
+                "Trade memory for speed",
+                "Optimization",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Fundamental design principle."
+            },
+            {
+              "id": "q9",
+              "question": "Can stacks implement queues?",
+              "options": [
+                "Yes (two stacks simulate FIFO)",
+                "No",
+                "Only partially",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Clever use of two LIFO structures."
+            },
+            {
+              "id": "q10",
+              "question": "How to implement Queue with two Stacks?",
+              "options": [
+                "Enqueue to S1, dequeue via pop from S2 (transfer on empty)",
+                "One stack",
+                "Three stacks",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "S2 reverses S1's order."
+            },
+            {
+              "id": "q11",
+              "question": "What is 'Persistent Data Structure'?",
+              "options": [
+                "Retain old versions after modification",
+                "Saved data",
+                "Backup",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Functional programming feature."
+            },
+            {
+              "id": "q12",
+              "question": "Can you make stacks persistent?",
+              "options": [
+                "Yes (functional approach with immutable nodes)",
+                "No",
+                "Only in Lisp",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Share structure between versions."
+            },
+            {
+              "id": "q13",
+              "question": "What is 'Version Control' stack analogy?",
+              "options": [
+                "Stacks of snapshots (commits)",
+                "File history",
+                "Branching",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Git's DAG is more complex but uses stack concepts."
+            },
+            {
+              "id": "q14",
+              "question": "What is 'Memoization Stack'?",
+              "options": [
+                "Cache results in stack-like structure",
+                "Memory stack",
+                "Heap caching",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "DP uses this pattern."
+            },
+            {
+              "id": "q15",
+              "question": "Can stacks be thread-safe?",
+              "options": [
+                "Yes (with locks or atomic operations)",
+                "Inherently safe",
+                "Not possible",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Concurrent programming consideration."
+            },
+            {
+              "id": "q16",
+              "question": "What is 'Lock-Free Stack'?",
+              "options": [
+                "Concurrent using atomic operations (CAS)",
+                "No synchronization",
+                "Shared memory",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Advanced concurrent data structure."
+            },
+            {
+              "id": "q17",
+              "question": "What is 'Bounded Stack'?",
+              "options": [
+                "Fixed maximum size",
+                "Variable size",
+                "Flexible",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Limits memory usage."
+            },
+            {
+              "id": "q18",
+              "question": "What is 'Stack Trace' truncation?",
+              "options": [
+                "Limit printed stack to avoid spam",
+                "Performance issue",
+                "Error",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Deep stacks produce long traces."
+            },
+            {
+              "id": "q19",
+              "question": "Can you measure stack usage?",
+              "options": [
+                "Yes (profiling tools, memory analysis)",
+                "Impossible",
+                "Approximation only",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Important for resource-constrained systems."
+            },
+            {
+              "id": "q20",
+              "question": "What is 'Flamegraph'?",
+              "options": [
+                "Visualization of stack traces over time",
+                "Profiling tool",
+                "Debug feature",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Shows where time is spent."
+            },
+            {
+              "id": "q21",
+              "question": "Can you compress stacks?",
+              "options": [
+                "Yes (dedup similar frames, encode patterns)",
+                "No",
+                "Lossless only",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Memory optimization technique."
+            },
+            {
+              "id": "q22",
+              "question": "What is 'Tail Call Optimization' benefit?",
+              "options": [
+                "Constant space instead of O(n)",
+                "Speed increase",
+                "Memory reduction",
+                "All above"
+              ],
+              "answer": 3,
+              "explanation": "Functional languages value this."
+            },
+            {
+              "id": "q23",
+              "question": "Can stack overflow be caught?",
+              "options": [
+                "Partially (some languages allow recovery)",
+                "Not catchable",
+                "Always fatal",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Some languages have StackOverflowError."
+            },
+            {
+              "id": "q24",
+              "question": "What is 'Alloca' function?",
+              "options": [
+                "Allocate on stack (not heap)",
+                "Memory function",
+                "Malloc variant",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "C function for temporary allocation."
+            },
+            {
+              "id": "q25",
+              "question": "What is 'Variable Length Array' (VLA)?",
+              "options": [
+                "Dynamically sized array on stack",
+                "Heap array",
+                "Fixed array",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "C99 feature (limited use)."
+            },
+            {
+              "id": "q26",
+              "question": "Can you nest stack allocations?",
+              "options": [
+                "Yes (scope-based deallocation)",
+                "No",
+                "Only once",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "RAII in C++ leverages this."
+            },
+            {
+              "id": "q27",
+              "question": "What is 'Stack Poisoning'?",
+              "options": [
+                "Mark freed stack memory (debugging)",
+                "Corruption",
+                "Security",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Catch use-after-free bugs."
+            },
+            {
+              "id": "q28",
+              "question": "Can you traverse stack frames?",
+              "options": [
+                "Yes (introspection in some languages)",
+                "No direct access",
+                "Debugger only",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Reflection/introspection APIs."
+            },
+            {
+              "id": "q29",
+              "question": "What is 'Call Graph' from stacks?",
+              "options": [
+                "Reconstruct function relationships from stacks",
+                "Function list",
+                "Call sequence",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Profiling and analysis tool."
+            },
+            {
+              "id": "q30",
+              "question": "Is stack optimization critical in embedded systems?",
+              "options": [
+                "Yes (limited RAM makes it vital)",
+                "No",
+                "Rarely",
+                "Only for performance"
+              ],
+              "answer": 0,
+              "explanation": "Microcontrollers have tight constraints."
+            }
+          ]
+        },
+        {
+          "setId": "s10",
+          "setName": "Challenge Problems & Stack Mastery",
+          "difficulty": "Hard",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Problem: Evaluate Postfix 5 3 + 4 *. Result?",
+              "options": ["32", "35", "15", "None"],
+              "answer": 0,
+              "explanation": "Push 5,3. +: pop 3,5, push 8. Push 4. *: pop 4,8, push 32."
+            },
+            {
+              "id": "q2",
+              "question": "Problem: Convert Infix 2+3*4-5 to Postfix?",
+              "options": [
+                "2 3 4 * + 5 -",
+                "2 3 + 4 * 5 -",
+                "2 + 3 4 * - 5",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Respects precedence: * before +/-."
+            },
+            {
+              "id": "q3",
+              "question": "Problem: Check balanced {'([)]}'. Valid?",
+              "options": ["No (interleaved)", "Yes", "Partially", "None"],
+              "answer": 0,
+              "explanation": "Must be properly nested."
+            },
+            {
+              "id": "q4",
+              "question": "Problem: Min additions for '(()'. How many?",
+              "options": ["1", "2", "0", "None"],
+              "answer": 0,
+              "explanation": "Add one ')' at end."
+            },
+            {
+              "id": "q5",
+              "question": "Problem: Largest Rectangle in Histogram. Method?",
+              "options": [
+                "Stack-based O(n) solution",
+                "Brute force O(n^2)",
+                "DP",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Stack tracks height indices."
+            },
+            {
+              "id": "q6",
+              "question": "Problem: Daily Temperatures (next warmer). Approach?",
+              "options": [
+                "Decreasing stack stores indices",
+                "Linear search",
+                "Binary search",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Find next greater element."
+            },
+            {
+              "id": "q7",
+              "question": "Problem: Trapping Rain Water. Can stacks help?",
+              "options": [
+                "Yes (heights stack)",
+                "No",
+                "Only iteration",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Calculate water between walls."
+            },
+            {
+              "id": "q8",
+              "question": "Problem: Remove K Digits to get Smallest. Approach?",
+              "options": [
+                "Decreasing stack removes larger digits",
+                "Brute force",
+                "Greedy",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Greedy with stack."
+            },
+            {
+              "id": "q9",
+              "question": "Problem: Decode String '2[abc]3[cd]'. Result?",
+              "options": ["abcabccdcdcd", "abccd", "abcabccdcdcd", "None"],
+              "answer": 2,
+              "explanation": "Nested expansion with stack."
+            },
+            {
+              "id": "q10",
+              "question": "Problem: N-Queens. Can it use stack?",
+              "options": [
+                "Yes (iterative backtracking)",
+                "Only recursion",
+                "No",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Explicit stack instead of call stack."
+            },
+            {
+              "id": "q11",
+              "question": "Problem: Word Ladder transformation. Stack useful?",
+              "options": ["Yes (DFS path finding)", "Only BFS", "No", "None"],
+              "answer": 0,
+              "explanation": "DFS explores paths."
+            },
+            {
+              "id": "q12",
+              "question": "Problem: Course Schedule (topological sort). Stacks?",
+              "options": ["Yes (DFS-based)", "Only BFS", "No", "None"],
+              "answer": 0,
+              "explanation": "DAG ordering."
+            },
+            {
+              "id": "q13",
+              "question": "Problem: Serialize Binary Tree. Stack usage?",
+              "options": [
+                "Yes (level-order or DFS)",
+                "Recursion",
+                "BFS",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Capture structure."
+            },
+            {
+              "id": "q14",
+              "question": "Problem: Iterator for BST. How?",
+              "options": [
+                "Stack stores path from root",
+                "Recursion",
+                "Queue",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "In-order traversal without recursion."
+            },
+            {
+              "id": "q15",
+              "question": "Problem: Sliding Window Maximum. Method?",
+              "options": [
+                "Decreasing deque (acts like stack/queue)",
+                "Brute force O(nk)",
+                "Sorting",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Hybrid stack-queue structure."
+            },
+            {
+              "id": "q16",
+              "question": "Problem: Remove All Adjacent Duplicates. Approach?",
+              "options": [
+                "Stack pops when top matches current",
+                "String manipulation",
+                "Loops",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Efficient with stack."
+            },
+            {
+              "id": "q17",
+              "question": "Problem: Validate Stack Sequences. Check?",
+              "options": [
+                "Simulate push/pop sequence",
+                "Compare lists",
+                "Hash check",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Verify push/pop order possible."
+            },
+            {
+              "id": "q18",
+              "question": "Problem: Greatest Element to Right. Stacks?",
+              "options": [
+                "Yes (decreasing stack stores indices)",
+                "Loop",
+                "DP",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Find next greater element."
+            },
+            {
+              "id": "q19",
+              "question": "Problem: Ternary Tree Postorder Traversal. Method?",
+              "options": [
+                "Stack for iterative postorder",
+                "Recursion",
+                "Queue",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Generalize binary tree approach."
+            },
+            {
+              "id": "q20",
+              "question": "Problem: Verify Preorder Serialization BST. How?",
+              "options": [
+                "Stack validates node count",
+                "Tree building",
+                "Parsing",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Check null markers."
+            },
+            {
+              "id": "q21",
+              "question": "Problem: Exclusive Time of Functions. Stacks?",
+              "options": [
+                "Yes (track call stack for timing)",
+                "Iteration",
+                "Simulation",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Calculate function execution time."
+            },
+            {
+              "id": "q22",
+              "question": "Problem: Basic Calculator III (with parentheses). Stacks?",
+              "options": [
+                "Yes (two stacks: operands and operators)",
+                "One stack",
+                "DP",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Handle precedence and nesting."
+            },
+            {
+              "id": "q23",
+              "question": "Problem: Increasing Subsequence after removals. Stack?",
+              "options": [
+                "Yes (monotonic stack approach)",
+                "Brute force",
+                "DP",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Maintain increasing property."
+            },
+            {
+              "id": "q24",
+              "question": "Problem: Reconstruct Itinerary. Stacks needed?",
+              "options": ["Yes (Euler path with stack)", "BFS", "DFS", "None"],
+              "answer": 0,
+              "explanation": "Hierholzer's algorithm."
+            },
+            {
+              "id": "q25",
+              "question": "Problem: Tweet Count per Frequency. Stack order?",
+              "options": [
+                "LIFO for recent tweets (time-ordered stack)",
+                "FIFO",
+                "Random",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Track timestamp ordering."
+            },
+            {
+              "id": "q26",
+              "question": "Problem: Making a Large Island. DFS with stack?",
+              "options": [
+                "Yes (connected component with stack)",
+                "BFS",
+                "Union-Find",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Merge islands."
+            },
+            {
+              "id": "q27",
+              "question": "Problem: Minimum Insertions for Valid Parentheses. Method?",
+              "options": ["Stack to count unmatched", "Greedy", "DP", "None"],
+              "answer": 0,
+              "explanation": "Track opens and closes needed."
+            },
+            {
+              "id": "q28",
+              "question": "Problem: Design Parking System. Stack order?",
+              "options": ["No (queue-like, FIFO)", "LIFO", "Priority", "None"],
+              "answer": 0,
+              "explanation": "First-in-first-out for vehicles."
+            },
+            {
+              "id": "q29",
+              "question": "Problem: Find the Celebrity. Linear stacks?",
+              "options": [
+                "Yes (elimination with stack)",
+                "Two pointers",
+                "Array",
+                "None"
+              ],
+              "answer": 0,
+              "explanation": "Reduce candidates."
+            },
+            {
+              "id": "q30",
+              "question": "Congratulations! You've mastered Stack Data Structures. Ready for Queues?",
+              "options": [
+                "Absolutely!",
+                "One more review",
+                "Need practice",
+                "Yes, let's go!"
+              ],
+              "answer": 0,
+              "explanation": "You've covered stack fundamentals, applications, and advanced patterns comprehensively!"
+            }
+          ]
+        }
       ]
     }
   ]

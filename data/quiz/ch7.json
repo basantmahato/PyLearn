@@ -1,56 +1,1095 @@
 {
-  "chapterId": "ch7",
-  "title": "Protocols & Network Security",
+  "chapterId": "ch6",
+  "title": "Networking Fundamentals",
   "sets": [
     {
       "setId": "s1",
-      "setName": "Protocol Suite",
+      "setName": "Types & Scales",
       "difficulty": "Easy",
       "questions": [
-        { "id": "q1", "question": "What is a 'Protocol'?", "options": ["Software", "Set of rules", "A cable", "None"], "answer": 1, "explanation": "A formal set of conventions for communication between autonomous systems." },
-        { "id": "q2", "question": "Which protocol is for reliable delivery?", "options": ["UDP", "IP", "TCP", "HTTP"], "answer": 2, "explanation": "TCP (Transmission Control Protocol) handles error checking and ordering." },
-        { "id": "q3", "question": "Which protocol handles addressing/routing?", "options": ["IP", "DNS", "UDP", "TCP"], "answer": 0, "explanation": "IP (Internet Protocol) assigns unique IDs to packets for mapping." },
-        { "id": "q4", "question": "Which protocol is for fast, unordered datagrams?", "options": ["UDP", "IP", "TCP", "HTTP"], "answer": 0, "explanation": "UDP (User Datagram Protocol) is 'best-effort' used in streaming." },
-        { "id": "q5", "question": "What is the 'address' of a website called?", "options": ["IP", "URL", "DNS", "MAC"], "answer": 1, "explanation": "Uniform Resource Locator is the human-readable path (e.g. google.com)." },
-        { "id": "q6", "question": "Which protocol handles web traffic?", "options": ["FTP", "SMTP", "HTTP", "POP3"], "answer": 2, "explanation": "Hypertext Transfer Protocol is the foundation of the WWW." },
-        { "id": "q7", "question": "Which protocol is for file transfers?", "options": ["FTP", "IP", "UDP", "TCP"], "answer": 0, "explanation": "File Transfer Protocol (FTP) manages data uploads/downloads." },
-        { "id": "q8", "question": "Which protocol handles outgoing email?", "options": ["IMAP", "POP3", "SMTP", "DNS"], "answer": 2, "explanation": "SMTP (Simple Mail Transfer Protocol) sends mail to the server." },
-        { "id": "q9", "question": "Which protocol is for receiving email?", "options": ["HTTP", "POP3", "SMTP", "FTP"], "answer": 1, "explanation": "POP3 (Post Office Protocol) downloads mail locally." },
-        { "id": "q10", "question": "What is the 'Port' for HTTP?", "options": ["80", "443", "21", "25"], "answer": 0, "explanation": "Port 80 is the standard port for unsecured web traffic." }
+        {
+          "id": "q1",
+          "question": "What is a computer network?",
+          "options": [
+            "Single computer",
+            "Interconnected systems",
+            "A printer",
+            "Software"
+          ],
+          "answer": 1,
+          "explanation": "A collection of autonomous computers linked to exchange resources."
+        },
+        {
+          "id": "q2",
+          "question": "Which network spans a city?",
+          "options": ["PAN", "LAN", "MAN", "WAN"],
+          "answer": 2,
+          "explanation": "MAN (Metropolitan Area Network) covers a metropolitan area like a city."
+        },
+        {
+          "id": "q3",
+          "question": "What is the smallest network type?",
+          "options": ["PAN", "LAN", "WAN", "MAN"],
+          "answer": 0,
+          "explanation": "PAN (Personal Area Network) is for personal devices like phone/watch."
+        },
+        {
+          "id": "q4",
+          "question": "The Internet is an example of which network?",
+          "options": ["LAN", "PAN", "MAN", "WAN"],
+          "answer": 3,
+          "explanation": "WAN (Wide Area Network) spans global distances."
+        },
+        {
+          "id": "q5",
+          "question": "What is a 'node'?",
+          "options": [
+            "Connection cable",
+            "A connected device",
+            "A protocol",
+            "Data packet"
+          ],
+          "answer": 1,
+          "explanation": "Any device (PC, server, printer) in a network is a node."
+        },
+        {
+          "id": "q6",
+          "question": "Which network is localized in a single building?",
+          "options": ["PAN", "LAN", "MAN", "WAN"],
+          "answer": 1,
+          "explanation": "LAN (Local Area Network) is for homes, offices, and schools."
+        },
+        {
+          "id": "q7",
+          "question": "What is ARPANET?",
+          "options": [
+            "First computer",
+            "First packet-switched network",
+            "A router",
+            "A web browser"
+          ],
+          "answer": 1,
+          "explanation": "The ancestor of the modern internet, started by DARPA."
+        },
+        {
+          "id": "q8",
+          "question": "What does NIC stand for?",
+          "options": [
+            "Network Internal Unit",
+            "Network Interface Card",
+            "Node Info Unit",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Also called a Network Interface Unit (NIU), it links the PC to the medium."
+        },
+        {
+          "id": "q9",
+          "question": "What is 'interoperability'?",
+          "options": [
+            "Different systems talking",
+            "Speed of network",
+            "Security",
+            "Cost"
+          ],
+          "answer": 0,
+          "explanation": "The ability of diverse hardware/software to communicate using standards."
+        },
+        {
+          "id": "q10",
+          "question": "Which provides the highest speed?",
+          "options": ["LAN", "WAN", "PAN", "Internet"],
+          "answer": 0,
+          "explanation": "LANs offer superior bandwidth due to short cable distances."
+        }
       ]
     },
     {
       "setId": "s2",
-      "setName": "Connectivity & Web",
+      "setName": "Topologies & Hardware",
       "difficulty": "Medium",
       "questions": [
-        { "id": "q1", "question": "What does DNS do?", "options": ["Block data", "Maps URL to IP", "Connect WiFi", "Encrypt files"], "answer": 1, "explanation": "DNS (Domain Name System) is the 'phonebook' of the internet." },
-        { "id": "q2", "question": "What is the size of IPv4 address?", "options": ["32 bits", "64 bits", "128 bits", "256 bits"], "answer": 0, "explanation": "IPv4 uses 4 octets (32-bit total) like 192.168.1.1." },
-        { "id": "q3", "question": "What is the size of IPv6 address?", "options": ["32 bits", "128 bits", "64 bits", "512 bits"], "answer": 1, "explanation": "IPv6 uses a 128-bit hex format to allow nearly infinite addresses." },
-        { "id": "q4", "question": "What does the 'S' in HTTPS stand for?", "options": ["Simple", "Secure (SSL/TLS)", "Staging", "Solid"], "answer": 1, "explanation": "HTTPS is HTTP over an encrypted TLS/SSL layer." },
-        { "id": "q5", "question": "What is a 'MAC' address?", "options": ["Software ID", "Hardcoded hardware ID", "Router IP", "None"], "answer": 1, "explanation": "Medium Access Control address is burnt into the NIC at factory." },
-        { "id": "q6", "question": "Which protocol is for remote command execution?", "options": ["SSH", "TELNET", "Both", "None"], "answer": 2, "explanation": "Both allow remote terminals (Telnet is insecure, SSH is secure)." },
-        { "id": "q7", "question": "What is 'Domain' ownership called?", "options": ["Rent", "Registration", "IP mapping", "DNS lookup"], "answer": 1, "explanation": "Registering a domain marks you as the authority for that name." },
-        { "id": "q8", "question": "Which protocol is for real-time video games?", "options": ["TCP", "UDP", "FTP", "POP3"], "answer": 1, "explanation": "Low latency is preferred, so UDP is used for speed over reliability." },
-        { "id": "q9", "question": "What does 'T' in TCP stand for?", "options": ["Terminal", "Transmission", "Technology", "Traffic"], "answer": 1, "explanation": "Transmission Control Protocol." },
-        { "id": "q10", "question": "What is 'WWW' vs 'Internet'?", "options": ["Same", "Service vs Infrastructure", "Browser vs Server", "None"], "options": ["The Web is a service on top of the hardware Infrastructure"], "answer": 1, "explanation": "The Web is just one of many services (like Email/FTP) on the Internet." }
+        {
+          "id": "q1",
+          "question": "What is 'Topology'?",
+          "options": [
+            "Network speed",
+            "Geometric arrangement of nodes",
+            "Encryption",
+            "Server name"
+          ],
+          "answer": 1,
+          "explanation": "The physical or logical layout of devices in a network."
+        },
+        {
+          "id": "q2",
+          "question": "Which topology has a central hub/switch?",
+          "options": ["Bus", "Star", "Ring", "Mesh"],
+          "answer": 1,
+          "explanation": "All nodes connect directly to a central controller."
+        },
+        {
+          "id": "q3",
+          "question": "Which topology uses a single backbone cable?",
+          "options": ["Star", "Ring", "Bus", "Mesh"],
+          "answer": 2,
+          "explanation": "Bus topology uses a single common path called the trunk."
+        },
+        {
+          "id": "q4",
+          "question": "Which topology is most fault-tolerant?",
+          "options": ["Full Mesh", "Star", "Bus", "Ring"],
+          "answer": 0,
+          "explanation": "Mesh provides redundant paths between every node."
+        },
+        {
+          "id": "q5",
+          "question": "What is a 'Hub'?",
+          "options": [
+            "Smart device",
+            "Legacy broadcasting device",
+            "Security layer",
+            "IP address"
+          ],
+          "answer": 1,
+          "explanation": "Hubs repeat signals to all ports, making them inefficient."
+        },
+        {
+          "id": "q6",
+          "question": "What is a 'Switch'?",
+          "options": [
+            "Legacy hub",
+            "Intelligent data router within LAN",
+            "Light switch",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Switches use MAC addresses to send data only to the correct destination."
+        },
+        {
+          "id": "q7",
+          "question": "Which device connects two different networks?",
+          "options": ["Switch", "Hub", "Router", "Modem"],
+          "answer": 2,
+          "explanation": "Routers handle pathfinding between heterogeneous networks (e.g. LAN to WAN)."
+        },
+        {
+          "id": "q8",
+          "question": "What does a Modem do?",
+          "options": [
+            "Store files",
+            "Convert Analog to Digital",
+            "Block viruses",
+            "Encryption"
+          ],
+          "answer": 1,
+          "explanation": "MOdulator-DEModulator translates between binary and carrier signals."
+        },
+        {
+          "id": "q9",
+          "question": "What is a 'Repeater'?",
+          "options": [
+            "Amplifies signal",
+            "Stores data",
+            "Deletes packets",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "Repeaters regenerate signals to overcome attenuation over long distances."
+        },
+        {
+          "id": "q10",
+          "question": "What is a 'Gateway'?",
+          "options": [
+            "Entry point for networks with different protocols",
+            "A cable",
+            "A hard drive",
+            "A router"
+          ],
+          "answer": 0,
+          "explanation": "Gateways translate between different architectural standards."
+        }
       ]
     },
     {
       "setId": "s3",
-      "setName": "Cybersecurity & Threats",
+      "setName": "Transmission Media & Bandwidth",
       "difficulty": "Hard",
       "questions": [
-        { "id": "q1", "question": "What is 'Phishing'?", "options": ["Catching fish", "Deceptive messages used to steal data", "A type of virus", "A network hack"], "answer": 1, "explanation": "Social engineering using fake emails or websites to steal credentials." },
-        { "id": "q2", "question": "Which malware replicates itself across vulnerabilities?", "options": ["Virus", "Worm", "Trojan", "Spam"], "answer": 1, "explanation": "Worms spread automatically through network connections." },
-        { "id": "q3", "question": "What is a 'Trojan Horse'?", "options": ["Virus", "Self-spreading worm", "Malware hidden in useful software", "None"], "answer": 2, "explanation": "It looks safe (like an app) but contains malicious payload." },
-        { "id": "q4", "question": "What is a 'Firewall'?", "options": ["Heater", "Barrier between trusted/untrusted networks", "Cooling fan", "Antivirus software"], "answer": 1, "explanation": "Protects systems by monitoring incoming/outgoing traffic." },
-        { "id": "q5", "question": "What does 'IPR' govern?", "options": ["Internet speed", "Ownership of creative/digital works", "Packet order", "Router logic"], "answer": 1, "explanation": "Intellectual Property Rights handle patents, copyrights, and DMCA." },
-        { "id": "q6", "question": "What is 'Spam'?", "options": ["Meat", "Unsolicited bulk email", "Encoded data", "None"], "answer": 1, "explanation": "Commercial/malicious mass mailings." },
-        { "id": "q7", "question": "What are 'Cookies' in a browser?", "options": ["Snacks", "Text files stored by servers for state", "Hard drive sectors", "None"], "answer": 1, "explanation": "Used for tracking logins and user preferences." },
-        { "id": "q8", "question": "What is 'Adware'?", "options": ["Admin software", "Malware that shows forced ads", "Ad blocking software", "None"], "answer": 1, "explanation": "Software that generates revenue for its author by displaying unwanted ads." },
-        { "id": "q9", "question": "What is 'Encryption'?", "options": ["Deleting data", "Coding data into unreadable text", "Copying data", "None"], "answer": 1, "explanation": "Using keys (like SSL) to ensure only authorized parties read the data." },
-        { "id": "q10", "question": "What is 'Antivirus' effectiveness called?", "options": ["Speed", "Detection rate/Heuristics", "Disk size", "None"], "answer": 1, "explanation": "Heuristic analysis checks for behavior patterns, not just signatures." }
+        {
+          "id": "q1",
+          "question": "What is 'Bandwidth'?",
+          "options": [
+            "Cable length",
+            "Max data transfer rate",
+            "User count",
+            "Latency"
+          ],
+          "answer": 1,
+          "explanation": "The capacity of a communication channel in bits per second."
+        },
+        {
+          "id": "q2",
+          "question": "Which is guided (wired) media?",
+          "options": ["Radio Waves", "Coaxial", "Satellite", "Infrared"],
+          "answer": 1,
+          "explanation": "Coaxial cables use physical copper paths."
+        },
+        {
+          "id": "q3",
+          "question": "Which is unguided (wireless) media?",
+          "options": [
+            "Ethernet",
+            "Optical Fiber",
+            "Microwave",
+            "Telephone line"
+          ],
+          "answer": 2,
+          "explanation": "Microwaves travel through the atmosphere without wires."
+        },
+        {
+          "id": "q4",
+          "question": "Which medium uses light for transmission?",
+          "options": ["Twisted Pair", "Coaxial", "Fiber Optic", "WiFi"],
+          "answer": 2,
+          "explanation": "Total Internal Reflection in glass strands allows light travel."
+        },
+        {
+          "id": "q5",
+          "question": "Which twisted pair is better shielded?",
+          "options": ["UTP", "STP", "Ethernet", "Standard"],
+          "answer": 1,
+          "explanation": "Shielded Twisted Pair reduces electromagnetic interference."
+        },
+        {
+          "id": "q6",
+          "question": "What is 'Attenuation'?",
+          "options": [
+            "Signal gain",
+            "Signal loss over distance",
+            "Encryption",
+            "Fast speed"
+          ],
+          "answer": 1,
+          "explanation": "The weakening of energy as a signal travels further."
+        },
+        {
+          "id": "q7",
+          "question": "Which frequency does Satellite communication use?",
+          "options": ["MHz", "GHz", "KHz", "Hz"],
+          "answer": 1,
+          "explanation": "High-frequency microwaves (GigaHertz) are needed to reach orbit."
+        },
+        {
+          "id": "q8",
+          "question": "What is the standard unit for data rate?",
+          "options": ["MHz", "Bps (bits per second)", "RPM", "Watts"],
+          "answer": 1,
+          "explanation": "Bandwidth is measured in bps, Kbps, Mbps, or Gbps."
+        },
+        {
+          "id": "q9",
+          "question": "Which medium is immune to EMI?",
+          "options": ["Copper", "Iron", "Fiber Optic", "Aluminum"],
+          "answer": 2,
+          "explanation": "Glass doesn't conduct electricity, so it ignores magnetic interference."
+        },
+        {
+          "id": "q10",
+          "question": "What is 'Crosstalk'?",
+          "options": [
+            "Chatting on phone",
+            "Interference between adjacent wires",
+            "Multiple users",
+            "Network error"
+          ],
+          "answer": 1,
+          "explanation": "Coupling of signals between parallel transmission lines."
+        }
+      ]
+    },
+    {
+      "setId": "s4",
+      "setName": "OSI Model - Layers",
+      "difficulty": "Medium",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "How many layers does the OSI model have?",
+          "options": ["5", "6", "7", "8"],
+          "answer": 2,
+          "explanation": "The OSI (Open Systems Interconnection) model has 7 layers."
+        },
+        {
+          "id": "q2",
+          "question": "Which layer handles physical transmission of data?",
+          "options": ["Layer 2", "Layer 1", "Layer 3", "Layer 4"],
+          "answer": 1,
+          "explanation": "Layer 1 (Physical Layer) deals with cables, signals, and hardware."
+        },
+        {
+          "id": "q3",
+          "question": "At which layer does MAC addressing operate?",
+          "options": ["Layer 1", "Layer 2", "Layer 3", "Layer 4"],
+          "answer": 1,
+          "explanation": "Layer 2 (Data Link Layer) uses MAC addresses for local communication."
+        },
+        {
+          "id": "q4",
+          "question": "Which layer handles IP addresses?",
+          "options": ["Layer 2", "Layer 3", "Layer 4", "Layer 7"],
+          "answer": 1,
+          "explanation": "Layer 3 (Network Layer) manages IP routing and logical addressing."
+        },
+        {
+          "id": "q5",
+          "question": "Layer 4 in the OSI model is also called:",
+          "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Session Layer",
+            "Application Layer"
+          ],
+          "answer": 1,
+          "explanation": "Layer 4 (Transport Layer) handles TCP, UDP, and end-to-end delivery."
+        },
+        {
+          "id": "q6",
+          "question": "Which OSI layer is responsible for encryption?",
+          "options": ["Layer 2", "Layer 3", "Layer 6", "Layer 7"],
+          "answer": 2,
+          "explanation": "Layer 6 (Presentation Layer) handles encryption and compression."
+        },
+        {
+          "id": "q7",
+          "question": "At which layer do HTTP, FTP, and SMTP operate?",
+          "options": ["Layer 4", "Layer 5", "Layer 6", "Layer 7"],
+          "answer": 3,
+          "explanation": "Layer 7 (Application Layer) is where user applications and protocols reside."
+        },
+        {
+          "id": "q8",
+          "question": "Which layer ensures reliable data delivery?",
+          "options": ["Layer 2", "Layer 3", "Layer 4", "Layer 5"],
+          "answer": 2,
+          "explanation": "Layer 4 (Transport Layer) ensures reliable packet delivery through TCP."
+        },
+        {
+          "id": "q9",
+          "question": "What does Layer 5 (Session Layer) manage?",
+          "options": [
+            "Data packets",
+            "Connections between applications",
+            "Physical signals",
+            "File systems"
+          ],
+          "answer": 1,
+          "explanation": "Session Layer establishes, maintains, and terminates communication sessions."
+        },
+        {
+          "id": "q10",
+          "question": "Data units at Layer 3 are called:",
+          "options": ["Frames", "Packets", "Segments", "Bits"],
+          "answer": 1,
+          "explanation": "Packets are the data units used at the Network Layer (Layer 3)."
+        }
+      ]
+    },
+    {
+      "setId": "s5",
+      "setName": "TCP/IP Model & Protocols",
+      "difficulty": "Medium-Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "How many layers does the TCP/IP model have?",
+          "options": ["4", "5", "7", "6"],
+          "answer": 0,
+          "explanation": "The TCP/IP model has 4 layers (also called DoD model)."
+        },
+        {
+          "id": "q2",
+          "question": "Which protocol ensures reliable delivery of data?",
+          "options": ["UDP", "IP", "TCP", "ICMP"],
+          "answer": 2,
+          "explanation": "TCP (Transmission Control Protocol) provides connection-oriented, reliable delivery."
+        },
+        {
+          "id": "q3",
+          "question": "UDP stands for:",
+          "options": [
+            "Universal Data Protocol",
+            "User Datagram Protocol",
+            "Union Digital Protocol",
+            "Unified Data Path"
+          ],
+          "answer": 1,
+          "explanation": "UDP provides fast, connectionless data transmission without reliability checks."
+        },
+        {
+          "id": "q4",
+          "question": "Which protocol is used for web browsing?",
+          "options": ["FTP", "HTTP", "SMTP", "DNS"],
+          "answer": 1,
+          "explanation": "HTTP (HyperText Transfer Protocol) is the foundation of the World Wide Web."
+        },
+        {
+          "id": "q5",
+          "question": "What does SMTP handle?",
+          "options": [
+            "Receiving emails",
+            "Sending emails",
+            "Downloading files",
+            "Domain lookup"
+          ],
+          "answer": 1,
+          "explanation": "SMTP (Simple Mail Transfer Protocol) is used for sending emails."
+        },
+        {
+          "id": "q6",
+          "question": "DNS translates:",
+          "options": [
+            "IP to MAC",
+            "Domain names to IP addresses",
+            "Data to packets",
+            "Ports to protocols"
+          ],
+          "answer": 1,
+          "explanation": "DNS (Domain Name System) converts domain names like google.com to IP addresses."
+        },
+        {
+          "id": "q7",
+          "question": "Which protocol is used for file transfer?",
+          "options": ["HTTP", "FTP", "SMTP", "SNMP"],
+          "answer": 1,
+          "explanation": "FTP (File Transfer Protocol) enables secure file transfer between systems."
+        },
+        {
+          "id": "q8",
+          "question": "ICMP is primarily used for:",
+          "options": [
+            "Email",
+            "File transfer",
+            "Error reporting and diagnostics",
+            "Encryption"
+          ],
+          "answer": 2,
+          "explanation": "ICMP (Internet Control Message Protocol) handles ping and traceroute commands."
+        },
+        {
+          "id": "q9",
+          "question": "Which port does HTTP use by default?",
+          "options": ["21", "25", "80", "443"],
+          "answer": 2,
+          "explanation": "HTTP operates on port 80; HTTPS uses port 443 for secure communication."
+        },
+        {
+          "id": "q10",
+          "question": "POP3 and IMAP are protocols for:",
+          "options": [
+            "Sending emails",
+            "Receiving emails",
+            "Transferring files",
+            "Domain management"
+          ],
+          "answer": 1,
+          "explanation": "Both POP3 and IMAP are email retrieval protocols used by clients."
+        }
+      ]
+    },
+    {
+      "setId": "s6",
+      "setName": "IP Addressing & Subnetting",
+      "difficulty": "Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "How many bits does an IPv4 address have?",
+          "options": ["16 bits", "32 bits", "64 bits", "128 bits"],
+          "answer": 1,
+          "explanation": "IPv4 addresses consist of 32 bits, written as 4 octets (e.g., 192.168.1.1)."
+        },
+        {
+          "id": "q2",
+          "question": "How many bits does an IPv6 address have?",
+          "options": ["32 bits", "64 bits", "96 bits", "128 bits"],
+          "answer": 3,
+          "explanation": "IPv6 addresses are 128 bits, providing vastly more addresses than IPv4."
+        },
+        {
+          "id": "q3",
+          "question": "What is the range of values in each octet of IPv4?",
+          "options": ["0-100", "0-255", "1-256", "0-128"],
+          "answer": 1,
+          "explanation": "Each octet represents 8 bits, ranging from 0 to 255 (2^8 - 1)."
+        },
+        {
+          "id": "q4",
+          "question": "What is a subnet mask?",
+          "options": [
+            "Network speed",
+            "Identifies network and host portions of IP",
+            "Security protocol",
+            "Encryption key"
+          ],
+          "answer": 1,
+          "explanation": "Subnet masks determine which portion of an IP address is the network versus host."
+        },
+        {
+          "id": "q5",
+          "question": "The default subnet mask for Class A is:",
+          "options": [
+            "255.255.255.0",
+            "255.255.0.0",
+            "255.0.0.0",
+            "255.255.255.255"
+          ],
+          "answer": 2,
+          "explanation": "Class A uses /8 subnet mask: 255.0.0.0, allowing 16.7 million hosts."
+        },
+        {
+          "id": "q6",
+          "question": "What is CIDR notation?",
+          "options": [
+            "A routing protocol",
+            "IP/prefix length notation",
+            "Encryption method",
+            "Network device"
+          ],
+          "answer": 1,
+          "explanation": "CIDR (Classless Inter-Domain Routing) notation like 192.168.1.0/24 specifies network size."
+        },
+        {
+          "id": "q7",
+          "question": "A /24 subnet mask in dotted decimal is:",
+          "options": [
+            "255.255.255.0",
+            "255.255.0.0",
+            "255.0.0.0",
+            "255.255.255.128"
+          ],
+          "answer": 0,
+          "explanation": "/24 means 24 bits for network, 8 for hosts = 255.255.255.0."
+        },
+        {
+          "id": "q8",
+          "question": "How many usable hosts are in a /25 subnet?",
+          "options": ["256", "128", "126", "64"],
+          "answer": 2,
+          "explanation": "/25 has 8 bits for hosts; 2^8 = 256, minus 2 (network & broadcast) = 254 usable IPs."
+        },
+        {
+          "id": "q9",
+          "question": "Which IP range is reserved for private networks (Class A)?",
+          "options": [
+            "10.0.0.0 - 10.255.255.255",
+            "172.16.0.0 - 172.31.255.255",
+            "192.168.0.0 - 192.168.255.255",
+            "All above"
+          ],
+          "answer": 3,
+          "explanation": "All three ranges are private: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x."
+        },
+        {
+          "id": "q10",
+          "question": "What is the broadcast address in 192.168.1.0/24 subnet?",
+          "options": [
+            "192.168.1.0",
+            "192.168.1.1",
+            "192.168.1.254",
+            "192.168.1.255"
+          ],
+          "answer": 3,
+          "explanation": "The broadcast address has all host bits set to 1 (last address in subnet)."
+        }
+      ]
+    },
+    {
+      "setId": "s7",
+      "setName": "Switching & Routing",
+      "difficulty": "Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is the difference between switching and routing?",
+          "options": [
+            "No difference",
+            "Switching is for LANs, routing for WANs",
+            "Switching is slower",
+            "Routing uses switches"
+          ],
+          "answer": 1,
+          "explanation": "Switching operates within a single network (L2), routing between different networks (L3)."
+        },
+        {
+          "id": "q2",
+          "question": "What is MAC address learning in switches?",
+          "options": [
+            "Fixed MAC table",
+            "Dynamic mapping of MAC to port",
+            "Encryption method",
+            "Router function"
+          ],
+          "answer": 1,
+          "explanation": "Switches learn source MAC addresses and remember which port they arrived on."
+        },
+        {
+          "id": "q3",
+          "question": "What is broadcast domain?",
+          "options": [
+            "Only switches",
+            "Network where broadcast reaches all devices",
+            "WAN segment",
+            "Internet"
+          ],
+          "answer": 1,
+          "explanation": "A broadcast domain is a segment where broadcast traffic reaches all connected devices."
+        },
+        {
+          "id": "q4",
+          "question": "Routers separate:",
+          "options": ["Ports", "Broadcast domains", "Cables", "Computers"],
+          "answer": 1,
+          "explanation": "Routers create separate broadcast domains, limiting unnecessary broadcast traffic."
+        },
+        {
+          "id": "q5",
+          "question": "What is VLAN?",
+          "options": [
+            "Virtual Local Area Network",
+            "Very Large Area Network",
+            "Virtual Link Area Network",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "VLAN allows logical grouping of devices regardless of physical location."
+        },
+        {
+          "id": "q6",
+          "question": "Which routing protocol is classful?",
+          "options": ["OSPF", "RIPv1", "BGP", "EIGRP"],
+          "answer": 1,
+          "explanation": "RIPv1 (Routing Information Protocol v1) is a classful routing protocol."
+        },
+        {
+          "id": "q7",
+          "question": "OSPF stands for:",
+          "options": [
+            "Open Source Path Finding",
+            "Open Shortest Path First",
+            "Optimal Signal Processing Framework",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "OSPF is a link-state routing protocol used for dynamic routing."
+        },
+        {
+          "id": "q8",
+          "question": "What is a routing table?",
+          "options": [
+            "Hardware device",
+            "List of known networks and next hops",
+            "Security rule",
+            "Backup file"
+          ],
+          "answer": 1,
+          "explanation": "A routing table contains entries mapping destination networks to next-hop gateways."
+        },
+        {
+          "id": "q9",
+          "question": "What metric does RIP use for routing?",
+          "options": ["Bandwidth", "Hop count", "Cost", "Latency"],
+          "answer": 1,
+          "explanation": "RIP uses hop count (number of routers) with a maximum of 15 hops."
+        },
+        {
+          "id": "q10",
+          "question": "BGP is used for:",
+          "options": [
+            "LAN routing",
+            "Inter-AS routing on the Internet",
+            "Within single network",
+            "Local switching"
+          ],
+          "answer": 1,
+          "explanation": "BGP (Border Gateway Protocol) handles routing between Autonomous Systems on the Internet."
+        }
+      ]
+    },
+    {
+      "setId": "s8",
+      "setName": "Network Security & Firewalls",
+      "difficulty": "Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is a firewall?",
+          "options": [
+            "Physical wall",
+            "Software/hardware filtering unauthorized access",
+            "Router",
+            "Switch"
+          ],
+          "answer": 1,
+          "explanation": "Firewalls monitor and control incoming/outgoing network traffic based on rules."
+        },
+        {
+          "id": "q2",
+          "question": "What is a DMZ?",
+          "options": [
+            "Digital Military Zone",
+            "Demilitarized Zone - perimeter network",
+            "Data Management Zone",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "DMZ is a buffered zone between internal network and the Internet for public-facing services."
+        },
+        {
+          "id": "q3",
+          "question": "What does encryption do?",
+          "options": [
+            "Speeds up data",
+            "Makes data unreadable without key",
+            "Deletes data",
+            "Duplicates data"
+          ],
+          "answer": 1,
+          "explanation": "Encryption converts plaintext to ciphertext using cryptographic algorithms."
+        },
+        {
+          "id": "q4",
+          "question": "What is a VPN?",
+          "options": [
+            "Virtual Public Network",
+            "Virtual Private Network",
+            "Very Personal Network",
+            "Visible Network"
+          ],
+          "answer": 1,
+          "explanation": "VPN creates encrypted tunnel for secure communication over untrusted networks."
+        },
+        {
+          "id": "q5",
+          "question": "Which encryption type uses two keys?",
+          "options": ["Symmetric", "Asymmetric", "XOR", "Caesar Cipher"],
+          "answer": 1,
+          "explanation": "Asymmetric encryption uses public and private key pairs (RSA, ECC)."
+        },
+        {
+          "id": "q6",
+          "question": "What is authentication?",
+          "options": [
+            "Data speed",
+            "Verifying identity of user/device",
+            "Network size",
+            "Router function"
+          ],
+          "answer": 1,
+          "explanation": "Authentication confirms that a user or device is who/what it claims to be."
+        },
+        {
+          "id": "q7",
+          "question": "What does SSL/TLS provide?",
+          "options": [
+            "File compression",
+            "Secure encrypted connection",
+            "Data backup",
+            "User authentication only"
+          ],
+          "answer": 1,
+          "explanation": "SSL (Secure Sockets Layer) / TLS provide encryption for web and email protocols."
+        },
+        {
+          "id": "q8",
+          "question": "What is a proxy server?",
+          "options": [
+            "Backup server",
+            "Intermediary between client and server",
+            "Router",
+            "Switch"
+          ],
+          "answer": 1,
+          "explanation": "Proxy servers filter requests, cache content, and provide anonymity."
+        },
+        {
+          "id": "q9",
+          "question": "What does IDS stand for?",
+          "options": [
+            "Intrusion Detection System",
+            "Internet Data Sync",
+            "Interface Display System",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": "IDS monitors network traffic for malicious patterns or policy violations."
+        },
+        {
+          "id": "q10",
+          "question": "What is a DDoS attack?",
+          "options": [
+            "Single attacker",
+            "Multiple sources flooding target with traffic",
+            "Virus spread",
+            "Password theft"
+          ],
+          "answer": 1,
+          "explanation": "Distributed Denial of Service attacks overwhelm targets from many sources simultaneously."
+        }
+      ]
+    },
+    {
+      "setId": "s9",
+      "setName": "Network Services & Administration",
+      "difficulty": "Medium-Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is DHCP?",
+          "options": [
+            "Static IP assignment",
+            "Dynamic Host Configuration Protocol",
+            "Device Hosting Service",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "DHCP automatically assigns IP addresses and network configuration to devices."
+        },
+        {
+          "id": "q2",
+          "question": "What is the purpose of NAT?",
+          "options": [
+            "Encryption",
+            "Translating private IPs to public IPs",
+            "Routing only",
+            "Security only"
+          ],
+          "answer": 1,
+          "explanation": "NAT (Network Address Translation) allows multiple devices to share one public IP."
+        },
+        {
+          "id": "q3",
+          "question": "What does SNMP monitor?",
+          "options": [
+            "Network security",
+            "Network devices and performance",
+            "User activity",
+            "Email"
+          ],
+          "answer": 1,
+          "explanation": "SNMP (Simple Network Management Protocol) collects data from network devices."
+        },
+        {
+          "id": "q4",
+          "question": "What is NTP used for?",
+          "options": [
+            "File transfer",
+            "Email service",
+            "Time synchronization",
+            "Web browsing"
+          ],
+          "answer": 2,
+          "explanation": "NTP (Network Time Protocol) ensures accurate time across network devices."
+        },
+        {
+          "id": "q5",
+          "question": "What does ARP do?",
+          "options": [
+            "Route packets",
+            "Translate IP to MAC addresses",
+            "Encrypt data",
+            "Transfer files"
+          ],
+          "answer": 1,
+          "explanation": "ARP (Address Resolution Protocol) maps IP addresses to MAC addresses."
+        },
+        {
+          "id": "q6",
+          "question": "What is LDAP used for?",
+          "options": [
+            "Large Data Array Protocol",
+            "Lightweight Directory Access Protocol for user/device info",
+            "Local Data Protocol",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "LDAP stores and retrieves directory information like user accounts and devices."
+        },
+        {
+          "id": "q7",
+          "question": "What is a DNS zone?",
+          "options": [
+            "Security area",
+            "Domain namespace managed by nameserver",
+            "Network segment",
+            "Firewall rule"
+          ],
+          "answer": 1,
+          "explanation": "DNS zone is a portion of domain namespace for which a nameserver is authoritative."
+        },
+        {
+          "id": "q8",
+          "question": "What does a secondary DNS server do?",
+          "options": [
+            "Original records",
+            "Backup copy of primary server records",
+            "Handles requests only",
+            "Encryption"
+          ],
+          "answer": 1,
+          "explanation": "Secondary DNS provides redundancy by maintaining copies of primary DNS records."
+        },
+        {
+          "id": "q9",
+          "question": "What is a proxy ARP?",
+          "options": [
+            "Normal ARP",
+            "Device responding to ARP on behalf of another",
+            "Encrypted ARP",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Proxy ARP allows a device to respond to ARP requests for another device's IP."
+        },
+        {
+          "id": "q10",
+          "question": "What is TTL in DNS?",
+          "options": [
+            "Total Time Lost",
+            "Time To Live - how long DNS record is cached",
+            "Transfer Template Language",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "TTL determines how long a DNS response can be cached before re-querying."
+        }
+      ]
+    },
+    {
+      "setId": "s10",
+      "setName": "Advanced Networking Concepts",
+      "difficulty": "Very Hard",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is QoS?",
+          "options": [
+            "Quick Output Streaming",
+            "Quality of Service - prioritizing traffic",
+            "Query on Server",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "QoS mechanisms prioritize critical traffic (VoIP, video) over less important data."
+        },
+        {
+          "id": "q2",
+          "question": "What is Load Balancing?",
+          "options": [
+            "Equal weight",
+            "Distributing traffic across multiple servers",
+            "Single path",
+            "Encryption"
+          ],
+          "answer": 1,
+          "explanation": "Load balancing distributes network traffic across multiple resources to optimize utilization."
+        },
+        {
+          "id": "q3",
+          "question": "What is the OSI model's role in networking?",
+          "options": [
+            "Just theoretical",
+            "Reference framework for network communication standards",
+            "Hardware design",
+            "Data compression"
+          ],
+          "answer": 1,
+          "explanation": "OSI model provides standardized framework helping vendors design interoperable products."
+        },
+        {
+          "id": "q4",
+          "question": "What is encapsulation in networking?",
+          "options": [
+            "Compression",
+            "Wrapping data with headers at each layer",
+            "Encryption only",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "Each OSI layer adds its own header; called encapsulation (headers called PDU)."
+        },
+        {
+          "id": "q5",
+          "question": "What is MTU?",
+          "options": [
+            "Maximum Time Unit",
+            "Maximum Transmission Unit - largest packet size",
+            "Multi-Transport Unit",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "MTU (typically 1500 bytes for Ethernet) limits packet size; larger packets are fragmented."
+        },
+        {
+          "id": "q6",
+          "question": "What is network congestion?",
+          "options": [
+            "Network maintenance",
+            "Traffic exceeding capacity causing delays",
+            "Security breach",
+            "Device failure"
+          ],
+          "answer": 1,
+          "explanation": "Congestion occurs when network demand exceeds available bandwidth, causing packet loss/delays."
+        },
+        {
+          "id": "q7",
+          "question": "What is Latency?",
+          "options": [
+            "Bandwidth",
+            "Delay in data transmission",
+            "Speed only",
+            "Packet loss"
+          ],
+          "answer": 1,
+          "explanation": "Latency measures the time delay from source to destination (measured in milliseconds)."
+        },
+        {
+          "id": "q8",
+          "question": "What is Jitter?",
+          "options": [
+            "Packet loss",
+            "Variation in latency",
+            "Network speed",
+            "Bandwidth"
+          ],
+          "answer": 1,
+          "explanation": "Jitter is inconsistent latency causing variations in packet arrival times."
+        },
+        {
+          "id": "q9",
+          "question": "What is the difference between hub and switch at the core?",
+          "options": [
+            "Same device",
+            "Hub broadcasts all ports; switch uses MAC lookup",
+            "No difference in function",
+            "Speed only"
+          ],
+          "answer": 1,
+          "explanation": "Hubs flood all ports (L1); switches intelligently forward based on MAC (L2)."
+        },
+        {
+          "id": "q10",
+          "question": "What is network slicing?",
+          "options": [
+            "Cutting cables",
+            "Dividing network into isolated logical networks",
+            "Security protocol",
+            "Routing method"
+          ],
+          "answer": 1,
+          "explanation": "Network slicing creates independent virtual networks from shared physical infrastructure, key for 5G."
+        }
       ]
     }
   ]
