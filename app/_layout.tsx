@@ -1,33 +1,98 @@
 import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
+    DarkTheme,
+    DefaultTheme,
+    ThemeProvider,
 } from "@react-navigation/native";
-import { Stack } from "expo-router";
+import { Stack, useRootNavigationState, useRouter } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
+import { useEffect, useRef, useState } from "react";
 import "react-native-reanimated";
 import "../global.css";
 
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useUserStore } from "@/lib/storage";
 
-export const unstable_settings = {
-  anchor: "(tabs)",
-};
+SplashScreen.preventAutoHideAsync();
+
+function useHasHydrated() {
+  const [hasHydrated, setHasHydrated] = useState(() => {
+    return useUserStore.persist.hasHydrated();
+  });
+
+  useEffect(() => {
+    if (useUserStore.persist.hasHydrated()) {
+      setHasHydrated(true);
+      return;
+    }
+
+    const unsub = useUserStore.persist.onFinishHydration(() => {
+      setHasHydrated(true);
+    });
+
+    return () => unsub();
+  }, []);
+
+  return hasHydrated;
+}
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const router = useRouter();
+  const navigationState = useRootNavigationState();
+  const hasHydrated = useHasHydrated();
+
+  const onboardingComplete = useUserStore((state) => state.onboardingComplete);
+  const [isReady, setIsReady] = useState(false);
+  // Guard: only run the initial redirect once
+  const hasNavigated = useRef(false);
+
+  useEffect(() => {
+    if (!hasHydrated) return;
+    const timer = setTimeout(() => setIsReady(true), 50);
+    return () => clearTimeout(timer);
+  }, [hasHydrated]);
+
+  useEffect(() => {
+    if (!isReady || !navigationState?.key) return;
+    // Only perform the initial redirect once
+    if (hasNavigated.current) return;
+    hasNavigated.current = true;
+
+    if (!onboardingComplete) {
+      console.log("[RootLayout] First launch -> onboarding");
+      router.replace("/onboarding/name");
+    } else {
+      console.log("[RootLayout] Returning user -> tabs");
+      router.replace("/(tabs)");
+    }
+
+    SplashScreen.hideAsync();
+  }, [isReady, navigationState?.key]);
+
+  // Also hide splash if we somehow land on the right screen without a redirect
+  useEffect(() => {
+    if (isReady) {
+      SplashScreen.hideAsync();
+    }
+  }, [isReady]);
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="chapter/[id]" options={{ headerShown: false }} />
-        <Stack.Screen name="quiz/[id]" options={{ headerShown: false, animation: 'slide_from_bottom' }} />
-        <Stack.Screen name="sample/[id]" options={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="chapter/[id]" />
+        <Stack.Screen
+          name="quiz/[id]"
+          options={{ animation: "slide_from_bottom" }}
+        />
+        <Stack.Screen name="sample/[id]" />
         <Stack.Screen
           name="modal"
           options={{ presentation: "modal", title: "Modal" }}
         />
+        <Stack.Screen name="onboarding/name" />
+        <Stack.Screen name="onboarding/avatar" />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
