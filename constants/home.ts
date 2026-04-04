@@ -27,21 +27,21 @@ export const BENTO_CARDS = [
     route: "/quiz"
   },
   {
-    title: "Programs",
-    subtitle: "Real-world code",
-    progress: 60,
-    icon: "code-tags",
-    color: "secondary",
-    tag: "60% Done",
-    route: "/programs"
-  },
-  {
     title: "Sample Papers",
     subtitle: "Previous year questions",
     progress: 20,
     icon: "file-document-multiple",
     color: "primary-container",
     tag: "20% Done",
-    route: "/sample-papers"
+    route: "/sample"
+  },
+  {
+    title: "Profile",
+    subtitle: "Your progress & stats",
+    progress: 60,
+    icon: "account-circle",
+    color: "secondary",
+    tag: "60% Done",
+    route: "/profile"
   }
 ];

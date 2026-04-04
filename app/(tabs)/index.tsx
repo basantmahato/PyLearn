@@ -1,12 +1,11 @@
+import { StatusBar } from "expo-status-bar";
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 
-import { Header } from "@/components/ui/Header";
+import { BentoCard } from "@/components/home/BentoCard";
 import { Greeting } from "@/components/home/Greeting";
 import { ProgressHero } from "@/components/home/ProgressHero";
-import { BentoCard } from "@/components/home/BentoCard";
-import { AdBanner } from "@/components/home/AdBanner";
+import { Header } from "@/components/ui/Header";
 import { BENTO_CARDS } from "@/constants/home";
 
 export default function HomeScreen() {
@@ -34,8 +33,8 @@ export default function HomeScreen() {
           ))}
         </View>
 
-        {/* Ad Placeholder */}
-        <AdBanner />
+        {/* Extra padding at bottom */}
+        <View className="h-8" />
       </ScrollView>
     </SafeAreaView>
   );

@@ -1,9 +1,21 @@
-import { View, Text, Pressable } from "react-native";
-import { Svg, Circle } from "react-native-svg";
-import { HOME_STATS } from "@/constants/home";
+import { UNITS } from "@/constants/chapters";
+import { useProgressStore } from "@/lib/progress-store";
+import { useRouter } from "expo-router";
+import { Pressable, Text, View } from "react-native";
+import { Circle, Svg } from "react-native-svg";
 
 export function ProgressHero() {
-  const { progress } = HOME_STATS;
+  const router = useRouter();
+  const { getOverallProgress, getTotalChaptersCompleted, getChapterProgress } = useProgressStore();
+  const progress = getOverallProgress();
+  const completed = getTotalChaptersCompleted();
+  const totalChapters = 11;
+  
+  // Find first uncompleted chapter
+  const allChapters = UNITS.flatMap((u) => u.chapters);
+  const firstUncompleted = allChapters.find((c) => getChapterProgress(c.id) < 100);
+  const targetChapterId = firstUncompleted?.id || "1";
+  
   const radius = 70;
   const strokeWidth = 12;
   const circumference = 2 * Math.PI * radius;
@@ -15,10 +27,13 @@ export function ProgressHero() {
         <View>
           <Text className="text-2xl font-bold text-on-primary-container mb-2">Overall Progress</Text>
           <Text className="text-on-primary-container/80 text-sm max-w-[180px]">
-            You're doing great! You've mastered {progress}% of the Python 3.12 core modules.
+            You've completed {completed} of {totalChapters} chapters.
           </Text>
         </View>
-        <Pressable className="bg-surface-container-lowest self-start px-6 py-3 rounded-full shadow-lg active:scale-95">
+        <Pressable
+          onPress={() => router.push(`/chapter/${targetChapterId}`)}
+          className="bg-surface-container-lowest self-start px-6 py-3 rounded-full shadow-lg active:scale-95"
+        >
           <Text className="text-primary font-bold text-sm">Continue Learning</Text>
         </Pressable>
       </View>
@@ -49,7 +64,7 @@ export function ProgressHero() {
           />
         </Svg>
         <View className="absolute inset-0 items-center justify-center">
-          <Text className="text-3xl font-black text-white">{progress}%</Text>
+          <Text className="text-3xl font-black text-white" style={{ color: '#ffffff' }}>{progress}%</Text>
         </View>
       </View>
     </View>

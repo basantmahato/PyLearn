@@ -6,6 +6,8 @@ import { Dimensions, Pressable, ScrollView, Text, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, Layout } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { useProgressStore } from "@/lib/progress-store";
+
 // Import all quiz data
 import ch1Data from "@/data/quiz/ch1.json";
 import ch10Data from "@/data/quiz/ch10.json";
@@ -39,6 +41,7 @@ export default function QuizPlayerScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const { saveQuizResult, getBestQuizScore, hasPassedQuiz } = useProgressStore();
 
   // Parse ID: "chapterId_setId" e.g. "1_s1"
   const [chapterId, setId] = (id as string).split("_");
@@ -49,11 +52,21 @@ export default function QuizPlayerScreen() {
     return chapter.sets.find((s: any) => s.setId === setId);
   }, [chapterId, setId]);
 
+  const bestScore = getBestQuizScore(chapterId, setId);
+  const previouslyPassed = hasPassedQuiz(chapterId, setId);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
+
+  // Save result when showing results - must be before any early returns
+  React.useEffect(() => {
+    if (showResults) {
+      handleResultsShown();
+    }
+  }, [showResults]);
 
   if (!quizData) {
     return (
@@ -93,6 +106,22 @@ export default function QuizPlayerScreen() {
     }
   };
 
+  const handleResultsShown = () => {
+    const percentage = Math.round((score / totalQuestions) * 100);
+    const passed = percentage >= 70;
+    
+    // Save quiz result to history
+    saveQuizResult({
+      chapterId,
+      setId,
+      score,
+      total: totalQuestions,
+      percentage,
+      date: new Date().toISOString(),
+      passed,
+    });
+  };
+
   const handleRetry = () => {
     setCurrentIndex(0);
     setSelectedOption(null);
@@ -120,6 +149,15 @@ export default function QuizPlayerScreen() {
           <Text className="text-4xl font-black text-on-surface tracking-tighter text-center">
             {isPassed ? "Great Job!" : "Keep Learning"}
           </Text>
+          
+          {/* Best Score Display */}
+          {bestScore !== null && (
+            <View className="bg-surface-container-low rounded-xl px-4 py-2 mt-4">
+              <Text className="text-sm text-on-surface-variant text-center">
+                Best Score: {bestScore}%
+              </Text>
+            </View>
+          )}
           
           <View className="bg-surface-container-low w-full rounded-3xl p-8 mt-8 border border-outline-variant/10">
             <View className="flex-row justify-between mb-4">
@@ -254,7 +292,7 @@ export default function QuizPlayerScreen() {
               ${selectedOption === null ? "bg-surface-container-highest opacity-50" : "bg-primary"}
             `}
           >
-            <Text className={`font-bold text-lg ${selectedOption === null ? "text-on-surface-variant" : "text-white"}`}>
+            <Text className={`font-bold text-lg ${selectedOption === null ? "text-on-surface-variant" : "text-white"}`} style={selectedOption === null ? {} : { color: '#ffffff' }}>
               Check Answer
             </Text>
           </Pressable>
@@ -263,7 +301,7 @@ export default function QuizPlayerScreen() {
             onPress={handleNext}
             className="w-full py-5 rounded-2xl bg-inverse-surface items-center justify-center shadow-lg"
           >
-            <Text className="text-white font-black text-lg">
+            <Text className="text-white font-black text-lg" style={{ color: '#ffffff' }}>
               {currentIndex < totalQuestions - 1 ? "Next Question" : "View Results"}
             </Text>
           </Pressable>

@@ -50,23 +50,7 @@ export default function SampleScreen() {
                 <Text className="text-sm text-on-surface-variant">Total Papers</Text>
               </View>
             </View>
-            <View className="flex-row gap-2">
-              <View className="bg-green-100 px-3 py-2 rounded-xl">
-                <Text className="text-xs font-bold text-green-700">
-                  {SAMPLE_PAPERS.filter(p => p.difficulty === "Easy").length} Easy
-                </Text>
-              </View>
-              <View className="bg-orange-100 px-3 py-2 rounded-xl">
-                <Text className="text-xs font-bold text-orange-700">
-                  {SAMPLE_PAPERS.filter(p => p.difficulty === "Medium").length} Med
-                </Text>
-              </View>
-              <View className="bg-red-100 px-3 py-2 rounded-xl">
-                <Text className="text-xs font-bold text-red-700">
-                  {SAMPLE_PAPERS.filter(p => p.difficulty === "Hard").length} Hard
-                </Text>
-              </View>
-            </View>
+           
           </View>
         </View>
 
@@ -105,6 +89,7 @@ export default function SampleScreen() {
                 className={`font-medium ${
                   difficultyFilter === filter ? "text-white" : "text-on-surface-variant"
                 }`}
+                style={difficultyFilter === filter ? { color: '#ffffff' } : {}}
               >
                 {filter}
               </Text>

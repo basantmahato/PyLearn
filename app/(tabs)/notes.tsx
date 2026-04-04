@@ -1,41 +1,83 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
-import React, { useMemo, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import React, { useCallback, useMemo, useState } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { SearchHero } from "@/components/notes/SearchHero";
 import { TopicDiscovery } from "@/components/notes/TopicDiscovery";
 import { UnitSection } from "@/components/notes/UnitSection";
 import { Header } from "@/components/ui/Header";
-import { UNITS } from "@/constants/chapters";
+import { TOPICS, UNITS } from "@/constants/chapters";
 
 export default function NotesScreen() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeTopic, setActiveTopic] = useState<string | null>(null);
 
-  // Functional search logic: Filtering units and chapters in real-time
+  // Get keywords for active topic
+  const activeTopicKeywords = useMemo(() => {
+    if (!activeTopic) return [];
+    const topic = TOPICS.find(t => t.label === activeTopic);
+    return topic?.keywords || [];
+  }, [activeTopic]);
+
+  // Combined search and topic filtering
   const filteredUnits = useMemo(() => {
-    if (!searchQuery.trim()) return UNITS;
+    const query = searchQuery.toLowerCase().trim();
+    const hasSearch = query.length > 0;
+    const hasTopic = activeTopicKeywords.length > 0;
 
-    const query = searchQuery.toLowerCase();
+    if (!hasSearch && !hasTopic) return UNITS;
 
     return UNITS.map((unit) => {
-      // Check if unit title itself matches the search query
-      const isUnitMatch = unit.title.toLowerCase().includes(query);
-
-      // Filter chapters that match title (or description/icon if needed)
-      const matchingChapters = unit.chapters.filter((chapter) =>
-        chapter.title.toLowerCase().includes(query)
+      // Check if unit title matches
+      const unitMatchesSearch = hasSearch && unit.title.toLowerCase().includes(query);
+      const unitMatchesTopic = hasTopic && activeTopicKeywords.some(kw => 
+        unit.title.toLowerCase().includes(kw.toLowerCase())
       );
 
-      // If the unit title matches, we show the entire unit. 
-      // Otherwise, we only show the matching chapters within that unit.
+      // Filter chapters
+      const matchingChapters = unit.chapters.filter((chapter) => {
+        const chapterTitle = chapter.title.toLowerCase();
+        
+        // Search filter
+        const matchesSearch = !hasSearch || chapterTitle.includes(query);
+        
+        // Topic filter - check if chapter title matches any keyword
+        const matchesTopic = !hasTopic || activeTopicKeywords.some(kw => 
+          chapterTitle.includes(kw.toLowerCase())
+        );
+
+        return matchesSearch && matchesTopic;
+      });
+
+      // If unit matches, show all chapters (unless topic filtering)
+      const chaptersToShow = (unitMatchesSearch && !hasTopic) 
+        ? unit.chapters 
+        : matchingChapters;
+
       return {
         ...unit,
-        chapters: isUnitMatch ? unit.chapters : matchingChapters,
+        chapters: chaptersToShow,
       };
     }).filter((unit) => unit.chapters.length > 0);
-  }, [searchQuery]);
+  }, [searchQuery, activeTopicKeywords]);
+
+  const handleTopicPress = useCallback((label: string, keywords: string[]) => {
+    // Toggle topic - if already active, clear it
+    if (activeTopic === label) {
+      setActiveTopic(null);
+      setSearchQuery("");
+    } else {
+      setActiveTopic(label);
+      setSearchQuery(label);
+    }
+  }, [activeTopic]);
+
+  const clearFilters = () => {
+    setActiveTopic(null);
+    setSearchQuery("");
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-background" edges={["top"]}>
@@ -74,7 +116,22 @@ export default function NotesScreen() {
           </View>
 
           {/* Discovery Section: Pillars for popular exploration */}
-          <TopicDiscovery onTopicPress={setSearchQuery} />
+          <TopicDiscovery 
+            onTopicPress={handleTopicPress} 
+            activeTopic={activeTopic}
+          />
+          
+          {/* Active Filter Indicator */}
+          {activeTopic && (
+            <View className="flex-row items-center gap-2 mb-4">
+              <Text className="text-sm text-on-surface-variant">
+                Filtering by: <Text className="font-bold text-primary">{activeTopic}</Text>
+              </Text>
+              <Pressable onPress={clearFilters} className="p-1">
+                <MaterialCommunityIcons name="close-circle" size={18} color="#717785" />
+              </Pressable>
+            </View>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>

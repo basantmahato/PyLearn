@@ -85,6 +85,10 @@ export const useUserStore = create<UserProfileStore>()(
         userName: state.userName,
         userAvatar: state.userAvatar,
       }),
+      onRehydrateStorage: () => (state) => {
+        // Hydration complete - state loaded from storage
+      },
+      skipHydration: false,
     },
   ),
 );
@@ -125,3 +129,4 @@ export function getUserProfile(): {
 export function resetOnboarding(): void {
   useUserStore.getState().resetOnboarding();
 }
+ 

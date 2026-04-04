@@ -1,13 +1,14 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React, { useMemo } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import React, { useCallback, useMemo, useRef, useState } from "react";
+import { NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 // Content Renderer Components
 import { CodeBlock, ListBlock, ParagraphBlock } from "@/components/chapter/ContentBlocks";
 import { PracticeSection } from "@/components/chapter/PracticeSection";
+import { useProgressStore } from "@/lib/progress-store";
 
 // Data Source Mapping (Simulating dynamic local content)
 import ch1Data from "@/data/notes/ch1/notes.json";
@@ -30,10 +31,17 @@ export default function ChapterDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const scrollViewRef = useRef<ScrollView>(null);
+  const [contentHeight, setContentHeight] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+
+  const chapterId = id as string;
+  const { updateChapterProgress, markChapterComplete, checkIn, getChapterProgress, toggleBookmark, isBookmarked } = useProgressStore();
+  const progress = getChapterProgress(chapterId);
+  const bookmarked = isBookmarked(chapterId);
 
   /**
    * Data Mapping: Maps dynamic route IDs to localized JSON assets.
-   * In a production scale, this could be a dynamic import or centralized service.
    */
   const data = useMemo(() => {
     const registry: Record<string, any> = {
@@ -49,8 +57,38 @@ export default function ChapterDetailScreen() {
       "10": ch10Data,
       "11": ch11Data,
     };
-    return registry[id as string] || null;
-  }, [id]);
+    return registry[chapterId] || null;
+  }, [chapterId]);
+
+  // Track scroll position and update progress
+  const handleScroll = useCallback((event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const y = event.nativeEvent.contentOffset.y;
+    const height = event.nativeEvent.contentSize.height;
+    const layoutHeight = event.nativeEvent.layoutMeasurement.height;
+    
+    setScrollY(y);
+    
+    if (height > 0) {
+      // Calculate progress based on scroll position (capped at 100%)
+      const scrollProgress = Math.min(100, Math.round((y / (height - layoutHeight)) * 100));
+      const newProgress = Math.max(progress, scrollProgress);
+      
+      if (newProgress > progress) {
+        updateChapterProgress(chapterId, newProgress);
+      }
+      
+      // Mark complete if scrolled to near bottom
+      if (scrollProgress >= 90) {
+        markChapterComplete(chapterId);
+        checkIn(); // Update streak
+      }
+    }
+  }, [chapterId, progress, updateChapterProgress, markChapterComplete, checkIn]);
+
+  // Handle content layout to get height
+  const handleContentSizeChange = useCallback((w: number, h: number) => {
+    setContentHeight(h);
+  }, []);
 
   // Error State: Graceful fallback for missing content
   if (!data) {
@@ -94,11 +132,32 @@ export default function ChapterDetailScreen() {
             {data.title}
           </Text>
         </View>
+        {/* Progress indicator */}
+        <View className="flex-row items-center gap-2">
+          <Pressable
+            onPress={() => toggleBookmark(chapterId)}
+            className="w-10 h-10 rounded-full bg-surface-container items-center justify-center active:scale-90"
+          >
+            <MaterialCommunityIcons
+              name={bookmarked ? "bookmark" : "bookmark-outline"}
+              size={20}
+              color={bookmarked ? "#005ab5" : "#717785"}
+            />
+          </Pressable>
+          <View className="flex-row items-center bg-primary/10 px-3 py-1.5 rounded-full">
+            <MaterialCommunityIcons name="chart-line" size={16} color="#005ab5" />
+            <Text className="ml-1.5 text-sm font-bold text-primary">{progress}%</Text>
+          </View>
+        </View>
       </View>
 
       <ScrollView 
+        ref={scrollViewRef}
         contentContainerClassName="pt-12 pb-32 max-w-4xl self-center w-full px-6"
         showsVerticalScrollIndicator={false}
+        onScroll={handleScroll}
+        onContentSizeChange={handleContentSizeChange}
+        scrollEventThrottle={500} // Throttle to every 500ms for performance
       >
         {/* Chapter Introduction Hero */}
         <View className="mb-16">

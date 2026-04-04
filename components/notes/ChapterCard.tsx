@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, Pressable } from "react-native";
+import { Chapter } from "@/constants/chapters";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { Chapter } from "@/constants/chapters";
+import React from "react";
+import { Pressable, Text, View } from "react-native";
 
 interface ChapterCardProps {
   chapter: Chapter;
@@ -32,6 +32,7 @@ export function ChapterCard({ chapter, unitColumns }: ChapterCardProps) {
             className={`text-lg md:text-xl font-bold leading-tight flex-1 ${
               useSolidButton ? "text-white" : "text-on-surface"
             }`}
+            style={useSolidButton ? { color: '#ffffff' } : {}}
           >
             {chapter.title}
           </Text>

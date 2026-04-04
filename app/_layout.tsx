@@ -1,7 +1,7 @@
 import {
-    DarkTheme,
-    DefaultTheme,
-    ThemeProvider,
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
 } from "@react-navigation/native";
 import { Stack, useRootNavigationState, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import "react-native-reanimated";
 import "../global.css";
 
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useUserStore } from "@/lib/storage";
 
@@ -60,10 +61,8 @@ export default function RootLayout() {
     hasNavigated.current = true;
 
     if (!onboardingComplete) {
-      console.log("[RootLayout] First launch -> onboarding");
       router.replace("/onboarding/name");
     } else {
-      console.log("[RootLayout] Returning user -> tabs");
       router.replace("/(tabs)");
     }
 
@@ -78,23 +77,22 @@ export default function RootLayout() {
   }, [isReady]);
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="chapter/[id]" />
-        <Stack.Screen
-          name="quiz/[id]"
-          options={{ animation: "slide_from_bottom" }}
-        />
-        <Stack.Screen name="sample/[id]" />
-        <Stack.Screen
-          name="modal"
-          options={{ presentation: "modal", title: "Modal" }}
-        />
-        <Stack.Screen name="onboarding/name" />
-        <Stack.Screen name="onboarding/avatar" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="chapter/[id]" />
+          <Stack.Screen
+            name="quiz/[id]"
+            options={{ animation: "slide_from_bottom" }}
+          />
+          <Stack.Screen name="sample/[id]" />
+          <Stack.Screen name="search" />
+          <Stack.Screen name="onboarding/name" />
+          <Stack.Screen name="onboarding/avatar" />
+        </Stack>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

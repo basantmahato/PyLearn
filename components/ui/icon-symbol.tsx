@@ -21,6 +21,7 @@ const MAPPING = {
   'doc.text.fill': 'description',
   'questionmark.circle.fill': 'help',
   'doc.on.doc.fill': 'file-copy',
+  'person.fill': 'person',
 } as IconMapping;
 
 /**

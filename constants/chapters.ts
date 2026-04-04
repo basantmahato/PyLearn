@@ -57,8 +57,9 @@ export const UNITS: Unit[] = [
 ];
 
 export const TOPICS = [
-  'List Comprehension',
-  'Dunder Methods',
-  'Pandas Intro',
-  'Exception Handling',
+  { label: 'Functions', keywords: ['Functions', 'Recursion', 'Basics'] },
+  { label: 'File Handling', keywords: ['File Handling'] },
+  { label: 'SQL', keywords: ['SQL', 'Database', 'MySQL'] },
+  { label: 'Networking', keywords: ['Networking', 'Protocols'] },
+  { label: 'Data Structures', keywords: ['Data Structures', 'Lists', 'Stack', 'Queue'] },
 ];
