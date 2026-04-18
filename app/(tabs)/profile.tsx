@@ -244,6 +244,37 @@ export default function ProfileScreen() {
             ))
           )}
         </View>
+
+        {/* Settings & Legal */}
+        <View className="mb-6">
+          <Text className="text-lg font-bold text-on-surface mb-4">Settings</Text>
+          
+          <Pressable
+            onPress={() => router.push("/privacy-policy")}
+            className="bg-surface-container-low rounded-xl p-4 mb-3 flex-row items-center border border-outline-variant/10 active:scale-[0.98]"
+          >
+            <View className="w-10 h-10 rounded-full bg-primary/10 items-center justify-center mr-3">
+              <MaterialCommunityIcons name="shield-check" size={20} color="#005ab5" />
+            </View>
+            <View className="flex-1">
+              <Text className="font-bold text-on-surface">Privacy Policy</Text>
+              <Text className="text-xs text-on-surface-variant">
+                How we handle your data
+              </Text>
+            </View>
+            <MaterialCommunityIcons name="chevron-right" size={20} color="#717785" />
+          </Pressable>
+        </View>
+
+        {/* App Version Footer */}
+        <View className="items-center py-6">
+          <Text className="text-xs text-on-surface-variant/60">
+            PyLearn v1.0.0
+          </Text>
+          <Text className="text-xs text-on-surface-variant/40 mt-1">
+            Made with love for CBSE Students
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

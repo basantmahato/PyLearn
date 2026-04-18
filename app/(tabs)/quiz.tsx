@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { ScrollView, View, Text, Pressable, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { UNITS } from "@/constants/chapters";
 import { Header } from "@/components/ui/Header";
+import { UNITS } from "@/constants/chapters";
 
 // Mock data integration for the dashboard (Actual data is in data/quiz)
 const DIFFICULTY_COLORS: Record<number, string> = {
@@ -106,7 +106,7 @@ export default function QuizScreen() {
           </View>
         ))}
 
-        {/* Global Stats or Streak Section Placeholder */}
+        {/* Daily Challenge CTA */}
         <View className="bg-primary/5 p-8 rounded-[40px] border border-primary/10 items-center">
            <MaterialCommunityIcons name="trophy-outline" size={32} color="#005ab5" />
            <Text className="text-xl font-bold text-on-surface mt-4">Daily Challenge</Text>

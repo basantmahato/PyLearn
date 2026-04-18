@@ -28,6 +28,10 @@ type ProgressStore = {
   // Quiz history
   quizHistory: QuizResult[];
 
+  // Sample paper completion (paperId -> completion percentage)
+  samplePaperProgress: Record<string, number>;
+  completedSamplePapers: string[];
+
   // Streak tracking
   streak: StreakData;
   dailyActivity: Record<string, boolean>; // date -> was active
@@ -46,6 +50,12 @@ type ProgressStore = {
   getBestQuizScore: (chapterId: string, setId: string) => number | null;
   hasPassedQuiz: (chapterId: string, setId: string) => boolean;
 
+  updateSamplePaperProgress: (paperId: string, progress: number) => void;
+  markSamplePaperComplete: (paperId: string) => void;
+  getSamplePaperProgress: (paperId: string) => number;
+  getCompletedSamplePapersCount: () => number;
+  getSamplePapersProgress: () => number;
+
   checkIn: () => void;
   getStreak: () => number;
   getLongestStreak: () => number;
@@ -59,6 +69,7 @@ type ProgressStore = {
   getTotalChaptersCompleted: () => number;
   getTotalQuizzesTaken: () => number;
   getAverageQuizScore: () => number;
+  getOverallAppProgress: () => number;
 
   resetAllProgress: () => void;
 };
@@ -110,6 +121,8 @@ export const useProgressStore = create<ProgressStore>()(
       chapterProgress: {},
       completedChapters: [] as string[],
       quizHistory: [] as QuizResult[],
+      samplePaperProgress: {},
+      completedSamplePapers: [] as string[],
       streak: {
         current: 0,
         longest: 0,
@@ -183,6 +196,49 @@ export const useProgressStore = create<ProgressStore>()(
           (r) =>
             r.chapterId === chapterId && r.setId === setId && r.passed
         );
+      },
+
+      // Sample paper actions
+      updateSamplePaperProgress: (paperId: string, progress: number) => {
+        const clampedProgress = Math.min(100, Math.max(0, progress));
+        set((state) => ({
+          samplePaperProgress: {
+            ...state.samplePaperProgress,
+            [paperId]: clampedProgress,
+          },
+        }));
+        if (clampedProgress >= 100) {
+          get().markSamplePaperComplete(paperId);
+        }
+      },
+
+      markSamplePaperComplete: (paperId: string) => {
+        set((state) => {
+          if (state.completedSamplePapers.includes(paperId)) {
+            return state;
+          }
+          return {
+            completedSamplePapers: [...state.completedSamplePapers, paperId],
+            samplePaperProgress: {
+              ...state.samplePaperProgress,
+              [paperId]: 100,
+            },
+          };
+        });
+      },
+
+      getSamplePaperProgress: (paperId: string) => {
+        return get().samplePaperProgress[paperId] || 0;
+      },
+
+      getCompletedSamplePapersCount: () => {
+        return get().completedSamplePapers.length;
+      },
+
+      getSamplePapersProgress: () => {
+        const totalPapers = 20; // Total sample papers available
+        const completed = get().completedSamplePapers.length;
+        return Math.round((completed / totalPapers) * 100);
       },
 
       // Streak actions
@@ -284,12 +340,32 @@ export const useProgressStore = create<ProgressStore>()(
         return Math.round(sum / history.length);
       },
 
+      getOverallAppProgress: () => {
+        const notesWeight = 0.4;
+        const quizWeight = 0.3;
+        const papersWeight = 0.3;
+
+        const notesProgress = get().getOverallProgress();
+        const quizProgress = get().quizHistory.length > 0
+          ? get().getAverageQuizScore()
+          : 0;
+        const papersProgress = get().getSamplePapersProgress();
+
+        return Math.round(
+          notesProgress * notesWeight +
+          quizProgress * quizWeight +
+          papersProgress * papersWeight
+        );
+      },
+
       // Reset
       resetAllProgress: () => {
         set({
           chapterProgress: {},
           completedChapters: [],
           quizHistory: [],
+          samplePaperProgress: {},
+          completedSamplePapers: [],
           streak: {
             current: 0,
             longest: 0,
@@ -323,6 +399,14 @@ export function saveQuizResult(result: QuizResult): void {
   useProgressStore.getState().saveQuizResult(result);
 }
 
+export function updateSamplePaperProgress(paperId: string, progress: number): void {
+  useProgressStore.getState().updateSamplePaperProgress(paperId, progress);
+}
+
+export function markSamplePaperComplete(paperId: string): void {
+  useProgressStore.getState().markSamplePaperComplete(paperId);
+}
+
 export function checkIn(): void {
   useProgressStore.getState().checkIn();
 }
@@ -333,4 +417,12 @@ export function toggleBookmark(chapterId: string): void {
 
 export function getOverallProgress(): number {
   return useProgressStore.getState().getOverallProgress();
+}
+
+export function getSamplePapersProgress(): number {
+  return useProgressStore.getState().getSamplePapersProgress();
+}
+
+export function getOverallAppProgress(): number {
+  return useProgressStore.getState().getOverallAppProgress();
 }

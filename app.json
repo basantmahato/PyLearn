@@ -7,10 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "pylearn",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
+    // "newArchEnabled": true,
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
@@ -18,9 +15,9 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "edgeToEdgeEnabled": true,
+      // "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.basantmahato.pylearn"
+      "package": "com.pylearn12.app"
     },
     "web": {
       "output": "static",
@@ -45,6 +42,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1838f67a-ca19-460f-88e1-b0fd84a9ed74"
+      }
+    },
+    "owner": "basantmahato"
   }
 }

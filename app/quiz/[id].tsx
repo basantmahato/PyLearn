@@ -3,7 +3,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useMemo, useState } from "react";
 import { Dimensions, Pressable, ScrollView, Text, View } from "react-native";
-import Animated, { FadeIn, FadeInDown, Layout } from "react-native-reanimated";
+import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useProgressStore } from "@/lib/progress-store";
@@ -120,6 +120,7 @@ export default function QuizPlayerScreen() {
       date: new Date().toISOString(),
       passed,
     });
+
   };
 
   const handleRetry = () => {
@@ -203,7 +204,6 @@ export default function QuizPlayerScreen() {
         </Pressable>
         <View className="flex-1 h-2 bg-surface-container-highest mx-4 rounded-full overflow-hidden">
            <Animated.View 
-             layout={Layout.springify()}
              className="h-full bg-primary rounded-full" 
              style={{ width: `${progress}%` }} 
            />

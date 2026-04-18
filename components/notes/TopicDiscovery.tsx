@@ -12,7 +12,7 @@ export function TopicDiscovery({ onTopicPress, activeTopic }: TopicDiscoveryProp
   return (
     <View className="mt-16 md:mt-24 mb-12">
       <View className="flex-row items-center gap-2 mb-6">
-        <MaterialCommunityIcons name={"sparkles" as any} size={20} color="#005ab5" />
+        <MaterialCommunityIcons name="creation" size={20} color="#005ab5" />
         <Text className="text-on-surface font-bold text-base md:text-lg opacity-60">
           Popular Topics
         </Text>

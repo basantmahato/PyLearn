@@ -1,11 +1,6 @@
-export const HOME_STATS = {
-  progress: 65,
-  streak: 12,
-  user: {
-    name: "Rahul",
-    profilePhoto: "https://lh3.googleusercontent.com/aida-public/AB6AXuBF4TId9nHCIiMFzDtGf9_XhMbhyVPoCJ8XX44TR0mtl7Qg5mZodKH0d0xHClC2hRMVhkl4BKFpU_i4sc9YoYaxSeQAUyyzMJPpwrDlZiNKSlfcJBB8vzIBRRPFT7TwAGkHQE21KzbyNFJPIDITit7vZrdkkoy_tsI2BUmbd_Bm_rvvemMPRSdCBIS-ZQMgVGrIjUMwzygN-E472mMMzlcodaoaF7b7GlUx5ov2W2-dhS4PJtnMRtmS5KOLMhduUEhElbX6u0EANhqI"
-  }
-};
+// Bento card configurations for the home screen dashboard
+// Note: All progress values are dynamically calculated from progress-store.
+// These values serve as fallback defaults only.
 
 export const BENTO_CARDS = [
   {
