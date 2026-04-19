@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 
-import { AVATAR_OPTIONS, getUserProfile } from "@/lib/storage";
+import { AVATAR_OPTIONS, useUserStore } from "@/lib/storage";
 
 // Map avatar IDs to valid MaterialCommunityIcons names
 const AVATAR_ICON_MAP: Record<string, string> = {
@@ -20,7 +20,7 @@ interface HeaderProps {
 }
 
 export function Header({ showSearch = false, onSearchPress }: HeaderProps) {
-  const { avatar } = getUserProfile();
+  const avatar = useUserStore((state) => state.userAvatar);
   const avatarOption = AVATAR_OPTIONS.find((a) => a.id === avatar);
   const avatarIcon = avatar ? (AVATAR_ICON_MAP[avatar] || "account") : "account";
 

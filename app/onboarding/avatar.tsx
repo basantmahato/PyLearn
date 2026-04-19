@@ -32,6 +32,7 @@ export default function OnboardingAvatarScreen() {
     await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     setUserAvatar(selectedAvatar);
     setOnboardingComplete();
+    router.dismissAll();
     router.replace('/(tabs)');
   };
 
